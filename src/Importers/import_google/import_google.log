@@ -1,0 +1,202 @@
+loaging Web:Pattern's
+Add Pattern: adelaide\.edu\.au/directory/
+Add Pattern: anu\.edu\.au/people/
+Add Pattern: anu\.edu\.au/researchers/
+Add Pattern: research\.jcu\.edu\.au/portfolio/
+Add Pattern: monash\.edu\.au/research/people/profiles/profile\.html
+Add Pattern: sydney\.edu\.au/vetscience/about/staff/profiles/
+Add Pattern: sydney\.edu\.au/science/people/
+Add Pattern: findanexpert\.unimelb\.edu\.au/display/person
+Add Pattern: researchers\.uq\.edu\.au/researcher/
+Add Pattern: socrates\.uwa\.edu\.au/Staff/StaffProfile.aspx?Person=
+Add Pattern: uwa\.edu\.au/people/
+Add Pattern: ceb\.uwa\.edu\.au/research/researchers/
+Add Pattern: borevitzlab\.anu\.edu\.au/borevitz-lab-people/
+Add Pattern: uq\.edu\.au/sbms/staff
+Add Pattern: bees\.unsw\.edu\.au/[^/]+
+Add Pattern: uws\.edu\.au/hie/people/
+Add Pattern: deakin\.edu\.au/research/admin/pubs/reports/database/dynamic/output/person/
+Add Pattern: deakin\.edu\.au/profiles/
+loaging Dryad:Publication's
+Found duplicated page name: species identification and likely catch time period of whale bones from south georgia
+Found duplicated page name: estimating quantitative genetic parameters in wild populations: a comparison of pedigree and genomic approaches
+Found duplicated page name: natural epigenetic polymorphisms lead to intraspecific variation in arabidopsis gene imprinting
+Found duplicated page name: how much of the world is woody?
+Found duplicated page name: probabilistic graphical model representation in phylogenetics
+Found duplicated page name: the evolution of males: support for predictions from sex allocation theory using mating arrays of sagittaria latifolia (alismataceae)
+Found duplicated page name: disentangling methodological and biological sources of gene tree discordance on oryza (poaceae) chromosome 3
+Found duplicated page name: recombination in the threespine stickleback genome – patterns and consequences
+Found duplicated page name: reconstructing the origins of high-alpine niches and cushion life form in the genus androsace s.l. (primulaceae)
+Found duplicated page name: kin-bias, breeding site selection, and female fitness in a cannibalistic neotropical frog
+Found duplicated page name: maternal investment increases with altitude in a frog on the tibetan plateau
+Found duplicated page name: sequencing of seven haloarchaeal genomes reveals patterns of genomic flux
+Found duplicated page name: assessing adaptive phenotypic plasticity by means of conditional strategies from empirical data: the latent environmental threshold model
+Found duplicated page name: a century-long genetic record reveals that protist effective population sizes are comparable to those of macroscopic species
+Found duplicated page name: anolis sex chromosomes are derived from a single ancestral pair
+Found duplicated page name: a genomic perspective on a new bacterial genus and species from the alcaligenaceae family, basilea psittacipulmonis
+Found duplicated page name: genomic and morphological evidence converge to resolve the enigma of strepsiptera
+Found duplicated page name: convergent and correlated evolution of major life-history traits in the angiosperm genus leucadendron (proteaceae)
+Found duplicated page name: the hologenomic basis of speciation: gut bacteria cause hybrid lethality in the genus nasonia
+Found duplicated page name: functional traits explain variation in plant life history strategies
+Found duplicated page name: landscape connectivity for wildlife: development and validation of multi-species linkage maps
+Found duplicated page name: selection from parasites favors immunogenetic diversity but not divergence among locally adapted host populations
+Found duplicated page name: recombination in the threespine stickleback genome – patterns and consequences
+Found duplicated page name: growth trajectory influences temperature preference in fish through an effect on metabolic rate
+Found duplicated page name: three keys to the radiation of angiosperms into freezing environments
+Found duplicated page name: neutral and selective processes shape mhc gene diversity and expression in stocked brook charr populations (salvelinus fontinalis)
+Found duplicated page name: riverscape genetics identifies replicated ecological divergence across an amazonian ecotone
+Found duplicated page name: multilocus patterns of genetic variation across cryptosporidium species suggest balancing selection at the gp60 locus
+Found duplicated page name: pulsing hydrology determines top-down control of basal resources in a tropical river-floodplain ecosystem
+Found duplicated page name: is diagnosability an indicator of speciation? response to ‘why one century of phenetics is enough’
+Found duplicated page name: gene trees, species trees and earth history combine to shed light on the evolution of migration in a model avian system
+Found duplicated page name: genetic variation and population structure in the endangered hermann’s tortoise: the roles of geography and human-mediated processes
+Processing cached publications
+Found matching URL: https://researchers.anu.edu.au/researchers/blyton-mdj for publication: Using probability modelling and genetic parentage assignment to test the role of local mate availability in mating system variation.
+Found matching URL: https://researchers.anu.edu.au/researchers/banks-sc for publication: Using probability modelling and genetic parentage assignment to test the role of local mate availability in mating system variation.
+Found dc.title: Dr Sam Banks
+Found matching URL: https://researchers.anu.edu.au/researchers/peakall-rj for publication: Using probability modelling and genetic parentage assignment to test the role of local mate availability in mating system variation.
+Found dc.title: Professor Rod Peakall
+Found matching URL: https://research.jcu.edu.au/portfolio/lynne.vanherwerden for publication: Long-term panmixia in a cosmopolitan Indo-Pacific coral reef fish and a nebulous genetic boundary with its broadly sympatric sister species
+Unable to find author information in metatag
+Found matching URL: http://www.uws.edu.au/hie/people/postdoctoral_fellows/doctor_mike_aspinwall for publication: Integrating transcriptional, metabolomic, and physiological responses to drought stress and recovery in switchgrass (Panicum virgatum L.)
+Found dc.title: Doctor Mike Aspinwall
+Found matching URL: https://researchers.anu.edu.au/researchers/langmore-ne for publication: Female song is widespread and ancestral in songbirds
+Found dc.title: Dr Naomi Langmore
+Found matching URL: https://research.jcu.edu.au/portfolio/megan.higgie/ for publication: Persistence in peripheral refugia promotes phenotypic divergence and speciation in a rainforest frog
+Unable to find author information in metatag
+Found matching URL: https://researchers.anu.edu.au/researchers/whitehead-m for publication: Pollinator specificity drives strong prepollination reproductive isolation in sympatric sexually deceptive orchids
+Found dc.title: Dr Michael Whitehead
+Found matching URL: https://researchers.anu.edu.au/researchers/peakall-rj for publication: Pollinator specificity drives strong prepollination reproductive isolation in sympatric sexually deceptive orchids
+Found matching URL: http://www.ceb.uwa.edu.au/research/researchers/bruno-buzatto for publication: Genetic variation underlying the expression of a polyphenism
+Found dc.title: Bruno Buzatto
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=2951617&pid=7048 for publication: Insect rate-temperature relationships: environmental variation and the metabolic theory of ecology
+Found dc.title: ROPES - Research Profiles
+Found matching URL: http://sydney.edu.au/vetscience/about/staff/profiles/vanessa.barrs.php for publication: Development of MHC-linked microsatellite markers in the domestic cat and their use to evaluate MHC diversity in domestic cats, cheetahs and Gir lions.
+Unable to find author information in metatag
+Found matching URL: http://sydney.edu.au/vetscience/about/staff/profiles/julia.beatty.php for publication: Development of MHC-linked microsatellite markers in the domestic cat and their use to evaluate MHC diversity in domestic cats, cheetahs and Gir lions.
+Unable to find author information in metatag
+Found matching URL: http://sydney.edu.au/vetscience/about/staff/profiles/kathy.belov.php for publication: Development of MHC-linked microsatellite markers in the domestic cat and their use to evaluate MHC diversity in domestic cats, cheetahs and Gir lions.
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/1 for publication: Randomised controlled trial of an education and support package for stroke patients and their carers
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/993 for publication: Randomised controlled trial of an education and support package for stroke patients and their carers
+Unable to find author information in metatag
+Found matching URL: http://www.bees.unsw.edu.au/angela-crean for publication: Fitness consequences of larval traits persist across the metamorphic boundary
+Unable to find author information in metatag
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=1475005&pid=6641 for publication: Fitness consequences of larval traits persist across the metamorphic boundary
+Found dc.title: ROPES - Research Profiles
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=2520469&pid=6713 for publication: Fitness consequences of larval traits persist across the metamorphic boundary
+Found dc.title: ROPES - Research Profiles
+Found matching URL: https://research.jcu.edu.au/portfolio/katharina.schulte/ for publication: Rapid microsatellite marker development for African mahogany (Khaya senegalensis, Meliaceae) using next-generation sequencing and assessment of its intra-specific genetic diversity.
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/594 for publication: Reducing mutation load through sexual selection on males
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/806 for publication: Reducing mutation load through sexual selection on males
+Unable to find author information in metatag
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person155120 for publication: Sexual selection is positively associated with ecological generalism among agamid lizards
+Found matching URL: https://researchers.anu.edu.au/researchers/louys-j for publication: Cats in the forest: predicting habitat adaptations from humerus morphometry in extant and fossil Felidae (Carnivora)
+Found dc.title: Dr Julien Louys
+Found matching URL: http://www.ceb.uwa.edu.au/research/researchers/mitchell for publication: Patterns of genetic variation in desiccation tolerance in embryos of the terrestrial-breeding frog, Pseudophryne guentheri
+Found dc.title: Nicola Mitchell
+Found matching URL: http://www.uwa.edu.au/people/nicola.mitchell for publication: Patterns of genetic variation in desiccation tolerance in embryos of the terrestrial-breeding frog, Pseudophryne guentheri
+Found dc.title: UWA Staff Profile
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=1539&pid=2978 for publication: Shades of red: bird-pollinated flowers target the specific colour discrimination abilities of avian vision
+Found dc.title: ROPES - Research Profiles
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=53810&pid=5782 for publication: Shades of red: bird-pollinated flowers target the specific colour discrimination abilities of avian vision
+Found dc.title: ROPES - Research Profiles
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=1884472&pid=6668 for publication: Humidity affects genetic architecture of heat resistance in Drosophila melanogaster
+Found dc.title: ROPES - Research Profiles
+Found matching URL: http://www.adelaide.edu.au/directory/martin.breed for publication: Pollen diversity matters: revealing the neglected effect of pollen diversity on fitness in fragmented landscapes
+Unable to find author information in metatag
+Found matching URL: https://researchers.anu.edu.au/researchers/rowell-dm for publication: Source population characteristics affect heterosis following genetic rescue of fragmented plant populations
+Found dc.title: Associate Professor David Rowell
+Found matching URL: http://www.uws.edu.au/hie/people/admin_and_technical_staff/christopher_mitchell for publication: Sexual selection and experimental evolution of chemical signals in Drosophila pseudoobscura
+Found dc.title: Mr Christopher Mitchell
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person17129 for publication: Balancing genetic uniqueness and genetic variation in determining conservation and translocation strategies: a comprehensive case study of threatened dwarf galaxias, Galaxiella pusilla (Mack) (Pisces: Galaxiidae)
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person100032 for publication: Balancing genetic uniqueness and genetic variation in determining conservation and translocation strategies: a comprehensive case study of threatened dwarf galaxias, Galaxiella pusilla (Mack) (Pisces: Galaxiidae)
+Found matching URL: http://www.deakin.edu.au/research/admin/pubs/reports/database/dynamic/output/person/person.php?person_code=rollile for publication: Causes of male sexual trait divergence in introduced populations of guppies
+Unable to find author information in metatag
+Found matching URL: http://www.deakin.edu.au/profiles/lee-rollins for publication: Causes of male sexual trait divergence in introduced populations of guppies
+Unable to find author information in metatag
+Found matching URL: https://researchers.anu.edu.au/researchers/gordon-dm for publication: Social networks and the spread of Salmonella in a sleepy lizard population
+Found dc.title: Professor David M Gordon
+Found matching URL: http://sydney.edu.au/science/people/nadine.chapman.php for publication: Sexual traits are sensitive to genetic stress and predict extinction risk in the stalk-eyed fly, Diasemopsis meigenii
+Unable to find author information in metatag
+Found matching URL: https://researchers.anu.edu.au/researchers/dewar-rc for publication: Predictions of single-nucleotide polymorphism differentiation between two populations in terms of mutual information
+Found dc.title: Professor Roderick Dewar
+Found matching URL: http://researchers.uq.edu.au/researcher/806 for publication: Independent axes of genetic variation and parallel evolutionary divergence of opercle bone shape in threespine stickleback
+Found matching URL: http://researchers.uq.edu.au/researcher/2869 for publication: Partitioning of genetic variation across the genome using multimarker methods in a wild bird population
+Unable to find author information in metatag
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person137175 for publication: Drift load in populations of small size and low density
+Found matching URL: http://www.uws.edu.au/hie/people/postdoctoral_fellows/doctor_manuel_delgado_baquerizo for publication: Vascular plants mediate the effects of aridity and soil properties on ammonia-oxidizing bacteria and archaea
+Found dc.title: Doctor Manuel Delgado Baquerizo
+Found matching URL: http://www.uws.edu.au/hie/people/postdoctoral_fellows/doctor_manuel_delgado_baquerizo for publication: Aridity Modulates N Availability in Arid and Semiarid Mediterranean Grasslands
+Found matching URL: http://www.uwa.edu.au/people/paco.garcia for publication: Maternal sexual interactions affect offspring survival and ageing
+Found dc.title: UWA Staff Profile
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=24605&pid=4876 for publication: Maternal sexual interactions affect offspring survival and ageing
+Found dc.title: ROPES - Research Profiles
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person100029 for publication: The evolution of sexual and parthenogenetic Warramaba: a window onto Plio-Pleistocene diversification processes in an arid biome
+Found matching URL: http://researchers.uq.edu.au/researcher/1091 for publication: Stronger convex (stabilizing) selection on homologous sexual display traits in females than in males: a multipopulation comparison in Drosophila serrata
+Unable to find author information in metatag
+Found matching URL: http://www.uwa.edu.au/people/joshua.mylne for publication: Evolutionary origins of a bioactive peptide buried within preproalbumin
+Found dc.title: UWA Staff Profile
+Found matching URL: http://researchers.uq.edu.au/researcher/850 for publication: Evolutionary origins of a bioactive peptide buried within preproalbumin
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/1805 for publication: Evolutionary origins of a bioactive peptide buried within preproalbumin
+Unable to find author information in metatag
+Found matching URL: https://researchers.anu.edu.au/researchers/rowell-dm for publication: Predicting local adaptation in fragmented plant populations: implications for restoration genetics
+Found matching URL: http://www.adelaide.edu.au/directory/matthew.tucker for publication: Optimum design of family structure and allocation of resources in association mapping with lines from multiple crosses
+Unable to find author information in metatag
+Found matching URL: http://www.adelaide.edu.au/directory/martin.breed for publication: Mating patterns and pollinator mobility are critical traits in forest fragmentation genetics
+Found matching URL: http://www.adelaide.edu.au/directory/eleanor.dormontt for publication: Mating patterns and pollinator mobility are critical traits in forest fragmentation genetics
+Unable to find author information in metatag
+Found matching URL: https://researchers.anu.edu.au/researchers/barton-ps for publication: Robustness of habitat-based surrogates of animal diversity: a multi-taxa comparison over time
+Found dc.title: Dr Philip Barton
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person12974 for publication: Sex-linked and autosomal microsatellites provide new insights into island populations of the tammar wallaby
+Found matching URL: http://www.uwa.edu.au/people/brian.chambers for publication: Sex-linked and autosomal microsatellites provide new insights into island populations of the tammar wallaby
+Found dc.title: UWA Staff Profile
+Found matching URL: http://researchers.uq.edu.au/researcher/2769 for publication: Long-distance dispersal maximizes evolutionary potential during rapid geographic range expansion
+Unable to find author information in metatag
+Found matching URL: http://www.uwa.edu.au/people/jason.kennington for publication: Local genetic patchiness but no regional differences between Indo-West Pacific populations of the dogtooth tuna Gymnosarda unicolor
+Found dc.title: UWA Staff Profile
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person17129 for publication: Polymorphism in the couch potato gene clines in eastern Australia but is not associated with ovarian dormancy in Drosophila melanogaster
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=11623&pid=4310 for publication: Polymorphism in the couch potato gene clines in eastern Australia but is not associated with ovarian dormancy in Drosophila melanogaster
+Found dc.title: ROPES - Research Profiles
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=22997&pid=4775 for publication: Polymorphism in the couch potato gene clines in eastern Australia but is not associated with ovarian dormancy in Drosophila melanogaster
+Found dc.title: ROPES - Research Profiles
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person164394 for publication: Polymorphism in the couch potato gene clines in eastern Australia but is not associated with ovarian dormancy in Drosophila melanogaster
+Found matching URL: https://researchers.anu.edu.au/researchers/head-ml for publication: Sequential mate choice and sexual isolation in threespine stickleback species
+Found dc.title: Dr Megan Head
+Found matching URL: https://researchers.anu.edu.au/researchers/gibbons-p for publication: Land management practices associated with house loss in wildfires
+Found dc.title: Dr Philip Gibbons
+Found matching URL: https://research.jcu.edu.au/portfolio/andrew.baird/ for publication: Increased local retention of reef coral larvae as a result of ocean warming
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/1855 for publication: Gene flow in the green mirid, Creontiades dilutus (Hemiptera: Miridae), across arid and agricultural environments with different host plant species
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/2785 for publication: The evolution of bipedal running in lizards suggests a consequential origin may be exploited in later lineages.
+Unable to find author information in metatag
+Found matching URL: http://sydney.edu.au/science/people/christopher.friesen.php for publication: Sexual conflict over mating in red-sided garter snakes (Thamnophis sirtalis) as indicated by experimental manipulation of genitalia
+Unable to find author information in metatag
+Found matching URL: https://researchers.anu.edu.au/researchers/jennions-md for publication: Increased behavioural lateralization in parasitized coral reef fish
+Found dc.title: Professor Michael Jennions
+Found matching URL: https://research.jcu.edu.au/portfolio/jaclyn.davies/ for publication: Increased behavioural lateralization in parasitized coral reef fish
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/869 for publication: Introgression and the fate of domesticated genes in a wild mammal population
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/1487 for publication: Introgression and the fate of domesticated genes in a wild mammal population
+Unable to find author information in metatag
+Found matching URL: http://researchers.uq.edu.au/researcher/1349 for publication: Fine-scale genetic population structure in a mobile marine mammal: inshore bottlenose dolphins in Moreton Bay, Australia
+Unable to find author information in metatag
+Found matching URL: http://www.uws.edu.au/hie/people/researchers/professor_peter_reich for publication: Species richness and the temporal stability of biomass production: a new analysis of recent biodiversity experiments
+Found dc.title: Professor Peter Reich
+Found matching URL: http://researchers.uq.edu.au/researcher/1798 for publication: Cockroaches that exchange respiratory gases discontinuously survive food and water restriction
+Unable to find author information in metatag
+Found matching URL: https://research.jcu.edu.au/portfolio/lynne.vanherwerden for publication: Murky waters: searching for structure in genetically depauperate blue threadfin populations of Western Australia
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=2520469&pid=6713 for publication: Interspecific competition alters nonlinear selection on offspring size in the field
+Found matching URL: http://www.monash.edu.au/research/people/profiles/profile.html?sid=1475005&pid=6641 for publication: Interspecific competition alters nonlinear selection on offspring size in the field
+Found matching URL: https://researchers.anu.edu.au/researchers/head-ml for publication: Paternal care: direct and indirect genetic effects of fathers on offspring performance
+Found matching URL: https://researchers.anu.edu.au/researchers/jennions-md for publication: Does male reproductive effort increase with age? Courtship in fiddler crabs
+Found matching URL: http://researchers.uq.edu.au/researcher/2387 for publication: Habitat collapse due to overgrazing threatens turtle conservation in marine protected areas
+Unable to find author information in metatag
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person71980 for publication: Syphilis infection among homosexual men reporting contact with syphilis: a case control study
+Found matching URL: http://www.findanexpert.unimelb.edu.au/display/person6106 for publicat
