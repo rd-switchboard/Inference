@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.rdswitchboard.inference</groupId>
+  <artifactId>inference</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0</version>
+  <name>Inference</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <class.path>jars/</class.path>
+    <jdk.version>1.7</jdk.version>
+    <junit.version>4.11</junit.version>
+    <aws-java-sdk.version>1.9.39</aws-java-sdk.version>    
+  </properties>
+
+  <modules>
+    <module>Libraries/google_cache</module>
+    <module>Importers/import_search_cache</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>${jdk.version}</source>
+            <target>${jdk.version}</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

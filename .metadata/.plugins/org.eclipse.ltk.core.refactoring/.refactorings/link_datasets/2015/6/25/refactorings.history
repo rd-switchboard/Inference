@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;org.grants.linkers.datasets&apos; to &apos;org.rdswitchboard.linkers.datasets&apos;&#x0A;- Original project: &apos;link_datasets&apos;&#x0A;- Original element: &apos;link_datasets/src/main/java/org.grants.linkers.datasets&apos;&#x0A;- Renamed element: &apos;link_datasets/src/main/java/org.rdswitchboard.linkers.datasets&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;org.grants.linkers.datasets&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;org.grants.linkers.datasets" name="org.rdswitchboard.linkers.datasets" qualified="false" references="true" stamp="1434789514478" textual="false" version="1.0"/>
+</session>

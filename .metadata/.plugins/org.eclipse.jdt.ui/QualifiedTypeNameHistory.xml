@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.s3.AmazonS3"/>
+<fullyQualifiedTypeName name="com.amazonaws.auth.BasicAWSCredentials"/>
+<fullyQualifiedTypeName name="com.amazonaws.util.StringUtils"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.s3.AmazonS3Client"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.DynamoDB"/>
+<fullyQualifiedTypeName name="com.amazonaws.auth.AWSCredentials"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.AttributeDefinition"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.KeySchemaElement"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.KeyType"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.Table"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="javax.xml.bind.JAXBContext"/>
+<fullyQualifiedTypeName name="javax.xml.bind.Unmarshaller"/>
+<fullyQualifiedTypeName name="org.rdswitchboard.utils.google.cache2.Link"/>
+<fullyQualifiedTypeName name="org.rdswitchboard.utils.google.cache2.Result"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.Item"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.PutItemOutcome"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.spec.QuerySpec"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.utils.ValueMap"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.ItemCollection"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.QueryOutcome"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.PrimaryKey"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.s3.model.PutObjectRequest"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.UUID"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.TimeZone"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.s3.model.Region"/>
+<fullyQualifiedTypeName name="com.amazonaws.regions.Regions"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="issueManagementUrl">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/src/Importers/import_search_cahce"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="groupId">
+		</list>
+		<list key="package">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/Inference/Libraries/google_cache"/>
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/Inference/Importers/import_search_cache"/>
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/Inference"/>
+			<item value="/home/dima/Projects/RD-Switchboard/Inference"/>
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/src"/>
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/"/>
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/src/Compilers"/>
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/src/"/>
+			<item value="/home/dima/Projects/RD-Switchboard/Inference/src/Libraries/neo4j"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="org.rdswitchboard.importers"/>
+		</list>
+		<list key="name">
+			<item value="Import Google CSE Search cache Into AWS DynamoDB/S3"/>
+		</list>
+		<list key="artifactId">
+			<item value="import_search_cache"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="1.0.0"/>
+		</list>
+	</section>
+</section>
