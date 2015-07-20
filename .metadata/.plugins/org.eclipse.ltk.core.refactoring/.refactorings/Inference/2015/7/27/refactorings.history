@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Inference/Importers/import_search_cahce&apos; to &apos;import_search_cache&apos;" description="Rename resource &apos;import_search_cahce&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Importers/import_search_cahce" name="import_search_cache" stamp="1435805937095" updateReferences="true"/>
-</session>

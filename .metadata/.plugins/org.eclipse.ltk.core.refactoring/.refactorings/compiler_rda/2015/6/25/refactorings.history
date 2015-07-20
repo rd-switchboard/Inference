@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;org.grants.compiler.rda&apos; to &apos;org.rdswitchboard.compilers.rda&apos;&#x0A;- Original project: &apos;compiler_rda&apos;&#x0A;- Original element: &apos;compiler_rda/src/main/java/org.grants.compiler.rda&apos;&#x0A;- Renamed element: &apos;compiler_rda/src/main/java/org.rdswitchboard.compilers.rda&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;org.grants.compiler.rda&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;org.grants.compiler.rda" name="org.rdswitchboard.compilers.rda" qualified="false" references="true" stamp="1434786384558" textual="false" version="1.0"/>
-</session>
