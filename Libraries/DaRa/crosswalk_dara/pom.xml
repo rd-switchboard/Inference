@@ -8,7 +8,7 @@
   </parent>
   <groupId>org.rdswitchboard.libraries</groupId>
   <artifactId>crosswalk_dara</artifactId>
-  <name>OAI:PMH Dara Crosswalk</name>
+  <name>OAI:PMH DaRa Crosswalk</name>
   <description>OAI:PMH Dara XML format converter to RDS Graph</description>
  
   <build>

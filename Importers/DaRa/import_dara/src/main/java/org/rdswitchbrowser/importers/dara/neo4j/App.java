@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.rdswitchboard.libraries.ddi.CrosswalkDdi;
+import org.rdswitchboard.libraries.dara.CrosswalkDara;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
@@ -65,7 +65,7 @@ private static final String PROPERTIES_FILE = "properties/import_dara.properties
 	private static void processFiles(String bucket, String prefix, String neo4jFolder) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
-        CrosswalkDdi crosswalk = new CrosswalkDdi();
+        CrosswalkDara crosswalk = new CrosswalkDara();
         crosswalk.setSource(GraphUtils.SOURCE_DARA);
    //    crosswalk.setVerbose(true);
         

@@ -79,11 +79,11 @@
       <artifactId>import_cern</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <!--<dependency>
+    <dependency>
       <groupId>org.rdswitchboard.importers</groupId>
       <artifactId>import_dara</artifactId>
       <version>${project.version}</version>
-    </dependency> --> <!-- Module has been disabled because DDI does not provides enough data -->
+    </dependency>
     <dependency>
       <groupId>org.rdswitchboard.importers</groupId>
       <artifactId>import_openaire</artifactId>

@@ -46,7 +46,7 @@
         <include>org.rdswitchboard.importers:import_dryad</include>
         <include>org.rdswitchboard.importers:import_cern</include>
         <include>org.rdswitchboard.importers:import_openaire</include>
-        <!-- <include>org.rdswitchboard.importers:import_dara</include> --> <!-- Module has been disabled because DDI does not provides enough data -->
+        <include>org.rdswitchboard.importers:import_dara</include>
         <include>org.rdswitchboard.importers:import_crossref</include>
         <include>org.rdswitchboard.importers:import_orcid</include>
         <include>org.rdswitchboard.linkers:link_nodes</include>

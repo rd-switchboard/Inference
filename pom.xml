@@ -38,6 +38,7 @@
 	<module>Libraries/Marc21/crosswalk_marc21</module>
 	<module>Libraries/DLI/crosswalk_dli</module>
 	<!-- <module>Libraries/DDI/crosswalk_ddi</module> --> <!-- Module has been disabled because DDI does not provides enough data -->
+	<module>Libraries/DaRa/crosswalk_dara</module>
         <module>Importers/Web/import_institutions</module>
 	<module>Importers/Web/import_patterns</module>
 	<module>Importers/Web/import_services</module>
@@ -47,7 +48,7 @@
         <module>Importers/Dryad/import_dryad</module>
         <module>Importers/Cern/import_cern</module>
 	<module>Importers/OpenAIRE/import_openaire</module>
-	<!-- <module>Importers/DaRa/import_dara</module> --> <!-- Module has been disabled because DDI does not provides enough data -->
+	<module>Importers/DaRa/import_dara</module>
 	<module>Importers/CrossRef/import_crossref</module>
 	<module>Importers/ORCID/import_orcid</module>
 	<module>Linkers/Google/link_web_researchers</module>

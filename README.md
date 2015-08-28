@@ -61,7 +61,7 @@ Project modules and data are separated into different folders to make navigation
 * Utils/Neo4j/delete_nodes: Module will delete orphant nodes (the nodes who does not have any connections to the other nodes
 * Utils/Neo4j/export_graph_json: Module will export finished graphs into S3
 
-#### Build the project
+#### Build and manage
 
 To build the whole project simple run `mvn package` from the repository folder. The Maven will download all required dependancied and will build all existing modules. It will also generate distribution in the Build/distribution/target/inference-${project.version} folder and will produze gz and bz2 archives with this distributive. If archives or assemble folder are not required, it can be disabled in the assemble configuration located at Build/distribution/src/assembly/bin.xml
 
@@ -73,7 +73,9 @@ You also can build single module without installing it, by executing Maven comma
 mvn install -pl import_ands -am
 ```
 
-#### Distribute the project
+To change project version, execute `mvn versions:set -DgenerateBackupPoms=false` from the main repository folder and enter new version.
+
+#### Distribute
 
 If Distribute module has been compiled, the Maven will create global distibutive with all modules and all dependacies located in Build/distribution/target/inference-${project.version}. It will also create bz2 and gz archives of this distributive. We recommend to upload whole archive on the server and unpack it there. The bz2 version is usally a bit smaller but will require more time to unpack. You can use either of them or create your own archive by zipping the distribution folder. 
 

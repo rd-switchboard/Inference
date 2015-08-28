@@ -58,7 +58,7 @@
     </dependency>
   	<dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
-  	  <artifactId>crosswalk_ddi</artifactId>
+  	  <artifactId>crosswalk_dara</artifactId>
       <version>1.2.0</version>
   	</dependency>
   	<dependency>
