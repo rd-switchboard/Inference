@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.rdswitchboard</groupId>
+    <artifactId>inference</artifactId>
+    <version>1.2.0</version>
+    <relativePath>../../../pom.xml</relativePath>
+  </parent>
+  <groupId>org.rdswitchboard.linkers</groupId>
+  <artifactId>link_web_researchers</artifactId>
+  <name>Link Web:Researcher by Google Search</name>
+  <description>Link Web:Researcher to the Grant and Publication nodes by Google CSE Result</description>
+  
+  <properties>
+    <main.class>org.rdswitchboard.linkers.neo4j.web.researcher.App</main.class>
+  </properties>
+  
+  <build>
+    <plugins>
+      <plugin>
+  	    <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+	      <archive>
+		    <manifest>
+		      <addClasspath>true</addClasspath>
+		      <mainClass>${main.class}</mainClass>
+		      <classpathPrefix>${class.path}</classpathPrefix>
+		    </manifest>
+	      </archive>
+        </configuration>
+      </plugin>
+  
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/${class.path}</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+          
+    </plugins>
+  </build>  
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  	<dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${commons.io.version}</version>
+    </dependency>
+  	<dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+      <artifactId>graph_utils</artifactId>
+      <version>1.2.0</version>
+  	</dependency>
+  	<dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+      <artifactId>neo4j_utils</artifactId>
+      <version>1.2.0</version>
+  	</dependency>
+  	<dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+      <artifactId>google_cache</artifactId>
+      <version>1.2.0</version>
+  	</dependency>
+  	<dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+      <artifactId>fuzzy_search</artifactId>
+      <version>1.2.0</version>
+  	</dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/oaitohtml.xsl"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <responseDate>2015-08-21T10:04:46Z</responseDate>
+  <request metadataPrefix="oai_ddi" verb="ListRecords" set="DSC-BO German Data Service Center for Business and Organizational Data">http://www.da-ra.de/oaip</request>
+  <ListRecords>
+
+
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:7252</identifier>
+        <datestamp>2013-01-23T13:40:50Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="7252" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0002.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="7252">
+            <r:UserID type="dara:resourceIdentifier">s0002.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">BEATA - Beschäftigten- und Partnerbefragung</r:Title>
+              <r:Creator xml:lang="de" affiliation="Universität Bielefeld">Diewald, Martin </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Duisburg-Essen">Brose, Hanns-Georg </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Duisburg-Essen">Goedicke, Anne </r:Creator>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Sozialwissenschaftliches Umfragezentrum (SUZ)</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2012-03-01</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0002.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="7252_A_de">
+              <r:Content xml:lang="de">Das Kooperationsprojekt der Universität Bielefeld und der Universität Duisburg-Essen, mit dem Titel „BEATA - Beschäftigungsverhältnisse als sozialer Tausch“, ist eine Untersuchung, deren Fokus auf Beschäftigungsverhältnissen und deren Vereinbarkeit mit der Familie liegt. Ziel der Studie ist es die Wechselwirkungen von Arbeitsnachfrage, Erwerbsorganisation und Familie zu erklären.Schwerpunkte sind die Frage nach substanziellen Ressourcen, die zwischen Arbeitsorganisationen und Beschäftigten getauscht werden - etwa Geld, Zeit, Status, Leistung, Anerkennung und Formen der Zuwendung - und über welche Ressourcen, Verhandlungen oder Beobachtungen stattfinden. Zu diesem Zweck wurden auch die Partnerinnen und Partner der Beschäftigten befragt.</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID>7252_UniverseScheme</r:ID>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="7252_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="7252_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2008-01</r:StartDate>
+                  <r:EndDate>2010-03</r:EndDate>
+                </r:ReferenceDate>
+                <r:ReferenceDate>
+                  <r:StartDate>2008-10</r:StartDate>
+                  <r:EndDate>2010-03</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Individuum</s:AnalysisUnitsCovered>
+            <c:ConceptualComponent id="7252_ConceptualComponent">
+              <c:UniverseScheme id="7252_UniverseScheme">
+                <c:Universe id="7252_Universe">
+                  <c:HumanReadable xml:lang="de">Beschäftigte in deutschen Großbetrieben und deren Partner</c:HumanReadable>
+                </c:Universe>
+              </c:UniverseScheme>
+            </c:ConceptualComponent>
+            <d:DataCollection id="7252_datacoll">
+              <d:Methodology id="7252_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Querschnitt</r:Content>
+                </d:TimeMethod>
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Querschnitt</r:Content>
+                </d:TimeMethod>
+                <d:SamplingProcedure id="7252_sp_de">
+                  <r:Content xml:lang="de">Empirische Grundlage der Beschäftigten- und Partnerbefragung sind 3 Unternehmen und 3 Universitäten mit jeweils mehr als 500 Beschäftigten, aus der anschließend die Stichprobe von Beschäftigten gezogen wurde. Als Stichprobenverfahren wurde eine Quotenstichprobe gewählt, die in Kooperation mit der Personalabteilung der betreffenden Unternehmen durchgeführt wurde. Interviewt wurden Mitarbeiter die Facharbeits- oder höher qualifizierte Tätigkeiten ausüben, da diese Mitarbeiter Verhandlungsspielräume im Hinblick auf Beschäftigungsbeziehungen besitzen und nicht so leicht ohne größere Kosten ausgetauscht werden können (Breen 1997, Marsden 1995). Um eine Streuung von Personen mit bzw. ohne Abstimmungsnotwendigkeiten zu erhalten, wurden verschiedene Lebensformen und der Umfang der Erwerbsbeteiligung als Quotenkriterium bei der Stichprobenziehung aufgenommen, da das Austarieren beruflicher und familärer Anforderungen sowie wiederholte Anpassungen familiärer Arbeitsangebotsstrategien besonders in solchen Haushalten schwierig ist, die (kleine) Kinder erziehen, Ältere betreuen und/oder doppelte Karrieren von Partnern zu koordinieren haben. Ein weiteres Quotenkriterium stellt das Geschlecht dar. Frauen und Männer sind zu etwa gleichen Teilen in der Stichprobe vertreten.</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="7252_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2008-01</r:StartDate>
+                  <r:EndDate>2010-03</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="7252_modeCollContr_1">
+                  <r:Content xml:lang="en">Self-completed questionnaire: CASI</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="7252_modeCollContr_2">
+                  <r:Content xml:lang="de">Selbst ausgefüllter Fragebogen: CASI</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="7252_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-7252</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="7252_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Die Daten sind für die akademische Forschung und Lehre freigegeben. Der Datenzugang erfolgt per vor-Ort-Nutzung und per Datenfernverarbeitung.</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="7252_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-7252">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+
+
+
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:7250</identifier>
+        <datestamp>2013-03-11T16:53:11Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="7250" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0018.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="7250">
+            <r:UserID type="dara:resourceIdentifier">s0018.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">SFB580-B2 Betriebspanel</r:Title>
+              <r:Creator xml:lang="de" affiliation="Friedrich-Schiller-Universität Jena">Struck, Olaf </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Friedrich-Schiller-Universität Jena">Köhler, Christoph </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Friedrich-Schiller-Universität Jena">Krause, Alexandra </r:Creator>
+              <r:Contributor xml:lang="de" role="Datenerhebung">CATI-Labor des Zentrums für Sozialforschung Halle e.V. (ZSH Halle) - (Welle 1)</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Telefonlabor der Friedrich-Schiller-Universität Jena - (Welle 2 &amp; 3)</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2012-03-01</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0018.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="7250_A_de">
+              <r:Content xml:lang="de">Thema des am Sonderforschungsbereich 580 in Jena angesiedelten Forschungsprojektes B2 ist die Frage nach der Erosion interner Arbeitsmärkte sowie der Ausweitung von Instabilität und Risiko. Dabei liegt der Schwerpunkt auf betrieblicher Beschäftigungsstabilität und  betrieblichen Beschäftigungssystemen. Bei der Betriebsbefragung handelt es sich um eine  CATI-Panelstudie, die in vier Wellen erhoben wurde. Die erste drei Wellen (2002, 2004, 2006) stehen zur Sekundärnutzung zur Verfügung. Inhaltlicher Schwerpunkt sind die betrieblichen Determinanten von Beschäftigungsstabilität und flexiblem Personaleinsatz.</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID>7250_UniverseScheme</r:ID>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="7250_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="7250_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2002-10</r:StartDate>
+                  <r:EndDate>2002-12</r:EndDate>
+                </r:ReferenceDate>
+                <r:ReferenceDate>
+                  <r:StartDate>2004-10</r:StartDate>
+                  <r:EndDate>2004-12</r:EndDate>
+                </r:ReferenceDate>
+                <r:ReferenceDate>
+                  <r:StartDate>2006-10</r:StartDate>
+                  <r:EndDate>2006-12</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <s:KindOfData>Stata, SPSS</s:KindOfData>
+            <s:KindOfData>Stata, SPSS</s:KindOfData>
+            <s:KindOfData>Stata, SPSS</s:KindOfData>
+            <r:Note type="Comment" id="7250_N">
+              <r:Relationship>
+                <r:RelatedToReference>
+                  <r:ID>7250</r:ID>
+                </r:RelatedToReference>
+              </r:Relationship>
+              <r:Content xml:lang="de">Als Incentives wurden in Welle 1 Anbahnungsschreiben mit Universitätslogo der Universität Jena verschickt und eine Ergebnisbroschüre in Aussicht gestellt. In den Folgewellen wurden Broschüren mit Ergebnissen der ersten Befragungswelle versandt.</r:Content>
+            </r:Note>
+            <c:ConceptualComponent id="7250_ConceptualComponent">
+              <c:UniverseScheme id="7250_UniverseScheme">
+                <c:Universe id="7250_Universe">
+                  <c:HumanReadable xml:lang="de">Zur Vorbereitung der Stichprobenauswahl wurden auf Basis von Sekundärdatenanalysen der BIBB/IAB-Erhebung des Jahres 1998/99 sowie der Regionalfiles der Beschäftigtenstichprobe der BA von 1975-1999 zunächst Informationen über Betriebszugehörigkeitsdauern und Beschäftigungsformen ausgewertet. Diese Analysen wurden für unterschiedliche Wirtschaftszweige mit dem Ziel durchgeführt, unter den Untersuchungseinheiten eine hohe  Heterogenität im Hinblick auf Beschäftigungsstabilität und Personalflexibilität zu erreichen. Es wurde davon ausgegangen, dass Beschäftigungsstabilität wirtschafts- und arbeitsmarktregionale sowie branchen- und betriebsstrukturelle Prägungen aufweist, so dass diese Merkmale in der Fallauswahl systematisch variiert wurden und ein quotiertes Stichprobendesign nach kontrastierenden Wirtschaftszweigen und Regionen gewählt wurde. In die Befragung einbezogen wurden jeweils zur Hälfte west- und ostdeutsche Betriebsstätten zweier Größenklassen (über und unter 50 Beschäftigte) in jeweils strukturstärkeren (Bayern, Thüringen, Sachsen) und strukturschwächeren Regionen (Niedersachen, Bremen, Mecklenburg-Vorpommern, Sachsen-Anhalt). Dabei wurden 10 Wirtschaftszweige gemäß der Branchenklassifikation WZ93 berücksichtigt. Grundlage der ersten Stichprobenziehung war die Beschäftigtenstatistik der BA. Damit umfasst die Grundgesamtheit alle Organisationseinheiten, die eine Betriebsnummer tragen. Dabei handelt es sich allerdings nicht notwendigerweise um eigenständige Betriebe, sondern auch um Betriebsstätten (in diesen wurden vorrangig Geschäftsführer und Personalverantwortliche befragt), die als wirtschaftlich eigenständige Einheiten bestehen. Neben eigenständigen Betrieben können daher auch Zweigniederlassungen, Unternehmenszentralen, Holdingbetriebe und Filialen, die eine Betriebsnummer tragen, in der Stichprobe vertreten sein. In jeder ausgewählten Betriebsstätte wurde eine Person über den Betrieb befragt. Vorrangig waren dies Geschäftsführer oder Personalverantwortliche.</c:HumanReadable>
+                </c:Universe>
+              </c:UniverseScheme>
+            </c:ConceptualComponent>
+            <d:DataCollection id="7250_datacoll">
+              <d:Methodology id="7250_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Längsschnittpanel</r:Content>
+                </d:TimeMethod>
+                <d:SamplingProcedure id="7250_sp_de">
+                  <r:Content xml:lang="de">Quotiertes Stichprobendesign nach kontrastierenden Wirtschaftszweigen und Regionen. Grundlage der Stichprobenziehung war die Beschäftigtenstatistik der BA. Damit umfasst die Grundgesamtheit alle Organisationseinheiten, die eine Betriebsnummer tragen. Dabei handelt es sich allerdings nicht notwendigerweise um eigenständige Betriebe, sondern auch um Betriebsstätten, die als wirtschaftlich eigenständige Einheiten bestehen. Neben eigenständigen Betrieben können daher auch Zweigniederlassungen, Unternehmenszentralen, Holdingbetriebe und Filialen, die eine Betriebsnummer tragen, in der Stichprobe vertreten sein. In Welle 2 und 3 wurden alle Betriebe befragt, die in Welle 1 (und Welle 2) teilgenommen und die der  Möglichkeit zu einer Wiederholungsbefragung zugestimmt haben. Zusätzlich wurden neue Betriebe in Stichprobe aufgenommen um das quotierte Stichprobendesign zu erhalten.</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="7250_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2002-10</r:StartDate>
+                  <r:EndDate>2006-12</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="7250_modeCollContr_1">
+                  <r:Content xml:lang="en">Interview: CATI</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="7250_modeCollContr_2">
+                  <r:Content xml:lang="de">Interview: CATI</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="7250_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-7250</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="7250_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Daten und Dokumente sind für die akademische Forschung und Lehre freigegeben. Der Datenzugang erfolgt als Gastwissenschaftlerarbeitsplatz oder Datenfernverarbeitung.</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="7250_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-7250">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:7249</identifier>
+        <datestamp>2013-03-11T17:26:08Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="7249" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0001.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="7249">
+            <r:UserID type="dara:resourceIdentifier">s0001.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">Verknüpfte Personen-Betriebsdaten im Anschluss an den ALLBUS 2008</r:Title>
+              <r:Creator xml:lang="de" affiliation="Universität Bielefeld">Liebig, Stefan </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Bielefeld">Gerhards, Christian </r:Creator>
+              <r:Contributor xml:lang="de" role="Datenerhebung">TNS Infratest</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2012-03-01</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0001.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="7249_A_de">
+              <r:Content xml:lang="de">In Deutschland gibt es bislang wenige Untersuchungen zum Zusammenhang zwischen Betriebsmerkmalen auf der einen Seite und individuellen Einstellungen und Merkmalen von Beschäftigten auf der anderen Seite. Dabei wird angesichts einer fortschreitenden Destandardisierung und Deregulierung von Beschäftigungsverhältnissen die Ebene der einzelnen Arbeitsorganisationen gerade in Deutschland für eine Reihe ökonomischer und sozialer Phänomene relevanter. Im Rahmen des Projektes wurde daher ein so genannter Linked-Employer-Employee-Datensatz (LEE) generiert, der sowohl ausführliche Informationen über die ökonomischen, personalpolitischen und arbeitsorganisatorischen Strukturen und Prozesse von Betrieben enthält, als auch Informationen über die soziale und ökonomische Situation der Beschäftigten und deren Haushalte.</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID/>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="7249_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="7249_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2008-03</r:StartDate>
+                  <r:EndDate>2008-08</r:EndDate>
+                </r:ReferenceDate>
+                <r:ReferenceDate>
+                  <r:StartDate>2009-03-16</r:StartDate>
+                  <r:EndDate>2009-06-19</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <r:OtherMaterial id="7249_otherM_1" type="Relation">
+              <r:UserID type="DOI">doi:10.4232/1.4600</r:UserID>
+              <r:Citation>
+                <r:Title/>
+              </r:Citation>
+              <r:Relationship>
+                <r:RelatedToReference>
+                  <r:ID>7249</r:ID>
+                </r:RelatedToReference>
+                <r:RelationshipDescription xml:lang="en">Is variant form of</r:RelationshipDescription>
+                <r:RelationshipDescription xml:lang="de">Ist Variante von</r:RelationshipDescription>
+              </r:Relationship>
+            </r:OtherMaterial>
+            <d:DataCollection id="7249_datacoll">
+              <d:Methodology id="7249_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Längsschnitt: Wiederholter Querschnitt</r:Content>
+                </d:TimeMethod>
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Querschnitt</r:Content>
+                </d:TimeMethod>
+                <d:SamplingProcedure id="7249_sp_de">
+                  <r:Content xml:lang="de">Grundlage des ALLBUS 2008 ist die erwachsene Wohnbevölkerung (d.h. Deutsche und Ausländer) in West- und Ostdeutschland. Die Stichprobe wird aus den Einwohnermelderegistern gezogen (mit den Auswahlstufen Gemeinden-Personen).  Ausgangspunkt der Betriebsbefragung waren die Befragten des ALLBUS 2008, die zum Zeitpunkt der Befragung in einem Betrieb mit mehr als sechs Beschäftigten abhängig beschäftigt waren. Insgesamt waren dies 1.101 Personen. Davon machten 943 Personen Angaben zu ihrem Betrieb. 828 der genannten Adressen wurden anschließend in einer Recherche überprüft. 719 Adressen konnten nach der Recherche bestätigt werden. Die entsprechenden Betriebe wurden kontaktiert. In 194 Fällen konnte schließlich ein Interview realisiert werden.</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="7249_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2008-03</r:StartDate>
+                  <r:EndDate>2009-06-19</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="7249_modeCollFree_1">
+                  <r:Content xml:lang="de">ALLBUS 2008 Personenbefragung: CAPI und CASIALLBUS Betriebsbefragung 2009:Überwiegend personlich-mündliche Befragungen. Auf Wunsch der Befragten konnte die Befragung teilweise oder ganz schriftlich erfolgen.</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="7249_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-7249</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="7249_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Daten und Dokumente sind für die akademische Forschung und Lehre freigegeben. Der Datenzugang erfolgt per vor-Ort-Nutzung und per Datenfernverarbeitung.</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="7249_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-7249">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+
+
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:7237</identifier>
+        <datestamp>2013-11-05T16:57:25Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="7237" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0044.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="7237">
+            <r:UserID type="dara:resourceIdentifier">S0044.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">Demografischer Wandel und der Arbeitsmarkt des öffentlichen Sektors SFB580-B8</r:Title>
+              <r:Title xml:lang="en">Demographic change and the public sectors labor market SFB580-B8</r:Title>
+              <r:Creator xml:lang="de" affiliation="Martin-Luhter-Universität Halle-Wittenberg">Bartl, Walter </r:Creator>
+              <r:Creator xml:lang="en" affiliation="Martin-Luther-University Halle-Wittenberg">Bartl, Walter </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Martin-Luhter-Universität Halle-Wittenberg">Jonda, Bernadette </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Martin-Luhter-Universität Halle-Wittenberg">Kopycka, Katarzyna </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Martin-Luhter-Universität Halle-Wittenberg">Pawleta, Dominika </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Martin-Luhter-Universität Halle-Wittenberg">Rademacher, Christian </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Martin-Luhter-Universität Halle-Wittenberg">Reinhold, Maria </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Martin-Luhter-Universität Halle-Wittenberg">Sackmann, Reinhold </r:Creator>
+              <r:Contributor xml:lang="en" role="Data Collector">Bartl, Walter</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Bartl, Walter</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector">Jonda, Bernadette</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Jonda, Bernadette</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector">Kopycka, Katarzyna</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Kopycka, Katarzyna</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector">Pawleta, Dominika</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Pawleta, Dominika</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector">Rademacher, Christian</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Rademacher, Christian</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector">Reinhold, Maria</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Reinhold, Maria</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2012-03-01</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0044.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="7237_A_de">
+              <r:Content xml:lang="de">Querschnitterhebung zu Anpassungsstrategien im öffentlichen Sektor auf demographische Veränderungen in Transformationsgesellschaften Abstract: Der demographische Wandel stellt ein zentrales Zukunftsproblem von fortgeschrittenen Gesellschaften dar und droht, die Entwicklung von Transformationsgesellschaften negativ zu beeinflussen. Für den Bereich staatlicher Gemeinwesen wird als Folge demographischer Umbrüche ein schleichender Kollaps prognostiziert. Strittig ist, ob es wirklich immer zu diesen dramatischen Folgen kommt. Die Folgen demographischer Herausforderungen werden durch akteurspezifische Bewältigungsstrategien und institutionelle Rahmenbedingungen vermittelt. Der Gegenstand des Forschungsprojektes ist der gesellschaftliche Umgang mit dem Problem demographische Alterung in einem exemplarischen Feld, nämlich dem Personalwesen des öffentlichen Sektors. Ziel des Forschungsprojektes ist die Untersuchung der Art der personalrelevanten Bewältigungsstrategien des öffentlichen Sektors auf demographische Veränderungen, die Ursachen hierfür, sowie deren Folgen. Zweck der Studie: Welche Strategien sind in der kommunalen Verwaltung und im kommunalen Bildungswesen als Reaktion auf demografische Veränderungen zu beobachten? Lassen sich einzelnen Reaktionsmustern spezifische Folgen zuordnen?/ Ziel des Forschungsprojektes ist die Untersuchung der Art der personalrelevanten Bewältigungsstrategien des öffentlichen Sektors im Umgang mit demographischen Veränderungen, die Ursachen hierfür, sowie deren Folgen. Theoriebezug: Demografische Veränderungen wie Alterung und Schrumpfung stellen den öffentlichen Dienst aufgrund seiner typischerweise inflexiblen Arbeitsmarktstrukturen vor besondere Herausforderungen. Zentrale Ergebnisse: In einem ersten Schritt werden die Formen der Wahrnehmung des demografischen Wandels in den Kommunen beschrieben, ihre hierfür entwickelten Beobachtungssensorien und die Deutungsmuster ihrer Wahrnehmungen. Im daran anschließenden zweiten Schritt werden die Reaktionen der kommunalen Personalpolitik auf die Herausforderungen des demografischen Wandels dargestellt. Im Fokus steht hierbei die Flexibilität der Anpassung kommunaler Arbeitsangebote an die veränderte Situation. Im abschließenden letzten Analyseschritt geht es um die quantitativen Folgen der gewählten Reaktionsstrategien. Dafür zentral sind die finanziellen Auswirkungen des demografischen Wandels für die Kommunen und eine exemplarische Analyse von Veränderungen der Beschäftigungsverhältnisse auf dem polnischen Lehrerarbeitsmarkt, sowie eine vergleichende Analyse generations-spezifischer Prekarisierung.</r:Content>
+            </s:Abstract>
+            <s:Abstract id="7237_A_en">
+              <r:Content xml:lang="en">Cross-sectional survey of adaptation strategies in the public sector to demographic changes in transformation societies Abstract: Demographic change is a central problem for the future of modern societies. It threatens to negatively influence the development of societies in transition. A result of demographic upheaval a gradual collapse is predicted for the national community. It is debatable whether these tragic consequences are inevitable. The consequences of demographic challenges are mediated by actor-specific coping strategies and institutional frameworks. The object of the research project is to investigate the way society deals with the problem of demographic aging in an exemplary field, namely the human resources of the public sector. The Goal of this research project is to investigate the nature of the personnel-related coping strategies in the public sector to demographic changes, the reasons for this, as well as their consequences. Purpose of the Study: What strategies can be observed in the local government and municipal education in response to demographic changes? Can individual reaction patterns be assigned to specific consequences? Goal of the research project is to investigate the nature of the personnel-related coping strategies in the public sector in dealing with demographic changes, the reasons for this, as well as their consequences. Theoretical approach: Demographic changes such as aging and shrinking are special challenges for the public sector due its inflexible labor market structures Key results: In a first step the forms of perception of demographic change in the municipalities are described, then the observations sensors and the patterns of interpretation of the communities' perceptions. In the second step the reactions of the local personnel policy to the challenges of demographic change are presented. The focus is on the flexibility of adapting local job opportunities to the altered situation. In the concluding last step the quantitative effects of the selected response strategies are analyzed. The key elements are the financial implications of demographic change for the communities and an exemplary analysis of changes in employment in the Polish teacher labor market, including a comparative analysis of generation-specific casualisation.</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID/>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:TopicalCoverage id="7237_class">
+                <r:Subject codeListAgency="de.gesis" codeListID="GESIS Classification Social Sciences" xml:lang="de">Industrie- und Betriebssoziologie, Arbeitssoziologie</r:Subject>
+                <r:Subject codeListAgency="de.gesis" codeListID="GESIS Classification Social Sciences" xml:lang="en">Sociology of Work, Industrial Sociology, Industrial Relations</r:Subject>
+              </r:TopicalCoverage>
+              <r:SpatialCoverage id="7237_spat">
+                <r:Description xml:lang="en">Germany</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="7237_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2006-07-01</r:StartDate>
+                  <r:EndDate>2007-03-31</r:EndDate>
+                </r:ReferenceDate>
+                <r:ReferenceDate>
+                  <r:StartDate>2006-07-01</r:StartDate>
+                  <r:EndDate>2007-03-31</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <s:AnalysisUnitsCovered xml:lang="en">Organization</s:AnalysisUnitsCovered>
+            <s:KindOfData>Datenform: faktisch anonymisierte Transkripte            Datenformat: Doc-Dokumente</s:KindOfData>
+            <s:KindOfData>Data format: factually anonymous transcripts					  File Format: Doc-Documents</s:KindOfData>
+            <r:Note type="Comment" id="7237_N">
+              <r:Relationship>
+                <r:RelatedToReference>
+                  <r:ID>7237</r:ID>
+                </r:RelatedToReference>
+              </r:Relationship>
+              <r:Content xml:lang="de">Die Interviews in Polen wurden in polnischer Muttersprache geführt. Acht Interviews wurden ins Deutsche übersetzt und anonymisiert.</r:Content>
+              <r:Content xml:lang="en">In Poland the interviews were conducted in Polish language. Eight interviews were translated into German and anonymized.</r:Content>
+            </r:Note>
+            <d:DataCollection id="7237_datacoll">
+              <d:Methodology id="7237_meth">
+                <d:SamplingProcedure id="7237_sp_de">
+                  <r:Content xml:lang="de">Je Vergleichsregion wurden sieben Gemeinden (zwei wachsende, zwei stagnierende, zwei schrumpfende Gemeinden und ein Oberzentrum) in die Untersuchung einbezogen. Als Auswahlkriterium wurde die relative Bevölkerungsentwicklung zwischen den Jahren 1995 und 2005 herangezogen. Die Auswahl der Kommunen erfolgte für Ostdeutschland und Polen zweistufig. In einer ersten Auswahl wurden je zwei Bundesländer/ Wojodschaften ausgewählt die seit 1990 eine signifikante Bevölkerungsveränderung zu verzeichneten hatten. Daran anschließend erfolgte im zweiten Schritt die Auswahl der Kommunen. Für Westdeutschland wurde ein Bundesland als Vergleichsregion gewählt. Ein weiteres Auswahlkriterium bildete die gesellschaftlich institutionalisierte Autonomie: - Diachron über den Transformationspfad (Ostdeutschland: inkorporiert, Polen: autonom) und eine Region ohne post-sozialistische Transformation (Westdeutschland); - Synchron über den Staatsaufbau (Ostdeutschland, Westdeutschland: föderal; Polen: dezentral unitaristisch</r:Content>
+                </d:SamplingProcedure>
+                <d:SamplingProcedure id="7237_sp_en">
+                  <r:Content xml:lang="en">In each region seven municipalities (two growing, two shrinking, two stable and a regional center) were included in the study. A sampling criterion was the local population dynamics between the years 1995 and 2005. The selection of communities took place in two stages for East Germany and Poland. In the first stage two federal states/ districts were selected that had a significant population increase since 1990. Subsequently, the second step was the sampling of the municipalities. For West Germany one federal state was selected as a basis of comparison. A further sampling criterion was the socially institutionalized autonomy: - Diachronically on the transformation path (East Germany: incorporated, Poland: autonomous) and a region without any post-socialist transformation (West Germany) - Synchronous development of the state (East Germany, West Germany: federal, Poland: decentralized unitarist)</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="7237_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2006-07-01</r:StartDate>
+                  <r:EndDate>2007-03-31</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="7237_modeCollContr_1">
+                  <r:Content xml:lang="en">Interview</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="7237_modeCollContr_2">
+                  <r:Content xml:lang="de">Interview</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="7237_modeCollFree_1">
+                  <r:Content xml:lang="de">leitfadengestützte Experteninterviews</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="7237_modeCollFree_2">
+                  <r:Content xml:lang="en">Expert interviews (semi-structured)</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="7237_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-7237</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="7237_access">
+                  <a:AccessConditions xml:lang="en">Delivery</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Lieferbar</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Daten und Dokumente sind für die akademische Forschung und Lehre freigegeben. Der Datenzugang erfolgt als Scientific-Use-File.</a:AccessConditions>
+                  <a:AccessConditions xml:lang="en">Data and documents are released for academic research and teaching, available as scientific use file.</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="7237_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-7237">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+
+
+
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:7370</identifier>
+        <datestamp>2013-11-05T16:57:56Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="7370" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0031.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="7370">
+            <r:UserID type="dara:resourceIdentifier">S0031.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">InnoKenn - Entwicklung und Validierung eines Diagnosewerkzeugs zur Erfassung der Innovationsfähigkeit von Unternehmen aus arbeitsorientierter Perspektive mit einem dazugehörigen Vorgehensmodell</r:Title>
+              <r:Creator xml:lang="de" affiliation="Helmut-Schmidt-Universität/ Universität der Bundeswehr Hamburg">Gröneweg, Christine </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Helmut-Schmidt-Universität/ Universität der Bundeswehr Hamburg">Matiaske, Wenzel </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Helmut-Schmidt-Universität/ Universität der Bundeswehr Hamburg">Rundnagel, Regine </r:Creator>
+              <r:Contributor xml:lang="en" role="Data Collector">Gröneweg, Christine</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Gröneweg, Christine</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector">Rundnagel, Regine</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Rundnagel, Regine</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2012-11-12</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0031.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="7370_A_de">
+              <r:Content xml:lang="de">Zur Feststellung ihrer Innovationsfähigkeit müssen Unternehmen als ersten Schritt ihren Ist-Zustand feststellen und eine Analyse ihrer Potenziale durchführen. Sollen aus dieser Bestandsaufnahme Handlungen zu mehr Innovationsfähigkeiten resultieren, ist eine Prioritätensetzung zu den Handlungsfeldern und dem Vorgehen nötig. Mit dem Instrument InnoKenn wurde beides in einer wissenschaftlichen und praxisorientierten Form als intern einsetzbares Werkzeug für Unternehmen verbunden und als Untersuchungsgegenstand im vorliegenden Projekt auf seine Funktions- und Leistungsfähigkeit sowie auf Praxistauglichkeit getestet.Das Diagnoseinstrument InnoKenn ermöglicht es relevanten Akteuren - Betriebsräten, Mitarbeitern, Unternehmensleitung - Stärken und Schwächen der betrieblichen Innovationsfähigkeit zu diagnostizieren. Auf deren Grundlage können dann im Folgenden Handlungsoptionen im dialogischen Verfahren entwickelt werden. Branchen- und akteursspezifische Besonderheiten wurden dabei berücksichtigt und das Werkzeug in ein dialogförderliches Vorgehensmodell eingebunden.Die Prüfung des Instrumentes InnoKenn als intern einsetzbares Werkzeug für Unternehmen erfolgte anhand von Experteninterviews und Fallstudien. Diese zeigten, dass InnoKenn Stärken und Schwächen der Innovationsfähigkeit identifiziert und im betrieblichen Einsatz (Vorgehensmodell) Möglichkeiten zur Veränderung anstößt. Hierbei wurde es für die Verwendung in Produktionsbetrieben und Dienstleistungsbetrieben getestet.</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID/>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="7370_spat">
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="7370_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2007-05-01</r:StartDate>
+                  <r:EndDate>2007-10-31</r:EndDate>
+                </r:ReferenceDate>
+                <r:ReferenceDate>
+                  <r:StartDate>2007-11-01</r:StartDate>
+                  <r:EndDate>2008-11-01</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <s:KindOfData>Datenform: faktisch anonymisierte Transkripte Datenformat: Doc-Dokumente</s:KindOfData>
+            <d:DataCollection id="7370_datacoll">
+              <d:Methodology id="7370_meth">
+                <d:SamplingProcedure id="7370_sp_de">
+                  <r:Content xml:lang="de">In einer ersten Erhebungsphase wurden Interviews mit 12 Intermediären des Feldes geführt (je drei Vertreter von Gewerkschaften, der Wissenschaft, der Arbeitgeber und von Betriebsräten), um den Prototyp des Instrumentes InnoKenn aus der Perspektive der Experten zu bewerten. Erhebungsphase zwei umfasst ein Convenience Sample von vier Betrieben der Grundgesamtheit nach einer strategischen Fallauswahl. Die Samplingkriterien waren die Unternehmensgröße, die Branchenzugehörigkeit, die regionale Zuordnung der Unternehmen und die Unternehmensform. Aus den vier Betrieben wurden 63 Interviewte (Mitarbeiter, Betriebsräte und Unternehmensleitung) in die Validierung einbezogen. Die Auswahl der Interviewpartner erfolgte durch die Unternehmensleitung und die Betriebsräte der einzelnen Unternehmen.  </r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="7370_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2007-05-01</r:StartDate>
+                  <r:EndDate>2008-11-01</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="7370_modeCollContr_1">
+                  <r:Content xml:lang="en">Interview</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="7370_modeCollContr_2">
+                  <r:Content xml:lang="de">Interview</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="7370_modeCollFree_1">
+                  <r:Content xml:lang="de">leitfadengestützte Experteninterviews</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="7370_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-7370</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="7370_access">
+                  <a:AccessConditions xml:lang="en">Delivery</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Lieferbar</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Daten und Dokumente sind für die akademische Forschung und Lehre freigegeben. Der Datenzugang erfolgt als Scientific-Use-File.</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="7370_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-7370">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:10261</identifier>
+        <datestamp>2013-12-03T16:28:25Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="10261" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0029.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="10261">
+            <r:UserID type="dara:resourceIdentifier">s0029.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">Innovationsverhalten klein- und mittelständischer Unternehmen</r:Title>
+              <r:Creator xml:lang="de" affiliation="Helmut-Schmidt-Universität Hamburg">Matiaske, Wenzel </r:Creator>
+              <r:Creator xml:lang="de" affiliation="University of Southern Denmark">Freytag, Per V.</r:Creator>
+              <r:Creator xml:lang="de" affiliation="University of Southern Denmark">Cornett, Andreas P.</r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Flensburg">Hinz, Holger </r:Creator>
+              <r:Contributor xml:lang="de" role="Datenerhebung">TNS Emnid</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">University of Southern Denmark</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2013-11-01</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0029.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="10261_A_de">
+              <r:Content xml:lang="de">Nicht verfügbar</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID/>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="10261_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:Description xml:lang="de">Dänemark</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="10261_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2002-10-01</r:StartDate>
+                  <r:EndDate>2006-03-31</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <d:DataCollection id="10261_datacoll">
+              <d:Methodology id="10261_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Querschnitt</r:Content>
+                </d:TimeMethod>
+              </d:Methodology>
+              <d:CollectionEvent id="10261_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2002-10-01</r:StartDate>
+                  <r:EndDate>2006-03-31</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="10261_modeCollFree_1">
+                  <r:Content xml:lang="de">Die deutschen Befragungen führte das Markt-, Media- und Meinungsforschungsinstitut TNS Emnid mittels CATI durch.Die dänischen Befragungen wurden schriftlich und postalisch von der Syddansk Universitetdurchgeführt. Die Nachfassaktion erfolgte telefonisch durch studentische Mitarbeiter.</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="10261_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-10261</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="10261_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Daten und Dokumente sind für die akademische Forschung und Lehre freigegeben. Der Datenzugang erfolgt als Gastwissenschaftlerarbeitsplatz oder Datenfernverarbeitung.</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="10261_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-10261">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:10079</identifier>
+        <datestamp>2013-12-10T13:58:51Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="10079" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0032.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="10079">
+            <r:UserID type="dara:resourceIdentifier">s0032.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">Betriebsvereinbarungen</r:Title>
+              <r:Creator xml:lang="de" affiliation="Universität Duisburg-Essen">Nienhüser, Werner </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Duisburg-Essen">Hoßfeld, Heiko </r:Creator>
+              <r:Contributor xml:lang="de" role="Datenerhebung">TNS Emnid</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2013-11-01</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0032.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="10079_A_de">
+              <r:Content xml:lang="de">Im Rahmen des Forschungsprojektes „Betriebsvereinbarungen in der Wahrnehmung von Personalverantwortlichen“ wurde untersucht, welchen Stellenwert Personalverantwortliche Betriebsvereinbarungen beimessen, wie verbreitet diese sind und ob sich systematische Unterschiede je nach den Merkmalen der untersuchten Unternehmen in den Einschätzungen des Stellenwerts und in der Verbreitung von Betriebsvereinbarungen zeigen. Zur Beantwortung dessen wurde eine repräsentative telefonische Befragung von 1000 Personalverantwortlichen durchgeführt.</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID>10079_UniverseScheme</r:ID>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="10079_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="10079_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2003-03-01</r:StartDate>
+                  <r:EndDate>2003-04-30</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <c:ConceptualComponent id="10079_ConceptualComponent">
+              <c:UniverseScheme id="10079_UniverseScheme">
+                <c:Universe id="10079_Universe">
+                  <c:HumanReadable xml:lang="de">Deutsche Betriebsstätten mit mehr als 100 Beschäftigten aus allen Wirtschaftszweigen mit Ausnahme von Land- und Forstwirtschaft, Fischerei und Fischzucht, Erziehung und Unterricht und Erbringung von sonstigen öffentlichen und persönlichen Dienstleistungen waren einbezogen. Ausgeschlossen wurden Unternehmen, die keinen Betriebsrat haben.</c:HumanReadable>
+                </c:Universe>
+              </c:UniverseScheme>
+            </c:ConceptualComponent>
+            <d:DataCollection id="10079_datacoll">
+              <d:Methodology id="10079_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Querschnitt</r:Content>
+                </d:TimeMethod>
+                <d:SamplingProcedure id="10079_sp_de">
+                  <r:Content xml:lang="de">Die Stichprobenziehung erfolgte nach Kriterien der Zufallsauswahl quotiert nach Betriebsgröße. Aus der Hoppenstedt-Datenbank wurde eine Zufallsstichprobe, geschichtet nach vier Größenklassen (100-199, 200-499, 500-999, mehr als 1000 Beschäftigte), gezogen.</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="10079_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2003-03-01</r:StartDate>
+                  <r:EndDate>2003-04-30</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="10079_modeCollContr_1">
+                  <r:Content xml:lang="en">Interview: CATI</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="10079_modeCollContr_2">
+                  <r:Content xml:lang="de">Interview: CATI</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="10079_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-10079</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="10079_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Daten und Dokumente sind für die akademische Forschung und Lehre freigegeben. Der Datenzugang erfolgt per vor-Ort-Nutzung und per Datenfernverarbeitung.</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="10079_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-10079">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:287251</identifier>
+        <datestamp>2014-01-31T12:44:15Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="287251" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0550.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="287251">
+            <r:UserID type="dara:resourceIdentifier">s0550.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">Metaanalyse Organisationsforschung</r:Title>
+              <r:Creator xml:lang="de" affiliation="Universität Bielefeld">Edler, Susanne </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Bielefeld">Hohlweg, Jelena Johanna Nadja</r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Bielefeld">Meyermann, Alexia </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Bielefeld">Pruisken, Henrik </r:Creator>
+              <r:Contributor xml:lang="en" role="Data Collector" affiliation="Universität Bielefeld">Edler, Susanne</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung" affiliation="Universität Bielefeld">Edler, Susanne</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector" affiliation="Universität Bielefeld">Hohlweg, Jelena Johanna Nadja</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung" affiliation="Universität Bielefeld">Hohlweg, Jelena Johanna Nadja</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector" affiliation="Universität Bielefeld">Meyermann, Alexia</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung" affiliation="Universität Bielefeld">Meyermann, Alexia</r:Contributor>
+              <r:Contributor xml:lang="en" role="Data Collector" affiliation="Universität Bielefeld">Pruisken, Henrik</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung" affiliation="Universität Bielefeld">Pruisken, Henrik</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Universität Bielefeld</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2014-01-31</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0550.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="287251_A_de">
+              <r:Content xml:lang="de">Nicht verfügbar</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID>287251_UniverseScheme</r:ID>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="287251_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+            </r:Coverage>
+            <c:ConceptualComponent id="287251_ConceptualComponent">
+              <c:UniverseScheme id="287251_UniverseScheme">
+                <c:Universe id="287251_Universe">
+                  <c:HumanReadable xml:lang="de">Für die Analyse wurden sechs Zeitschriften der betriebswirtschaftlichen Personal- und Managementforschung, der soziologischen und ökonomischen Arbeits- und Arbeitsmarktforschung bestimmt. Ausgewählt wurden die Zeitschriften Arbeit, Industrielle Beziehungen (IB), Management Revue (mrev), Schmollers Jahrbuch, Zeitschrift für Arbeitsmarktforschung (ZAF) und Zeitschrift für Personalforschung (ZfP). Die Zeitschriften Arbeit, IB und ZAF sind aus dem Feld der Arbeits- und Arbeitsmarktforschung. Alle sind interdisziplinär angelegt, sie sprechen insbesondere Sozial- wie Wirtschaftswissenschaftler an. Arbeit und IB veröffentlichen empirische und theoretische Artikel, während der Schwerpunkt der ZAF deutlich auf empirischen Artikeln liegt.</c:HumanReadable>
+                </c:Universe>
+              </c:UniverseScheme>
+            </c:ConceptualComponent>
+            <d:DataCollection id="287251_datacoll">
+              <d:Methodology id="287251_meth">
+                <d:SamplingProcedure id="287251_sp_de">
+                  <r:Content xml:lang="de">Analysiert wurde eine selektive Auswahl bekannter Zeitschriften der empirischen Organisationsforschung in Deutschland. Das bedeutet, nur in Deutschland herausgegebene Zeitschriften, die peer-reviewed sind, also einem doppelblinden Begutachtungsverfahren unterliegen, wurden berücksichtigt (für die Zeitschrift Arbeit gilt dies erst ab Oktober 2009). Zusätzlich wurden die Zeitschriften Schmollers Jahrbuch, Managementforschung und Zeitschrift Führung + Organisation analysiert. Da diese aber entweder nur in sehr geringem Maß Artikel der Organisationsforschung enthielten oder kaum empirische Arbeiten, wurde sie für die weitere Analyse nicht berücksichtigt.</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="287251_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-287251</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="287251_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="287251_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-287251">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:294765</identifier>
+        <datestamp>2014-06-24T08:36:31Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="294765" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0041.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="294765">
+            <r:UserID type="dara:resourceIdentifier">s0041.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">Mitarbeiterbefragungen zum Betriebs- und Organisationsklima</r:Title>
+              <r:Creator xml:lang="de" affiliation="Ludwig-Maximilians-Universität München, Institut für Psychologie">von Rosenstiel, Lutz </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Ludwig-Maximilians-Universität München, Institut für Psychologie">Bögel, Rudolf </r:Creator>
+              <r:Contributor xml:lang="en" role="Other" affiliation="Datenservicezentrum Betriebs- und Organisationsdaten">Dammann, Maik</r:Contributor>
+              <r:Contributor xml:lang="de" role="Sonstiges" affiliation="Datenservicezentrum Betriebs- und Organisationsdaten">Dammann, Maik</r:Contributor>
+              <r:Contributor xml:lang="en" role="Project Leader" affiliation="Ludwig-Maximilians-Universität München, Institut für Psychologie">von Rosenstiel, Lutz</r:Contributor>
+              <r:Contributor xml:lang="de" role="Projektleiter" affiliation="Ludwig-Maximilians-Universität München, Institut für Psychologie">von Rosenstiel, Lutz</r:Contributor>
+              <r:Contributor xml:lang="en" role="Project Member" affiliation="Ludwig-Maximilians-Universität München, Institut für Psychologie">Bögel, Rudolf</r:Contributor>
+              <r:Contributor xml:lang="de" role="Projektmitarbeiter" affiliation="Ludwig-Maximilians-Universität München, Institut für Psychologie">Bögel, Rudolf</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2014-06-23</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0041.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="294765_A_de">
+              <r:Content xml:lang="de">Der inhaltliche Fokus der Studien richtet sich auf die Durchführung eines von v. Rosenstiel und Mitarbeitern (1983) entwickelten Verfahrens zur Messung des Betriebs- und Organisationsklimas in der betrieblichen Praxis. Bei dem Betriebs- und Organisationsklima handelt es sich um ein Konstrukt kollektiver Wahrnehmung, das die Gegebenheiten der Organisation mehrdimensional beschreibt. Es wird definiert als relativ überdauernde Qualität einer Organisationsumwelt, die von den Mitarbeitern wahrgenommen wird, ihr Verhalten beeinflusst und deren Attribute beschrieben werden können. Die zentralen Ziele der von den teilnehmenden Betrieben ausgehenden Forschungsaufträge liegen in der praxisbezogenen Identifikation und Bewertung der organisationsspezifischen Betriebsklimata. Ein wiederkehrendes Kontingent an standardisierten Fragen, das in mehreren Betrieben zum Einsatz kam, erwirkt zudem das Analysepotential zwischenorganisationaler Vergleiche.Die Mitarbeiterbefragungen zum Betriebs- und Organisationsklima wurden betriebsintern anhand von standardisierten Fragebögen durchgeführt. Bei dem Datenmaterial, das zur Sekundärnutzung zur Verfügung gestellt wird, handelt es sich um PAPI-Studien, die zwischen 1993 und 2002 erhoben wurden. Ein Teil der Datensätze liegt im Trenddesign vor, überwiegend handelt es sich jedoch um Querschnittsdaten. Die Fragebögen variieren nach betriebsspezifischen Gegebenheiten im Detail, greifen jedoch alle auf ein ähnliches Kontingent an Fragen zum Betriebs- und Organisationsklima zurück. Sie sind so konzipiert, dass die Fragestellungen auf die Beschreibung von Attributen der Organisation durch die befragten Belegschaften abzielen. Dies geschieht mit der Intention aus den befragten Individuen, die zu Bewertung neigen, ein soziales Kollektiv zu kreieren, das nach Möglichkeit beschreibt und nicht bewertet, indem die Fragen in der Wir- und Gruppenform gestellt werden und nach der Bestätigung oder Beurteilung eines Sachverhalts fragen. Zum Beispiel wird nicht gefragt: „Wie sind Sie mit Ihrem Meister zufrieden?“ mit den Antwortmöglichkeiten „sehr“ bis „gar nicht“, sondern eine entsprechende Betriebsklimafrage lautet: „Unsere Vorgesetzten kritisieren Untergebene vor anderen Mitarbeitern“ mit den Antwortmöglichkeiten „stimmt“ bis „stimmt nicht“. Deratige Frageformulierungen können individuelle Bewertungen zwar nicht ausgeschließen, sie deuten jedoch merklich in Richtung Beschreibung.</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID>294765_UniverseScheme</r:ID>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="294765_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="294765_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>1994</r:StartDate>
+                  <r:EndDate>2002</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Individuum</s:AnalysisUnitsCovered>
+            <c:ConceptualComponent id="294765_ConceptualComponent">
+              <c:UniverseScheme id="294765_UniverseScheme">
+                <c:Universe id="294765_Universe">
+                  <c:HumanReadable xml:lang="de">Die Mitarbeiterbefragungen fanden im Auftrag der 12 beteiligten deutschen Betriebe statt.</c:HumanReadable>
+                </c:Universe>
+              </c:UniverseScheme>
+            </c:ConceptualComponent>
+            <d:DataCollection id="294765_datacoll">
+              <d:Methodology id="294765_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Andere</r:Content>
+                </d:TimeMethod>
+                <d:SamplingProcedure id="294765_sp_de">
+                  <r:Content xml:lang="de">In einem der 12 Betriebe wurden die zu befragenden Bescäftigten anhand einer Klumpenauswahl ermittelt, in 8 Betrieben konnten alle Beschäftigten teilnhemen, in 3 Betrieben ist nicht bekannt, ob eine Auswahl der Beschäftigten erfolgte.</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="294765_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>1994</r:StartDate>
+                  <r:EndDate>2002</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="294765_modeCollContr_1">
+                  <r:Content xml:lang="en">Self-completed questionnaire: Paper/Pencil</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="294765_modeCollContr_2">
+                  <r:Content xml:lang="de">Selbst ausgefüllter Fragebogen: Papier/Bleistift</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="294765_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-294765</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="294765_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung und Datenfernverarbeitung</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="294765_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-294765">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:10080</identifier>
+        <datestamp>2014-06-25T09:01:17Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="10080" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0548.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="10080">
+            <r:UserID type="dara:resourceIdentifier">s0548.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">Kleine Hochschulen in strukturschwachen Lagen. Fallstudien aus Perspektive des Ressourcenabhängigkeitsansatzes</r:Title>
+              <r:Creator xml:lang="de" affiliation="Universität Flensburg">Larmann, Veit </r:Creator>
+              <r:Contributor xml:lang="en" role="Data Collector">Larmann, Veit</r:Contributor>
+              <r:Contributor xml:lang="de" role="Datenerhebung">Larmann, Veit</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2014-06-25</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0548.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="10080_A_de">
+              <r:Content xml:lang="de">Kleine Fachhochschulen in strukturschwachen Lagen erfüllen für ihre peripheren Region wichtige Funktionen, sind aber in ihrem Bestand durch eine Verwettbewerblichung der Hochschulsteuerung zunehmend gefährdet, weil sie in diesem Wettbewerb mehrfach benachteiligt sind. Die Studie nutzt den Ressourcenabhängigkeitsansatz als theoretischen Rahmen um die Ressourcenstrategien von vier Fallstudienhochschulen zu beschreiben und auf Gründe zurückzuführen, mit denen diese Hochschulen ihre Existenz in den strukturschwachen Lagen sichern. Dazu werden insbesondere die Ressourcenstrategien bezogen auf (1) Landesbudget, (2) Personal, (3) Studienbewerber und (4) Praxiskontakte untersucht. Diese Strategien werden in vier Einzelfallstudien dargestellt und anschließend in eine Cross-Case-Analyse Gemeinsamkeiten und Unterschiede in den Strategien der Hochschulen diskutiert.</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID/>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="10080_spat">
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="10080_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2010-03-01</r:StartDate>
+                  <r:EndDate>2011-11-30</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <s:KindOfData>Datenform: Transkripte            Datenformat: Doc-Dokumente</s:KindOfData>
+            <d:DataCollection id="10080_datacoll">
+              <d:Methodology id="10080_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Querschnitt</r:Content>
+                </d:TimeMethod>
+                <d:SamplingProcedure id="10080_sp_de">
+                  <r:Content xml:lang="de">In einem ersten Schritt wurden Fallstudienhochschulen mit mindestens zwei Fachbereichen und weniger als 2.732 Studierenden, die in den als strukturschwach ausgewiesenen Bereichen der Übersichtskarte des Raumordnungsberichtes 2005 der Bundesrepublik Deutschland 2005 liegen. Das Bezugsjahr für die Studierendenzahlen war 2007. In einem zweiten Schritt wurden in einer ersten Ebene interne Hochschulexperten ausgewählt, die Strategien und Abhängigkeiten bzgl. der vier fokussierten Ressourcenströme rekonstruieren können und in einer zweiten Ebene regionale Experten ausgewählt, die Ressourcenstrategien von deren Seite rekonstruieren können.</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="10080_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2010-03-01</r:StartDate>
+                  <r:EndDate>2011-11-30</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="10080_modeCollContr_1">
+                  <r:Content xml:lang="en">Interview: Face-to-Face</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="10080_modeCollContr_2">
+                  <r:Content xml:lang="de">Interview: persönliches</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="10080_modeCollFree_1">
+                  <r:Content xml:lang="de">leitfadengestützte Experteninterviews</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="10080_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-10080</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="10080_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Daten und Dokumente sind für die akademische Forschung und Lehre freigegeben. Der Datenzugang erfolgt per vor-Ort-Nutzung</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="10080_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-10080">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:294980</identifier>
+        <datestamp>2014-07-08T12:10:26Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="294980" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0549.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="294980">
+            <r:UserID type="dara:resourceIdentifier">s0549.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">SOEP-LEE Betriebsbefragung</r:Title>
+              <r:SubTitle xml:lang="de">Die Betriebsbefragung des Sozio-oekonomischen Panels</r:SubTitle>
+              <r:Creator xml:lang="de" affiliation="DIW Berlin und Freie Universität Berlin">Schupp, Jürgen </r:Creator>
+              <r:Creator xml:lang="de" affiliation="Universität Bielefeld">Liebig, Stefan </r:Creator>
+              <r:Contributor xml:lang="en" role="Project Leader" affiliation="DIW Berlin und Freie Universität Berlin">Schupp, Jürgen</r:Contributor>
+              <r:Contributor xml:lang="de" role="Projektleiter" affiliation="DIW Berlin und Freie Universität Berlin">Schupp, Jürgen</r:Contributor>
+              <r:Contributor xml:lang="en" role="Project Leader" affiliation="Universität Bielefeld">Liebig, Stefan</r:Contributor>
+              <r:Contributor xml:lang="de" role="Projektleiter" affiliation="Universität Bielefeld">Liebig, Stefan</r:Contributor>
+              <r:Contributor xml:lang="en" role="Project Member" affiliation="Universität Bielefeld">Meyermann, Alexia</r:Contributor>
+              <r:Contributor xml:lang="de" role="Projektmitarbeiter" affiliation="Universität Bielefeld">Meyermann, Alexia</r:Contributor>
+              <r:Contributor xml:lang="en" role="Project Member" affiliation="DIW Berlin">Weinhardt, Michael</r:Contributor>
+              <r:Contributor xml:lang="de" role="Projektmitarbeiter" affiliation="DIW Berlin">Weinhardt, Michael</r:Contributor>
+              <r:PublicationDate>
+                <r:SimpleDate>2014</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0549.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="294980_A_de">
+              <r:Content xml:lang="de">Dieser Datensatz stellt Informationen zu Organisationsmerkmalen von insgesamt 1708 Arbeitgebern aus Deutschland zur Verfügung, die im Rahmen einer gesonderten standardisierten Betriebsstättenbefragung zwischen August 2012 und März 2013 erhoben wurden. Die im Projekt erhobenen Organisationsdaten können mit den Individual- und Haushaltsdaten des SOEP verknüpft werden. Dazu wurden im Jahr 2012 alle abhängig beschäftigten Befragten des SOEP nach der Adresse ihres Arbeitgebers aus dem Vorjahr befragt; diese bilden die Grundlage der Erhebung. Dieses neue Angebot eines verknüpften Personen-Arbeitgeberdatensatz eröffnet neue Potentiale für eine Vielzahl von Sekundäranalysen mit innovativen Fragestellungen in den Sozial- und Wirtschaftswissenschaften und erweitert die Informationen zum Arbeitskontext und zu den Arbeitsbedingungen der Befragten des Sozio-oekonomischen Panels (SOEP) entscheidend. So kann z. B. der Einfluss innerbetrieblicher Einkommensunterschiede (Betriebsmerkmal) auf das Gerechtigkeitsempfinden von Lohnunterschieden (Individualmerkmal, erhoben im SOEP 2011) untersucht werden.Erhoben wurden beschäftigungsspezifische Praktiken und Strukturen hinsichtlich zentraler Ungleichheitsdimensionen. Dabei wurde versucht, sowohl zwischenbetriebliche Varianz (durch Messung von Aggregatmerkmalen auf Betriebsebene) als auch innerbetriebliche Varianz abzubilden. Dabei sind folgende Ungleichheitsdimensionen Gegenstand der Befragung: Einkommen, Aufstiegschancen, sonstige Gratifikationen und Belastungen wie Vereinbarkeit von Beruf und Familie, Arbeitsvolumen/-druck, Instabilität der Arbeitsbedingungen, Möglichkeiten zur Vereinbarkeit von Beruf und Familie. Weiterhin wurde bei den Inhalten auf Kompatibilitätmit den bisherigen SOEP-Inhalten geachtet. </r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID>294980_UniverseScheme</r:ID>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="294980_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="294980_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2012-08</r:StartDate>
+                  <r:EndDate>2013-03</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <s:KindOfData>Umfragedaten</s:KindOfData>
+            <r:OtherMaterial id="294980_otherM_1" type="Relation">
+              <r:UserID type="DOI">10.5684/soep.v29</r:UserID>
+              <r:Citation>
+                <r:Title/>
+              </r:Citation>
+              <r:Relationship>
+                <r:RelatedToReference>
+                  <r:ID>294980</r:ID>
+                </r:RelatedToReference>
+                <r:RelationshipDescription xml:lang="en">Is supplement to</r:RelationshipDescription>
+                <r:RelationshipDescription xml:lang="de">Ist Ergänzung zu</r:RelationshipDescription>
+              </r:Relationship>
+            </r:OtherMaterial>
+            <r:Note type="Comment" id="294980_N">
+              <r:Relationship>
+                <r:RelatedToReference>
+                  <r:ID>294980</r:ID>
+                </r:RelatedToReference>
+              </r:Relationship>
+              <r:Content xml:lang="de">Die Datendokumentationen einschließlich der Variablen- und Wertelabels liegen sowohl in deutscher als auch in englischer Sprache vor.
+
+Die SOEP-LEE Betriebsbefragung kann sowohl separat ausgewertet werden als auch in Verknüpfung mit den Individualdaten des SOEP.</r:Content>
+            </r:Note>
+            <c:ConceptualComponent id="294980_ConceptualComponent">
+              <c:UniverseScheme id="294980_UniverseScheme">
+                <c:Universe id="294980_Universe">
+                  <c:HumanReadable xml:lang="de">Betriebe in Deutschland mit mindestens 5 Beschäftigten</c:HumanReadable>
+                </c:Universe>
+              </c:UniverseScheme>
+            </c:ConceptualComponent>
+            <d:DataCollection id="294980_datacoll">
+              <d:Methodology id="294980_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Querschnitt</r:Content>
+                </d:TimeMethod>
+                <d:SamplingProcedure id="294980_sp_de">
+                  <r:Content xml:lang="de">Die Grundgesamtheit entspricht allen Betrieben in Deutschland mit mindestens 5 abhängigbeschäftigten Personen. Dabei kam eine sogenannte Emplyoee-first-Methode zum Einsatz:Sämtliche abhängig Beschäftigten des SOEP wurden 2012 nach den Kontaktdaten der lokalenEinheit gefragt, in der sie im Jahr 2011 (im Monat des SOEP-Interviews) tätig waren. DieAusschöpfung liegt hier bei etwa 85 % (N = 6549). Diese Arbeitgeberkontaktdaten stelltendann die Grundlage für eine gesondert durchgeführte, standardisierte Arbeitgeberbefragung dar (ohne Selbständige, mindestens 5 Angestellten im Betrieb).</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="294980_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2012-08</r:StartDate>
+                  <r:EndDate>2013-03</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="294980_modeCollContr_1">
+                  <r:Content xml:lang="en">Interview: Face-to-Face</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="294980_modeCollContr_2">
+                  <r:Content xml:lang="de">Interview: persönliches</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="294980_modeCollFree_1">
+                  <r:Content xml:lang="de">Persönlich-mündliches Interview mittels Papierfragebogen (PAPI); Überlassung eines Papierfragebogens zum Selbstausfüllen auf Anfrage.</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="294980_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-294980</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="294980_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung und Datenfernverarbeitung</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="294980_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-294980">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:oai.da-ra.de:428430</identifier>
+        <datestamp>2015-05-21T15:14:12Z</datestamp>
+        <setSpec>DSC-BO German Data Service Center for Business and Organizational Data</setSpec>
+      </header>
+      <metadata>
+        <ddi:DDIInstance xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:p="ddi:physicaldataproduct:3_1" xmlns:a="ddi:archive:3_1" xmlns:pi="ddi:physicalinstance:3_1" xmlns:m1="ddi:physicaldataproduct_ncube_normal:3_1" xmlns:pr="ddi:ddiprofile:3_1" xmlns:ddi="ddi:instance:3_1" xmlns:ds="ddi:dataset:3_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m2="ddi:physicaldataproduct_ncube_tabular:3_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m3="ddi:physicaldataproduct_ncube_inline:3_1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:l="ddi:logicalproduct:3_1" xmlns:g="ddi:group:3_1" xmlns:m4="ddi:physicaldataproduct_proprietary:3_1" xmlns:d="ddi:datacollection:3_1" xmlns:s="ddi:studyunit:3_1" xmlns:dce="ddi:dcelements:3_1" xmlns:cm="ddi:comparative:3_1" xmlns:c="ddi:conceptualcomponent:3_1" xmlns:r="ddi:reusable:3_1" id="428430" xsi:schemaLocation="ddi:instance:3_1 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd">
+          <r:Citation>
+            <r:Title>Meta data for resource 10.7478/s0019.1.v1</r:Title>
+            <r:Creator>DSC-BO German Data Service Center for Business and Organizational Data</r:Creator>
+            <r:Publisher>da|ra Registration agency for social and economic data</r:Publisher>
+            <r:Copyright>All meta data from da|ra are available free of restriction under the Creative Commons CC0 1.0 Universal Public Domain Dedication.</r:Copyright>
+          </r:Citation>
+          <s:StudyUnit id="428430">
+            <r:UserID type="dara:resourceIdentifier">s0019.1</r:UserID>
+            <r:Citation>
+              <r:Title xml:lang="de">Die Nachfrage nach Personaldienstleistungen im Spannungsfeld von ökonomischen und rechtlichen Determinanten (SFB580-B5)</r:Title>
+              <r:Creator xml:lang="de">Sonderforschungsbereich  580 - Projekt B5</r:Creator>
+              <r:PublicationDate>
+                <r:SimpleDate>2015-05-21</r:SimpleDate>
+              </r:PublicationDate>
+              <r:Language>de</r:Language>
+              <r:InternationalIdentifier type="DOI">10.7478/s0019.1.v1</r:InternationalIdentifier>
+              <dce:DCElements/>
+            </r:Citation>
+            <s:Abstract id="428430_A_de">
+              <r:Content xml:lang="de">Im Forschungsprojekt SFB 580-B5 „Die Nachfrage nach Personaldienstleistungen im Spannungsfeld von ökonomischen und rechtlichen Determinanten“ wurde die Nachfrage nach Personaldienstleistungen durch Unternehmen in Deutschland untersucht. Damit steht das Outsourcing von Personalfunktionen im Mittelpunkt der Studie. Personaldienstleistungen, wie z.B. Arbeitnehmerüberlassung und Unternehmensberatung stellen unternehmensexterne Alternativen zur internen Personalarbeit dar. Das Forschungsinteresse richtet sich auf Faktoren, welche die Entscheidung zur (Nicht-)Nachfrage nach Personaldienstleistungen beeinflussen. Dabei ist es das Ziel, einen umfassenden Überblick über Entscheidungen zum Outsourcing von Teilen der Personalarbeit zu geben.Im Rahmen des Forschungsprozesses wurde eine standardisierte Telefonbefragung von Personalverantwortlichen in Unternehmen aus den beiden Wirtschaftszweigen Produktion und Dienstleistung durchgeführt. Die Expertenbefragung wurde in 1021 Unternehmen zu folgenden Themen durchgeführt:Unternehmensstruktur (u.a. Produkte/Geschäftsfelder, Rechtsform, Gründungsjahr, organisatorische Änderungen),Nachfrage nach Personaldienstleistungen (u.a. Umfang, Häufigkeit)Entscheidungsprozess bei der Nachfrage nach Personaldienstleistungen (Abwägung der Alternativen, erwartete Wirkungen durch die (Nicht-)Nachfrage, eingetroffene Wirkungen)</r:Content>
+            </s:Abstract>
+            <r:UniverseReference>
+              <r:ID>428430_UniverseScheme</r:ID>
+            </r:UniverseReference>
+            <s:Purpose id="">
+              <r:Content/>
+            </s:Purpose>
+            <r:Coverage>
+              <r:SpatialCoverage id="428430_spat">
+                <r:Description xml:lang="de">Deutschland</r:Description>
+                <r:TopLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:TopLevelReference>
+                <r:LowestLevelReference>
+                  <r:LevelName>Codes for countries and their subdivisions (ISO 3166-1/2/3 )</r:LevelName>
+                </r:LowestLevelReference>
+              </r:SpatialCoverage>
+              <r:TemporalCoverage id="428430_temp">
+                <r:ReferenceDate>
+                  <r:StartDate>2006-04-26</r:StartDate>
+                  <r:EndDate>2006-08-24</r:EndDate>
+                </r:ReferenceDate>
+              </r:TemporalCoverage>
+            </r:Coverage>
+            <s:AnalysisUnitsCovered xml:lang="de">Organisation</s:AnalysisUnitsCovered>
+            <s:KindOfData>Stata</s:KindOfData>
+            <c:ConceptualComponent id="428430_ConceptualComponent">
+              <c:UniverseScheme id="428430_UniverseScheme">
+                <c:Universe id="428430_Universe">
+                  <c:HumanReadable xml:lang="de">Privatunternehmen in Deutschland im Produktions- und Dienstleistungssektor</c:HumanReadable>
+                </c:Universe>
+              </c:UniverseScheme>
+            </c:ConceptualComponent>
+            <d:DataCollection id="428430_datacoll">
+              <d:Methodology id="428430_meth">
+                <d:TimeMethod id="_sp_de">
+                  <r:Content xml:lang="de">Querschnitt</r:Content>
+                </d:TimeMethod>
+                <d:SamplingProcedure id="428430_sp_de">
+                  <r:Content xml:lang="de">Für die Befragung wurde eine disproportional geschichtete Stichprobe von Betriebsstätten nach Größenklassen (1-19, 20-99, 100-499 und über 500 Beschäftigte), Region (West- und Ostdeutschland) und Wirtschaftssektor (Produktion und Dienstleistung) gezogen. Die Kontaktadressen und Unternehmensdaten zu Größe, Wirtschaftszweig, Arbeitsregion u.ä. der einzelnen Betriebsstätten wurden von der Industrie- und Handelskammer (IHK) zur Verfügung gestellt. Hieraus wurden 5019 Adressen gezogen. Nicht in allen Zellen konnte die angestrebte  Zellverteilung von 300 Adressen pro Zelle erreicht werden. Dies war insbesondere in ostdeutschen Großunternehmen der Fall. Deshalb wurden die Zellen der westdeutschen Großunternehmen entsprechend aufgefüllt, um bei Auswertungen die Merkmale Produktion und Dienstleistung sowie die vier Größenklassen annähernd gleich in der Stichprobe vertreten zu haben. In der Befragung wurden 993 gültige Interviews durchführt. Inklusive Pretest beträgt die Fallzahl der geführten Interviews 1021.</r:Content>
+                </d:SamplingProcedure>
+              </d:Methodology>
+              <d:CollectionEvent id="428430_eve_1">
+                <d:DataCollectionDate>
+                  <r:StartDate>2006-04-26</r:StartDate>
+                  <r:EndDate>2006-08-24</r:EndDate>
+                </d:DataCollectionDate>
+                <d:ModeOfCollection id="428430_modeCollContr_1">
+                  <r:Content xml:lang="en">Interview: CATI</r:Content>
+                </d:ModeOfCollection>
+                <d:ModeOfCollection id="428430_modeCollContr_2">
+                  <r:Content xml:lang="de">Interview: CATI</r:Content>
+                </d:ModeOfCollection>
+              </d:CollectionEvent>
+            </d:DataCollection>
+            <pi:PhysicalInstance id="">
+              <pi:RecordLayoutReference>
+                <r:ID/>
+              </pi:RecordLayoutReference>
+              <pi:DataFileIdentification id="">
+                <pi:URI/>
+              </pi:DataFileIdentification>
+            </pi:PhysicalInstance>
+            <a:Archive id="428430_archive">
+              <a:ArchiveSpecific>
+                <a:ArchiveOrganizationReference>
+                  <r:ID>dara-PubAgent-428430</r:ID>
+                </a:ArchiveOrganizationReference>
+                <a:DefaultAccess id="428430_access">
+                  <a:AccessConditions xml:lang="en">Onsite</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung</a:AccessConditions>
+                  <a:AccessConditions xml:lang="de">Vor-Ort-Nutzung und Datenfernverarbeitung</a:AccessConditions>
+                </a:DefaultAccess>
+              </a:ArchiveSpecific>
+              <a:OrganizationScheme id="428430_OrganizationScheme">
+                <a:Organization id="dara-PubAgent-428430">
+                  <a:OrganizationName xml:lang="en">DSC-BO German Data Service Center for Business and Organizational Data</a:OrganizationName>
+                  <a:OrganizationName xml:lang="de">DSZ-BO Datenservicezentrum Betriebs- und Organisationsdaten</a:OrganizationName>
+                </a:Organization>
+              </a:OrganizationScheme>
+            </a:Archive>
+          </s:StudyUnit>
+        </ddi:DDIInstance>
+      </metadata>
+    </record>
+    <resumptionToken expirationDate="2015-08-21T11:04:46Z" completeListSize="12" cursor="0"/>
+  </ListRecords>
+</OAI-PMH>

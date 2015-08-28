@@ -1,0 +1,5 @@
+name,url
+rda.oai,http://researchdata.ands.org.au/registry/services/oai
+rda.grant,http://researchdata.ands.org.au/registry/services/{YOUR API KEY}/getGrants?{params}
+rda.rifcs,http://researchdata.ands.org.au/registry/services/{YOUR API KEY}/getRIFCS?{params}
+dryad.oai,http://datadryad.org/oai

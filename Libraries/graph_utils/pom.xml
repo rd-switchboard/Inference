@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.rdswitchboard</groupId>
+    <artifactId>inference</artifactId>
+    <version>1.2.0</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+  <groupId>org.rdswitchboard.libraries</groupId>
+  <artifactId>graph_utils</artifactId>
+  <name>Graph Representation Library</name>
+  <description>A library, what will define format of Graph, Node and Relationship and interfaces to work with the graphs. </description>
+
+  <dependencies>
+    <dependency>
+	  <groupId>commons-lang</groupId>
+	  <artifactId>commons-lang</artifactId>
+	  <version>${commons.lang.version}</version>
+    </dependency> 
+  </dependencies>
+
+</project>

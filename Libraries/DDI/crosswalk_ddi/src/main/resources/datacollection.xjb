@@ -1,0 +1,18 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          version="2.1">
+    <bindings schemaLocation="datacollection.xsd" version="1.0">
+        <!-- Customise the package name -->
+        <!-- <schemaBindings>
+            <package name="ddi.datacollection.3_1"/>
+        </schemaBindings> -->
+
+        <!-- rename the value element -->
+        <bindings node="//xs:complexType[@name='GeneralInstructionType']">
+            <bindings node=".//xs:attribute[@name='isOverride']">
+                <property name="isOverrideAttribute"/>
+            </bindings>
+        </bindings>
+    </bindings>
+</bindings>

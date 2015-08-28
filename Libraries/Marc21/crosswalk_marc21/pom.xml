@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.rdswitchboard</groupId>
+  	<artifactId>inference</artifactId>
+  	<version>1.2.0</version>
+  	<relativePath>../../../pom.xml</relativePath>
+  </parent>
+  <groupId>org.rdswitchboard.libraries</groupId>
+  <artifactId>crosswalk_marc21</artifactId>
+  <name>OAI:PMH Macr21 Crosswalk</name>
+  <description>OAI:PMH Macr21 xml format converter to RDS Graph</description>
+    
+  <build>
+	<plugins>
+	  	 
+	  <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>xjc</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+     
+ 	</plugins>
+  </build>
+  
+  <dependencies>
+    <dependency>
+	  <groupId>javax.xml.bind</groupId>
+	  <artifactId>jaxb-api</artifactId>
+	  <version>${jaxb.api.version}</version>
+    </dependency>
+    <dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+      <artifactId>graph_utils</artifactId>
+      <version>1.2.0</version>
+  	</dependency>
+  </dependencies>
+
+</project>

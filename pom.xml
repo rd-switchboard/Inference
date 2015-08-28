@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.rdswitchboard</groupId>
+  <artifactId>inference</artifactId>
+  <packaging>pom</packaging>
+  <version>1.2.0</version>
+  <name>Inference</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <class.path>jars/</class.path>
+    <jdk.version>1.7</jdk.version>
+    <junit.version>4.11</junit.version>
+    <commons.io.version>2.4</commons.io.version>
+    <commons.lang.version>2.6</commons.lang.version>
+    <aws-java-sdk.version>1.9.39</aws-java-sdk.version>
+    <jackson.version>2.5.0</jackson.version>
+    <jersey.version>1.9</jersey.version>
+    <neo4j.version>2.2.3</neo4j.version>
+    <opencsv.version>2.3</opencsv.version>
+    <mysql.version>5.1.35</mysql.version>
+    <guava.version>18.0</guava.version>
+    <jaxb.api.version>2.2.11</jaxb.api.version>
+  </properties>
+
+  <modules>
+  	<module>Libraries/graph_utils</module>
+  	<module>Libraries/neo4j_utils</module>
+	<module>Libraries/ORCID/orcid_utils</module>
+	<module>Libraries/Scopus/scopus_utils</module>
+        <module>Libraries/CrossRef/crossref_utils</module>
+  	<module>Libraries/Google/google_cache</module>
+  	<module>Libraries/Google/google_cse</module>
+	<module>Libraries/Fuzzy/fuzzy_search</module>
+  	<module>Libraries/RIF_CS/crosswalk_rif_cs</module>
+	<module>Libraries/Mets/crosswalk_mets</module>
+	<module>Libraries/Marc21/crosswalk_marc21</module>
+	<module>Libraries/DLI/crosswalk_dli</module>
+	<!-- <module>Libraries/DDI/crosswalk_ddi</module> --> <!-- Module has been disabled because DDI does not provides enough data -->
+        <module>Importers/Web/import_institutions</module>
+	<module>Importers/Web/import_patterns</module>
+	<module>Importers/Web/import_services</module>
+	<module>Importers/ARC/import_arc</module>
+        <module>Importers/NHMRC/import_nhmrc</module>
+        <module>Importers/ANDS/import_ands</module>
+        <module>Importers/Dryad/import_dryad</module>
+        <module>Importers/Cern/import_cern</module>
+	<module>Importers/OpenAIRE/import_openaire</module>
+	<!-- <module>Importers/DaRa/import_dara</module> --> <!-- Module has been disabled because DDI does not provides enough data -->
+	<module>Importers/CrossRef/import_crossref</module>
+	<module>Importers/ORCID/import_orcid</module>
+	<module>Linkers/Google/link_web_researchers</module>
+	<module>Linkers/Static/link_nodes</module>
+	<module>Search/Google/google_search</module>
+  	<module>Utils/Neo4j/copy_harmonized</module>
+	<module>Utils/Neo4j/delete_nodes</module>
+	<module>Utils/Neo4j/export_graph_json</module>
+	<module>Build/distribution</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>${jdk.version}</source>
+            <target>${jdk.version}</target>
+          </configuration>
+        </plugin>
+ 
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>2.9</version> 
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>jaxb2-maven-plugin</artifactId>
+          <version>1.6</version>
+        </plugin>
+
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+	  <version>2.5.5</version>
+          <configuration>
+            <descriptor>src/assembly/bin.xml</descriptor>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
