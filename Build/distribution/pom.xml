@@ -41,7 +41,12 @@
   <dependencies>
     <dependency>
       <groupId>org.rdswitchboard.importers</groupId>
-      <artifactId>import_ands</artifactId>
+      <artifactId>import_institutions</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.rdswitchboard.importers</groupId>
+      <artifactId>import_services</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>

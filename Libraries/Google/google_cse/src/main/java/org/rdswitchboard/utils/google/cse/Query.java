@@ -35,6 +35,7 @@ public class Query {
 	private static final String CSE_API = "https://www.googleapis.com/customsearch/v1?key=%s&cx=%s&q=%s";
 	private static final String ENCODE_UTF8 = "UTF-8";
 	private static final ObjectMapper mapper = new ObjectMapper();   
+	private static final int MAX_FILE_NAME = 250;
 	
 	/**
 	 * Class Constructor
@@ -88,7 +89,7 @@ public class Query {
 			File jsonFile = null;
 			String json = null;
 			if (null != jsonFolder) {
-				jsonFile = new File(jsonFolder + "/" + query + ".json");
+				jsonFile = new File(jsonFolder + "/" + (query.length() <= MAX_FILE_NAME ? query : query.substring(0, MAX_FILE_NAME)) + ".json");
 				if (jsonFile.exists() && !jsonFile.isDirectory())
 					json = FileUtils.readFileToString(jsonFile);
 			}
@@ -126,7 +127,7 @@ public class Query {
 			File jsonFile = null;
 			String json = null;
 			if (null != jsonFolder) {
-				jsonFile = new File(jsonFolder + "/" + query + ".json");
+				jsonFile = new File(jsonFolder + "/" + (query.length() <= MAX_FILE_NAME ? query : query.substring(0, MAX_FILE_NAME)) + ".json");
 				if (jsonFile.exists() && !jsonFile.isDirectory())
 					json = FileUtils.readFileToString(jsonFile);
 			}
