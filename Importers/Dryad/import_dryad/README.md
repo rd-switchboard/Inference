@@ -11,7 +11,8 @@ Program has been tested on Ubuntu Linux 14.04 and should work on any other linux
 #### Build and ussage
 
 To build the program run `mvn package -am` from the `Importers/Dryad/import_dryad` project forlder 
-or run `mvn package -pl :import_dryad -am` from the main repository folder:
+or run `mvn package -pl :import_dryad -am` from the main repository folder. Or to build everything,
+simple run `mvn package` from the main repository folder.
 
 ```
 cd Importers/Dryad/import_dryad
