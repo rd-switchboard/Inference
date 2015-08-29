@@ -1,6 +1,6 @@
 #Dryad Importer
 
-This tool is desinged to import Dryad XML filed from provided S3 Bucket into Neo4j Database.
+This tool is desinged to import Dryad OAI:PMH/Mets XML files from provided S3 Bucket into Neo4j Database.
 
 #### Requirements
 

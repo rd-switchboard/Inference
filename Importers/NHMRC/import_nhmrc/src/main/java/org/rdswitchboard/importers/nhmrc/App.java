@@ -65,7 +65,7 @@ public class App {
 	        if (StringUtils.isEmpty(grantsFile))
 	            throw new IllegalArgumentException("Invalid path to the Grants CSV file");
 	        
-	        String rolesFile = properties.getProperty("new.grants", ROLES_CSV_PATH);
+	        String rolesFile = properties.getProperty("roles", ROLES_CSV_PATH);
 	        if (StringUtils.isEmpty(rolesFile))
 	            throw new IllegalArgumentException("Invalid path to the Roles CSV file");
 	        

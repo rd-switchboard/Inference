@@ -24,17 +24,16 @@ Project modules and data are separated into different folders to make navigation
 * Build: Project Distribution module
 * Data: Static data, incliding list of institutions, patterns, sevices, arc and nhmrc grants and test nodes
 * Importers: All modules, designed to import data into Neo4j from different Data Sources 
-* Importers/ANDS: ANDS Metadata Import Module
-* Importers/ARC: ARC Grants Import Module
-* Importers/Cern: CERN Metadata Import Module
-* Importers/CrossRef: CrossRef Metadata Import Module
-* Importers/DaRa: Da-Ra Metadata Import Module
+* Importers/ANDS: [ANDS Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/ANDS/import_ands)
+* Importers/ARC: [ARC Grants Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/ARC/import_arc)
+* Importers/Cern: [CERN Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/Cern/import_cern)
+* Importers/CrossRef: [CrossRef Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/CrossRef/import_crossref)
+* Importers/DaRa: [Da-Ra Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/DaRa/import_dara)
 * Importers/Dryad: [Dryad Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/Dryad/import_dryad)
-* Importers/Figshare: Figshare Metadata Import Module
-* Importers/NHMRC: NHMRC Metadata Import Module
-* Importers/ORCID: ORCID Metadata Import Module
-* Importers/OpenAIRE: OpenAIRE Metadata Import Module
-* Importers/Web: Static Metadata Import Module (Institutions, Patterns and Services)
+* Importers/NHMRC: [NHMRC Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/NHMRC/import_nhmrc)
+* Importers/ORCID: [ORCID Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/ORCID/import_orcid)
+* Importers/OpenAIRE: [OpenAIRE Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/OpenAIRE/import_openaire)
+* Importers/Web: Static Metadata Import Module ([Institutions](https://github.com/rd-switchboard/Inference/tree/master/Importers/Web/import_institutions), [Patterns](https://github.com/rd-switchboard/Inference/tree/master/Importers/Web/import_patterns) and -Services-)
 * Libraries: All Libraries, used by other Modules
 * Libraries/CrossRef: CrossRef API Libarary
 * Libraries/DDI: DDI Metadata Crosswalk (not used at this moment because of insufficient metadata)
@@ -87,7 +86,7 @@ Copy archive to the server and unpack it:
 
 ```
 tar -xzvf neo4j-community-2.2.3-unix.tar.gz
-cp neo4j-community-2.2.3-unix neo4j-aggrigator
+cp neo4j-community-2.2.3-unix neo4j-aggregator
 cp neo4j-community-2.2.3-unix neo4j-nexus
 ```
 
