@@ -15,14 +15,14 @@ Program has been tested on Ubuntu Linux 14.04 and should work on any other linux
 Inference enginge consists from a selection of different java modules united into one global Maven project, 
 located in the main Repository folder. Part of these modules are libraries used by other modules and remaining 
 modules are separate applications, designed to perform different taks. All applications will require one or two 
-Neo4j instances to be avaliable and will use them in the exclusive mode. so no two applications can work at the 
+Neo4j instances to be avaliable and will use them in the exclusive mode, so no two applications can work at the 
 same time. The Inefence Engine suppose to run them one by one in some batch process and such design allows 
 to exclude some tasks from the batch to save time and resources.
 
 Project modules and data are separated into different folders to make navigation between them easy.
 
 * Build: Project Distribution module
-* Data: Static data, incliding list of institutions, patterns, sevices, arc and nhmrc granst and test nodes
+* Data: Static data, incliding list of institutions, patterns, sevices, arc and nhmrc grants and test nodes
 * Importers: All modules, designed to import data into Neo4j from different Data Sources 
 * Importers/ANDS: ANDS Metadata Import Module
 * Importers/ARC: ARC Grants Import Module
@@ -58,14 +58,14 @@ Project modules and data are separated into different folders to make navigation
 * Utils: Different Helper Applications
 * Utils/Neo4j: Neo4j Applications
 * Utils/Neo4j/copy_harmonized: Modle will generate Harmonized Neo4j Instance (Nexus) from Aggrigation Neo4j Instance
-* Utils/Neo4j/delete_nodes: Module will delete orphant nodes (the nodes who does not have any connections to the other nodes
+* Utils/Neo4j/delete_nodes: Module will delete orphant nodes (the nodes which do not have any connections to the other nodes
 * Utils/Neo4j/export_graph_json: Module will export finished graphs into S3
 
 #### Build and manage
 
-To build the whole project simple run `mvn package` from the repository folder. The Maven will download all required dependancied and will build all existing modules. It will also generate distribution in the Build/distribution/target/inference-${project.version} folder and will produze gz and bz2 archives with this distributive. If archives or assemble folder are not required, it can be disabled in the assemble configuration located at Build/distribution/src/assembly/bin.xml
+To build the whole project simply run `mvn package` from the repository folder. The Maven will download all required dependancied and will build all existing modules. It will also generate distribution in the Build/distribution/target/inference-${project.version} folder and will produce gz and bz2 archives with this distribution. If archives or assemble folder are not required, it can be disabled in the assemble configuration located at Build/distribution/src/assembly/bin.xml
 
-To install porject into you local maven repository, execute `mvn install` from the repository folder. After that you will be able to build any module separatly by executint mvn package in the module folder, but, if one of depending module has been changed, new installation of this module will be required.
+To install porject into your local maven repository, execute `mvn install` from the repository folder. After that you will be able to build any module separately by executint mvn package in the module folder, but, if one of depending modules has been changed, new installation of this module will be required.
 
 You also can build single module without installing it, by executing Maven command `mvn install -pl :${module.name} -am` from the repository folder. For example, to build only ANDS import module, you can execute:
 
@@ -77,11 +77,11 @@ To change project version, execute `mvn versions:set -DgenerateBackupPoms=false`
 
 #### Distribute
 
-If Distribute module has been compiled, the Maven will create global distibutive with all modules and all dependacies located in Build/distribution/target/inference-${project.version}. It will also create bz2 and gz archives of this distributive. We recommend to upload whole archive on the server and unpack it there. The bz2 version is usally a bit smaller but will require more time to unpack. You can use either of them or create your own archive by zipping the distribution folder. 
+If Distribute module has been compiled, the Maven will create global distribution with all modules and all dependacies located in Build/distribution/target/inference-${project.version}. It will also create bz2 and gz archives of this distribution. We recommend to upload whole archive on the server and unpack it there. The bz2 version is usally a bit smaller but will require more time to unpack. You can use either of them or create your own archive by zipping the distribution folder. 
 
 #### Installation
 
-You will need to install at least two neo4j databases - aggrigator and nexus. You can download neo4j from the [official Neo4j Web site](http://neo4j.com/artifact.php?name=neo4j-community-2.2.3-unix.tar.gz)
+You will need to install at least two neo4j databases - aggregator and nexus. You can download neo4j from the [official Neo4j Web site](http://neo4j.com/artifact.php?name=neo4j-community-2.2.3-unix.tar.gz)
 
 Copy archive to the server and unpack it:
 
@@ -103,7 +103,7 @@ The distribution will have `properties` folder where all properties files will b
 
 #### Execution
 
-All executable modules can be executed by calling java: `java -jar ${module.name}-${module.version} [${optinal.path.to.properties.file}]`. The output of the program can be directed to the log file and program it self could be run as a daemon, allows you to monitor the process without interfire to the program work. We recommend to add `nohup` keyworard before calling the Java, that will ensure, what program will finish it's work even if your connection with server will be terminated. 
+All executable modules can be executed by calling java: `java -jar ${module.name}-${module.version} [${optinal.path.to.properties.file}]`. The output of the program can be directed to the log file and program itself could be run as a daemon, allows you to monitor the process without interfere to the program work. We recommend to add `nohup` keywoard before calling the Java, that will ensure, that program will finish its work even if your connection with server will be terminated. 
 
 For example, to execute ANDS import with custom configuration file and without interruptions, you can use this command 
 
@@ -111,7 +111,7 @@ For example, to execute ANDS import with custom configuration file and without i
 nohup java -jar import_ands-1.3.0.jar properties/import_ands/properties > logs/import_ands.txt 2>&1 &
 ``` 
 
-We also recommend to unite all programs into some batch process so they would be called one by one. A shell script will be most siutable for that. A sample of such shell script is provided in the Scripts folder
+We also recommend to combine all programs into some batch process so they would be called one by one. A shell script will be most siutable for that. A sample of such shell script is provided in the Scripts folder
 
 
 
