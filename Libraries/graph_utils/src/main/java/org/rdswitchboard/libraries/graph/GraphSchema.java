@@ -16,43 +16,51 @@ import java.util.Objects;
  */
 
 public class GraphSchema {
-	private String label;
 	private String index;
+	private String key;
 	private boolean unique;
 	
 	public GraphSchema() {
-		
+		this.index = null;
+		this.key= GraphUtils.PROPERTY_KEY;
+		this.unique = false;
 	}
 	
-	public GraphSchema(String label, String index, boolean unique) {
-		setLabel(label);
-		setIndex(index);
+	public GraphSchema(String index, boolean unique) {
+		_setIndex(index);
+		this.key = GraphUtils.PROPERTY_KEY;
 		setUnique(unique);
 	}
 	
-	public String getLabel() {
-		return label;
+	public GraphSchema(String index, String key, boolean unique) {
+		_setIndex(index);
+		setKey(key);
+		setUnique(unique);
 	}
 	
-	public void setLabel(String label) {
-		this.label = label;
-	}
-		 
-	public GraphSchema withLabel(String label) {
-		setLabel(label);
-		return this;
-	}
-	
-	public String getIndex() {
+	public String _getIndex() {
 		return index;
 	}
 	
-	public void setIndex(String index) {
+	public void _setIndex(String index) {
 		this.index = index;
 	}
 
-	public GraphSchema withIndex(String index) {
-		setIndex(index);
+	public GraphSchema _withIndex(String index) {
+		_setIndex(index);
+		return this;
+	}
+	
+	public String getKey() {
+		return key;
+	}
+	
+	public void setKey(String key) {
+		this.key = key;
+	}
+		 
+	public GraphSchema withKey(String key) {
+		setKey(key);
 		return this;
 	}
 	 
@@ -77,20 +85,20 @@ public class GraphSchema {
 			return false;
 		if (obj instanceof GraphSchema) 
 			return this.unique == ((GraphSchema) obj).unique
-					&& Objects.equals(this.label, ((GraphSchema) obj).label)
-					&& Objects.equals(this.index, ((GraphSchema) obj).index);
+					&& Objects.equals(this.index, ((GraphSchema) obj).index)
+					&& Objects.equals(this.key, ((GraphSchema) obj).key);
 		
 		return false;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(this.unique, this.label, this.index);
+		return Objects.hash(this.unique, this.index, this.key);
 	}
 
 	@Override
 	public String toString() {
-		return "GraphSchema [label=" + label + ", index=" + index + ", unique="
+		return "GraphSchema [index=" + index + ", key=" + key + ", unique="
 				+ unique + "]";
 	}
 }

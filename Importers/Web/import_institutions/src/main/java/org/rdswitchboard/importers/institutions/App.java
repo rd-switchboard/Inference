@@ -69,10 +69,7 @@ public class App {
 	            throw new IllegalArgumentException("Invalid path to Institutions CSV file");
 	        
 	        List<GraphSchema> schemas = new ArrayList<GraphSchema>();
-	        schemas.add( new GraphSchema()
-	        		.withLabel(GraphUtils.SOURCE_WEB)
-	        		.withIndex(GraphUtils.PROPERTY_KEY)
-	        		.withUnique(true));
+	        schemas.add( new GraphSchema(GraphUtils.SOURCE_WEB, GraphUtils.PROPERTY_KEY, true));
 	        
 			Neo4jDatabase importer = new Neo4jDatabase(neo4jFolder);
 			//importer.setVerbose(true);

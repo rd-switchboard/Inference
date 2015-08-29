@@ -70,14 +70,8 @@ public class App {
 	            throw new IllegalArgumentException("Invalid path to the Roles CSV file");
 	        
 	        List<GraphSchema> schema = new ArrayList<GraphSchema>();
-	        schema.add( new GraphSchema()
-	        		.withLabel(GraphUtils.SOURCE_NHMRC)
-	        		.withIndex(GraphUtils.PROPERTY_KEY)
-	        		.withUnique(true));
-	        schema.add( new GraphSchema()
-	        		.withLabel(GraphUtils.SOURCE_NHMRC)
-	        		.withIndex(GraphUtils.PROPERTY_NHMRC_ID)
-	        		.withUnique(false));
+	        schema.add( new GraphSchema(GraphUtils.SOURCE_NHMRC, true));
+	        schema.add( new GraphSchema(GraphUtils.SOURCE_NHMRC, GraphUtils.PROPERTY_NHMRC_ID, false));
 	        
 	        Neo4jDatabase importer = new Neo4jDatabase(neo4jFolder);
 			//importer.setVerbose(true);

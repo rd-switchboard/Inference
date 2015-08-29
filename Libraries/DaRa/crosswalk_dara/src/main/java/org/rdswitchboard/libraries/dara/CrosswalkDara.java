@@ -237,8 +237,7 @@ public class CrosswalkDara implements GraphCrosswalk {
 						} 
 					}
 				} 
-			} else 
-				throw new Exception("No Records has been detected in the OAI:PMH document");
+			} 
 		} else
 			throw new Exception("This is not OAI:PMH Document");
 		

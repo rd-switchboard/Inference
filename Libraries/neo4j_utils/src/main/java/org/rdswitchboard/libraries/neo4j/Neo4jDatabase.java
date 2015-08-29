@@ -738,20 +738,20 @@ public class Neo4jDatabase implements GraphImporter {
 	public void _importSchema(GraphSchema schema) {
 		// make sure we had imported each schema only once
 		if (!importedSchemas.contains(schema)) {
-			String label = schema.getLabel();
-			String index = schema.getIndex();
+			String index = schema._getIndex();
+			String key = schema.getKey();
 			
 			if (schema.isUnique()) {
 				if (verbose) {
-					System.out.println("Creating Constraint {label=" + label + ", index=" + index + "}");
+					System.out.println("Creating Constraint {index=" + index + ", key=" + key + "}");
 				}
-				_createConstrant(label, index);
+				_createConstrant(index, key);
 			} else {
 				if (verbose) {
-					System.out.println("Creating Index {label=" + label + ", index=" + index + "}");
+					System.out.println("Creating Index {index=" + index + ", key=" + key + "}");
 				}
 	
-				_createIndex(label, index);
+				_createIndex(index, key);
 			}
 			
 			importedSchemas.add(schema);

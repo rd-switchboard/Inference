@@ -48,10 +48,7 @@ public class App {
 	        
 	        Neo4jDatabase importer = new Neo4jDatabase(neo4jFolder);
 			importer.setVerbose(true);
-			importer.importSchema( new GraphSchema()
-    			.withLabel(GraphUtils.SOURCE_WEB)
-    			.withIndex(GraphUtils.PROPERTY_KEY)
-    			.withUnique(true) );
+			importer.importSchema( new GraphSchema(GraphUtils.SOURCE_WEB, GraphUtils.PROPERTY_KEY, true) );
 			
 			Graph graph = importPatternsCsv(patterns);
 			if (null == graph)
