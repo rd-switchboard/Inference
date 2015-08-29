@@ -29,7 +29,7 @@ Project modules and data are separated into different folders to make navigation
 * Importers/Cern: CERN Metadata Import Module
 * Importers/CrossRef: CrossRef Metadata Import Module
 * Importers/DaRa: Da-Ra Metadata Import Module
-* Importers/Dryad: Dryad Metadata Import Module
+* Importers/Dryad: [Dryad Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/Dryad/import_dryad)
 * Importers/Figshare: Figshare Metadata Import Module
 * Importers/NHMRC: NHMRC Metadata Import Module
 * Importers/ORCID: ORCID Metadata Import Module
@@ -47,8 +47,8 @@ Project modules and data are separated into different folders to make navigation
 * Libraries/ORCID: ORCID API Library
 * Libraries/RIF_CS: RIF:CS Metadata Crosswalk (used by ANDS)
 * Libraries/Scopus: Scopus API Library
-* Libraries/graph_utils: Graph Representation Library used in RD-Switchboard project
-* Libraries/neo4j_utils: Neo4j Database Helper Library used in RD-Switchboard project
+* Libraries/graph_utils: [Graph Representation Library used in RD-Switchboard project](https://github.com/rd-switchboard/Inference/tree/master/Libraries/graph_utils)
+* Libraries/neo4j_utils: [Neo4j Database Helper Library used in RD-Switchboard project](https://github.com/rd-switchboard/Inference/tree/master/Libraries/neo4j_utils)
 * Linkers: Modules used to link nodes from different data sources
 * Linkers/Google: Will link different data sources with Web:Researcher nodes, found by Google CSE
 * Linkers/Static: Will link different data sources by existsing metadata (ODCID ID, Scopus ID, DOI etc)

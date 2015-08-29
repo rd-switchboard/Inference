@@ -144,6 +144,12 @@ Examples:
 GrahRelationship rel = new GrahRelationship()
 	.withType(GraphUtils.RELATIONSHIP_RELATED_TO)
 	.withStart(node.getKey)
-	.withEnd(GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_DOI, referencedDoi);
+	.withEnd(GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_DOI, GraphUtils.extractDoi(referencedDoi));
 ```
 
+
+#### Graph Utils
+
+GraphUtils is a static class, what defines all contants for a Graph. It defines all possible Graph source and type strings, 
+properties and relationships names, etc. It also defines some static functions for extracting or generating standartised
+URL's, DOI, ORCID ID and Scopus ID.
