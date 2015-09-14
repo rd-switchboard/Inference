@@ -98,7 +98,7 @@ public class Linker {
 	public void link(String googleCache) throws Exception {
 		Map<String, Set<Long>> nodes;
 		
-		/*nodes = new HashMap<String, Set<Long>>();
+		nodes = new HashMap<String, Set<Long>>();
 		
 		if (verbose)
 			System.out.println("Processing ANDS:Grant");
@@ -113,8 +113,8 @@ public class Linker {
 			linkCached(nodes, googleCache, CACHE_GRANT);
 			
 			tx.success();
-		}*/
-				
+		}
+			
 		
 		/*if (verbose)
 			System.out.println("Processing Dryad:Publication");
@@ -132,7 +132,7 @@ public class Linker {
 			tx.success();
 		}*/
 		
-	/*	
+		
 		if (verbose)
 			System.out.println("Processing Simple Search");
 		
@@ -155,25 +155,25 @@ public class Linker {
 		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.PROPERTY_TITLE, null );* /
+				GraphUtils.PROPERTY_TITLE, null );*/
 		loadNodes( nodes, GraphUtils.SOURCE_ORCID, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
 		
 		linkSimpleSearch(nodes, googleCache);
-		*/
+		
 		
 		if (verbose)
 			System.out.println("Processing Fuzzu Search");
 		
 		nodes = new HashMap<String, Set<Long>>();
 		
-	/*	loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_GRANT, 
+		loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_GRANT, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );*/
-		/*loadNodes( nodes, GraphUtils.SOURCE_DRYAD, GraphUtils.TYPE_DATASET, 
+		loadNodes( nodes, GraphUtils.SOURCE_DRYAD, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
-/*		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
+		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_CERN, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
@@ -184,7 +184,7 @@ public class Linker {
 		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.PROPERTY_TITLE, null );*/
+				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
 		
