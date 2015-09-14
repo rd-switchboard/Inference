@@ -43,7 +43,7 @@ public class GraphUtils {
 	public static final String PROPERTY_HOST = "host";
 	public static final String PROPERTY_PATTERN = "pattern";
 	public static final String PROPERTY_ORIGINAL_SOURCE = "original_source";
-	public static final String PROPERTY_CONTRIBUTORS = "contributors";
+	//public static final String PROPERTY_CONTRIBUTORS = "contributors";
 	public static final String PROPERTY_SCOPUS_ID = "scopus_id";
 	public static final String PROPERTY_SCOPUS_EID = "scopus_eid";
 	public static final String PROPERTY_ORCID_ID = "orcid";
@@ -75,7 +75,7 @@ public class GraphUtils {
 	public static final String SOURCE_CROSSREF = "crossref";
 	public static final String SOURCE_FIGSHARE = "figshare";
 	public static final String SOURCE_CERN = "cern";
-	public static final String SOURCE_OPEN_AIRE = "openaire";
+	public static final String SOURCE_DLI = "dli";
 	public static final String SOURCE_DARA = "dara";
 	
 	// meta-data types

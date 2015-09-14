@@ -1,8 +1,13 @@
 package org.rdswitchboard.libraries.dara;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.io.StringWriter;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -10,6 +15,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.openarchives.oai._2.Creator;
 import org.openarchives.oai._2.Creators;
@@ -31,6 +37,7 @@ import org.rdswitchboard.libraries.graph.GraphNode;
 import org.rdswitchboard.libraries.graph.GraphSchema;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.graph.interfaces.GraphCrosswalk;
+import org.xml.sax.SAXParseException;
 
 
 public class CrosswalkDara implements GraphCrosswalk {
@@ -38,6 +45,13 @@ public class CrosswalkDara implements GraphCrosswalk {
 	private static final String NODE_RESOURCE = "resource";
 	private static final String LANG_EN = "en";
 	private static final String TYPE_DOI = "doi";
+	
+	//private static final String REG_SET_SPEC = "<setSpec>.+</setSpec>";
+	//private static final String REG_APM = "^\\&#?\\w+;";
+	private static final String REG_AMP = "\\&(#?\\w+;)?";
+	
+	//private static final Pattern PATTERN_SET_SEPC = Pattern.compile(REG_SET_SPEC);
+	private static final Pattern PATTERN_AMP = Pattern.compile(REG_AMP);
 	
 	private Unmarshaller unmarshaller;
 	
@@ -159,6 +173,20 @@ public class CrosswalkDara implements GraphCrosswalk {
 	public void setSource(String source) {
 		this.source = source;
 	}
+	
+	private String fixAmps(String str) {
+		Matcher m = PATTERN_AMP.matcher(str);
+		StringBuffer sb = new StringBuffer(str.length());
+		while (m.find()) {
+			String amp = m.group();
+			if (amp.equals("&")) 
+				amp = "&amp;";
+
+			m.appendReplacement(sb, amp);
+		}
+		m.appendTail(sb);
+		return sb.toString();
+	}
 
 	/**
 	 * Process XML Document
@@ -175,8 +203,36 @@ public class CrosswalkDara implements GraphCrosswalk {
 		
 		++processedFiles;
 		
+		String xmlString = IOUtils.toString(xml, StandardCharsets.UTF_8); 
+		
+		/*
+		if (null != _xml) {
+			Matcher matcher = patternAmp.matcher(_xml);
+			while (matcher.find()) {
+				System.out.println(String.format("Found incorrect Ampersand: \"%s\" starting at index %d and ending at index %d.%n",
+	                    matcher.group(),
+	                    matcher.start(),
+	                    matcher.end()));
+				
+				int start = matcher.start();
+				if (_xml.charAt(start) == '&')
+					_xml.replaceAll(regex, replacement)
+				String amp = _xml.substring(start, start + 1);
+			}
+		}*/
+		
+	//	StringWriter writer = new StringWriter(); 
+	//	IOUtils.copy(xml, writer, );
+		//String theString = writer.toString();
+		
 		// unmarshall XML file
-		JAXBElement<?> element = (JAXBElement<?>) unmarshaller.unmarshal( xml );
+		JAXBElement<?> element;
+		try {
+			element = (JAXBElement<?>) unmarshaller.unmarshal( new ByteArrayInputStream(xmlString.getBytes()));
+		} catch (JAXBException e) {
+			xmlString = fixAmps(xmlString);
+			element = (JAXBElement<?>) unmarshaller.unmarshal( new ByteArrayInputStream(xmlString.getBytes()));
+		}
 
 		// create graph object
 		Graph graph = new Graph();

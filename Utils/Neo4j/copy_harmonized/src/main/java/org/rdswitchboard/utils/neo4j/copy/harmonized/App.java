@@ -85,8 +85,12 @@ public class App {
 	        SOURCES.add(GraphUtils.SOURCE_ARC);
 	        SOURCES.add(GraphUtils.SOURCE_NHMRC);
 	        SOURCES.add(GraphUtils.SOURCE_ANDS);
-	        	        
-	        TYPES.add(GraphUtils.TYPE_INSTITUTION);
+	        SOURCES.add(GraphUtils.SOURCE_DARA);
+	        SOURCES.add(GraphUtils.SOURCE_CERN);
+	        SOURCES.add(GraphUtils.SOURCE_DLI);
+	        	
+	        // do not export institutions
+	        //TYPES.add(GraphUtils.TYPE_INSTITUTION);
 	        TYPES.add(GraphUtils.TYPE_PUBLICATION);
 	        TYPES.add(GraphUtils.TYPE_RESEARCHER);
 	        TYPES.add(GraphUtils.TYPE_DATASET);
@@ -294,10 +298,16 @@ public class App {
 		// if we have found an url, check could it become this node key or it is equals to an existing key
 		if (null != url)
 		{
-			if (null == key)
+			if (null == key) {
+				// The node does not have key, this must be first export of the node. 
+				// check if this is an orphant node
+				if (isOrphantNode(srcNode))
+					return false;
+				
+				// assing the url as a key
 				key = url;
-			else if (!key.equals(url)) {
-			//	System.out.println("Node URL (" + url + ") does not equals to key (" + key + ")");
+			} else if (!key.equals(url)) {
+				// This node already have the key, check what key is same as this URL
 				return false;
 			}
 		}
@@ -343,6 +353,7 @@ public class App {
 		// add node source
 		addProperty(dstNode, GraphUtils.PROPERTY_SOURCE, source);
 		// add node orginal key
+//		String originalKey = source + ":" + (String) srcNode.getProperty(GraphUtils.PROPERTY_KEY);
 		addProperty(dstNode, GraphUtils.PROPERTY_ORIGINAL_KEY, srcNode.getProperty(GraphUtils.PROPERTY_KEY));
 		
 		// copy all non existing properties, except key, url, source and type
@@ -372,6 +383,15 @@ public class App {
 		
 		return true;
 	}
+		
+	private static boolean isOrphantNode(Node node) {
+		Iterable<Relationship> rels = node.getRelationships();
+		for (Relationship rel : rels) 
+			if (!rel.getType().name().equals(GraphUtils.RELATIONSHIP_KNOWN_AS))
+				return false;
+		
+		return true;
+	}
 	
 	private static int exportRelationships(Node srcNode) throws Exception {
 		int counter = 0;
@@ -380,7 +400,8 @@ public class App {
 			Iterable<Relationship> rels = srcNode.getRelationships(Direction.OUTGOING);
 			for (Relationship rel : rels) {
 				RelationshipType type = rel.getType();
-				if (!type.equals(relKnownAs) && !type.equals(relRelatedTo))
+				String name = type.name();
+				if (!name.equals(GraphUtils.RELATIONSHIP_KNOWN_AS))
 					type = relRelatedTo;
 				
 				Long endId = mapKeys.get(rel.getEndNode().getId());

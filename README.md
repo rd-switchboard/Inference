@@ -33,7 +33,7 @@ Project modules and data are separated into different folders to make navigation
 * Importers/NHMRC: [NHMRC Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/NHMRC/import_nhmrc)
 * Importers/ORCID: [ORCID Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/ORCID/import_orcid)
 * Importers/OpenAIRE: [OpenAIRE Metadata Import Module](https://github.com/rd-switchboard/Inference/tree/master/Importers/OpenAIRE/import_openaire)
-* Importers/Web: Static Metadata Import Module ([Institutions](https://github.com/rd-switchboard/Inference/tree/master/Importers/Web/import_institutions), [Patterns](https://github.com/rd-switchboard/Inference/tree/master/Importers/Web/import_patterns) and -Services-)
+* Importers/Web: Static Metadata Import Module ([Institutions](https://github.com/rd-switchboard/Inference/tree/master/Importers/Web/import_institutions), [Patterns](https://github.com/rd-switchboard/Inference/tree/master/Importers/Web/import_patterns) and --Services--)
 * Libraries: All Libraries, used by other Modules
 * Libraries/CrossRef: CrossRef API Libarary
 * Libraries/DDI: DDI Metadata Crosswalk (not used at this moment because of insufficient metadata)

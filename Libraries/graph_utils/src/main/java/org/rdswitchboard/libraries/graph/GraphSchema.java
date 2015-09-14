@@ -27,27 +27,27 @@ public class GraphSchema {
 	}
 	
 	public GraphSchema(String index, boolean unique) {
-		_setIndex(index);
+		setIndex(index);
 		this.key = GraphUtils.PROPERTY_KEY;
 		setUnique(unique);
 	}
 	
 	public GraphSchema(String index, String key, boolean unique) {
-		_setIndex(index);
+		setIndex(index);
 		setKey(key);
 		setUnique(unique);
 	}
 	
-	public String _getIndex() {
+	public String getIndex() {
 		return index;
 	}
 	
-	public void _setIndex(String index) {
+	public void setIndex(String index) {
 		this.index = index;
 	}
 
-	public GraphSchema _withIndex(String index) {
-		_setIndex(index);
+	public GraphSchema withIndex(String index) {
+		setIndex(index);
 		return this;
 	}
 	

@@ -57,6 +57,9 @@
   	<module>Utils/Neo4j/copy_harmonized</module>
 	<module>Utils/Neo4j/delete_nodes</module>
 	<module>Utils/Neo4j/export_graph_json</module>
+	<module>Utils/Neo4j/export_keys</module>
+        <module>Utils/Neo4j/test_connections</module>
+	<module>Utils/Neo4j/replace_source</module>
 	<module>Build/distribution</module>
   </modules>
 

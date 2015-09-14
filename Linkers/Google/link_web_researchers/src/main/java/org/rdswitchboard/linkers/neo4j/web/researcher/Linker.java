@@ -113,8 +113,8 @@ public class Linker {
 			linkCached(nodes, googleCache, CACHE_GRANT);
 			
 			tx.success();
-		}
-		*/		
+		}*/
+				
 		
 		/*if (verbose)
 			System.out.println("Processing Dryad:Publication");
@@ -130,28 +130,65 @@ public class Linker {
 			linkCached(nodes, googleCache, CACHE_PUBLICATION);
 			
 			tx.success();
-		}
-		*/
+		}*/
 		
+	/*	
 		if (verbose)
 			System.out.println("Processing Simple Search");
 		
 		nodes = new HashMap<String, Set<Long>>();
 		
+	/*	loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_GRANT, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_DATASET, 
+				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_DRYAD, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_CERN, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
-		/*loadNodes( nodes, GraphUtils.SOURCE_ORCID, GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.PROPERTY_TITLE, null );*/
+		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_DATASET, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_DATASET, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );* /
+		loadNodes( nodes, GraphUtils.SOURCE_ORCID, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );
 		
-		try ( Transaction tx = graphDb.beginTx() ) {
-			linkFuzzySearch(nodes, googleCache);
-			
-			tx.success();
-		}
+		linkSimpleSearch(nodes, googleCache);
+		*/
+		
+		if (verbose)
+			System.out.println("Processing Fuzzu Search");
+		
+		nodes = new HashMap<String, Set<Long>>();
+		
+	/*	loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_GRANT, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_DATASET, 
+				GraphUtils.PROPERTY_TITLE, null );*/
+		/*loadNodes( nodes, GraphUtils.SOURCE_DRYAD, GraphUtils.TYPE_DATASET, 
+				GraphUtils.PROPERTY_TITLE, null );
+/*		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_CERN, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_DATASET, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_DATASET, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );*/
+		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );
+		
+		linkFuzzySearch(nodes, googleCache);
 		
 		// add publication linking here
 	}
@@ -215,7 +252,7 @@ public class Linker {
 			System.out.println("Processing cached pages: " + folderName);
 		
 		File linksFolder = GoogleUtils.getLinkFolder(googleCache);
-		File cacheFolder = GoogleUtils.getCacheFolder(googleCache, folderName);
+		File cacheFolder = GoogleUtils.getResultFolder(googleCache);
 		File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
 		File[] files = cacheFolder.listFiles();
 		for (File file : files) 
@@ -273,54 +310,74 @@ public class Linker {
 			thread.start();
 			threads.add(thread);
 		}
-		
-		File linksFolder = GoogleUtils.getLinkFolder(googleCache);
-		File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
-		File[] files = linksFolder.listFiles();
-		for (File file : files) 
-			if (!file.isDirectory())
-				try {
-					/*if (verbose)
-						System.out.println("Processing file: " + file.toString());*/
-					
-					Link link = (Link) jaxbUnmarshaller.unmarshal(file);
-					if (link != null && isLinkFollowAPattern(link.getLink())) {
-						if (verbose)
-							System.out.println("Testing link: " + link.getLink());
-							
-						MatcherSimple matcher = new MatcherSimple(googleCache, link, nodes);
 
-						semaphore.acquire(); 
+		int counter = 0;
+		
+		Transaction tx = graphDb.beginTx();
+		try {
+			File linksFolder = GoogleUtils.getLinkFolder(googleCache);
+			File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
+			File[] files = linksFolder.listFiles();
+			for (File file : files) 
+				if (!file.isDirectory())
+					try {
+						/*if (verbose)
+							System.out.println("Processing file: " + file.toString());*/
 						
-						boolean matcherAssigned = false;
-						for (MatcherThread thread : threads) 
-							if (thread.isFree()) {
-								processResult(thread.getResult(), metadataFolder); 
-								thread.addMatcher(matcher);
-								matcherAssigned = true;
+						Link link = (Link) jaxbUnmarshaller.unmarshal(file);
+						if (link != null && isLinkFollowAPattern(link.getLink())) {
+							if (verbose)
+								System.out.println("Testing link: " + link.getLink());
 								
-								break;
-							}
+							MatcherSimple matcher = new MatcherSimple(googleCache, link, nodes);
+	
+							semaphore.acquire(); 
+							
+							boolean matcherAssigned = false;
+							for (MatcherThread thread : threads) 
+								if (thread.isFree()) {
+									
+									counter += processResult(thread.getResult(), metadataFolder);
+									if (counter >= 1000) {
+										tx.success();
+										tx.close();
+										
+										tx = graphDb.beginTx();
+										
+										counter = 0;
+									}
+									
+									thread.addMatcher(matcher);
+									matcherAssigned = true;
+									
+									break;
+								}
+							
+							if (!matcherAssigned)
+								throw new MatcherThreadException("All matcher threads are busy");
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
 						
-						if (!matcherAssigned)
-							throw new MatcherThreadException("All matcher threads are busy");
+						break;
 					}
-				} catch (Exception e) {
-					e.printStackTrace();
-					
-					break;
-				}
-		for (MatcherThread thread : threads) {
-			processResult(thread.getResult(), metadataFolder);
+			for (MatcherThread thread : threads) {
+				thread.finishCurrentAndExit();
+				
+				processResult(thread.getResult(), metadataFolder);
+				
+				thread.join();
+			}
 			
-			thread.finishCurrentAndExit();
-			thread.join();
-		}	
+			tx.success();
+		} finally {
+			tx.close();
+		}
 	}
 	
 	private void linkFuzzySearch(Map<String, Set<Long>> nodes, String googleCache) throws Exception {
 		if (verbose)
-			System.out.println("Processing Simple Search");
+			System.out.println("Processing Fuzzy Search");
 		
 		Semaphore semaphore = new Semaphore(maxThreads);
 		
@@ -331,65 +388,88 @@ public class Linker {
 			threads.add(thread);
 		}
 		
-		File linksFolder = GoogleUtils.getLinkFolder(googleCache);
-		File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
-		File[] files = linksFolder.listFiles();
-		for (File file : files) 
-			if (!file.isDirectory())
-				try {
-					/*if (verbose)
-						System.out.println("Processing file: " + file.toString());*/
-					
-					Link link = (Link) jaxbUnmarshaller.unmarshal(file);
-					if (link != null && isLinkFollowAPattern(link.getLink())) {
-						if (verbose)
-							System.out.println("Testing link: " + link.getLink());
-							
-						Matcher matcher = new MatcherFuzzy(googleCache, link, nodes);
-
-						semaphore.acquire(); 
+		int counter = 0;
+		
+		Transaction tx = graphDb.beginTx();
+		try {
+			File linksFolder = GoogleUtils.getLinkFolder(googleCache);
+			File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
+			File[] files = linksFolder.listFiles();
+			for (File file : files) 
+				if (!file.isDirectory())
+					try {
+						/*if (verbose)
+							System.out.println("Processing file: " + file.toString());*/
 						
-						boolean matcherAssigned = false;
-						for (MatcherThread thread : threads) 
-							if (thread.isFree()) {
-								processResult(thread.getResult(), metadataFolder); 
-								thread.addMatcher(matcher);
-								matcherAssigned = true;
+						Link link = (Link) jaxbUnmarshaller.unmarshal(file);
+						if (link != null && isLinkFollowAPattern(link.getLink())) {
+							if (verbose)
+								System.out.println("Testing link: " + link.getLink());
 								
-								break;
-							}
+							Matcher matcher = new MatcherFuzzy(googleCache, link, nodes);
+	
+							semaphore.acquire(); 
+							
+							boolean matcherAssigned = false;
+							for (MatcherThread thread : threads) 
+								if (thread.isFree()) {
+									counter += processResult(thread.getResult(), metadataFolder); 
+									if (counter >= 1000) {
+										tx.success();
+										tx.close();
+										
+										tx = graphDb.beginTx();
+										
+										counter = 0;
+									}									
+									
+									thread.addMatcher(matcher);
+									matcherAssigned = true;
+									
+									break;
+								}
+							
+							if (!matcherAssigned)
+								throw new MatcherThreadException("All matcher threads are busy");
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
 						
-						if (!matcherAssigned)
-							throw new MatcherThreadException("All matcher threads are busy");
+						break;
 					}
-				} catch (Exception e) {
-					e.printStackTrace();
-					
-					break;
-				}
-		for (MatcherThread thread : threads) {
-			processResult(thread.getResult(), metadataFolder);
+			for (MatcherThread thread : threads) {
+				processResult(thread.getResult(), metadataFolder);
+				
+				thread.finishCurrentAndExit();
+				thread.join();
+			}	
 			
-			thread.finishCurrentAndExit();
-			thread.join();
-		}	
+			tx.success();
+		} finally {
+			tx.close();
+		}
 	}
 	
-	private void processResult(MatcherResult result, File metadataFolder) {
+	private int processResult(MatcherResult result, File metadataFolder) {
+		int counter = 0;
 		if (null != result) {
 			if (verbose)
 				System.out.println("Found " + result.getNodes().size() + " macthing texts in: " + result.getLink().getLink());
 
 			try {
 				Node nodeResearcher = getOrCreateWebResearcher(result.getLink(), metadataFolder);
-				for (Long nodeId : result.getNodes()) 
+				for (Long nodeId : result.getNodes()) {
 					Neo4jUtils.createUniqueRelationship(graphDb.getNodeById(nodeId), 
-							nodeResearcher, relRelatedTo, Direction.OUTGOING, null);	
+							nodeResearcher, relRelatedTo, Direction.OUTGOING, null);
+					++counter;
+				}
 				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+		
+		return counter;
 	}
 	
 	private void putUnique(Map<String, Set<Long>> nodes, String key, Long id) {

@@ -64,7 +64,7 @@ public class App {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkDli crosswalk = new CrosswalkDli();
-        crosswalk.setSource(GraphUtils.SOURCE_OPEN_AIRE);
+        crosswalk.setSource(GraphUtils.SOURCE_DLI);
         //crosswalk.setVerbose(true);
         
     	Neo4jDatabase importer = new Neo4jDatabase(neo4jFolder);

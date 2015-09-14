@@ -30,6 +30,7 @@ import org.rdswitchboard.utils.orcid.RequestType;
 import org.rdswitchboard.utils.orcid.WorkContributors;
 import org.rdswitchboard.utils.orcid.WorkIdentifier;
 import org.rdswitchboard.utils.orcid.WorkIdentifiers;
+import org.rdswitchboard.utils.orcid.WorkTitle;
 
 /**
  * History
@@ -194,15 +195,30 @@ public class ImporterOrcid {
 		
 		importer.importSchemas(schemas);
 		
+		Graph graph = new Graph();
+		int chunks = 0;
+		
 		File[] files = new File(orcdiFolder).listFiles();
 		for (File file : files) 
 			if (!file.isDirectory())
 				try {
-					importRecord(file);
+					importRecord(file, graph);
+					
+					if (graph.getNodesCount() >= 1000) {
+						
+						System.out.println("Import chunk: " + (++chunks));
+						importer.importGraph(graph);
+					
+						graph = new Graph();
+					}
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 					break;
 				}
+		
+		System.out.println("Import final chunk");
+		importer.importGraph(graph);
 		
 		/*for (ContributorData contributorData : contributos) {
 			RestNode nodeResearcher = findNodeByKey(indexOrcidResearcher, PROPERTY_KEY, contributorData.getResearcherKey());
@@ -222,23 +238,20 @@ public class ImporterOrcid {
 		}*/
 	} 
 		
-	private void importRecord(File file) throws Exception {
-		if (verbose)
-			System.out.println("Processing: " + file.getName());
-		
+	private void importRecord(File file, Graph graph) throws Exception {
+		/*if (verbose)
+			System.out.println("Processing: " + file.getName());*/
+				 
 		OrcidMessage message = orcid.parseJson(file);
 		if (null != message) { // must have a message
 			OrcidProfile profile = message.getProfile();
-			if (null != profile)  { // must have a profile
-				Graph graph = processResearcher(profile);
-				importer.importGraph(graph);
-			}
+			if (null != profile)  // must have a profile
+				processResearcher(profile, graph);
 		} else
 			throw new Exception("Unable to parse JSON file");
 	}
 	
-	private Graph processResearcher(OrcidProfile profile) throws Exception {
-		Graph graph = new Graph();
+	private void processResearcher(OrcidProfile profile, Graph graph) throws Exception {
 		
 		OrcidIdentifier identifier = profile.getIdentifier();
 		if (null != identifier && StringUtils.isNotEmpty(identifier.getUri())) { // must have an identifier
@@ -334,8 +347,6 @@ public class ImporterOrcid {
 				}
 			}
 		}	
-		
-		return graph;
 	}
 	
 	/*private void processIdentifier(Graph grahp, String key, ExternalIdentifier externalIdentifier) {
@@ -398,7 +409,7 @@ public class ImporterOrcid {
 				.withSource(GraphUtils.SOURCE_ORCID)
 				.withType(GraphUtils.TYPE_PUBLICATION)
 				.withProperty(GraphUtils.PROPERTY_LOCAL_ID, putCode)
-				.withProperty(GraphUtils.PROPERTY_TITLE, work.getJournalTitle())
+			//	.withProperty(GraphUtils.PROPERTY_TITLE, work.getTitle().getTitle())
 				.withProperty(GraphUtils.PROPERTY_PUBLISHED_DATE, work.getPublicationDateString());
 				
 			graph.addNode(node);
@@ -407,6 +418,11 @@ public class ImporterOrcid {
 				.withRelationship(GraphUtils.RELATIONSHIP_AUTHOR)
 				.withStart(GraphUtils.SOURCE_ORCID, researcherKey)
 				.withEnd(GraphUtils.SOURCE_ORCID, key));
+			
+			
+			WorkTitle title = work.getTitle();
+			if (null != title)
+				node.addProperty(GraphUtils.PROPERTY_TITLE, title.getTitle());
 			
 			String url = work.getUrl();
 			if (null != url) {
@@ -464,7 +480,7 @@ public class ImporterOrcid {
 				for (Contributor contributor : contributors.getContributor()) {
 					String name = contributor.getCreditName();
 				
-					node.addProperty(GraphUtils.PROPERTY_CONTRIBUTORS, name);
+					node.addProperty(GraphUtils.PROPERTY_AUTHORS, name);
 
 					OrcidIdentifier contributorId = contributor.getOrcidId();
 					if (null != contributorId) {

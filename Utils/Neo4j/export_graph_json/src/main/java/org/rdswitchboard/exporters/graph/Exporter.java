@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.neo4j.graphdb.DynamicLabel;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
@@ -72,7 +73,6 @@ public class Exporter {
 	private static final String CONTENT_TYPE = "application/json";
 	
 	private GraphDatabaseService graphDb;
-	private GlobalGraphOperations global;
 
 	private long nodeCounter = 0;
 	
@@ -84,9 +84,7 @@ public class Exporter {
 	private String s3Bucket;
 	private String s3Key;
 	private String neo4jFolder;
-	
-	private List<Label> labels;
-	
+		
 	//private AWSCredentials awsCredentials;
 	private AmazonS3 s3client;
 		
@@ -94,6 +92,8 @@ public class Exporter {
 	
 	private static final ObjectMapper mapper = new ObjectMapper();
 	private static final Charset charset = Charset.forName(CONTENT_ENCODING);
+	
+	//private Map<Label, String> labels;
 	
 	/**
 	 * Function to set Neo4j folder
@@ -160,11 +160,6 @@ public class Exporter {
 	 * Function to add exporting label
 	 * @param label
 	 */
-	public void addLabel(Label label) {
-		if (null == labels)
-			labels = new ArrayList<Label>();
-		labels.add(label);
-	}
 	
 	
 	
@@ -175,6 +170,10 @@ public class Exporter {
 	public void setTestNodeId(long testNodeId) {
 		this.testNodeId = testNodeId;
 	}
+	
+/*	public void setLabels(Map<Label, String> labels) {
+		this.labels = labels;
+	}*/
 
 	/**
 	 * Function to enable Public Read Rights
@@ -188,12 +187,10 @@ public class Exporter {
 	 * Function to begin exporting process
 	 */
 	
-	public void process() {
+	public void process(Label type, Map<Label, Label[]> sources) {
 		
 	//	System.out.println("Target folder: " + outputFolder);
 		System.out.println("Neo4j folder: " + neo4jFolder);
-		if (labels != null)
-			System.out.println("Neo4j Labels: " + StringUtils.join(labels, ", "));
 		System.out.println("S3 Bucket: " + s3Bucket);
 		System.out.println("S3 Key: " + s3Key);
 		System.out.println("Export level: " + maxLevel);
@@ -204,7 +201,6 @@ public class Exporter {
 			System.out.println("Test Node ID: " + testNodeId);
 		
 		graphDb = Neo4jUtils.getReadOnlyGraphDb(neo4jFolder);
-		global = Neo4jUtils.getGlobalOperations(graphDb);
 		
 //		System.out.println("Region: " + s3client.setE);
 //		System.out.println("Location: " + s3client.getBucketLocation(s3Bucket));
@@ -213,31 +209,15 @@ public class Exporter {
 		s3client.setEndpoint("s3-us-west-2.amazonaws.com");
 		
 		long beginTime = System.currentTimeMillis();
-					
-		
+							
 		try ( Transaction tx = graphDb.beginTx() ) {
-			// query all RDA nodes
-			if (testNodeId != 0) {
-				processNode(graphDb.getNodeById( testNodeId ));
-			} else if (null != labels && labels.size() > 0) {
-				List<Label> labels = new ArrayList<Label>(this.labels);
-				Label label = labels.remove(0);
-				if (labels.size() == 0)
-					labels = null;
-				
-				ResourceIterator<Node> nodes = graphDb.findNodes(label);
+			try (ResourceIterator<Node> nodes = graphDb.findNodes(type)) {
 				while (nodes.hasNext()) {
 					Node node = nodes.next();
-					if (null == labels || hasLabels(node, labels)) 
+					if (isValid(node, sources)) 
 						processNode(node);
 				}
-				
-				nodes.close();
-			} else {
-				Iterable<Node> nodes = global.getAllNodes(); 
-				for (Node node : nodes) 
-					processNode(node);
-			}
+			} 
 		}
 		
 		long endTime = System.currentTimeMillis();
@@ -245,7 +225,28 @@ public class Exporter {
 		System.out.println(String.format("Done. Exported %d nodes over %d ms. Average %f ms per node", 
 				nodeCounter, endTime - beginTime, (float)(endTime - beginTime) / (float) nodeCounter));
 	} 
-	
+
+	private boolean isValid(Node node,  Map<Label, Label[]> sources) {
+		if (!node.hasProperty(GraphUtils.PROPERTY_ORIGINAL_KEY))
+			return false;
+		
+		for (Map.Entry<Label, Label[]> entry : sources.entrySet()) {
+			if (node.hasLabel(entry.getKey())) {
+				if (entry.getValue() == null)
+					return true;
+				
+				Iterable<Relationship> relationships = node.getRelationships();
+				for (Relationship relationship : relationships) {
+					Node other = relationship.getOtherNode(node);
+					for (Label label : entry.getValue())
+						if (other.hasLabel(label))
+							return true;
+				}
+			}
+		}
+		
+		return false;
+	}
 
 	/**
 	 * Function to check if node has all listed labels
@@ -253,13 +254,13 @@ public class Exporter {
 	 * @param labels Collection of labels 
 	 * @return true if node has all labels, false otherway
 	 */
-	private boolean hasLabels(Node node, Collection<Label> labels) {
+	/*private boolean hasLabels(Node node, Collection<Label> labels) {
 		for (Label label : labels)
 			if (!node.hasLabel(label))
 				return false;
 		
 		return true;
-	}
+	}*/
 	
 	/**
 	 * Function to process a single node

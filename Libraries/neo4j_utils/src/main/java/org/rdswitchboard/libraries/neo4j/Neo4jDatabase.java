@@ -110,6 +110,22 @@ public class Neo4jDatabase implements GraphImporter {
 				nodesCreated, nodesUpdated, relationshipsCreated, relationshipsUpdated, unknownRelationships.size()) );
 	}
 	
+	public long getSourcesConnectionsCount(String source1, String source2) {
+		try ( Transaction ignored = graphDb.beginTx() ) 
+		{
+			String cypher = "MATCH (n1:" + source1 + ")-[x]-(n2:" + source2 + ") RETURN COUNT (DISTINCT x) AS n";
+			try (Result result = graphDb.execute(cypher)) {
+				if  ( result.hasNext() )
+			    {
+			        Map<String,Object> row = result.next();
+			        return (Long) row.get(COLUMN_N);
+			    }
+			}
+		}
+		
+		return 0;
+	}
+	
 	
 	public void enumrateAllNodes(ProcessNode processNode) throws Exception {
 		try ( Transaction tx = graphDb.beginTx() ) 
@@ -392,16 +408,55 @@ public class Neo4jDatabase implements GraphImporter {
 		}*/
 	}
 	
+	
+	
 	public ResourceIterator<Node> _findNodes(Label label, String key, Object value) {
 		return graphDb.findNodes(label, key, value);
 	}
-
+	
 	public ResourceIterator<Node> _findNodes(String label, String key, Object value) {
-		return graphDb.findNodes(DynamicLabel.label(label), key, value);
+		return _findNodes(DynamicLabel.label(label), key, value);
 	}
 
 	public ResourceIterator<Node> _findNodes(GraphKey key) {
-		return _findNodes(key.getIndex(), key.getKey(), key.getValue());
+		return _findNodes(DynamicLabel.label(key.getIndex()), key.getKey(), key.getValue());
+	}
+	
+	public Node _findSingleNode(Label label, String key, Object value) {
+		try (ResourceIterator<Node> nodes = _findNodes(label, key, value)) {
+			if (!nodes.hasNext())
+				return null;
+			
+			return nodes.next();
+		}		
+	}
+	
+	public Node _findSingleNode(String label, String key, Object value) {
+		return _findSingleNode(DynamicLabel.label(label), key, value); 		
+	}
+	
+	public Node _findSingleNode(GraphKey key) {
+		return _findSingleNode(key.getIndex(), key.getKey(), key.getValue()); 		
+	}	
+	
+	private List<Node> _findRelatedNodes(Label label, String key, Object value) {
+		try (ResourceIterator<Node> hits = _findNodes(label, key, value)) {
+			List<Node> nodes = new ArrayList<Node>();
+			
+			while (hits.hasNext()) {
+				nodes.add(hits.next());
+			}
+			
+			return nodes;
+		}
+	}
+	
+	private List<Node> _findRelatedNodes(String label, String key, Object value) {
+		return _findRelatedNodes(DynamicLabel.label(label), key, value);
+	}
+	
+	private List<Node> _findRelatedNodes(GraphKey key) {
+		return _findRelatedNodes(DynamicLabel.label(key.getIndex()), key.getKey(), key.getValue());
 	}
 	
 	public Relationship _findRelationship(Iterable<Relationship> rels, long nodeId, Direction direction) {
@@ -738,7 +793,7 @@ public class Neo4jDatabase implements GraphImporter {
 	public void _importSchema(GraphSchema schema) {
 		// make sure we had imported each schema only once
 		if (!importedSchemas.contains(schema)) {
-			String index = schema._getIndex();
+			String index = schema.getIndex();
 			String key = schema.getKey();
 			
 			if (schema.isUnique()) {
@@ -783,7 +838,7 @@ public class Neo4jDatabase implements GraphImporter {
 		}
 		
 		Index<Node> idx = _getNodeIndex(key.getIndex());
-		Node node = _findNode(idx, key.getKey(), key.getValue());
+		Node node = _findSingleNode(key.getIndex(), key.getKey(), key.getValue());
 		if (null == node) {
 			node = _createNode(graphNode.getLabels(), graphNode.getProperties());
 			node.setProperty(key.getKey(), key.getValue());
@@ -818,23 +873,13 @@ public class Neo4jDatabase implements GraphImporter {
 			for (GraphRelationship graphRelationship : relationships) 
 				_importRelationship(graphRelationship, true);
 	}
-	
-	private List<Node> _getRelatedNodes(GraphKey key) {
-		List<Node> nodes = new ArrayList<Node>();
-		ResourceIterator<Node> hits = _findNodes(key);
-		while (hits.hasNext()) {
-			nodes.add(hits.next());
-		}
 		
-		return nodes;
-	}
-	
 	private void _importRelationship(GraphRelationship graphRelationship, boolean storeUnknown) {
 		String relationshipName = graphRelationship.getRelationship();
 		GraphKey start = graphRelationship.getStart();
 		GraphKey end = graphRelationship.getEnd();
 		
-		List<Node> nodesStart = _getRelatedNodes(start);
+		List<Node> nodesStart = _findRelatedNodes(start);
 		if (nodesStart.isEmpty() && storeUnknown) { 
 			storeUnknownRelationship(getRelationshipKey(start), graphRelationship);
 			
@@ -842,7 +887,7 @@ public class Neo4jDatabase implements GraphImporter {
 				System.out.println("Relationship Start Key (" + start + ") does not exists");
 		}
 		
-		List<Node> nodesEnd = _getRelatedNodes(end);
+		List<Node> nodesEnd = _findRelatedNodes(end);
 		if (nodesEnd.isEmpty() && storeUnknown) {
 			storeUnknownRelationship(getRelationshipKey(end), graphRelationship);
 			

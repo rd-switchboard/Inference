@@ -214,6 +214,8 @@ public class App {
 								String granteeName = grantee.trim();
 								String granteeKey = "arc:researcher:" + projectId + ":" + granteeName;
 								
+								nodeGrant.addProperty(GraphUtils.PROPERTY_AUTHORS, granteeName);
+								
 								GraphNode nodeResearcher  =new GraphNode()
 									.withKey(GraphUtils.SOURCE_ARC, granteeKey)
 									.withSource(GraphUtils.SOURCE_ARC)

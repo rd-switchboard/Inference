@@ -185,6 +185,12 @@ public class App {
 						
 				String grantId = grantee[0];
 				String individualId = grantee[2];
+				String prefix = grantee[4].trim();
+				String firstName = grantee[5].trim();
+				String middleName = grantee[6].trim();
+				String lastName = grantee[7].trim();
+				String fullName = grantee[8].trim();
+				
 			//	System.out.println("Grant id: " + grantId + ", Individual ID: " + individualId);
 				
 				String purl = GraphUtils.generateNhmrcGrantPurl(grantId);
@@ -192,12 +198,6 @@ public class App {
 				
 				if (!researcher.contains(individualId)) {
 					researcher.add(individualId);
-					
-					String prefix = grantee[4].trim();
-					String firstName = grantee[5].trim();
-					String middleName = grantee[6].trim();
-					String lastName = grantee[7].trim();
-					String fullName = grantee[8].trim();
 									
 					GraphNode node = new GraphNode()
 						.withKey(GraphUtils.SOURCE_NHMRC, key)
@@ -218,6 +218,12 @@ public class App {
 					
 					graph.addNode(node);
 				}
+				
+				graph.addNode(new GraphNode()
+					.withKey(GraphUtils.SOURCE_NHMRC, purl)
+					.withSource(GraphUtils.SOURCE_NHMRC)
+					.withType(GraphUtils.TYPE_GRANT)
+					.withProperty(GraphUtils.PROPERTY_AUTHORS, fullName));
 				
 				graph.addRelationship(new GraphRelationship()
 					.withRelationship(GraphUtils.RELATIONSHIP_INVESTIGATOR)

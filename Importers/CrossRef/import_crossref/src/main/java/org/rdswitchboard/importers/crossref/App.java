@@ -88,8 +88,12 @@ public class App {
 	        }*/
 	        
 	        loadReferences(GraphUtils.SOURCE_DRYAD, GraphUtils.PROPERTY_REFERENCED_BY);
-	        processReferences();
-	     
+	        loadReferences(GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_REFERENCED_BY);
+	        processReferences(GraphUtils.RELATIONSHIP_RELATED_TO);
+
+	        loadReferences(GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);
+	        processReferences(GraphUtils.RELATIONSHIP_KNOWN_AS);
+	        
 		} catch (Exception e) {
             e.printStackTrace();
 		}       
@@ -132,7 +136,7 @@ public class App {
 		}
 	}
 	
-	private static void processReferences() {
+	private static void processReferences(String relationships) {
 		System.out.println("Processing references");
 		
 		Graph graph = new Graph();
@@ -141,7 +145,7 @@ public class App {
 			if (null != node) {
 				for (GraphKey key : entry.getValue()) {
 					graph.addRelationship(new GraphRelationship() 
-						.withRelationship(GraphUtils.RELATIONSHIP_KNOWN_AS)
+						.withRelationship(relationships)
 						.withStart(key)
 						.withEnd(node.getKey()));
 				}
@@ -155,5 +159,7 @@ public class App {
 		}
 		
 		neo4j.importGraph(graph);
+		
+		references.clear();
 	}
 }

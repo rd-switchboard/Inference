@@ -7,11 +7,12 @@
   	<relativePath>../../../pom.xml</relativePath>
   </parent>
   <groupId>org.rdswitchboard.utils</groupId>
-  <artifactId>delete_nodes</artifactId>
-  <name>Delete Orpahant Nodes</name>
+  <artifactId>replace_source</artifactId>
+  <name>Replace Node Source with another one</name>
+  <description>The tool will select all nodes witch specyfed node_source and will replace them with another one</description>
 
   <properties>
-    <main.class>org.rdswitchboard.utils.neo4j.delete.App</main.class>
+    <main.class>org.rdswitchboard.utils.neo4j.replace.App</main.class>
   </properties>
   
   <build>
@@ -57,5 +58,5 @@
       <version>${project.version}</version>
     </dependency>
   </dependencies>
-  
+
 </project>

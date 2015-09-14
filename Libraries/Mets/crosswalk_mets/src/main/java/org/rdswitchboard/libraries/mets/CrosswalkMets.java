@@ -383,6 +383,8 @@ public class CrosswalkMets implements GraphCrosswalk {
 	 * @param identifiers
 	 */
 	private void processIdentifiers(GraphNode node, List<Element> identifiers) {
+		String url = null;
+		
 		if (null != identifiers)
 			for (Element identifier : identifiers) {
 				String type = identifier.getAttribute(ATTRIBUTE_TYPE);
@@ -392,6 +394,7 @@ public class CrosswalkMets implements GraphCrosswalk {
 						String doi = GraphUtils.extractDoi(identifierString);
 						if (StringUtils.isNotEmpty(doi)) {
 							node.addIndex(source, GraphUtils.PROPERTY_DOI, doi);
+							url = GraphUtils.generateDoiUri(doi);
 							//node.addProperty(GraphUtils.PROPERTY_DOI, doi);
 						}
 					} else if (identifierString.contains(PART_PURL)) {
@@ -399,12 +402,14 @@ public class CrosswalkMets implements GraphCrosswalk {
 						if (StringUtils.isNotEmpty(purl))
 							node.addProperty(GraphUtils.PROPERTY_PURL, purl);		 
 					} else if (null != type && type.equals(IDENIFIER_URI)) {
-						String url = GraphUtils.extractFormalizedUrl(identifierString);
-						if (StringUtils.isNotEmpty(url))
-							node.addProperty(GraphUtils.PROPERTY_URL, url);
+						if (null == url)
+							url = GraphUtils.extractFormalizedUrl(identifierString);
 					}
 				}														
 			}
+
+		if (null != url)
+			node.addProperty(GraphUtils.PROPERTY_URL, url);
 	}
 	
 	/**
