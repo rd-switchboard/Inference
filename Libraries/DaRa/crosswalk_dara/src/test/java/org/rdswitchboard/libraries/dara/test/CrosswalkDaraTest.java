@@ -18,7 +18,7 @@ import org.rdswitchboard.libraries.graph.GraphUtils;
 
 public class CrosswalkDaraTest {
 	private static final String TEST_FILE = "/dara.xml";
-	private static final int RECORDS_COUNT = 45;
+	private static final int RECORDS_COUNT = 50;
 	private static final String RECORD_KEY = "oai:oai.da-ra.de:9498";
 	private static final String RECORD_TITLE = "Poverty in a State of Wealth, Social Disparities in the City-State of Singapore";
 	private static final String RECORD_DOI = "10.4232/10.ASEAS-1.2-6";
@@ -65,8 +65,6 @@ public class CrosswalkDaraTest {
 	
 	@Test
 	public void testCrosswalk() {
-		
-	
 		assertNotNull("Test file missing", 
 				getClass().getResource(TEST_FILE));
 		
@@ -105,6 +103,5 @@ public class CrosswalkDaraTest {
 		assertEquals("First record DOI do not equal to '" + RECORD_DOI + "'", 
 				RECORD_DOI,
 				node.getProperty(GraphUtils.PROPERTY_DOI));
-
 	}
 }

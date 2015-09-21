@@ -36,7 +36,7 @@ public class Linker {
 	
 	public void link() throws Exception {
 		// grants
-
+		
 		linkNodes(GraphUtils.TYPE_GRANT, 
 				GraphUtils.SOURCE_ARC, GraphUtils.PROPERTY_ARC_ID, 
 				GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_ARC_ID);
@@ -45,54 +45,34 @@ public class Linker {
 				GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_NHMRC_ID);
 
 		// publication
-		linkNodes(GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.SOURCE_DLI, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);
-
-
+		linkNodes(GraphUtils.TYPE_PUBLICATION, GraphUtils.PROPERTY_DOI, new String[] { 
+				GraphUtils.SOURCE_CROSSREF, // 10453
+				GraphUtils.SOURCE_DARA,     // 57056
+				GraphUtils.SOURCE_CERN,     // 174648
+				GraphUtils.SOURCE_DLI,      // 306022
+				GraphUtils.SOURCE_ORCID }); // 4618279
+		
 		// researcher
-		linkNodes(GraphUtils.TYPE_RESEARCHER, 
-				GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_ORCID_ID, 
-				GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_ORCID_ID);
-		linkNodes(GraphUtils.TYPE_RESEARCHER, 
-				GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_ORCID_ID, 
-				GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_ORCID_ID);
-				
+		linkNodes(GraphUtils.TYPE_RESEARCHER, GraphUtils.PROPERTY_ORCID_ID, new String[] { 
+				GraphUtils.SOURCE_CROSSREF, 
+				GraphUtils.SOURCE_ANDS,
+				GraphUtils.SOURCE_ORCID });
+					
 		// Link Datasets
-		linkNodes(GraphUtils.TYPE_DATASET, 
-				GraphUtils.SOURCE_DRYAD, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_DATASET, 
-				GraphUtils.SOURCE_DRYAD, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_DLI, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_DATASET, 
-				GraphUtils.SOURCE_DRYAD, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_DATASET, 
-				GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_DLI, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_DATASET, 
-				GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_DATASET, 
-				GraphUtils.SOURCE_DLI, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);
-		linkNodes(GraphUtils.TYPE_DATASET, 
-				GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.PROPERTY_DOI, 
-				GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI);
+		linkNodes(GraphUtils.TYPE_DATASET, GraphUtils.PROPERTY_DOI, new String[] { 
+				GraphUtils.SOURCE_DARA,   // 7842
+				GraphUtils.SOURCE_ANDS,   // 43701
+				GraphUtils.SOURCE_DRYAD,  // 57474
+				GraphUtils.SOURCE_DLI }); // 1199379
 	}
+	
+	private void linkNodes(String type, String property, String[] sources) {
+		for (int i = 0; i < sources.length -1; ++i) {
+			for (int j = i + 1; j < sources.length; ++j) {
+				linkNodes(type, sources[i], property, sources[j], property);
+			}
+		}
+ 	}
 	
 	private void linkNodes(String type, 
 			String srcLabel, String srcProperty, String dstLabel, String dstProperty) {

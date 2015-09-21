@@ -301,7 +301,7 @@ public class App {
 			if (null == key) {
 				// The node does not have key, this must be first export of the node. 
 				// check if this is an orphant node
-				if (isOrphantNode(srcNode))
+				if (isOrphantNode(srcNode, null))
 					return false;
 				
 				// assing the url as a key
@@ -384,11 +384,26 @@ public class App {
 		return true;
 	}
 		
-	private static boolean isOrphantNode(Node node) {
+	private static boolean isOrphantNode(Node node, Set<Long> knownAs) {
+		boolean added = false;
+		
 		Iterable<Relationship> rels = node.getRelationships();
-		for (Relationship rel : rels) 
+		for (Relationship rel : rels) {
 			if (!rel.getType().name().equals(GraphUtils.RELATIONSHIP_KNOWN_AS))
 				return false;
+			
+			if (!added) {
+				if (null == knownAs)
+					knownAs = new HashSet<Long>();
+				
+				knownAs.add(node.getId());
+				added = true;
+			}
+			
+			Node other = rel.getOtherNode(node);
+			if (!knownAs.contains(other.getId()) && !isOrphantNode(other, knownAs))
+				return false;
+		}
 		
 		return true;
 	}

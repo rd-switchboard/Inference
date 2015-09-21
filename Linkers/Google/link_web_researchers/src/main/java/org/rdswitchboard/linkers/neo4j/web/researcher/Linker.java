@@ -170,7 +170,7 @@ public class Linker {
 		loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_GRANT, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_DATASET, 
-				GraphUtils.PROPERTY_TITLE, null );*/
+				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_DRYAD, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
@@ -181,11 +181,9 @@ public class Linker {
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
-		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_DATASET, 
+		loadNodes( nodes, GraphUtils.SOURCE_DLI, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
-		loadNodes( nodes, GraphUtils.SOURCE_OPEN_AIRE, GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.PROPERTY_TITLE, null );
-		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
+		loadNodes( nodes, GraphUtils.SOURCE_DLI, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
 		
 		linkFuzzySearch(nodes, googleCache);

@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.rdswitchboard</groupId>
   	<artifactId>inference</artifactId>
-  	<version>1.2.0</version>
+  	<version>1.4.0</version>
   	<relativePath>../../../pom.xml</relativePath>
   </parent>
   <groupId>org.rdswitchboard.utils</groupId>
@@ -20,7 +20,6 @@
 	  <plugin>
   	    <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.5</version>
         <configuration>
 	      <archive>
 		    <manifest>
@@ -35,7 +34,6 @@
       <plugin>
 	    <groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-dependency-plugin</artifactId>
-		<version>2.9</version>
         <executions>
 		  <execution>
 	        <id>copy-dependencies</id>
@@ -61,12 +59,12 @@
     <dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
       <artifactId>graph_utils</artifactId>
-      <version>1.2.0</version>
+      <version>1.4.0</version>
   	</dependency>
   	<dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
       <artifactId>neo4j_utils</artifactId>
-      <version>1.2.0</version>
+      <version>1.4.0</version>
   	</dependency> 
   </dependencies>
   

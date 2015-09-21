@@ -114,8 +114,7 @@ public class App {
 	        sources.put(labelAnds, null);
 	        sources.put(labelDryad, new Label[] { labelCrossref });
 	        sources.put(labelCern, new Label[] { labelAnds, labelDryad, labelCrossref, labelOrcid, labelWeb, labelDli, labelDara});
-	        
-			
+	        			
 	       	Exporter expoter = new Exporter();
 	       	expoter.setNeo4jFolder(sourceNeo4jFolder);
 //	       	expoter.addLabel(DynamicLabel.label(GraphUtils.SOURCE_ANDS));

@@ -44,6 +44,7 @@ public class CrosswalkDara implements GraphCrosswalk {
 
 	private static final String NODE_RESOURCE = "resource";
 	private static final String LANG_EN = "en";
+	private static final String LANG_DE = "de";
 	private static final String TYPE_DOI = "doi";
 	
 	//private static final String REG_SET_SPEC = "<setSpec>.+</setSpec>";
@@ -195,7 +196,6 @@ public class CrosswalkDara implements GraphCrosswalk {
 	 * @return Graph object
 	 * @throws JAXBException 
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public Graph process(InputStream xml) throws Exception  {
 		if (0 == markTime)
@@ -336,16 +336,26 @@ public class CrosswalkDara implements GraphCrosswalk {
 			node.addProperty(GraphUtils.PROPERTY_DARA_ID, identifier.getIdentifier());
 
 		// Record myst have a title
+		String _language = null;
+		String _title = null;
+		
 		Titles titles = record.getTitles();
 		if (null != titles) {
 			for (Title title : titles.getTitle()) {
 				String language = title.getLanguage();
-				if (null == language || language.toLowerCase().equals(LANG_EN))
-					node.addProperty(GraphUtils.PROPERTY_TITLE, title.getTitleName());
+				if (null != language)
+					language = language.toLowerCase();
+				if (null == _title || null != language && language.equals(LANG_EN)) {
+					_language = language;
+					_title = title.getTitleName();					
+				}
 			}
 		}
 		
-		if (!node.hasProperty(GraphUtils.PROPERTY_TITLE)) 
+		if (null != _title) {
+			node.addProperty(GraphUtils.PROPERTY_TITLE, _title);
+			node.addProperty(GraphUtils.PROPERTY_TITLE_LANGUAGE, _language);
+		} else
 			return false;
 		
 		Creators creators = record.getCreators();

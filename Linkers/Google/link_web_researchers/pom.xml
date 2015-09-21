@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.rdswitchboard</groupId>
     <artifactId>inference</artifactId>
-    <version>1.2.0</version>
+    <version>1.4.0</version>
     <relativePath>../../../pom.xml</relativePath>
   </parent>
   <groupId>org.rdswitchboard.linkers</groupId>
@@ -66,22 +66,22 @@
   	<dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
       <artifactId>graph_utils</artifactId>
-      <version>1.2.0</version>
+      <version>1.4.0</version>
   	</dependency>
   	<dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
       <artifactId>neo4j_utils</artifactId>
-      <version>1.2.0</version>
+      <version>1.4.0</version>
   	</dependency>
   	<dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
       <artifactId>google_cache</artifactId>
-      <version>1.2.0</version>
+      <version>1.4.0</version>
   	</dependency>
   	<dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
       <artifactId>fuzzy_search</artifactId>
-      <version>1.2.0</version>
+      <version>1.4.0</version>
   	</dependency>
   </dependencies>
 </project>

@@ -60,6 +60,7 @@ public class GraphUtils {
 	public static final String PROPERTY_REFERENCED_BY = "referenced_by"; // temporary for Dryad
 	public static final String PROPERTY_ORIGINAL_KEY = "original_key";
 	public static final String PROPERTY_DARA_ID = "dara_id";
+	public static final String PROPERTY_TITLE_LANGUAGE = "title_language";
 	
 	// control properties
 	public static final String PROPERTY_DELETED = "deleted";
