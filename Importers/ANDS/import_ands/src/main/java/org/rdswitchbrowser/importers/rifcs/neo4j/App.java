@@ -137,8 +137,6 @@ public class App {
 	}
 	
 	private static void processFiles(String xmlFolder, String neo4jFolder, CrosswalkRifCs.XmlType type) throws Exception {
-        AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
-        
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
         crosswalk.setSource(GraphUtils.SOURCE_ANDS);
         crosswalk.setType(type);
