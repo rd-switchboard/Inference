@@ -17,7 +17,7 @@
     <aws-java-sdk.version>1.9.39</aws-java-sdk.version>
     <jackson.version>2.5.0</jackson.version>
     <jersey.version>1.9</jersey.version>
-    <neo4j.version>2.2.4</neo4j.version>
+    <neo4j.version>2.3.1</neo4j.version>
     <opencsv.version>2.3</opencsv.version>
     <mysql.version>5.1.35</mysql.version>
     <guava.version>18.0</guava.version>
