@@ -1,5 +1,6 @@
 package org.rdswitchbrowser.importers.rifcs.neo4j;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
@@ -34,20 +35,6 @@ public class App {
 	            properties.load(in);
 	        }
 	        
-	        String bucket = properties.getProperty("s3.bucket");
-	        
-	        if (StringUtils.isNullOrEmpty(bucket))
-                throw new IllegalArgumentException("AWS S3 Bucket can not be empty");
-
-	        System.out.println("S3 Bucket: " + bucket);
-	        
-	        String prefix = properties.getProperty("s3.prefix");
-	        	
-	        if (StringUtils.isNullOrEmpty(prefix))
-	            throw new IllegalArgumentException("AWS S3 Prefix can not be empty");
-        
-	        System.out.println("S3 Prefix: " + prefix);
-	        
 	        String neo4jFolder = properties.getProperty("neo4j");
 	        
 	        if (StringUtils.isNullOrEmpty(neo4jFolder))
@@ -55,9 +42,26 @@ public class App {
 	        
 	        System.out.println("Neo4J: " + neo4jFolder);
 	        
+	        String bucket = properties.getProperty("s3.bucket");
+	        String prefix = properties.getProperty("s3.prefix");
+	        String xmlFolder = properties.getProperty("xml.folder");
+	        
+	        if (!StringUtils.isNullOrEmpty(bucket) && !StringUtils.isNullOrEmpty(prefix)) {
+	        	System.out.println("S3 Bucket: " + bucket);
+	        	System.out.println("S3 Prefix: " + prefix);
+	        	
+	        	processS3Files(bucket, prefix, neo4jFolder);
+	        } else if (!StringUtils.isNullOrEmpty(xmlFolder)) {
+	        	System.out.println("XML: " + xmlFolder);
+	        	
+	        	processFiles(xmlFolder, neo4jFolder);
+	        } else
+                throw new IllegalArgumentException("Please provide either S3 Bucket and prefix OR a path to a XML Folder");
+
+	        	        
 	       /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");*/ 
 	        
-        	processFiles(bucket, prefix, neo4jFolder);
+        	
 		} catch (Exception e) {
             e.printStackTrace();
 		}       
@@ -86,7 +90,7 @@ public class App {
 	}
 	*/
 	
-	private static void processFiles(String bucket, String prefix, String neo4jFolder) throws Exception {
+	private static void processS3Files(String bucket, String prefix, String neo4jFolder) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
@@ -127,6 +131,35 @@ public class App {
 		crosswalk.printStatistics(System.out);
 		neo4j.printStatistics(System.out);
 	}
+	
+	private static void processFiles(String xmlFolder, String neo4jFolder) throws Exception {
+        AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
+        
+        CrosswalkRifCs crosswalk = new CrosswalkRifCs();
+        crosswalk.setSource(GraphUtils.SOURCE_ANDS);
+     //   crosswalk.setVerbose(true);
+        
+    	Neo4jDatabase neo4j = new Neo4jDatabase(neo4jFolder);
+    	//importer.setVerbose(true);
+    		    
+		File[] files = new File(xmlFolder).listFiles();
+		for (File file : files) 
+			if (!file.isDirectory()) 
+		        try (InputStream xml = new FileInputStream(file))
+		        {
+			        System.out.println("Processing file: " + file);
+					
+			     	Graph graph = crosswalk.process(xml);
+					neo4j.importGraph(graph);
+		        }
+		
+		System.out.println("Done");
+		
+		crosswalk.printStatistics(System.out);
+		neo4j.printStatistics(System.out);
+	}
+	
+	
 	
 	/*private static void processMultiThread(String accessKey, String secretKey, 
 			String bucket, String prefix, int maxThreads) throws Exception {
