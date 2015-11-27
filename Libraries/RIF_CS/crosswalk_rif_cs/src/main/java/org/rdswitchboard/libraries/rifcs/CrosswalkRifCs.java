@@ -67,6 +67,10 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 	
 	private static final String[] GRANT_DATES = new String[] { "startDate" };
 	private static final String[] COLLECTION_DATES = new String[] { null };
+	
+	public enum XmlType {
+		oai, rif_cs
+	}
 
 	private Unmarshaller unmarshaller;
 	private long existingRecords = 0;
@@ -74,6 +78,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 	private long brokenRecords = 0;
 	private long filesCounter = 0;
 	private long markTime = 0;
+	
+	private XmlType type = XmlType.oai;
 	
 	private boolean verbose = false;
 	
@@ -123,6 +129,14 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 		markTime = System.currentTimeMillis();
 	}
 	
+	public XmlType getType() {
+		return type;
+	}
+	
+	public void setType(XmlType type) {
+		this.type = type;
+	}
+	
 	@Override
 	public void setSource(String source) {
 		this.source = source;
@@ -139,9 +153,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 		if (0 == markTime)
 			markTime = System.currentTimeMillis();
 		
-		++filesCounter;
+		++filesCounter;		
 		
-		JAXBElement<?> element = (JAXBElement<?>) unmarshaller.unmarshal( xml );
 		Graph graph = new Graph();
 		graph.addSchema(new GraphSchema(source, GraphUtils.PROPERTY_KEY, true));
 		graph.addSchema(new GraphSchema(source, GraphUtils.PROPERTY_NLA, false));
@@ -151,6 +164,21 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 		graph.addSchema(new GraphSchema(source, GraphUtils.PROPERTY_DOI, false));
 		graph.addSchema(new GraphSchema(source, GraphUtils.PROPERTY_PURL, false));
 		
+		if (type == XmlType.oai)
+			processOai((JAXBElement<?>) unmarshaller.unmarshal( xml ), graph);
+		else 
+			processRegistryObjects((RegistryObjects) unmarshaller.unmarshal( xml ), graph, false);
+				
+		return graph;
+	}
+		
+	public void printStatistics(PrintStream out) {
+		long spentTime = getSpentTime();
+		out.println( String.format("Processed %d files.\nSpent %d millisecods.\nFound %d records.\nFound %d deleted records.\nFound %d broken records.\nSpent ~ %f milliseconds per record.", 
+				filesCounter, spentTime, existingRecords, deletedRecords, brokenRecords, (float) spentTime / (float) existingRecords));
+	}
+	
+	private void processOai(JAXBElement<?> element , Graph graph) throws Exception {
 		OAIPMHtype root = (OAIPMHtype) element.getValue();
 		ListRecordsType records = root.getListRecords();
 		if (null != records &&  null != records.getRecord()) {
@@ -162,67 +190,62 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 							
 				if (null != record.getMetadata()) {
 					Object metadata = record.getMetadata().getAny();
-					if (metadata instanceof RegistryObjects) {
-						RegistryObjects registryObjects = (RegistryObjects) metadata;
-						if (registryObjects.getRegistryObject() != null && registryObjects.getRegistryObject().size() > 0) {
-							for (RegistryObjects.RegistryObject registryObject : registryObjects.getRegistryObject()) {
-								String group = registryObject.getGroup();
-								String key = registryObject.getKey();
-								if (verbose) 
-									System.out.println("Key: " + key);
-								
-								String url = null;
-								try {
-									url = GraphUtils.generateAndsUrl(key);
-								} catch(UnsupportedEncodingException e) {
-									e.printStackTrace();
-								}								
-								
-								GraphNode node = new GraphNode()
-									.withKey(new GraphKey(source, key))
-									.withSource(source)
-									.withProperty(GraphUtils.PROPERTY_URL, url)
-									.withProperty(GraphUtils.PROPERTY_ANDS_GROUP, group);
-								
-								if (deleted) {
-									graph.addNode(node.withDeleted(true));
-									
-									++deletedRecords;
-								} else if (registryObject.getCollection() != null)
-									importCollection(graph, node, registryObject.getCollection());
-								else if (registryObject.getActivity() != null) 
-									importActivity(graph, node, registryObject.getActivity());
-								else if (registryObject.getService() != null)
-									importService(graph, node, registryObject.getService());
-								else if (registryObject.getParty() != null)
-									importParty(graph, node, registryObject.getParty());	
-								else {
-									graph.addNode(node.withBroken(true));
-									
-									++brokenRecords;
-								}
-								
-								++existingRecords;	
-							}
-								
-							// at this point all registry objects should be imported, abort the function
-						} else
-							throw new Exception("Metadata does not contains any records");
-					} else
+					if (metadata instanceof RegistryObjects) 
+						processRegistryObjects((RegistryObjects) metadata, graph, deleted);
+					else
 						throw new Exception("Metadata is not in rif format");
 				} else
 					throw new Exception("Unable to find metadata");
 			}
 		} else
 			System.out.println("Unable to find records");
-		
-		return graph;
 	}
 	
-	public void printStatistics(PrintStream out) {
-		long spentTime = getSpentTime();
-		out.println( String.format("Processed %d files.\nSpent %d millisecods.\nFound %d records.\nFound %d deleted records.\nFound %d broken records.\nSpent ~ %f milliseconds per record.", 
-				filesCounter, spentTime, existingRecords, deletedRecords, brokenRecords, (float) spentTime / (float) existingRecords));
+	private void processRegistryObjects(RegistryObjects registryObjects, 
+			Graph graph, boolean deleted) throws Exception
+	{
+		if (registryObjects.getRegistryObject() != null && registryObjects.getRegistryObject().size() > 0) {
+			for (RegistryObjects.RegistryObject registryObject : registryObjects.getRegistryObject()) {
+				String group = registryObject.getGroup();
+				String key = registryObject.getKey();
+				if (verbose) 
+					System.out.println("Key: " + key);
+				
+				String url = null;
+				try {
+					url = GraphUtils.generateAndsUrl(key);
+				} catch(UnsupportedEncodingException e) {
+					e.printStackTrace();
+				}								
+				
+				GraphNode node = new GraphNode()
+					.withKey(new GraphKey(source, key))
+					.withSource(source)
+					.withProperty(GraphUtils.PROPERTY_URL, url)
+					.withProperty(GraphUtils.PROPERTY_ANDS_GROUP, group);
+				
+				if (deleted) {
+					graph.addNode(node.withDeleted(true));
+					
+					++deletedRecords;
+				} else if (registryObject.getCollection() != null)
+					importCollection(graph, node, registryObject.getCollection());
+				else if (registryObject.getActivity() != null) 
+					importActivity(graph, node, registryObject.getActivity());
+				else if (registryObject.getService() != null)
+					importService(graph, node, registryObject.getService());
+				else if (registryObject.getParty() != null)
+					importParty(graph, node, registryObject.getParty());	
+				else {
+					graph.addNode(node.withBroken(true));
+					
+					++brokenRecords;
+				}
+				
+				++existingRecords;
+			}
+		} else
+			throw new Exception("Metadata does not contains any records");
 	}
 	
 	private boolean importCollection(Graph graph, GraphNode node, Collection collection) {

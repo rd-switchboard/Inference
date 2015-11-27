@@ -45,16 +45,19 @@ public class App {
 	        String bucket = properties.getProperty("s3.bucket");
 	        String prefix = properties.getProperty("s3.prefix");
 	        String xmlFolder = properties.getProperty("xml.folder");
+	        String xmlType = properties.getProperty("xml.type", "oai");
+	        
+	        CrosswalkRifCs.XmlType type = CrosswalkRifCs.XmlType.valueOf(xmlType); 
 	        
 	        if (!StringUtils.isNullOrEmpty(bucket) && !StringUtils.isNullOrEmpty(prefix)) {
 	        	System.out.println("S3 Bucket: " + bucket);
 	        	System.out.println("S3 Prefix: " + prefix);
 	        	
-	        	processS3Files(bucket, prefix, neo4jFolder);
+	        	processS3Files(bucket, prefix, neo4jFolder, type);
 	        } else if (!StringUtils.isNullOrEmpty(xmlFolder)) {
 	        	System.out.println("XML: " + xmlFolder);
 	        	
-	        	processFiles(xmlFolder, neo4jFolder);
+	        	processFiles(xmlFolder, neo4jFolder, type);
 	        } else
                 throw new IllegalArgumentException("Please provide either S3 Bucket and prefix OR a path to a XML Folder");
 
@@ -90,11 +93,12 @@ public class App {
 	}
 	*/
 	
-	private static void processS3Files(String bucket, String prefix, String neo4jFolder) throws Exception {
+	private static void processS3Files(String bucket, String prefix, String neo4jFolder, CrosswalkRifCs.XmlType type) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
         crosswalk.setSource(GraphUtils.SOURCE_ANDS);
+        crosswalk.setType(type);
      //   crosswalk.setVerbose(true);
         
     	Neo4jDatabase neo4j = new Neo4jDatabase(neo4jFolder);
@@ -132,11 +136,12 @@ public class App {
 		neo4j.printStatistics(System.out);
 	}
 	
-	private static void processFiles(String xmlFolder, String neo4jFolder) throws Exception {
+	private static void processFiles(String xmlFolder, String neo4jFolder, CrosswalkRifCs.XmlType type) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
         crosswalk.setSource(GraphUtils.SOURCE_ANDS);
+        crosswalk.setType(type);
      //   crosswalk.setVerbose(true);
         
     	Neo4jDatabase neo4j = new Neo4jDatabase(neo4jFolder);
