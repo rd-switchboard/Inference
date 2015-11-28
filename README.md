@@ -5,7 +5,7 @@ The repository contains separate java applications as well as libraries, used by
 
 #### Requirements
 
-Program requires Java 1.7 and Apache Maven 3.0.5. It will also require Neo4j 2.2.3.
+Program requires Java 1.7 and Apache Maven 3.0.5. It will also require Neo4j 2.3.1.
 
 Program has been tested on Ubuntu Linux 14.04 and should work on any other linux as well
 
@@ -86,14 +86,14 @@ If Distribute module has been compiled, the Maven will create global distributio
 
 #### Installation
 
-You will need to install at least two neo4j databases - aggregator and nexus. You can download neo4j from the [official Neo4j Web site](http://neo4j.com/artifact.php?name=neo4j-community-2.2.3-unix.tar.gz)
+You will need to install at least two neo4j databases - aggregator and nexus. You can download neo4j from the [official Neo4j Web site](http://neo4j.com/artifact.php?name=neo4j-community-2.3.1-unix.tar.gz)
 
 Copy archive to the server and unpack it:
 
 ```
-tar -xzvf neo4j-community-2.2.3-unix.tar.gz
-cp neo4j-community-2.2.3-unix neo4j-aggregator
-cp neo4j-community-2.2.3-unix neo4j-nexus
+tar -xzvf neo4j-community-2.3.1-unix.tar.gz
+cp neo4j-community-2.3.1-unix neo4j-aggregator
+cp neo4j-community-2.3.1-unix neo4j-nexus
 ```
 
 Next, unpack the Inference archive, by executing `tar -xzvf inference-${project.version}.tar.bz2` for bz2 or `tar -xjvf inference-${project.version}.tar.gz` for gzip. Replace ${project.version} with actual project version:
