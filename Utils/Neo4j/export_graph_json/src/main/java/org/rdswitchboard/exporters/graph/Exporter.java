@@ -27,6 +27,7 @@ import org.rdswitchboard.exporters.graph.json.JsonNode;
 import org.rdswitchboard.exporters.graph.json.JsonRelationship;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
+import org.rdswitchboard.libraries.neo4j.Neo4jException;
 
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.InstanceProfileCredentialsProvider;
@@ -187,7 +188,7 @@ public class Exporter {
 	 * Function to begin exporting process
 	 */
 	
-	public void process(Label type, Map<Label, Label[]> sources) {
+	public void process(Label type, Map<Label, Label[]> sources) throws Neo4jException {
 		
 	//	System.out.println("Target folder: " + outputFolder);
 		System.out.println("Neo4j folder: " + neo4jFolder);

@@ -1,9 +1,7 @@
 package org.rdswitchboard.linkers.neo4j.web.researcher;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +27,7 @@ import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.index.Index;
 import org.neo4j.graphdb.index.IndexHits;
 import org.rdswitchboard.libraries.graph.GraphUtils;
+import org.rdswitchboard.libraries.neo4j.Neo4jException;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
 import org.rdswitchboard.utils.google.cache2.Link;
 import org.rdswitchboard.utils.google.cache2.Result;
@@ -62,7 +61,7 @@ public class Linker {
 	private final int minTitleLength;
 	private int maxThreads;
 	
-	public Linker(final String neo4jFolder, final String blackList, final int minTitleLength, boolean verbose) throws FileNotFoundException, IOException, JAXBException {
+	public Linker(final String neo4jFolder, final String blackList, final int minTitleLength, boolean verbose) throws FileNotFoundException, IOException, JAXBException, Neo4jException {
 		this.minTitleLength = minTitleLength;
 		this.verbose = verbose;
 		

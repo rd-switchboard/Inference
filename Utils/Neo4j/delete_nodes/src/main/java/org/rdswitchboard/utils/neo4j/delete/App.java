@@ -17,25 +17,29 @@ import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
 
 public class App {
 	public static void main(String[] args) {
-		if (args.length != 2)
-			System.err.println("Ussage: java -jar delete_nodes.jar [neo4j Folder] [Label1,Label2]|[orphants]");
-		else {
-			String neo4j = args[0];
-			String[] labels = args[1].split(",");
-			
-			if (labels.length == 0)
-				System.err.println("Please provide any node labels or `orphant` to delete orphant nodes");
-			
-			GraphDatabaseService graphDb = Neo4jUtils.getGraphDb(neo4j);
-			
-			if (labels[0].equals("orphant")) {
+		try {
+			if (args.length != 2)
+				System.err.println("Ussage: java -jar delete_nodes.jar [neo4j Folder] [Label1,Label2]|[orphants]");
+			else {
+				String neo4j = args[0];
+				String[] labels = args[1].split(",");
 				
-				deleteOrpahnNodes(graphDb);
+				if (labels.length == 0)
+					System.err.println("Please provide any node labels or `orphant` to delete orphant nodes");
 				
-			} else {
-
-				deleteNodesWithLabels(graphDb, labels);			
+				GraphDatabaseService graphDb = Neo4jUtils.getGraphDb(neo4j);
+				
+				if (labels[0].equals("orphant")) {
+					
+					deleteOrpahnNodes(graphDb);
+					
+				} else {
+	
+					deleteNodesWithLabels(graphDb, labels);			
+				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	

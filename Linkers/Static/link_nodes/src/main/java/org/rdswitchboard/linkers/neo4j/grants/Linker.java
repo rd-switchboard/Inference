@@ -10,6 +10,7 @@ import org.neo4j.graphdb.RelationshipType;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
 import org.rdswitchboard.libraries.graph.GraphUtils;
+import org.rdswitchboard.libraries.neo4j.Neo4jException;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
 
 public class Linker {
@@ -22,7 +23,7 @@ public class Linker {
 	//private long linked = 0;
 //	private long skyped = 0;
 	
-	public Linker(final String neo4jFolder) {
+	public Linker(final String neo4jFolder) throws Neo4jException {
 		graphDb = Neo4jUtils.getGraphDb( neo4jFolder );
 	}
 	

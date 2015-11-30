@@ -20,16 +20,21 @@ import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
 public class App {
 	
 	public static void main(String[] args) {
-		if (args.length != 3)
-			System.err.println("Ussage: java -jar replace_source.jar [neo4j Folder] [OLD Label] [New Label]");
-		else {
-			String neo4j = args[0];
-			String oldLabel = args[1];
-			String newLabel = args[2];
-			
-			GraphDatabaseService graphDb = Neo4jUtils.getGraphDb(neo4j);
-			
-			replaceLabels(graphDb, oldLabel, newLabel);
+		try
+		{
+			if (args.length != 3)
+				System.err.println("Ussage: java -jar replace_source.jar [neo4j Folder] [OLD Label] [New Label]");
+			else {
+				String neo4j = args[0];
+				String oldLabel = args[1];
+				String newLabel = args[2];
+				
+				GraphDatabaseService graphDb = Neo4jUtils.getGraphDb(neo4j);
+				
+				replaceLabels(graphDb, oldLabel, newLabel);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	

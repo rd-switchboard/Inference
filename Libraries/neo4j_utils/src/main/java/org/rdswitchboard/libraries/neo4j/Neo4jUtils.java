@@ -1,7 +1,9 @@
 package org.rdswitchboard.libraries.neo4j;
 
+import java.io.File;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.DynamicLabel;
 import org.neo4j.graphdb.GraphDatabaseService;
@@ -29,27 +31,59 @@ public class Neo4jUtils {
 	public static final String NEO4J_CONF = "/conf/neo4j.properties";
 	public static final String NEO4J_DB = "/data/graph.db";
 	
-	public static GraphDatabaseService getReadOnlyGraphDb( final String graphDbPath ) {
-		GraphDatabaseService graphDb = new GraphDatabaseFactory()
-				.newEmbeddedDatabaseBuilder( graphDbPath + NEO4J_DB )
-				.loadPropertiesFromFile( graphDbPath + NEO4J_CONF )
-				.setConfig( GraphDatabaseSettings.read_only, "true" )
-				.newGraphDatabase();
+	public static File GetDbPath(final String folder) throws Neo4jException
+	{
+		File db = new File(folder, NEO4J_DB);
+		if (!db.exists() || !db.isDirectory())
+			throw new Neo4jException("The " + folder + " folder is not valid Neo4j instance. Please provide path to an existing Neo4j instance");
 		
-		registerShutdownHook( graphDb );
-		
-		return graphDb;
+		return db;
 	}
 	
-	public static GraphDatabaseService getGraphDb( final String graphDbPath ) {
-		GraphDatabaseService graphDb = new GraphDatabaseFactory()
-			.newEmbeddedDatabaseBuilder( graphDbPath + NEO4J_DB )
-			.loadPropertiesFromFile( graphDbPath + NEO4J_CONF )
-			.newGraphDatabase();
+	public static File GetConfPath(final String folder) throws Neo4jException
+	{
+		File conf = new File(folder, NEO4J_CONF);
+		if (!conf.exists() || conf.isDirectory())
+			throw new Neo4jException("The " + folder + " folder is not valid Neo4j instance. Please provide path to an existing Neo4j instance");
 		
-		registerShutdownHook( graphDb );
+		return conf;
+	}	
+	
+	public static GraphDatabaseService getReadOnlyGraphDb( final String graphDbPath ) throws Neo4jException {
+		if (StringUtils.isEmpty(graphDbPath))
+			throw new Neo4jException("Please provide path to an existing Neo4j instance");
 		
-		return graphDb;
+		try {
+			GraphDatabaseService graphDb = new GraphDatabaseFactory()
+				.newEmbeddedDatabaseBuilder( GetDbPath(graphDbPath).toString() )
+				.loadPropertiesFromFile( GetConfPath(graphDbPath).toString() )
+				.setConfig( GraphDatabaseSettings.read_only, "true" )
+				.newGraphDatabase();
+			
+			registerShutdownHook( graphDb );
+			
+			return graphDb;
+		} catch (Exception e) {
+			throw new Neo4jException("Unable to open Neo4j instance located at: " + graphDbPath + ". Error: " + e.getMessage());
+		}
+	}
+	
+	public static GraphDatabaseService getGraphDb( final String graphDbPath ) throws Neo4jException {
+		if (StringUtils.isEmpty(graphDbPath))
+			throw new Neo4jException("Please provide path to an existing Neo4j instance");
+		
+		try {
+			GraphDatabaseService graphDb = new GraphDatabaseFactory()
+				.newEmbeddedDatabaseBuilder( GetDbPath(graphDbPath).toString() )
+				.loadPropertiesFromFile( GetConfPath(graphDbPath).toString() )
+				.newGraphDatabase();
+		
+			registerShutdownHook( graphDb );
+		
+			return graphDb;
+		} catch (Exception e) {
+			throw new Neo4jException("Unable to open Neo4j instance located at: " + graphDbPath + ". Error: " + e.getMessage());
+		}
 	}
 	
 	public static void registerShutdownHook( final GraphDatabaseService graphDb )
