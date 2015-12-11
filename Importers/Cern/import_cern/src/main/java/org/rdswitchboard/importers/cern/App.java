@@ -1,9 +1,9 @@
 package org.rdswitchboard.importers.cern;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.marc21.CrosswalkMarc21;
@@ -31,41 +31,33 @@ import com.amazonaws.util.StringUtils;
  *
  */
 public class App {
-	private static final String PROPERTIES_FILE = "properties/import_cern.properties";
 	
 	public static void main(String[] args) {
 		try {
-            String propertiesFile = PROPERTIES_FILE;
-            if (args.length > 0 && !StringUtils.isNullOrEmpty(args[0])) 
-                    propertiesFile = args[0];
-
-            Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
+			Properties properties = Configuration.fromArgs(args);
+			
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        
-	        String bucket = properties.getProperty("s3.bucket");
+	        if (StringUtils.isNullOrEmpty(neo4jFolder))
+	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
+
+	        System.out.println("Neo4J: " + neo4jFolder);
+	        
+	        String bucket = properties.getProperty(Configuration.PROPERTY_S3_BUCKET);
 	        
 	        if (StringUtils.isNullOrEmpty(bucket))
                 throw new IllegalArgumentException("AWS S3 Bucket can not be empty");
 
 	        System.out.println("S3 Bucket: " + bucket);
 	        
-	        String prefix = properties.getProperty("s3.prefix");
+	        String prefix = properties.getProperty(Configuration.PROPERTY_CERN_S3);
 	        	
 	        if (StringUtils.isNullOrEmpty(prefix))
 	            throw new IllegalArgumentException("AWS S3 Prefix can not be empty");
         
 	        System.out.println("S3 Prefix: " + prefix);
-	        
-	        String neo4jFolder = properties.getProperty("neo4j");
-	        
-	        if (StringUtils.isNullOrEmpty(neo4jFolder))
-	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
-	        
-	        System.out.println("Neo4J: " + neo4jFolder);
-	        
-	       /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");*/ 
+	        	        
+	        /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");*/ 
 	        
         	processFiles(bucket, prefix, neo4jFolder);
 		} catch (Exception e) {

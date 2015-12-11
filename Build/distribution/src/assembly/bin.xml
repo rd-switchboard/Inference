@@ -16,7 +16,7 @@
         <include>README*</include>
         <include>LICENSE*</include>
         <include>NOTICE*</include>
-        <include>properties*/</include>
+        <include>Conf/inference.conf</include>
       </includes>
     </fileSet>
     <!--<fileSet>

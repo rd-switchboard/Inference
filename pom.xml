@@ -25,6 +25,7 @@
   </properties>
 
   <modules>
+        <module>Libraries/properties</module>
   	<module>Libraries/graph_utils</module>
   	<module>Libraries/neo4j_utils</module>
 	<module>Libraries/ORCID/orcid_utils</module>
@@ -58,6 +59,7 @@
 	<module>Utils/Neo4j/delete_nodes</module>
 	<module>Utils/Neo4j/export_graph_json</module>
 	<module>Utils/Neo4j/export_keys</module>
+	<module>Utils/Neo4j/export_property</module>
         <module>Utils/Neo4j/test_connections</module>
 	<module>Utils/Neo4j/replace_source</module>
 	<module>Build/distribution</module>

@@ -1,15 +1,12 @@
 package org.rdswitchboard.importers.services;
 
-import java.io.FileInputStream;
 import java.io.FileReader;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 import org.parboiled.common.StringUtils;
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphNode;
 import org.rdswitchboard.libraries.graph.GraphSchema;
@@ -24,7 +21,6 @@ import au.com.bytecode.opencsv.CSVReader;
  *
  */
 public abstract class App {
-	private static final String PROPERTIES_FILE = "properties/import_services.properties";
 	private static final String SERVICES_SCV_FILE = "data/services.csv";
 	
 	/**
@@ -34,23 +30,16 @@ public abstract class App {
 	 */
 	public static void main(String[] args) {
 		try {
-			String propertiesFile = PROPERTIES_FILE;
-	        if (args.length > 0 && !StringUtils.isEmpty(args[0])) 
-	        	propertiesFile = args[0];
-	
-	        Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
+			Properties properties = Configuration.fromArgs(args);
 	        
 	        System.out.println("Importing Web Services");
 	                
-	        String neo4jFolder = properties.getProperty("neo4j");
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4j: " + neo4jFolder);
 	        
-	        String services = properties.getProperty("services", SERVICES_SCV_FILE);
+	        String services = properties.getProperty(Configuration.PROPERTY_SERVICES, SERVICES_SCV_FILE);
 	        if (StringUtils.isEmpty(services))
 	            throw new IllegalArgumentException("Invalid path to Services CSV file");
 	        

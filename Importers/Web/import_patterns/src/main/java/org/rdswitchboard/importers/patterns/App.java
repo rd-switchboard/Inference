@@ -1,11 +1,10 @@
 package org.rdswitchboard.importers.patterns;
 
-import java.io.FileInputStream;
 import java.io.FileReader;
-import java.io.InputStream;
 import java.util.Properties;
 
 import org.parboiled.common.StringUtils;
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphNode;
 import org.rdswitchboard.libraries.graph.GraphRelationship;
@@ -16,7 +15,6 @@ import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
 import au.com.bytecode.opencsv.CSVReader;
 
 public class App {
-	private static final String PROPERTIES_FILE = "properties/import_patterns.properties";
 	private static final String PATTERNS_SCV_FILE = "data/patterns.csv";
 	
 	/**
@@ -26,23 +24,16 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		try {
-			String propertiesFile = PROPERTIES_FILE;
-	        if (args.length > 0 && !StringUtils.isEmpty(args[0])) 
-	        	propertiesFile = args[0];
-	
-	        Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
+			Properties properties = Configuration.fromArgs(args);
 	        
 	        System.out.println("Importing Web Patterns");
 	                
-	        String neo4jFolder = properties.getProperty("neo4j");
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4j: " + neo4jFolder);
 	        
-	        String patterns = properties.getProperty("patterns", PATTERNS_SCV_FILE);
+	        String patterns = properties.getProperty(Configuration.PROPERTY_PATTERNS, PATTERNS_SCV_FILE);
 	        if (StringUtils.isEmpty(patterns))
 	            throw new IllegalArgumentException("Invalid path to Patterns CSV file");
 	        

@@ -1,7 +1,5 @@
 package org.rdswitchboard.utils.neo4j.copy.harmonized;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -23,14 +21,11 @@ import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.index.Index;
 import org.neo4j.tooling.GlobalGraphOperations;
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
 
-public class App {
-	private static final String PROPERTIES_FILE = "properties/copy_harmonized.properties";
-	private static final String SOURCE_NEO4J_FOLDER = "neo4j"; 
-	private static final String TARGET_NEO4J_FOLDER = "neo4j1";
-		
+public class App {	
 	private static final Set<String> SOURCES = new HashSet<String>();
 	private static final Set<String> TYPES = new HashSet<String>();
 	private static final Map<String, Index<Node>> mapIndexes = new HashMap<String, Index<Node>>();
@@ -44,23 +39,16 @@ public class App {
 	
 	public static void main(String[] args) {
 		try {
-			String propertiesFile = PROPERTIES_FILE;
-	        if (args.length > 0 && !StringUtils.isEmpty(args[0])) 
-	        	propertiesFile = args[0];
-	
-	        Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
+			Properties properties = Configuration.fromArgs(args);
 	        
 	        System.out.println("Export Neo4j database");
 	                	        
-	        String srcNeo4j1Folder = properties.getProperty("source.neo4j", SOURCE_NEO4J_FOLDER);
+	        String srcNeo4j1Folder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        if (StringUtils.isEmpty(srcNeo4j1Folder))
 	            throw new IllegalArgumentException("Neo4j1 Folder can not be empty");
 	        System.out.println("Source Neo4j Folder: " + srcNeo4j1Folder);
 
-	        String dstNeo4j2Folder = properties.getProperty("target.neo4j", TARGET_NEO4J_FOLDER);
+	        String dstNeo4j2Folder = properties.getProperty("target.neo4j");
 	        if (StringUtils.isEmpty(dstNeo4j2Folder))
 	            throw new IllegalArgumentException("Neo4j2 Folder can not be empty");
 	        System.out.println("Target Neo4j Folder: " + dstNeo4j2Folder);

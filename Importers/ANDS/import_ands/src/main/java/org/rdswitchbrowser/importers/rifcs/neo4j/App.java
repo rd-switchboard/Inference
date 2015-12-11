@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
@@ -22,30 +23,23 @@ import com.amazonaws.util.StringUtils;
 
 public class App {
 
-	private static final String PROPERTIES_FILE = "properties/import_ands.properties";
-	
+	public static final String DEF_XML_TYPE = "oai";
+		
 	public static void main(String[] args) {
 		try {
-            String propertiesFile = PROPERTIES_FILE;
-            if (args.length > 0 && !StringUtils.isNullOrEmpty(args[0])) 
-                    propertiesFile = args[0];
-
-            Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
-	        
-	        String neo4jFolder = properties.getProperty("neo4j");
+			Properties properties = Configuration.fromArgs(args);
+			        
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        
 	        if (StringUtils.isNullOrEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        
 	        System.out.println("Neo4J: " + neo4jFolder);
 	        
-	        String bucket = properties.getProperty("s3.bucket");
-	        String prefix = properties.getProperty("s3.prefix");
-	        String xmlFolder = properties.getProperty("xml.folder");
-	        String xmlType = properties.getProperty("xml.type", "oai");
+	        String bucket = properties.getProperty(Configuration.PROPERTY_S3_BUCKET);
+	        String prefix = properties.getProperty(Configuration.PROPERTY_ANDS_S3S);
+	        String xmlFolder = properties.getProperty(Configuration.PROPERTY_ANDS_XML);
+	        String xmlType = properties.getProperty(Configuration.PROPERTY_ANDS_XML_TYPE, DEF_XML_TYPE);
 	        
 	        CrosswalkRifCs.XmlType type = CrosswalkRifCs.XmlType.valueOf(xmlType); 
 	        

@@ -5,10 +5,10 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import org.parboiled.common.StringUtils;
+import org.rdswitchboard.libraries.configuration.Configuration;
 
 public class App {
 
-	private static final String PROPERTIES_FILE = "properties/import_orcid.properties";
 	private static final String ORCID_FOLDER = "orcid/json";
 
 	/**
@@ -18,23 +18,16 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		try {
-			String propertiesFile = PROPERTIES_FILE;
-	        if (args.length > 0 && !StringUtils.isEmpty(args[0])) 
-	        	propertiesFile = args[0];
-	
-	        Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
-	        
+			Properties properties = Configuration.fromArgs(args);
+			
 	        System.out.println("Importing ORCID Files");
 	                
-	        String neo4jFolder = properties.getProperty("neo4j");
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4j: " + neo4jFolder);
 	        
-	        String orcidFolder = properties.getProperty("orcid.json", ORCID_FOLDER);
+	        String orcidFolder = properties.getProperty(Configuration.PROPERTY_ORCID_JSON, ORCID_FOLDER);
 	        if (StringUtils.isEmpty(orcidFolder))
 	            throw new IllegalArgumentException("Invalid path to ORCID Json Folder");
 			

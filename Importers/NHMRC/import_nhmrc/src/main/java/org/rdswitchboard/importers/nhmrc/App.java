@@ -1,8 +1,6 @@
 package org.rdswitchboard.importers.nhmrc;
 
-import java.io.FileInputStream;
 import java.io.FileReader;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -10,8 +8,8 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.parboiled.common.StringUtils;
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
-import org.rdswitchboard.libraries.graph.GraphKey;
 import org.rdswitchboard.libraries.graph.GraphNode;
 import org.rdswitchboard.libraries.graph.GraphRelationship;
 import org.rdswitchboard.libraries.graph.GraphSchema;
@@ -29,12 +27,9 @@ import au.com.bytecode.opencsv.CSVReader;
  */
 
 public class App {
-	private static final String PROPERTIES_FILE = "properties/import_nhmrc.properties";
-	
 	private static final String GRANTS_CSV_PATH = "data/nhmrc/2014/grants-data.csv";
 	private static final String ROLES_CSV_PATH = "data/nhmrc/2014/ci-roles.csv";
-
-			
+		
 	private static final Set<String> institutions = new HashSet<String>();
 	private static final Set<String> researcher = new HashSet<String>();
 	
@@ -45,27 +40,20 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		try {
-			String propertiesFile = PROPERTIES_FILE;
-	        if (args.length > 0 && !StringUtils.isEmpty(args[0])) 
-	        	propertiesFile = args[0];
-	
-	        Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
+			Properties properties = Configuration.fromArgs(args);
 	        
 	        System.out.println("Importing NHMRC Grants");
 	                
-	        String neo4jFolder = properties.getProperty("neo4j");
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4j: " + neo4jFolder);
 	        
-	        String grantsFile = properties.getProperty("grants", GRANTS_CSV_PATH);
+	        String grantsFile = properties.getProperty(Configuration.PROPERTY_NHMRC_GRANTS, GRANTS_CSV_PATH);
 	        if (StringUtils.isEmpty(grantsFile))
 	            throw new IllegalArgumentException("Invalid path to the Grants CSV file");
 	        
-	        String rolesFile = properties.getProperty("roles", ROLES_CSV_PATH);
+	        String rolesFile = properties.getProperty(Configuration.PROPERTY_NHMRC_ROLES, ROLES_CSV_PATH);
 	        if (StringUtils.isEmpty(rolesFile))
 	            throw new IllegalArgumentException("Invalid path to the Roles CSV file");
 	        

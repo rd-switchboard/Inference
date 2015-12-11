@@ -195,6 +195,10 @@ public class Neo4jDatabase implements GraphImporter {
 		}
 	}
 	
+	public void enumrateAllNodesWithLabelAndProperty(Label label, String property, ProcessNode processNode)  throws Exception {
+		enumrateAllNodesWithLabelAndProperty(label.toString(), property, processNode);
+	}
+	
 	public ConstraintDefinition createConstrant(Label label, String key) {
 		ConstraintDefinition def = null;
 		

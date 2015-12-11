@@ -1,8 +1,6 @@
 package org.rdswitchboard.search.google;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
@@ -13,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.neo4j.graphdb.DynamicLabel;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
 import org.rdswitchboard.libraries.neo4j.interfaces.ProcessNode;
@@ -26,11 +25,8 @@ import org.rdswitchboard.utils.google.cse.QueryResponse;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 
-
 public class App {
-	private static final String PROPERTIES_FILE = "properties/google_search.properties";
 	private static final String GOOGLE_CACHE = "google";
-	private static final String NEO4J_FOLDER = "neo4j";
 	private static final String BLACK_LIST = "conf/black.list";
 	private static final String MIN_TITLE_LENGTH = "30";
 	private static final String MAX_ATTEMPTS = "2";
@@ -61,26 +57,27 @@ public class App {
 		
 	public static void main(String[] args) {
 		try {
-			String propertiesFile = PROPERTIES_FILE;
-			if (args.length > 0 && StringUtils.isNotEmpty(args[0]))
-				propertiesFile = args[0];
-			if (StringUtils.isEmpty(propertiesFile))
-				throw new Exception("Please provide properties file");
-			
-            Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
+			Properties properties = Configuration.fromArgs(args);
 	        
-	        String googleCseId = properties.getProperty("google.cse.id");
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
+	        if (StringUtils.isEmpty(neo4jFolder))
+                throw new IllegalArgumentException("Neo4j Folder can not be empty");
+	        System.out.println("Neo4j Folder: " + neo4jFolder);
+
+	        String blackListPath = properties.getProperty(Configuration.PROPERTY_GOOGLE_BLACK_LIST, BLACK_LIST);
+	        if (StringUtils.isEmpty(blackListPath))
+                throw new IllegalArgumentException("Black List Path can not be empty");
+	        System.out.println("Black List: " + blackListPath);
+			
+	        String googleCseId = properties.getProperty(Configuration.PROPERTY_GOOGLE_CSE_ID);
 	        if (StringUtils.isEmpty(googleCseId))
                 throw new IllegalArgumentException("Google CSE ID can not be empty");
 
-	        String googleApiKey = properties.getProperty("google.api.key");
+	        String googleApiKey = properties.getProperty(Configuration.PROPERTY_GOOGLE_API_KEY);
 	        if (StringUtils.isEmpty(googleApiKey))
                 throw new IllegalArgumentException("Google API Key can not be empty");
 	  
-	        String googleCache = properties.getProperty("google.cache", GOOGLE_CACHE);
+	        String googleCache = properties.getProperty(Configuration.PROPERTY_GOOGLE_CACHE, GOOGLE_CACHE);
 	        if (StringUtils.isEmpty(googleCache))
                 throw new IllegalArgumentException("Google Cache Folder can not be empty");
 	        System.out.println("Google Folder: " + googleCache);
@@ -105,23 +102,13 @@ public class App {
 	        resultFolder.mkdirs();
 	        System.out.println("Result Folder: " + resultFolder);
 	        
-	        String neo4jFolder = properties.getProperty("neo4j", NEO4J_FOLDER);
-	        if (StringUtils.isEmpty(neo4jFolder))
-                throw new IllegalArgumentException("Neo4j Folder can not be empty");
-	        System.out.println("Neo4j Folder: " + neo4jFolder);
-	        
-	        String blackListPath = properties.getProperty("black.list", BLACK_LIST);
-	        if (StringUtils.isEmpty(blackListPath))
-                throw new IllegalArgumentException("Black List Path can not be empty");
-	        System.out.println("Black List: " + blackListPath);
-	        
-	        minTitleLength = Integer.parseInt(properties.getProperty("min.title.length", MIN_TITLE_LENGTH));
+	        minTitleLength = Integer.parseInt(properties.getProperty(Configuration.PROPERTY_GOOGLE_MIN_TITLE_LENGTH, MIN_TITLE_LENGTH));
 	        System.out.println("Minimum Title Length: " +  minTitleLength);
 
-	        maxAttempts = Integer.parseInt(properties.getProperty("max.attempts", MAX_ATTEMPTS));
-	        attemptDelay = Integer.parseInt(properties.getProperty("attempt.delay", ATTEMPT_DELAY));
-	        int connectionTimeout = Integer.parseInt(properties.getProperty("connection.timeout", CONNECTION_TIMEOUT));
-	        int readTimeout = Integer.parseInt(properties.getProperty("read.timeout", READ_TIMEOUT));
+	        maxAttempts = Integer.parseInt(properties.getProperty(Configuration.PROPERTY_GOOGLE_MAX_ATTEMPTS, MAX_ATTEMPTS));
+	        attemptDelay = Integer.parseInt(properties.getProperty(Configuration.PROPERTY_GOOGLE_ATTEMPT_DELAY, ATTEMPT_DELAY));
+	        int connectionTimeout = Integer.parseInt(properties.getProperty(Configuration.PROPERTY_GOOGLE_CONNECTION_TIMEOUT, CONNECTION_TIMEOUT));
+	        int readTimeout = Integer.parseInt(properties.getProperty(Configuration.PROPERTY_GOOGLE_READ_TIMEOUT, READ_TIMEOUT));
 	        	       
 	        blackList = GoogleUtils.loadBlackList(blackListPath);
 	        links =  GoogleUtils.loadLinks(brokenFolder, links);

@@ -56,6 +56,11 @@
 	  <artifactId>commons-lang</artifactId>
 	  <version>${commons.lang.version}</version>
     </dependency>   
+  	<dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+  	  <artifactId>properties</artifactId>
+  	  <version>1.4.0</version>
+  	</dependency>
     <dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
       <artifactId>graph_utils</artifactId>

@@ -1,8 +1,6 @@
 package org.rdswitchboard.importers.arc;
 
-import java.io.FileInputStream;
 import java.io.FileReader;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -11,13 +9,12 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.parboiled.common.StringUtils;
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
-import org.rdswitchboard.libraries.graph.GraphKey;
 import org.rdswitchboard.libraries.graph.GraphNode;
 import org.rdswitchboard.libraries.graph.GraphRelationship;
 import org.rdswitchboard.libraries.graph.GraphSchema;
 import org.rdswitchboard.libraries.graph.GraphUtils;
-import org.rdswitchboard.libraries.graph.interfaces.GraphImporter;
 import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
 
 import au.com.bytecode.opencsv.CSVReader;
@@ -31,7 +28,6 @@ import au.com.bytecode.opencsv.CSVReader;
  */
 
 public class App {
-	private static final String PROPERTIES_FILE = "properties/import_arc.properties";
 	
 	private static final String COMPLETED_GRANTS_CSV_PATH = "data/arc/completed_projects.csv";
 	//private static final String COMPLETED_ROLES_CSV_PATH = "data/arc/completed_fellowships.csv";
@@ -53,27 +49,20 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		try {
-			String propertiesFile = PROPERTIES_FILE;
-	        if (args.length > 0 && !StringUtils.isEmpty(args[0])) 
-	        	propertiesFile = args[0];
-	
-	        Properties properties = new Properties();
-	        try (InputStream in = new FileInputStream(propertiesFile)) {
-	            properties.load(in);
-	        }
-	        
+			Properties properties = Configuration.fromArgs(args);
+				        
 	        System.out.println("Importing ARC Grants");
 	                
-	        String neo4jFolder = properties.getProperty("neo4j");
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4j: " + neo4jFolder);
 	        
-	        String completedGrants = properties.getProperty("completed.grants", COMPLETED_GRANTS_CSV_PATH);
+	        String completedGrants = properties.getProperty(Configuration.PROPERTY_ARC_COMPLETED, COMPLETED_GRANTS_CSV_PATH);
 	        if (StringUtils.isEmpty(completedGrants))
 	            throw new IllegalArgumentException("Invalid path to completed grants CSV file");
 	        
-	        String newGrants = properties.getProperty("new.grants", NEW_GRANTS_CSV_PATH);
+	        String newGrants = properties.getProperty(Configuration.PROPERTY_ARC_NEW, NEW_GRANTS_CSV_PATH);
 	        if (StringUtils.isEmpty(newGrants))
 	            throw new IllegalArgumentException("Invalid path to new grants CSV file");
 	        

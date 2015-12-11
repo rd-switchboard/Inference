@@ -58,6 +58,11 @@
     </dependency>
     <dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
+  	  <artifactId>properties</artifactId>
+  	  <version>1.4.0</version>
+  	</dependency>    
+    <dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
   	  <artifactId>neo4j_utils</artifactId>
   	  <version>1.4.0</version>
   	</dependency>

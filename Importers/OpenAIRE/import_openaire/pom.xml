@@ -56,6 +56,11 @@
       <artifactId>aws-java-sdk</artifactId>
       <version>${aws-java-sdk.version}</version>
     </dependency>
+    <dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+  	  <artifactId>properties</artifactId>
+  	  <version>1.4.0</version>
+  	</dependency>    
   	<dependency>
   	  <groupId>org.rdswitchboard.libraries</groupId>
   	  <artifactId>crosswalk_dli</artifactId>

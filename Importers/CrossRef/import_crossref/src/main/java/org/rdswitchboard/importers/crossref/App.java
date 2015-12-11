@@ -1,8 +1,5 @@
 package org.rdswitchboard.importers.crossref;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,9 +10,8 @@ import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
 import org.neo4j.graphdb.DynamicLabel;
-import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
-import org.neo4j.graphdb.Transaction;
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphKey;
 import org.rdswitchboard.libraries.graph.GraphNode;
@@ -26,8 +22,6 @@ import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
 import org.rdswitchboard.libraries.neo4j.interfaces.ProcessNode;
 
 public class App {
-	private static final String PROPERTIES_FILE = "properties/import_crossref.properties";
-	private static final String NEO4J_FOLDER = "neo4j";
 	private static final String CROSSREF_FOLDER = "crossref/cahce";
 	
 	private static CrossrefGraph crossref;
@@ -35,27 +29,16 @@ public class App {
 	
 	private static final Map<String, Set<GraphKey>> references = new HashMap<String, Set<GraphKey>>();
 	
-	
 	public static void main(String[] args) {
 		try {
-            String propertiesPath = PROPERTIES_FILE;
-            if (args.length > 0 && StringUtils.isNotEmpty(args[0])) 
-            	propertiesPath = args[0];
-
-            Properties properties = new Properties();
-            File propertiesFile = new File(propertiesPath);
-            if (propertiesFile.exists() && propertiesFile.isFile()) {
-		        try (InputStream in = new FileInputStream(propertiesFile)) {
-		            properties.load(in);
-		        }
-            }
+			Properties properties = Configuration.fromArgs(args);
 	        
-	        String neo4jFolder = properties.getProperty("neo4j", NEO4J_FOLDER);
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4J: " + neo4jFolder);
 	     
-	        String crossrefFolder = properties.getProperty("crossref", CROSSREF_FOLDER);
+	        String crossrefFolder = properties.getProperty(Configuration.PROPERTY_CROSSREF, CROSSREF_FOLDER);
 	        if (StringUtils.isEmpty(crossrefFolder))
 	            throw new IllegalArgumentException("CrossRef Cache Folder can not be empty");
 	        System.out.println("CrossRef: " + crossrefFolder);
