@@ -30,7 +30,8 @@ public class Configuration {
 	public static final String PROPERTY_CERN_S3 = "cern.s3";
 	
 	// CrossRef
-	public static final String PROPERTY_CROSSREF = "crossref";
+	public static final String PROPERTY_CROSSREF_CACHE = "crossref.cache";
+	public static final String PROPERTY_CROSSREF_DATA = "crossref.data";
 	
 	// DaRa
 	public static final String PROPERTY_DARA_S3 = "dara.s3";

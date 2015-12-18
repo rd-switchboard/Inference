@@ -3,8 +3,11 @@ package org.rdswitchbrowser.importers.rifcs.neo4j;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
 import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphUtils;
@@ -19,7 +22,6 @@ import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
-import com.amazonaws.util.StringUtils;
 
 public class App {
 
@@ -31,7 +33,7 @@ public class App {
 			        
 	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        
-	        if (StringUtils.isNullOrEmpty(neo4jFolder))
+	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        
 	        System.out.println("Neo4J: " + neo4jFolder);
@@ -43,12 +45,12 @@ public class App {
 	        
 	        CrosswalkRifCs.XmlType type = CrosswalkRifCs.XmlType.valueOf(xmlType); 
 	        
-	        if (!StringUtils.isNullOrEmpty(bucket) && !StringUtils.isNullOrEmpty(prefix)) {
+	        if (!StringUtils.isEmpty(bucket) && !StringUtils.isEmpty(prefix)) {
 	        	System.out.println("S3 Bucket: " + bucket);
 	        	System.out.println("S3 Prefix: " + prefix);
 	        	
 	        	processS3Files(bucket, prefix, neo4jFolder, type);
-	        } else if (!StringUtils.isNullOrEmpty(xmlFolder)) {
+	        } else if (!StringUtils.isEmpty(xmlFolder)) {
 	        	System.out.println("XML: " + xmlFolder);
 	        	
 	        	processFiles(xmlFolder, neo4jFolder, type);
@@ -100,17 +102,24 @@ public class App {
     		    
     	ListObjectsRequest listObjectsRequest;
 		ObjectListing objectListing;
-		S3Object object;
+		
+		String file = prefix + "/latest.txt";
+		S3Object object = s3client.getObject(new GetObjectRequest(bucket, file));
+		
+		String latest;
+		try (InputStream txt = object.getObjectContent()) {
+			latest = prefix + "/" + IOUtils.toString(txt, StandardCharsets.UTF_8);
+		}
 		
 	    listObjectsRequest = new ListObjectsRequest()
 			.withBucketName(bucket)
-			.withPrefix(prefix);
+			.withPrefix(latest);
 	    do {
 			objectListing = s3client.listObjects(listObjectsRequest);
 			for (S3ObjectSummary objectSummary : 
 				objectListing.getObjectSummaries()) {
 				
-				String file = objectSummary.getKey();
+				file = objectSummary.getKey();
 
 		        System.out.println("Processing file: " + file);
 				

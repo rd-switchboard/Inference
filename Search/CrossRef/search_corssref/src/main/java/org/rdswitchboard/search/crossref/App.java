@@ -1,4 +1,4 @@
-package org.rdswitchboard.importers.crossref;
+package org.rdswitchboard.search.crossref;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,8 +9,6 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
-import org.neo4j.graphdb.DynamicLabel;
-import org.neo4j.graphdb.Node;
 import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphKey;
@@ -18,14 +16,10 @@ import org.rdswitchboard.libraries.graph.GraphNode;
 import org.rdswitchboard.libraries.graph.GraphRelationship;
 import org.rdswitchboard.libraries.graph.GraphSchema;
 import org.rdswitchboard.libraries.graph.GraphUtils;
-import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
-import org.rdswitchboard.libraries.neo4j.interfaces.ProcessNode;
 
 public class App {
-	private static final String CROSSREF_FOLDER = "crossref/cahce";
-	
-	private static CrossrefGraph crossref;
-	private static Neo4jDatabase neo4j;
+	private static final String CROSSREF_CACHE_FOLDER = "crossref/cahce";
+	private static final String CROSSREF_DATA_FOLDER = "crossref/data";
 	
 	private static final Map<String, Set<GraphKey>> references = new HashMap<String, Set<GraphKey>>();
 	
@@ -38,10 +32,16 @@ public class App {
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4J: " + neo4jFolder);
 	     
-	        String crossrefFolder = properties.getProperty(Configuration.PROPERTY_CROSSREF_CACHE, CROSSREF_FOLDER);
-	        if (StringUtils.isEmpty(crossrefFolder))
+	        String crossrefCache = properties.getProperty(Configuration.PROPERTY_CROSSREF_CACHE, CROSSREF_CACHE_FOLDER);
+	        if (StringUtils.isEmpty(crossrefCache))
 	            throw new IllegalArgumentException("CrossRef Cache Folder can not be empty");
-	        System.out.println("CrossRef: " + crossrefFolder);
+	        System.out.println("CrossRef Cache: " + crossrefCache);
+
+	        String crossrefData = properties.getProperty(Configuration.PROPERTY_CROSSREF_DATA, CROSSREF_DATA_FOLDER);
+	        if (StringUtils.isEmpty(crossrefData))
+	            throw new IllegalArgumentException("CrossRef Data Folder can not be empty");
+	        System.out.println("CrossRef Data: " + crossrefCache);
+	        
 	        
 	     /*   String sources = properties.getProperty("sources");
 	        if (StringUtils.isNotEmpty(sources))
@@ -51,7 +51,6 @@ public class App {
 	        crossref = new CrossrefGraph();
 	        crossref.setCacheFolder(crossrefFolder);
 	        
-	        neo4j = new Neo4jDatabase(neo4jFolder);
 	        List<GraphSchema> schemas = new ArrayList<GraphSchema>();
 	        schemas.add(new GraphSchema(GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_KEY, true));
 	        schemas.add(new GraphSchema(GraphUtils.SOURCE_CROSSREF, GraphUtils.PROPERTY_DOI, false));

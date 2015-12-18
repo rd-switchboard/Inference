@@ -1,8 +1,11 @@
 package org.rdswitchboard.importers.cern;
 
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
 import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphUtils;
@@ -17,7 +20,6 @@ import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
-import com.amazonaws.util.StringUtils;
 
 /**
  * Main class for CERN DC data importer
@@ -38,21 +40,21 @@ public class App {
 			
 	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J);
 	        
-	        if (StringUtils.isNullOrEmpty(neo4jFolder))
+	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 
 	        System.out.println("Neo4J: " + neo4jFolder);
 	        
 	        String bucket = properties.getProperty(Configuration.PROPERTY_S3_BUCKET);
 	        
-	        if (StringUtils.isNullOrEmpty(bucket))
+	        if (StringUtils.isEmpty(bucket))
                 throw new IllegalArgumentException("AWS S3 Bucket can not be empty");
 
 	        System.out.println("S3 Bucket: " + bucket);
 	        
 	        String prefix = properties.getProperty(Configuration.PROPERTY_CERN_S3);
 	        	
-	        if (StringUtils.isNullOrEmpty(prefix))
+	        if (StringUtils.isEmpty(prefix))
 	            throw new IllegalArgumentException("AWS S3 Prefix can not be empty");
         
 	        System.out.println("S3 Prefix: " + prefix);
@@ -100,17 +102,24 @@ public class App {
     	
     	ListObjectsRequest listObjectsRequest;
 		ObjectListing objectListing;
-		S3Object object;
+		
+		String file = prefix + "/latest.txt";
+		S3Object object = s3client.getObject(new GetObjectRequest(bucket, file));
+		
+		String latest;
+		try (InputStream txt = object.getObjectContent()) {
+			latest = prefix + "/" + IOUtils.toString(txt, StandardCharsets.UTF_8);
+		}		
 		
 	    listObjectsRequest = new ListObjectsRequest()
 			.withBucketName(bucket)
-			.withPrefix(prefix);
+			.withPrefix(latest);
 	    do {
 			objectListing = s3client.listObjects(listObjectsRequest);
 			for (S3ObjectSummary objectSummary : 
 				objectListing.getObjectSummaries()) {
 				
-				String file = objectSummary.getKey();
+				file = objectSummary.getKey();
 
 		        System.out.println("Processing file: " + file);
 				

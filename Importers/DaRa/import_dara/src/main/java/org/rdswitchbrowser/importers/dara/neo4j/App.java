@@ -1,8 +1,10 @@
 package org.rdswitchbrowser.importers.dara.neo4j;
 
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
+import org.apache.commons.io.IOUtils;
 import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.dara.CrosswalkDara;
 import org.rdswitchboard.libraries.graph.Graph;
@@ -67,17 +69,24 @@ public class App {
     	
     	ListObjectsRequest listObjectsRequest;
 		ObjectListing objectListing;
-		S3Object object;
+
+		String file = prefix + "/latest.txt";
+		S3Object object = s3client.getObject(new GetObjectRequest(bucket, file));
+		
+		String latest;
+		try (InputStream txt = object.getObjectContent()) {
+			latest = prefix + "/" + IOUtils.toString(txt, StandardCharsets.UTF_8);
+		}		
 		
 	    listObjectsRequest = new ListObjectsRequest()
 			.withBucketName(bucket)
-			.withPrefix(prefix);
+			.withPrefix(latest);
 	    do {
 			objectListing = s3client.listObjects(listObjectsRequest);
 			for (S3ObjectSummary objectSummary : 
 				objectListing.getObjectSummaries()) {
 				
-				String file = objectSummary.getKey();
+				file = objectSummary.getKey();
 
 		        System.out.println("Processing file: " + file);
 				
