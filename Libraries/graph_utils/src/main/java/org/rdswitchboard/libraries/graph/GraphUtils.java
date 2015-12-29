@@ -30,7 +30,6 @@ public class GraphUtils {
 	// optional properties
 	public static final String PROPERTY_NLA = "nla";
 	public static final String PROPERTY_DOI = "doi";
-	//public static final String PROPERTY_ORCID = "orcid";
 	public static final String PROPERTY_PURL = "purl";
 	public static final String PROPERTY_LOCAL_ID = "local_id";
 	public static final String PROPERTY_NAME_PREFIX = "name_prefix";
@@ -43,7 +42,6 @@ public class GraphUtils {
 	public static final String PROPERTY_HOST = "host";
 	public static final String PROPERTY_PATTERN = "pattern";
 	public static final String PROPERTY_ORIGINAL_SOURCE = "original_source";
-	//public static final String PROPERTY_CONTRIBUTORS = "contributors";
 	public static final String PROPERTY_SCOPUS_ID = "scopus_id";
 	public static final String PROPERTY_SCOPUS_EID = "scopus_eid";
 	public static final String PROPERTY_ORCID_ID = "orcid";

@@ -48,7 +48,7 @@ public class App {
 	            throw new IllegalArgumentException("Neo4j1 Folder can not be empty");
 	        System.out.println("Source Neo4j Folder: " + srcNeo4j1Folder);
 
-	        String dstNeo4j2Folder = properties.getProperty("target.neo4j");
+	        String dstNeo4j2Folder = properties.getProperty(Configuration.PROPERTY_NEO4J_NEXUS);
 	        if (StringUtils.isEmpty(dstNeo4j2Folder))
 	            throw new IllegalArgumentException("Neo4j2 Folder can not be empty");
 	        System.out.println("Target Neo4j Folder: " + dstNeo4j2Folder);
