@@ -111,6 +111,8 @@ public class App {
 			latest = prefix + "/" + IOUtils.toString(txt, StandardCharsets.UTF_8);
 		}
 		
+		System.out.println("S3 Repository: " + latest);
+		
 	    listObjectsRequest = new ListObjectsRequest()
 			.withBucketName(bucket)
 			.withPrefix(latest);
