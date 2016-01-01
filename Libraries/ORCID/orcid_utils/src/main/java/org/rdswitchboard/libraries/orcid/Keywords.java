@@ -12,7 +12,7 @@ public class Keywords {
 		return keyword;
 	}
 
-	@JsonDeserialize(using = ValueDeserializer.class)
+	@JsonDeserialize(using = ValueArrayDeserializer.class)
 	public void setKeyword(List<String> keyword) {
 		this.keyword = keyword;
 	}

@@ -14,7 +14,7 @@ public class OtherNames {
 		return names;
 	}
 	
-	@JsonDeserialize(using = OtherNameDeserializer.class)
+	@JsonDeserialize(using = ValueArrayDeserializer.class)
 	public void setNames(List<String> names) {
 		this.names = names;
 	}

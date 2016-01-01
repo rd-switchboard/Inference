@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 
-public class OtherNameDeserializer extends JsonDeserializer<List<String>> {
+public class ValueArrayDeserializer extends JsonDeserializer<List<String>> {
 
 	private static final String VALUE = "value";
 	
