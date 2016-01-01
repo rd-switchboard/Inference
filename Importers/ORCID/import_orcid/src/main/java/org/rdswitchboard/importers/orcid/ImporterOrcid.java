@@ -27,7 +27,7 @@ import org.rdswitchboard.libraries.orcid.OrcidWork;
 import org.rdswitchboard.libraries.orcid.OrcidWorks;
 import org.rdswitchboard.libraries.orcid.PersonalDetails;
 import org.rdswitchboard.libraries.orcid.RequestType;
-import org.rdswitchboard.libraries.orcid.Contributors;
+import org.rdswitchboard.libraries.orcid.WorkContributors;
 import org.rdswitchboard.libraries.orcid.WorkIdentifier;
 import org.rdswitchboard.libraries.orcid.WorkIdentifiers;
 import org.rdswitchboard.libraries.orcid.WorkTitle;
@@ -471,7 +471,7 @@ public class ImporterOrcid {
 				addProperty(map, PROPERTY_TRANSLATED_TITLE, title.getTranslatedTitle());
 			}*/
 			
-			Contributors contributors = work.getWorkContributors();
+			WorkContributors contributors = work.getWorkContributors();
 			if (null != contributors && null != contributors.getContributor()) 
 				for (Contributor contributor : contributors.getContributor()) {
 					String name = contributor.getCreditName();

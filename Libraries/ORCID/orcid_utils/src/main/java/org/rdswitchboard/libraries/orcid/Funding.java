@@ -13,8 +13,8 @@ public class Funding {
 	private String url;
 	private Date startDate;
 	private Date endDate;
-	private ExternalIdentifiers externalIdentifiers;
-	private Contributors contributors;
+	private FundingExternalIdentifiers externalIdentifiers;
+	private FundingContributors contributors;
 	private Organization organization;
 	private Source source;
 	private String createdDate;
@@ -105,20 +105,20 @@ public class Funding {
 	}
 	
 	@JsonProperty("funding-external-identifiers")
-	public ExternalIdentifiers getExternalIdentifiers() {
+	public FundingExternalIdentifiers getExternalIdentifiers() {
 		return externalIdentifiers;
 	}
 	
-	public void setExternalIdentifiers(ExternalIdentifiers externalIdentifiers) {
+	public void setExternalIdentifiers(FundingExternalIdentifiers externalIdentifiers) {
 		this.externalIdentifiers = externalIdentifiers;
 	}
 	
 	@JsonProperty("funding-contributors")
-	public Contributors getContributors() {
+	public FundingContributors getContributors() {
 		return contributors;
 	}
 	
-	public void setContributors(Contributors contributors) {
+	public void setContributors(FundingContributors contributors) {
 		this.contributors = contributors;
 	}
 	

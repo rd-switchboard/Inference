@@ -1,0 +1,324 @@
+{
+  "message-version" : "1.2",
+  "orcid-profile" : {
+    "orcid" : null,
+    "orcid-id" : null,
+    "orcid-identifier" : {
+      "value" : null,
+      "uri" : "http://orcid.org/0000-0003-4269-6344",
+      "path" : "0000-0003-4269-6344",
+      "host" : "orcid.org"
+    },
+    "orcid-deprecated" : null,
+    "orcid-preferences" : {
+      "locale" : "EN"
+    },
+    "orcid-history" : {
+      "creation-method" : "DIRECT",
+      "completion-date" : null,
+      "submission-date" : {
+        "value" : 1421146489233
+      },
+      "last-modified-date" : {
+        "value" : 1437694689720
+      },
+      "claimed" : {
+        "value" : true
+      },
+      "source" : null,
+      "deactivation-date" : null,
+      "verified-email" : {
+        "value" : true
+      },
+      "verified-primary-email" : {
+        "value" : true
+      },
+      "visibility" : null
+    },
+    "orcid-bio" : {
+      "personal-details" : {
+        "given-names" : {
+          "value" : "Ulrika"
+        },
+        "family-name" : {
+          "value" : "Kaby"
+        },
+        "credit-name" : null,
+        "other-names" : null
+      },
+      "biography" : null,
+      "researcher-urls" : null,
+      "contact-details" : null,
+      "keywords" : null,
+      "external-identifiers" : null,
+      "delegation" : null,
+      "applications" : null,
+      "scope" : null
+    },
+    "orcid-activities" : {
+      "affiliations" : {
+        "affiliation" : [ {
+          "type" : "EMPLOYMENT",
+          "department-name" : "Department of Ethology",
+          "role-title" : "Researcher",
+          "start-date" : {
+            "year" : {
+              "value" : "2006"
+            },
+            "month" : {
+              "value" : "01"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : null,
+          "organization" : {
+            "name" : "Stockholms Universitet",
+            "address" : {
+              "city" : "Stockholm",
+              "region" : null,
+              "country" : "SE"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "7675",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-4269-6344",
+              "path" : "0000-0003-4269-6344",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Ulrika Kaby"
+            },
+            "source-date" : {
+              "value" : 1421146591339
+            }
+          },
+          "created-date" : {
+            "value" : 1421146591339
+          },
+          "last-modified-date" : {
+            "value" : 1421146591339
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "665195"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : "Department of zoology",
+          "role-title" : "PhD",
+          "start-date" : {
+            "year" : {
+              "value" : "2000"
+            },
+            "month" : {
+              "value" : "02"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2005"
+            },
+            "month" : {
+              "value" : "12"
+            },
+            "day" : {
+              "value" : "16"
+            }
+          },
+          "organization" : {
+            "name" : "Stockholms Universitet",
+            "address" : {
+              "city" : "Stockholm",
+              "region" : null,
+              "country" : "SE"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "7675",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-4269-6344",
+              "path" : "0000-0003-4269-6344",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Ulrika Kaby"
+            },
+            "source-date" : {
+              "value" : 1421146554771
+            }
+          },
+          "created-date" : {
+            "value" : 1421146554771
+          },
+          "last-modified-date" : {
+            "value" : 1421146554771
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "665193"
+        } ]
+      },
+      "orcid-works" : {
+        "orcid-work" : [ {
+          "put-code" : "14999286",
+          "work-title" : {
+            "title" : {
+              "value" : "En mycket bra titel"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Fina tidskriften"
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "CONFERENCE_PAPER",
+          "publication-date" : {
+            "year" : {
+              "value" : "2007"
+            },
+            "month" : {
+              "value" : "01"
+            },
+            "day" : {
+              "value" : "03"
+            },
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-4269-6344",
+              "path" : "0000-0003-4269-6344",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Ulrika Kaby"
+            },
+            "source-date" : {
+              "value" : 1421146760391
+            }
+          },
+          "created-date" : {
+            "value" : 1421146760391
+          },
+          "last-modified-date" : {
+            "value" : 1437694689740
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      },
+      "funding-list" : {
+        "funding" : [ {
+          "put-code" : "58665",
+          "funding-type" : "GRANT",
+          "organization-defined-type" : null,
+          "funding-title" : {
+            "title" : {
+              "value" : "MItt fina projekt"
+            },
+            "translated-title" : null
+          },
+          "short-description" : "Bla bla bla",
+          "amount" : {
+            "value" : "1234567.89",
+            "currency-code" : "SEK"
+          },
+          "url" : {
+            "value" : ""
+          },
+          "start-date" : {
+            "year" : {
+              "value" : "2006"
+            },
+            "month" : {
+              "value" : "01"
+            },
+            "day" : null
+          },
+          "end-date" : null,
+          "funding-external-identifiers" : {
+            "funding-external-identifier" : [ {
+              "funding-external-identifier-type" : "GRANT_NUMBER",
+              "funding-external-identifier-value" : "1",
+              "funding-external-identifier-url" : null
+            } ]
+          },
+          "funding-contributors" : {
+            "funding-contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : null,
+              "contributor-email" : null,
+              "funding-contributor-attributes" : {
+                "funding-contributor-role" : "LEAD"
+              }
+            } ]
+          },
+          "organization" : {
+            "name" : "Vetenskapsrådet",
+            "address" : {
+              "city" : "stockholm",
+              "region" : null,
+              "country" : "SE"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "http://dx.doi.org/10.13039/501100004359",
+              "disambiguation-source" : "FUNDREF"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-4269-6344",
+              "path" : "0000-0003-4269-6344",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Ulrika Kaby"
+            },
+            "source-date" : {
+              "value" : 1421146719033
+            }
+          },
+          "created-date" : {
+            "value" : 1421146719033
+          },
+          "last-modified-date" : {
+            "value" : 1437077137233
+          },
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      }
+    },
+    "orcid-internal" : null,
+    "type" : "USER",
+    "group-type" : null,
+    "client-type" : null
+  },
+  "orcid-search-results" : null,
+  "error-desc" : null
+}
