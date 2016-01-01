@@ -1,0 +1,577 @@
+{
+  "message-version" : "1.2",
+  "orcid-profile" : {
+    "orcid" : null,
+    "orcid-id" : null,
+    "orcid-identifier" : {
+      "value" : null,
+      "uri" : "http://orcid.org/0000-0001-8477-2785",
+      "path" : "0000-0001-8477-2785",
+      "host" : "orcid.org"
+    },
+    "orcid-deprecated" : null,
+    "orcid-preferences" : {
+      "locale" : "EN"
+    },
+    "orcid-history" : {
+      "creation-method" : "DIRECT",
+      "completion-date" : null,
+      "submission-date" : {
+        "value" : 1415383655176
+      },
+      "last-modified-date" : {
+        "value" : 1438365396331
+      },
+      "claimed" : {
+        "value" : true
+      },
+      "source" : null,
+      "deactivation-date" : null,
+      "verified-email" : {
+        "value" : true
+      },
+      "verified-primary-email" : {
+        "value" : true
+      },
+      "visibility" : null
+    },
+    "orcid-bio" : {
+      "personal-details" : {
+        "given-names" : {
+          "value" : "Colleen"
+        },
+        "family-name" : {
+          "value" : "Willis"
+        },
+        "credit-name" : null,
+        "other-names" : null
+      },
+      "biography" : {
+        "value" : "Colleen Willis is currently the Senior Librarian, Digital Strategies and Technology at the National Academies of Sciences, Engineering and Medicine. She manages all library systems, metadata, interlibrary loan operations, and Library Impact Services.",
+        "visibility" : "PUBLIC"
+      },
+      "researcher-urls" : {
+        "researcher-url" : [ {
+          "url-name" : {
+            "value" : "LinkedIn Profile"
+          },
+          "url" : {
+            "value" : "https://www.linkedin.com/pub/colleen-willis/59/20b/935"
+          }
+        } ],
+        "visibility" : "PUBLIC"
+      },
+      "contact-details" : {
+        "email" : [ {
+          "value" : "cwillis@nas.edu",
+          "primary" : true,
+          "current" : true,
+          "verified" : true,
+          "visibility" : "PUBLIC",
+          "source" : "0000-0001-8477-2785",
+          "source-client-id" : null
+        } ],
+        "address" : {
+          "country" : {
+            "value" : "US",
+            "visibility" : "PUBLIC"
+          }
+        }
+      },
+      "keywords" : null,
+      "external-identifiers" : null,
+      "delegation" : null,
+      "applications" : null,
+      "scope" : null
+    },
+    "orcid-activities" : {
+      "affiliations" : {
+        "affiliation" : [ {
+          "type" : "EMPLOYMENT",
+          "department-name" : "Library/Research Center",
+          "role-title" : "Senior Librarian, Digital Strategies and Technology",
+          "start-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : {
+              "value" : "03"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : null,
+          "organization" : {
+            "name" : "National Academies of Sciences, Engineering and Medicine",
+            "address" : {
+              "city" : "Washington",
+              "region" : "DC",
+              "country" : "US"
+            },
+            "disambiguated-organization" : null
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-8477-2785",
+              "path" : "0000-0001-8477-2785",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Colleen Willis"
+            },
+            "source-date" : {
+              "value" : 1438005620610
+            }
+          },
+          "created-date" : {
+            "value" : 1438005620610
+          },
+          "last-modified-date" : {
+            "value" : 1438005620610
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1058364"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : null,
+          "role-title" : "Consultant",
+          "start-date" : {
+            "year" : {
+              "value" : "2007"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "organization" : {
+            "name" : "Infopeople Project",
+            "address" : {
+              "city" : "San Mateo",
+              "region" : "CA",
+              "country" : "US"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "94108",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-8477-2785",
+              "path" : "0000-0001-8477-2785",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Colleen Willis"
+            },
+            "source-date" : {
+              "value" : 1438005680086
+            }
+          },
+          "created-date" : {
+            "value" : 1438005680086
+          },
+          "last-modified-date" : {
+            "value" : 1438005680086
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1058366"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : "Children's Department",
+          "role-title" : "Librarian",
+          "start-date" : {
+            "year" : {
+              "value" : "1999"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "organization" : {
+            "name" : "Anaheim Public Library",
+            "address" : {
+              "city" : "Anaheim",
+              "region" : "CA",
+              "country" : "US"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "93952",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-8477-2785",
+              "path" : "0000-0001-8477-2785",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Colleen Willis"
+            },
+            "source-date" : {
+              "value" : 1438005700065
+            }
+          },
+          "created-date" : {
+            "value" : 1438005700065
+          },
+          "last-modified-date" : {
+            "value" : 1438005750034
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1058368"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : "Reference/Children's",
+          "role-title" : "Librarian",
+          "start-date" : {
+            "year" : {
+              "value" : "1999"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2001"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "organization" : {
+            "name" : "Newport Beach Public Library",
+            "address" : {
+              "city" : "Newport Beach",
+              "region" : "CA",
+              "country" : "US"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "94013",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-8477-2785",
+              "path" : "0000-0001-8477-2785",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Colleen Willis"
+            },
+            "source-date" : {
+              "value" : 1438005766622
+            }
+          },
+          "created-date" : {
+            "value" : 1438005766622
+          },
+          "last-modified-date" : {
+            "value" : 1438005957185
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1058370"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : "Library and Information Science",
+          "role-title" : "Masters of Science (M.S.)",
+          "start-date" : {
+            "year" : {
+              "value" : "1997"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "1999"
+            },
+            "month" : {
+              "value" : "05"
+            },
+            "day" : {
+              "value" : "31"
+            }
+          },
+          "organization" : {
+            "name" : "University of Arizona",
+            "address" : {
+              "city" : "Tucson",
+              "region" : "AZ",
+              "country" : "US"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "8041",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-8477-2785",
+              "path" : "0000-0001-8477-2785",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Colleen Willis"
+            },
+            "source-date" : {
+              "value" : 1438005355650
+            }
+          },
+          "created-date" : {
+            "value" : 1438005355650
+          },
+          "last-modified-date" : {
+            "value" : 1438005469981
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1058350"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : "Speech Pathology Audiology",
+          "role-title" : "Bachelor of Science (B.S.)",
+          "start-date" : {
+            "year" : {
+              "value" : "1992"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "1996"
+            },
+            "month" : {
+              "value" : "05"
+            },
+            "day" : {
+              "value" : "31"
+            }
+          },
+          "organization" : {
+            "name" : "Northern Arizona University",
+            "address" : {
+              "city" : "Flagstaff",
+              "region" : "AZ",
+              "country" : "US"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "3356",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-8477-2785",
+              "path" : "0000-0001-8477-2785",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Colleen Willis"
+            },
+            "source-date" : {
+              "value" : 1438005213477
+            }
+          },
+          "created-date" : {
+            "value" : 1438005213477
+          },
+          "last-modified-date" : {
+            "value" : 1438005342480
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1058344"
+        } ]
+      },
+      "orcid-works" : {
+        "orcid-work" : [ {
+          "put-code" : "17677158",
+          "work-title" : {
+            "title" : {
+              "value" : "The Growth of Incarceration in the United States: Exploring Causes and Consequences"
+            },
+            "subtitle" : null,
+            "translated-title" : {
+              "value" : "",
+              "language-code" : ""
+            }
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "FORMATTED_UNSPECIFIED",
+            "citation" : "National Research Council. (2014). The Growth of Incarceration in the United States: Exploring Causes and Consequences. Committee on Causes and Consequences of High Rates of Incarceration, J. Travis, B. Western, and S. Redburn, Editors. Committee on Law and Justice, Division of Behavioral and Social Sciences and Education. Washington, DC: The National Academies Press."
+          },
+          "work-type" : "REPORT",
+          "publication-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : {
+              "value" : "04"
+            },
+            "day" : {
+              "value" : "30"
+            },
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "ISBN",
+              "work-external-identifier-id" : {
+                "value" : "978-0-309-29801-8"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.nap.edu/catalog/18613/the-growth-of-incarceration-in-the-united-states-exploring-causes"
+          },
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-8477-2785",
+              "path" : "0000-0001-8477-2785",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Colleen Willis"
+            },
+            "source-date" : {
+              "value" : 1438005034907
+            }
+          },
+          "created-date" : {
+            "value" : 1438005034907
+          },
+          "last-modified-date" : {
+            "value" : 1438005034907
+          },
+          "language-code" : "en",
+          "country" : {
+            "value" : "US",
+            "visibility" : "PUBLIC"
+          },
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "17677137",
+          "work-title" : {
+            "title" : {
+              "value" : "Public Health Implications of Raising the Minimum Age of Legal Access to Tobacco Products "
+            },
+            "subtitle" : null,
+            "translated-title" : {
+              "value" : "",
+              "language-code" : ""
+            }
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "FORMATTED_UNSPECIFIED",
+            "citation" : "IOM (Institute of Medicine). 2015. Public Health Implications of Raising the Minimum Age of Legal Access to Tobacco Products. Washington, DC: The National Academies Press."
+          },
+          "work-type" : "REPORT",
+          "publication-date" : {
+            "year" : {
+              "value" : "2015"
+            },
+            "month" : {
+              "value" : "03"
+            },
+            "day" : {
+              "value" : "12"
+            },
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "ISBN",
+              "work-external-identifier-id" : {
+                "value" : "0309316243"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.nap.edu/catalog/18997/public-health-implications-of-raising-the-minimum-age-of-legal-access-to-tobacco-products"
+          },
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-8477-2785",
+              "path" : "0000-0001-8477-2785",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Colleen Willis"
+            },
+            "source-date" : {
+              "value" : 1438005957606
+            }
+          },
+          "created-date" : {
+            "value" : 1438005957606
+          },
+          "last-modified-date" : {
+            "value" : 1438005957615
+          },
+          "language-code" : "en",
+          "country" : {
+            "value" : "US",
+            "visibility" : "PUBLIC"
+          },
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      },
+      "funding-list" : null
+    },
+    "orcid-internal" : null,
+    "type" : "USER",
+    "group-type" : null,
+    "client-type" : null
+  },
+  "orcid-search-results" : null,
+  "error-desc" : null
+}
