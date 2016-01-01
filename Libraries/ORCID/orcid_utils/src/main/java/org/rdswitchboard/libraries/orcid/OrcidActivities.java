@@ -29,7 +29,7 @@ public class OrcidActivities {
 		return fundings;
 	}
 
-	public void setFunding(Fundings fundings) {
+	public void setFundings(Fundings fundings) {
 		this.fundings = fundings;
 	}
 
