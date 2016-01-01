@@ -19,6 +19,7 @@ public class OrcidHistory {
 	private String deactivationDate;
 	private Source source;
 	private String visibility;
+	private String verifiedEmail;
 	
 	@JsonProperty("creation-method")
 	public String getCreationMethod() {
@@ -99,6 +100,15 @@ public class OrcidHistory {
 		this.visibility = visibility;
 	}
 	
+	@JsonProperty("verified-email")
+	public String getVerifiedEmail() {
+		return verifiedEmail;
+	}
+
+	public void setVerifiedEmail(String verifiedEmail) {
+		this.verifiedEmail = verifiedEmail;
+	}
+	
 	@Override
 	public String toString() {
 		return "OrcidHistory [creationMethod=" + creationMethod
@@ -108,6 +118,7 @@ public class OrcidHistory {
 				+ ", claimed=" + claimed 
 				+ ", deactivationDate=" + deactivationDate 
 				+ ", source=" + source
-				+ ", visibility=" + visibility + "]";
+				+ ", visibility=" + visibility
+				+ ", verifiedEmail=" + verifiedEmail + "]";
 	}
 }
