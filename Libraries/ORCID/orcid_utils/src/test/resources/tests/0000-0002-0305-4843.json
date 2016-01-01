@@ -1,0 +1,66 @@
+{
+  "message-version" : "1.2",
+  "orcid-profile" : {
+    "orcid" : null,
+    "orcid-id" : null,
+    "orcid-identifier" : {
+      "value" : null,
+      "uri" : "http://orcid.org/0000-0002-0305-4843",
+      "path" : "0000-0002-0305-4843",
+      "host" : "orcid.org"
+    },
+    "orcid-deprecated" : null,
+    "orcid-preferences" : {
+      "locale" : "EN"
+    },
+    "orcid-history" : {
+      "creation-method" : "MEMBER_REFERRED",
+      "completion-date" : null,
+      "submission-date" : {
+        "value" : 1402322865625
+      },
+      "last-modified-date" : {
+        "value" : 1402322898301
+      },
+      "claimed" : {
+        "value" : true
+      },
+      "source" : null,
+      "deactivation-date" : null,
+      "verified-email" : {
+        "value" : false
+      },
+      "verified-primary-email" : {
+        "value" : false
+      },
+      "visibility" : null
+    },
+    "orcid-bio" : {
+      "personal-details" : {
+        "given-names" : {
+          "value" : "MARIA ELIANE"
+        },
+        "family-name" : {
+          "value" : "MOREIRA FREIRE"
+        },
+        "credit-name" : null,
+        "other-names" : null
+      },
+      "biography" : null,
+      "researcher-urls" : null,
+      "contact-details" : null,
+      "keywords" : null,
+      "external-identifiers" : null,
+      "delegation" : null,
+      "applications" : null,
+      "scope" : null
+    },
+    "orcid-activities" : null,
+    "orcid-internal" : null,
+    "type" : "USER",
+    "group-type" : null,
+    "client-type" : null
+  },
+  "orcid-search-results" : null,
+  "error-desc" : null
+}

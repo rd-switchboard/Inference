@@ -25,6 +25,9 @@ public class OrcidWork {
 	private String country;
 	private String shortDescription;
 	private String visibility;
+	private Source source;
+	private String createdDate;
+	private String lastModifiedDate;
 	
 	@JsonProperty("put-code")
 	public String getPutCode() {
@@ -170,22 +173,46 @@ public class OrcidWork {
 	public void setShortDescription(String shortDescription) {
 		this.shortDescription = shortDescription;
 	}
+	
+	public Source getSource() {
+		return source;
+	}
+
+	public void setSource(Source source) {
+		this.source = source;
+	}
+
+	@JsonProperty("created-date")
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+	@JsonDeserialize(using = ValueDeserializer.class)
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	@JsonProperty("last-modified-date")
+	public String getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+	
+	@JsonDeserialize(using = ValueDeserializer.class)
+	public void setLastModifiedDate(String lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
+	}
 
 	@Override
 	public String toString() {
-		return "OrcidWork [putCode=" + putCode 
-				+ ", title=" + title
-				+ ", journalTitle=" + journalTitle 
-				+ ", citation=" + citation
-				+ ", workType=" + workType 
-				+ ", publicationDate=" + publicationDate 
-				+ ", worlIdentifiers=" + worlIdentifiers
-				+ ", url=" + url 
-				+ ", workContributors=" + workContributors
-				+ ", workSource=" + workSource 
-				+ ", languageCode=" + languageCode 
-				+ ", country=" + country 
-				+ ", shortDescription=" + shortDescription
-				+ ", visibility=" + visibility + "]";
+		return "OrcidWork [putCode=" + putCode + ", title=" + title
+				+ ", journalTitle=" + journalTitle + ", citation=" + citation
+				+ ", workType=" + workType + ", publicationDate="
+				+ publicationDate + ", worlIdentifiers=" + worlIdentifiers
+				+ ", url=" + url + ", workContributors=" + workContributors
+				+ ", workSource=" + workSource + ", languageCode="
+				+ languageCode + ", country=" + country + ", shortDescription="
+				+ shortDescription + ", visibility=" + visibility + ", source="
+				+ source + ", createdDate=" + createdDate
+				+ ", lastModifiedDate=" + lastModifiedDate + "]";
 	}
 }

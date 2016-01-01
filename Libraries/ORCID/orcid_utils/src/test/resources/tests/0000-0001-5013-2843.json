@@ -1,0 +1,3586 @@
+{
+  "message-version" : "1.2",
+  "orcid-profile" : {
+    "orcid" : null,
+    "orcid-id" : null,
+    "orcid-identifier" : {
+      "value" : null,
+      "uri" : "http://orcid.org/0000-0001-5013-2843",
+      "path" : "0000-0001-5013-2843",
+      "host" : "orcid.org"
+    },
+    "orcid-deprecated" : null,
+    "orcid-preferences" : {
+      "locale" : "EN"
+    },
+    "orcid-history" : {
+      "creation-method" : "MEMBER_REFERRED",
+      "completion-date" : null,
+      "submission-date" : {
+        "value" : 1390227657310
+      },
+      "last-modified-date" : {
+        "value" : 1441301870392
+      },
+      "claimed" : {
+        "value" : true
+      },
+      "source" : null,
+      "deactivation-date" : null,
+      "verified-email" : {
+        "value" : true
+      },
+      "verified-primary-email" : {
+        "value" : true
+      },
+      "visibility" : null
+    },
+    "orcid-bio" : {
+      "personal-details" : {
+        "given-names" : {
+          "value" : "Maria"
+        },
+        "family-name" : {
+          "value" : "Ibáñez"
+        },
+        "credit-name" : null,
+        "other-names" : null
+      },
+      "biography" : null,
+      "researcher-urls" : null,
+      "contact-details" : null,
+      "keywords" : null,
+      "external-identifiers" : {
+        "external-identifier" : [ {
+          "orcid" : null,
+          "external-id-orcid" : null,
+          "external-id-common-name" : {
+            "value" : "ResearcherID"
+          },
+          "external-id-reference" : {
+            "value" : "B-2445-2014"
+          },
+          "external-id-url" : {
+            "value" : "http://www.researcherid.com/rid/B-2445-2014"
+          },
+          "external-id-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-7707-4137",
+              "path" : "0000-0001-7707-4137",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : null,
+            "source-date" : null
+          }
+        } ],
+        "visibility" : "PUBLIC"
+      },
+      "delegation" : null,
+      "applications" : null,
+      "scope" : null
+    },
+    "orcid-activities" : {
+      "affiliations" : null,
+      "orcid-works" : {
+        "orcid-work" : [ {
+          "put-code" : "18244472",
+          "work-title" : {
+            "title" : {
+              "value" : "Size and Aspect Ratio Control of Pd2Sn Nanorods and Their Water Denitration Properties"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Langmuir"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151205407-21,\ntitle = {Size and Aspect Ratio Control of Pd2Sn Nanorods and Their Water Denitration Properties},\njournal = {Langmuir},\nyear = {2015},\nauthor = {Luo, ZhiShan and  Ibanez, Maria and  Antolin, Ana M. and  Genc, Aziz and  Shavel, Alexey and  Contreras, Sandra and  Medina, Francesc and  Arbiol, Jordi and  Cabot, Andreu},\nvolume = {31},\nnumber = {13},\npages = {3952-3957}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2015"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/la504906q"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000352660500024"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000352660500024&KeyUID=WOS:000352660500024"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Luo, ZhiShan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Antolin, Ana M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Genc, Aziz",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Contreras, Sandra",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Medina, Francesc",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441296327274
+            }
+          },
+          "created-date" : {
+            "value" : 1441296327274
+          },
+          "last-modified-date" : {
+            "value" : 1441296327274
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18244453",
+          "work-title" : {
+            "title" : {
+              "value" : "Electron Doping in Bottom-Up Engineered Thermoelectric Nanomaterials through HCI-Mediated Ligand Displacement"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the American Chemical Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151205188-22,\ntitle = {Electron Doping in Bottom-Up Engineered Thermoelectric Nanomaterials through HCI-Mediated Ligand Displacement},\njournal = {Journal of the American Chemical Society},\nyear = {2015},\nauthor = {Ibanez, Maria and  Korkosz, Rachel J. and  Luo, Zhishan and  Riba, Pau and  Cadavid, Doris and  Ortega, Silvia and  Cabot, Andreu and  Kanatzidis, Mercouri G.},\nvolume = {137},\nnumber = {12},\npages = {4046-4049}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2015"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/jacs.5b00091"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000352244800011"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000352244800011&KeyUID=WOS:000352244800011"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Korkosz, Rachel J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Luo, Zhishan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Riba, Pau",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ortega, Silvia",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Kanatzidis, Mercouri G.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441296314843
+            }
+          },
+          "created-date" : {
+            "value" : 1441296314843
+          },
+          "last-modified-date" : {
+            "value" : 1441296314843
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245804",
+          "work-title" : {
+            "title" : {
+              "value" : "Thermoelectric properties of bottom-up assembled Bi2S3-xTex nanocomposites"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "International Journal of Nanotechnology"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151235711-27,\ntitle = {Thermoelectric properties of bottom-up assembled Bi2S3-xTex nanocomposites},\njournal = {International Journal of Nanotechnology},\nyear = {2014},\nauthor = {Cadavid, Doris and  Ibanez, Maria and  Anselmi-Tamburini, Umberto and  Dura, Oscar Juan and  Lopez de la Torre, Marco Antonio and  Cabot, Andreu},\nvolume = {11},\nnumber = {9-11},\npages = {773-784}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1504/IJNT.2014.063787"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000340027100006"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000340027100006&KeyUID=WOS:000340027100006"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Anselmi-Tamburini, Umberto",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Dura, Oscar Juan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Lopez de la Torre, Marco Antonio",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298115478
+            }
+          },
+          "created-date" : {
+            "value" : 1441298115478
+          },
+          "last-modified-date" : {
+            "value" : 1441298115478
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245803",
+          "work-title" : {
+            "title" : {
+              "value" : "The effect of the Ga content on the photocatalytic hydrogen evolution of CuIn Ga S  nanocrystals"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Materials Chemistry A"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151235710-23,\ntitle = {The effect of the Ga content on the photocatalytic hydrogen evolution of CuIn Ga S  nanocrystals},\njournal = {Journal of Materials Chemistry A},\nyear = {2014},\nauthor = {Xuelian Yu and  Xiaoqiang An and  Shavel, A. and  Ibanez, M. and  Cabot, A.},\nvolume = {2},\nnumber = {31},\npages = {12317-22}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1039/c4ta01315h"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "INSPEC:15154533"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=INSPEC&KeyUT=INSPEC:15154533&KeyUID=INSPEC:15154533"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Xuelian Yu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Xiaoqiang An",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298115471
+            }
+          },
+          "created-date" : {
+            "value" : 1441298115471
+          },
+          "last-modified-date" : {
+            "value" : 1441298115471
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245779",
+          "work-title" : {
+            "title" : {
+              "value" : "Cu2ZnSnS4-Pt and Cu2ZnSnS4-Au Heterostructured Nanoparticles for Photocatalytic Water Splitting and Pollutant Degradation"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the American Chemical Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151236231-24,\ntitle = {Cu2ZnSnS4-Pt and Cu2ZnSnS4-Au Heterostructured Nanoparticles for Photocatalytic Water Splitting and Pollutant Degradation},\njournal = {Journal of the American Chemical Society},\nyear = {2014},\nauthor = {Yu, Xuelian and  Shavel, Alexey and  An, Xiaoqiang and  Luo, Zhishan and  Ibanez, Maria and  Cabot, Andreu},\nvolume = {136},\nnumber = {26},\npages = {9236-9239}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/ja502076b"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000338692700001"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000338692700001&KeyUID=WOS:000338692700001"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Yu, Xuelian",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "An, Xiaoqiang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Luo, Zhishan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298028256
+            }
+          },
+          "created-date" : {
+            "value" : 1441298028256
+          },
+          "last-modified-date" : {
+            "value" : 1441298167361
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18244474",
+          "work-title" : {
+            "title" : {
+              "value" : "Colloidal synthesis and functional properties of quaternary Cu-based semiconductors: Cu HgGeSe"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Nanoparticle Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151205407-25,\ntitle = {Colloidal synthesis and functional properties of quaternary Cu-based semiconductors: Cu HgGeSe},\njournal = {Journal of Nanoparticle Research},\nyear = {2014},\nauthor = {Wenhua Li and  Ibanez, M. and  Cadavid, D. and  Zamani, R.R. and  Rubio-Garcia, J. and  Gorsse, S. and  Morante, J.R. and  Arbiol, J. and  Cabot, A.},\nvolume = {16},\nnumber = {3},\npages = {2297 (6 pp.)}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1007/s11051-014-2297-2"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "INSPEC:14591200"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=INSPEC&KeyUT=INSPEC:14591200&KeyUID=INSPEC:14591200"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Wenhua Li",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, D.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, R.R.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rubio-Garcia, J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gorsse, S.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Morante, J.R.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441296327285
+            }
+          },
+          "created-date" : {
+            "value" : 1441296327285
+          },
+          "last-modified-date" : {
+            "value" : 1441296327285
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18244473",
+          "work-title" : {
+            "title" : {
+              "value" : "Bottom-up processing of PbTe-PbS thermoelectric nanocomposites"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "International Journal of Nanotechnology"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151205407-28,\ntitle = {Bottom-up processing of PbTe-PbS thermoelectric nanocomposites},\njournal = {International Journal of Nanotechnology},\nyear = {2014},\nauthor = {Ortega, Silvia and  Ibanez, Maria and  Cadavid, Doris and  Cabot, Andreu},\nvolume = {11},\nnumber = {9-11},\npages = {955-970}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1504/IJNT.2014.063802"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000340027100021"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000340027100021&KeyUID=WOS:000340027100021"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ortega, Silvia",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441296327279
+            }
+          },
+          "created-date" : {
+            "value" : 1441296327279
+          },
+          "last-modified-date" : {
+            "value" : 1441296327279
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245797",
+          "work-title" : {
+            "title" : {
+              "value" : "Organic ligand displacement by metal salts to enhance nanoparticle functionality: thermoelectric properties of Ag2Te"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Materials Chemistry a"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234656-17,\ntitle = {Organic ligand displacement by metal salts to enhance nanoparticle functionality: thermoelectric properties of Ag2Te},\njournal = {Journal of Materials Chemistry a},\nyear = {2013},\nauthor = {Cadavid, Doris and  Ibanez, Maria and  Shavel, Alexey and  Juan Dura, Oscar and  Lopez de la Torre, M. A. and  Cabot, Andreu},\nvolume = {1},\nnumber = {15},\npages = {4864-4870}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1039/c3ta01455j"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000316282800033"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000316282800033&KeyUID=WOS:000316282800033"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Juan Dura, Oscar",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Lopez de la Torre, M. A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298093436
+            }
+          },
+          "created-date" : {
+            "value" : 1441298093436
+          },
+          "last-modified-date" : {
+            "value" : 1441298093436
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245796",
+          "work-title" : {
+            "title" : {
+              "value" : "Metal Ions To Control the Morphology of Semiconductor Nanoparticles: Copper Selenide Nanocubes"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the American Chemical Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234656-19,\ntitle = {Metal Ions To Control the Morphology of Semiconductor Nanoparticles: Copper Selenide Nanocubes},\njournal = {Journal of the American Chemical Society},\nyear = {2013},\nauthor = {Li, Wenhua and  Zamani, Reza and  Ibanez, Maria and  Cadavid, Doris and  Shavel, Alexey and  Morante, Joan Ramon and  Arbiol, Jordi and  Cabot, Andreu},\nvolume = {135},\nnumber = {12},\npages = {4664-4667}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/ja400472m"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000317032000023"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000317032000023&KeyUID=WOS:000317032000023"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Morante, Joan Ramon",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298093431
+            }
+          },
+          "created-date" : {
+            "value" : 1441298093431
+          },
+          "last-modified-date" : {
+            "value" : 1441298093431
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245795",
+          "work-title" : {
+            "title" : {
+              "value" : "CuTe Nanocrystals: Shape and Size Control, Plasmonic Properties, and Use as SERS Probes and Photothermal Agents"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the American Chemical Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234655-18,\ntitle = {CuTe Nanocrystals: Shape and Size Control, Plasmonic Properties, and Use as SERS Probes and Photothermal Agents},\njournal = {Journal of the American Chemical Society},\nyear = {2013},\nauthor = {Li, Wenhua and  Zamani, Reza and  Gil, Pilar Rivera and  Pelaz, Beatriz and  Ibanez, Maria and  Cadavid, Doris and  Shavel, Alexey and  Alvarez-Puebla, Ramon A. and  Parak, Wolfgang J. and  Arbiol, Jordi and  Cabot, Andreu},\nvolume = {135},\nnumber = {19},\npages = {7098-7101}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/ja401428e"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000319250200005"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000319250200005&KeyUID=WOS:000319250200005"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gil, Pilar Rivera",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pelaz, Beatriz",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Alvarez-Puebla, Ramon A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Parak, Wolfgang J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298093425
+            }
+          },
+          "created-date" : {
+            "value" : 1441298093425
+          },
+          "last-modified-date" : {
+            "value" : 1441298093425
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245794",
+          "work-title" : {
+            "title" : {
+              "value" : "Cu2HgSnSe4 nanoparticles: synthesis and thermoelectric properties"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Crystengcomm"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234655-7,\ntitle = {Cu2HgSnSe4 nanoparticles: synthesis and thermoelectric properties},\njournal = {Crystengcomm},\nyear = {2013},\nauthor = {Li, Wenhua and  Ibanez, Maria and  Zamani, Reza R. and  Garcia-Castello, Nuria and  Gorsse, Stephane and  Cadavid, Doris and  Daniel Prades, Joan and  Arbiol, Jordi and  Cabot, Andreu},\nvolume = {15},\nnumber = {44},\npages = {8966-8971}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1039/c3ce41583j"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000326494500021"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000326494500021&KeyUID=WOS:000326494500021"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza R.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Garcia-Castello, Nuria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gorsse, Stephane",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Daniel Prades, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298093421
+            }
+          },
+          "created-date" : {
+            "value" : 1441298093421
+          },
+          "last-modified-date" : {
+            "value" : 1441298093421
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245793",
+          "work-title" : {
+            "title" : {
+              "value" : "Core-Shell Nanoparticles As Building Blocks for the Bottom-Up Production of Functional Nanocomposites: PbTe-PbS Thermoelectric Properties"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Acs Nano"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234655-16,\ntitle = {Core-Shell Nanoparticles As Building Blocks for the Bottom-Up Production of Functional Nanocomposites: PbTe-PbS Thermoelectric Properties},\njournal = {Acs Nano},\nyear = {2013},\nauthor = {Ibanez, Maria and  Zamani, Reza and  Gorsse, Stephane and  Fan, Jiandong and  Ortega, Silvia and  Cadavid, Doris and  Ramon Morante, Joan and  Arbiol, Jordi and  Cabot, Andreu},\nvolume = {7},\nnumber = {3},\npages = {2573-2586}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/nn305971v"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000316846700076"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000316846700076&KeyUID=WOS:000316846700076"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gorsse, Stephane",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fan, Jiandong",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ortega, Silvia",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ramon Morante, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298093415
+            }
+          },
+          "created-date" : {
+            "value" : 1441298093415
+          },
+          "last-modified-date" : {
+            "value" : 1441298093415
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245792",
+          "work-title" : {
+            "title" : {
+              "value" : "Colloidal synthesis and thermoelectric properties of Cu2SnSe3 nanocrystals"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Materials Chemistry a"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234655-15,\ntitle = {Colloidal synthesis and thermoelectric properties of Cu2SnSe3 nanocrystals},\njournal = {Journal of Materials Chemistry a},\nyear = {2013},\nauthor = {Ibanez, Maria and  Cadavid, Doris and  Anselmi-Tamburini, Umberto and  Zamani, Reza and  Gorsse, Stephane and  Li, Wenhua and  Lopez, Antonio M. and  Ramon Morante, Joan and  Arbiol, Jordi and  Cabot, Andreu},\nvolume = {1},\nnumber = {4},\npages = {1421-1426}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1039/c2ta00419d"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000314633500060"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000314633500060&KeyUID=WOS:000314633500060"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Anselmi-Tamburini, Umberto",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gorsse, Stephane",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Lopez, Antonio M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ramon Morante, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298093410
+            }
+          },
+          "created-date" : {
+            "value" : 1441298093410
+          },
+          "last-modified-date" : {
+            "value" : 1441298093410
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245806",
+          "work-title" : {
+            "title" : {
+              "value" : "Antimony-Based Ligand Exchange To Promote Crystallization in Spray-Deposited Cu2ZnSnSe4 Solar Cells"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the American Chemical Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151235711-1,\ntitle = {Antimony-Based Ligand Exchange To Promote Crystallization in Spray-Deposited Cu2ZnSnSe4 Solar Cells},\njournal = {Journal of the American Chemical Society},\nyear = {2013},\nauthor = {Carrete, Alex and  Shavel, Alexey and  Fontane, Xavier and  Montserrat, Joana and  Fan, Jiandong and  Ibanez, Maria and  Saucedo, Edgardo and  Perez-Rodriguez, Alejandro and  Cabot, Andreu},\nvolume = {135},\nnumber = {43},\npages = {15982-15985}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/ja4068639"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000326487800005"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000326487800005&KeyUID=WOS:000326487800005"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Carrete, Alex",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fontane, Xavier",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Montserrat, Joana",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fan, Jiandong",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Saucedo, Edgardo",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Perez-Rodriguez, Alejandro",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298115496
+            }
+          },
+          "created-date" : {
+            "value" : 1441298115496
+          },
+          "last-modified-date" : {
+            "value" : 1441298115496
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245805",
+          "work-title" : {
+            "title" : {
+              "value" : "All Change for Nanocrystals"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Science"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151235711-2,\ntitle = {All Change for Nanocrystals},\njournal = {Science},\nyear = {2013},\nauthor = {Ibanez, Maria and  Cabot, Andreu},\nvolume = {340},\nnumber = {6135},\npages = {935-936}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1126/science.1239221"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000319344100032"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000319344100032&KeyUID=WOS:000319344100032"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298115486
+            }
+          },
+          "created-date" : {
+            "value" : 1441298115486
+          },
+          "last-modified-date" : {
+            "value" : 1441298115486
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245782",
+          "work-title" : {
+            "title" : {
+              "value" : "Solution-growth and optoelectronic performance of ZnO:Cl/TiO2 and ZnO:Cl/ZnxTiOy/TiO2 core-shell nanowires with tunable shell thickness"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Physics D-Applied Physics"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234303-9,\ntitle = {Solution-growth and optoelectronic performance of ZnO:Cl/TiO2 and ZnO:Cl/ZnxTiOy/TiO2 core-shell nanowires with tunable shell thickness},\njournal = {Journal of Physics D-Applied Physics},\nyear = {2012},\nauthor = {Fan, Jiandong and  Zamani, Reza and  Fabrega, Cristian and  Shavel, Alexey and  Flox, Cristina and  Ibanez, Maria and  Andreu, Teresa and  Lopez, Antonio M. and  Arbiol, Jordi and  Ramon Morante, Joan and  Cabot, Andreu},\nvolume = {45},\nnumber = {41}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1088/0022-3727/45/41/415301"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000309609300007"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000309609300007&KeyUID=WOS:000309609300007"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fan, Jiandong",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fabrega, Cristian",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Flox, Cristina",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Andreu, Teresa",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Lopez, Antonio M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ramon Morante, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298047898
+            }
+          },
+          "created-date" : {
+            "value" : 1441298047898
+          },
+          "last-modified-date" : {
+            "value" : 1441298047898
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245790",
+          "work-title" : {
+            "title" : {
+              "value" : "Cu2ZnGeSe4 Nanocrystals: Synthesis and Thermoelectric Properties"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the American Chemical Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234668-3,\ntitle = {Cu2ZnGeSe4 Nanocrystals: Synthesis and Thermoelectric Properties},\njournal = {Journal of the American Chemical Society},\nyear = {2012},\nauthor = {Ibanez, Maria and  Zamani, Reza and  LaLonde, Aaron and  Cadavid, Doris and  Li, Wenhua and  Shavel, Alexey and  Arbiol, Jordi and  Morante, Joan Ramon and  Gorsse, Stephane and  Snyder, G. Jeffrey and  Cabot, Andreu},\nvolume = {134},\nnumber = {9},\npages = {4060-4063}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/ja211952z"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000301550800034"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000301550800034&KeyUID=WOS:000301550800034"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "LaLonde, Aaron",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Morante, Joan Ramon",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gorsse, Stephane",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Snyder, G. Jeffrey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298069291
+            }
+          },
+          "created-date" : {
+            "value" : 1441298069291
+          },
+          "last-modified-date" : {
+            "value" : 1441298069291
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245789",
+          "work-title" : {
+            "title" : {
+              "value" : "Crystallographic Control at the Nanoscale To Enhance Functionality: Polytypic Cu2GeSe3 Nanoparticles as Thermoelectric Materials"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Chemistry of Materials"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234667-8,\ntitle = {Crystallographic Control at the Nanoscale To Enhance Functionality: Polytypic Cu2GeSe3 Nanoparticles as Thermoelectric Materials},\njournal = {Chemistry of Materials},\nyear = {2012},\nauthor = {Ibanez, Maria and  Zamani, Reza and  Li, Wenhua and  Cadavid, Doris and  Gorsse, Stephane and  Katcho, Nebil A. and  Shavel, Alexey and  Lopez, Antonio M. and  Ramon Morante, Joan and  Arbiol, Jordi and  Cabot, Andreu},\nvolume = {24},\nnumber = {23},\npages = {4615-4622}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/cm303252q"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000312122400017"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000312122400017&KeyUID=WOS:000312122400017"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gorsse, Stephane",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Katcho, Nebil A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Lopez, Antonio M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ramon Morante, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298069287
+            }
+          },
+          "created-date" : {
+            "value" : 1441298069287
+          },
+          "last-modified-date" : {
+            "value" : 1441298069287
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245788",
+          "work-title" : {
+            "title" : {
+              "value" : "Continuous Production of Cu2ZnSnS4 Nanocrystals in a Flow Reactor"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the American Chemical Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234667-6,\ntitle = {Continuous Production of Cu2ZnSnS4 Nanocrystals in a Flow Reactor},\njournal = {Journal of the American Chemical Society},\nyear = {2012},\nauthor = {Shavel, Alexey and  Cadavid, Doris and  Ibanez, Maria and  Carrete, Alex and  Cabot, Andreu},\nvolume = {134},\nnumber = {3},\npages = {1438-1441}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/ja209688a"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000301084400014"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000301084400014&KeyUID=WOS:000301084400014"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Carrete, Alex",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298069282
+            }
+          },
+          "created-date" : {
+            "value" : 1441298069282
+          },
+          "last-modified-date" : {
+            "value" : 1441298069282
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245787",
+          "work-title" : {
+            "title" : {
+              "value" : "Composition Control and Thermoelectric Properties of Quaternary Chalcogenide Nanocrystals: The Case of Stannite Cu2CdSnSe4"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Chemistry of Materials"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234667-5,\ntitle = {Composition Control and Thermoelectric Properties of Quaternary Chalcogenide Nanocrystals: The Case of Stannite Cu2CdSnSe4},\njournal = {Chemistry of Materials},\nyear = {2012},\nauthor = {Ibanez, Maria and  Cadavid, Doris and  Zamani, Reza and  Garcia-Castello, Nuria and  Izquierdo-Roca, Victor and  Li, Wenhua and  Fairbrother, Andrew and  Daniel Prades, Joan and  Shavel, Alexey and  Arbiol, Jordi and  Perez-Rodriguez, Alejandro and  Ramon Morante, Joan and  Cabot, Andreu},\nvolume = {24},\nnumber = {3},\npages = {562-570}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/cm2031812"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000300129400021"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000300129400021&KeyUID=WOS:000300129400021"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Zamani, Reza",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Garcia-Castello, Nuria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Izquierdo-Roca, Victor",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fairbrother, Andrew",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Daniel Prades, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Perez-Rodriguez, Alejandro",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ramon Morante, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298069278
+            }
+          },
+          "created-date" : {
+            "value" : 1441298069278
+          },
+          "last-modified-date" : {
+            "value" : 1441298069278
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245786",
+          "work-title" : {
+            "title" : {
+              "value" : "Bottom-up processing of thermoelectric nanocomposites from colloidal nanocrystal building blocks: the case of Ag2Te-PbTe"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Nanoparticle Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234667-20,\ntitle = {Bottom-up processing of thermoelectric nanocomposites from colloidal nanocrystal building blocks: the case of Ag2Te-PbTe},\njournal = {Journal of Nanoparticle Research},\nyear = {2012},\nauthor = {Cadavid, Doris and  Ibanez, Maria and  Gorsse, Stephane and  Lopez, Antonio M. and  Cirera, Albert and  Ramon Morante, Joan and  Cabot, Andreu},\nvolume = {14},\nnumber = {12}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1007/s11051-012-1328-0"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000312894200061"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000312894200061&KeyUID=WOS:000312894200061"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gorsse, Stephane",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Lopez, Antonio M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cirera, Albert",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ramon Morante, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298069272
+            }
+          },
+          "created-date" : {
+            "value" : 1441298069272
+          },
+          "last-modified-date" : {
+            "value" : 1441298069272
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245780",
+          "work-title" : {
+            "title" : {
+              "value" : "Morphology evolution of Cu2-xS nanoparticles: from spheres to dodecahedrons"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Chemical Communications"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151233653-14,\ntitle = {Morphology evolution of Cu2-xS nanoparticles: from spheres to dodecahedrons},\njournal = {Chemical Communications},\nyear = {2011},\nauthor = {Li, Wenhua and  Shavel, Alexey and  Guzman, Roger and  Rubio-Garcia, Javier and  Flox, Cristina and  Fan, Jiandong and  Cadavid, Doris and  Ibanez, Maria and  Arbiol, Jordi and  Ramon Morante, Joan and  Cabot, Andreu},\nvolume = {47},\nnumber = {37},\npages = {10332-10334}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1039/c1cc13803k"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000294500600040"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000294500600040&KeyUID=WOS:000294500600040"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Guzman, Roger",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rubio-Garcia, Javier",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Flox, Cristina",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fan, Jiandong",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ramon Morante, Joan",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298028261
+            }
+          },
+          "created-date" : {
+            "value" : 1441298028261
+          },
+          "last-modified-date" : {
+            "value" : 1441298028261
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245785",
+          "work-title" : {
+            "title" : {
+              "value" : "Means and Limits of Control of the Shell Parameters in Hollow Nanoparticles Obtained by the Kirkendall Effect"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Chemistry of Materials"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234303-10,\ntitle = {Means and Limits of Control of the Shell Parameters in Hollow Nanoparticles Obtained by the Kirkendall Effect},\njournal = {Chemistry of Materials},\nyear = {2011},\nauthor = {Ibanez, Maria and  Fan, Jiandong and  Li, Wenhua and  Cadavid, Doris and  Nafria, Raquel and  Carrete, Alex and  Cabot, Andreu},\nvolume = {23},\nnumber = {12},\npages = {3095-3104}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/cm2006633"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000291897300011"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000291897300011&KeyUID=WOS:000291897300011"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fan, Jiandong",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Li, Wenhua",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Nafria, Raquel",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Carrete, Alex",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298047917
+            }
+          },
+          "created-date" : {
+            "value" : 1441298047917
+          },
+          "last-modified-date" : {
+            "value" : 1441298047917
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245784",
+          "work-title" : {
+            "title" : {
+              "value" : "Growth Kinetics of Asymmetric Bi2S3 Nanocrystals: Size Distribution Focusing in Nanorods"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Physical Chemistry C"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234303-12,\ntitle = {Growth Kinetics of Asymmetric Bi2S3 Nanocrystals: Size Distribution Focusing in Nanorods},\njournal = {Journal of Physical Chemistry C},\nyear = {2011},\nauthor = {Ibanez, Maria and  Guardia, Pablo and  Shavel, Alexey and  Cadavid, Doris and  Arbiol, Jordi and  Morante, Joan Ramon and  Cabot, Andreu},\nvolume = {115},\nnumber = {16},\npages = {7947-7955}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/jp2002904"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000289697400017"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000289697400017&KeyUID=WOS:000289697400017"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Guardia, Pablo",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Morante, Joan Ramon",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298047911
+            }
+          },
+          "created-date" : {
+            "value" : 1441298047911
+          },
+          "last-modified-date" : {
+            "value" : 1441298047911
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245783",
+          "work-title" : {
+            "title" : {
+              "value" : "Correction to Growth Kinetics of Asymmetric Bi2S3 Nanocrystals: Size Distribution Focusing in Nanorods (vol 115, pg 7947, 2011)"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Physical Chemistry C"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151234303-11,\ntitle = {Correction to Growth Kinetics of Asymmetric Bi2S3 Nanocrystals: Size Distribution Focusing in Nanorods (vol 115, pg 7947, 2011)},\njournal = {Journal of Physical Chemistry C},\nyear = {2011},\nauthor = {Ibanez, Maria and  Guardia, Pablo and  Shavel, Alexey and  Cadavid, Doris and  Arbiol, Jordi and  Morante, Joan Ramon and  Cabot, Andreu},\nvolume = {115},\nnumber = {23},\npages = {11888}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/jp204009r"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000291339000071"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000291339000071&KeyUID=WOS:000291339000071"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Guardia, Pablo",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shavel, Alexey",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cadavid, Doris",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Arbiol, Jordi",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Morante, Joan Ramon",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298047905
+            }
+          },
+          "created-date" : {
+            "value" : 1441298047905
+          },
+          "last-modified-date" : {
+            "value" : 1441298047905
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "18245781",
+          "work-title" : {
+            "title" : {
+              "value" : "Reaction Regimes on the Synthesis of Hollow Particles by the Kirkendall Effect"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the American Chemical Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article{RID:0903151233653-13,\ntitle = {Reaction Regimes on the Synthesis of Hollow Particles by the Kirkendall Effect},\njournal = {Journal of the American Chemical Society},\nyear = {2009},\nauthor = {Cabot, Andreu and  Ibanez, Maria and  Guardia, Pablo and  Alivisatos, A. Paul},\nvolume = {131},\nnumber = {32},\npages = {11326-+}\n}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2009"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1021/ja903751p"
+              }
+            }, {
+              "work-external-identifier-type" : "WOSUID",
+              "work-external-identifier-id" : {
+                "value" : "WOS:000269379200027"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=ORCID&SrcApp=OrcidOrg&DestLinkType=FullRecord&DestApp=WOS_CPL&KeyUT=WOS:000269379200027&KeyUID=WOS:000269379200027"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Cabot, Andreu",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ibanez, Maria",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Guardia, Pablo",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Alivisatos, A. Paul",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1377-5676",
+              "path" : "0000-0003-1377-5676",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "ResearcherID"
+            },
+            "source-date" : {
+              "value" : 1441298028265
+            }
+          },
+          "created-date" : {
+            "value" : 1441298028265
+          },
+          "last-modified-date" : {
+            "value" : 1441298028265
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      },
+      "funding-list" : null
+    },
+    "orcid-internal" : null,
+    "type" : "USER",
+    "group-type" : null,
+    "client-type" : null
+  },
+  "orcid-search-results" : null,
+  "error-desc" : null
+}

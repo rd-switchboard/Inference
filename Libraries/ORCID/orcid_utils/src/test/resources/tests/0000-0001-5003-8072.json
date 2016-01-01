@@ -1,0 +1,1497 @@
+{
+  "message-version" : "1.2",
+  "orcid-profile" : {
+    "orcid" : null,
+    "orcid-id" : null,
+    "orcid-identifier" : {
+      "value" : null,
+      "uri" : "http://orcid.org/0000-0001-5003-8072",
+      "path" : "0000-0001-5003-8072",
+      "host" : "orcid.org"
+    },
+    "orcid-deprecated" : null,
+    "orcid-preferences" : {
+      "locale" : "EN"
+    },
+    "orcid-history" : {
+      "creation-method" : "MEMBER_REFERRED",
+      "completion-date" : null,
+      "submission-date" : {
+        "value" : 1392953351623
+      },
+      "last-modified-date" : {
+        "value" : 1442233060194
+      },
+      "claimed" : {
+        "value" : true
+      },
+      "source" : null,
+      "deactivation-date" : null,
+      "verified-email" : {
+        "value" : true
+      },
+      "verified-primary-email" : {
+        "value" : true
+      },
+      "visibility" : null
+    },
+    "orcid-bio" : {
+      "personal-details" : {
+        "given-names" : {
+          "value" : "Stephanie"
+        },
+        "family-name" : {
+          "value" : "Fay"
+        },
+        "credit-name" : null,
+        "other-names" : null
+      },
+      "biography" : null,
+      "researcher-urls" : null,
+      "contact-details" : null,
+      "keywords" : null,
+      "external-identifiers" : {
+        "external-identifier" : [ {
+          "orcid" : null,
+          "external-id-orcid" : null,
+          "external-id-common-name" : {
+            "value" : "Scopus Author ID"
+          },
+          "external-id-reference" : {
+            "value" : "37060739300"
+          },
+          "external-id-url" : {
+            "value" : "http://www.scopus.com/inward/authorDetails.url?authorID=37060739300&partnerID=MN8TOARS"
+          },
+          "external-id-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : null,
+            "source-date" : null
+          }
+        } ],
+        "visibility" : "PUBLIC"
+      },
+      "delegation" : null,
+      "applications" : null,
+      "scope" : null
+    },
+    "orcid-activities" : {
+      "affiliations" : null,
+      "orcid-works" : {
+        "orcid-work" : [ {
+          "put-code" : "17744785",
+          "work-title" : {
+            "title" : {
+              "value" : "Psychological predictors of opportunistic snacking in the absence of hunger"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Eating Behaviors"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { fay2015,title = {Psychological predictors of opportunistic snacking in the absence of hunger},journal = {Eating Behaviors},year = {2015},volume = {18},pages = {156-159},author = {Fay, S.H. and White, M.J. and Finlayson, G. and King, N.A.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2015"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.eatbeh.2015.05.014"
+              }
+            }, {
+              "work-external-identifier-type" : "EID",
+              "work-external-identifier-id" : {
+                "value" : "2-s2.0-84934998872"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84934998872&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay, S.H.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "White, M.J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Finlayson, G.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "King, N.A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1438249287022
+            }
+          },
+          "created-date" : {
+            "value" : 1438249287022
+          },
+          "last-modified-date" : {
+            "value" : 1438249287022
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11831863",
+          "work-title" : {
+            "title" : {
+              "value" : "Using photography in 'The Restaurant of the Future'. A useful way to assess portion selection and plate cleaning?"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "FORMATTED_UNSPECIFIED",
+            "citation" : "Hinton EC, Brunstrom JM, Fay SH, Wilkinson LL, Ferriday D, Rogers PJ, de Wijk R, Appetite, 2013, vol. 63, pp. 31-35"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : {
+              "value" : "04"
+            },
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2012.12.008"
+              }
+            }, {
+              "work-external-identifier-type" : "PMID",
+              "work-external-identifier-id" : {
+                "value" : "23262297"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://europepmc.org/abstract/med/23262297"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hinton EC",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Brunstrom JM",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay SH",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Wilkinson LL",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ferriday D",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rogers PJ",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "de Wijk R",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-9157-3431",
+              "path" : "0000-0002-9157-3431",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Europe PubMed Central"
+            },
+            "source-date" : {
+              "value" : 1392953599483
+            }
+          },
+          "created-date" : {
+            "value" : 1392953599483
+          },
+          "last-modified-date" : {
+            "value" : 1438249282928
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "17744786",
+          "work-title" : {
+            "title" : {
+              "value" : "Using photography in 'The Restaurant of the Future': A useful way to assess portion selection and plate cleaning?"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Appetite"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { fay2013,title = {Using photography in 'The Restaurant of the Future': A useful way to assess portion selection and plate cleaning?},journal = {Appetite},year = {2013},volume = {63},pages = {31-35},author = {Hinton, E.C. and Brunstrom, J.M. and Fay, S.H. and Wilkinson, L.L. and Ferriday, D. and Rogers, P.J. and De Wijk, R.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2012.12.008"
+              }
+            }, {
+              "work-external-identifier-type" : "EID",
+              "work-external-identifier-id" : {
+                "value" : "2-s2.0-84872433430"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84872433430&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hinton, E.C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Brunstrom, J.M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay, S.H.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Wilkinson, L.L.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ferriday, D.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rogers, P.J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "De Wijk, R.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1438249287083
+            }
+          },
+          "created-date" : {
+            "value" : 1438249287083
+          },
+          "last-modified-date" : {
+            "value" : 1438249287083
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11831858",
+          "work-title" : {
+            "title" : {
+              "value" : "The ‘variety effect’ is anticipated in meal planning"
+            },
+            "subtitle" : {
+              "value" : "Appetite"
+            },
+            "translated-title" : null
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : " @article{Wilkinson_Hinton_Fay_Rogers_Brunstrom_2013, title={The âvariety effectâ is anticipated in meal planning}, volume={60}, ISSN={0195-6663}, url={http://dx.doi.org/10.1016/j.appet.2012.10.001}, DOI={10.1016/j.appet.2012.10.001}, journal={Appetite}, publisher={Elsevier BV}, author={Wilkinson, Laura L. and Hinton, Elanor C. and Fay, Stephanie H. and Rogers, Peter J. and Brunstrom, Jeffrey M.}, year={2013}, month={Jan}, pages={175â179}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "ISSN",
+              "work-external-identifier-id" : {
+                "value" : "0195-6663"
+              }
+            }, {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2012.10.001"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : null,
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-3054-1567",
+              "path" : "0000-0002-3054-1567",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "CrossRef Metadata Search"
+            },
+            "source-date" : {
+              "value" : 1392953435359
+            }
+          },
+          "created-date" : {
+            "value" : 1392953435359
+          },
+          "last-modified-date" : {
+            "value" : 1438249282928
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "17744780",
+          "work-title" : {
+            "title" : {
+              "value" : "The 'variety effect' is anticipated in meal planning"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Appetite"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { fay2013,title = {The 'variety effect' is anticipated in meal planning},journal = {Appetite},year = {2013},volume = {60},number = {1},pages = {175-179},author = {Wilkinson, L.L. and Hinton, E.C. and Fay, S.H. and Rogers, P.J. and Brunstrom, J.M.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2012.10.001"
+              }
+            }, {
+              "work-external-identifier-type" : "EID",
+              "work-external-identifier-id" : {
+                "value" : "2-s2.0-84868536621"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84868536621&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Wilkinson, L.L.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hinton, E.C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay, S.H.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rogers, P.J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Brunstrom, J.M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1438249282923
+            }
+          },
+          "created-date" : {
+            "value" : 1438249282923
+          },
+          "last-modified-date" : {
+            "value" : 1438249282923
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11831859",
+          "work-title" : {
+            "title" : {
+              "value" : "Diet-Induced Obesity: When Does Consumption Become Overconsumption?"
+            },
+            "subtitle" : {
+              "value" : "Current Obesity Reports"
+            },
+            "translated-title" : null
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : " @article{Fay_Finlayson_King_2013, title={Diet-Induced Obesity: When Does Consumption Become Overconsumption?}, volume={2}, ISSN={2162-4968}, url={http://dx.doi.org/10.1007/s13679-012-0033-8}, DOI={10.1007/s13679-012-0033-8}, number={1}, journal={Curr Obes Rep}, publisher={Springer Science + Business Media}, author={Fay, Stephanie H. and Finlayson, Graham S. and King, Neil A.}, year={2013}, month={Mar}, pages={104â106}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1007/s13679-012-0033-8"
+              }
+            }, {
+              "work-external-identifier-type" : "ISSN",
+              "work-external-identifier-id" : {
+                "value" : "2162-4968"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : null,
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-3054-1567",
+              "path" : "0000-0002-3054-1567",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "CrossRef Metadata Search"
+            },
+            "source-date" : {
+              "value" : 1392953448201
+            }
+          },
+          "created-date" : {
+            "value" : 1392953448201
+          },
+          "last-modified-date" : {
+            "value" : 1438249282928
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11831864",
+          "work-title" : {
+            "title" : {
+              "value" : "Computer-based assessments of expected satiety predict behavioural measures of portion-size selection and food intake."
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "FORMATTED_UNSPECIFIED",
+            "citation" : "Wilkinson LL, Hinton EC, Fay SH, Ferriday D, Rogers PJ, Brunstrom JM, Appetite, 2012, vol. 59, no. 3, pp. 933-938"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : {
+              "value" : "12"
+            },
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2012.09.007"
+              }
+            }, {
+              "work-external-identifier-type" : "PMID",
+              "work-external-identifier-id" : {
+                "value" : "22989621"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://europepmc.org/abstract/med/22989621"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Wilkinson LL",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hinton EC",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay SH",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ferriday D",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rogers PJ",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Brunstrom JM",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-9157-3431",
+              "path" : "0000-0002-9157-3431",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Europe PubMed Central"
+            },
+            "source-date" : {
+              "value" : 1392953599490
+            }
+          },
+          "created-date" : {
+            "value" : 1392953599490
+          },
+          "last-modified-date" : {
+            "value" : 1438249282928
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "17744781",
+          "work-title" : {
+            "title" : {
+              "value" : "Computer-based assessments of expected satiety predict behavioural measures of portion-size selection and food intake"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Appetite"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { fay2012,title = {Computer-based assessments of expected satiety predict behavioural measures of portion-size selection and food intake},journal = {Appetite},year = {2012},volume = {59},number = {3},pages = {933-938},author = {Wilkinson, L.L. and Hinton, E.C. and Fay, S.H. and Ferriday, D. and Rogers, P.J. and Brunstrom, J.M.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2012.09.007"
+              }
+            }, {
+              "work-external-identifier-type" : "EID",
+              "work-external-identifier-id" : {
+                "value" : "2-s2.0-84866853395"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84866853395&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Wilkinson, L.L.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hinton, E.C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay, S.H.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ferriday, D.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rogers, P.J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Brunstrom, J.M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1438249282924
+            }
+          },
+          "created-date" : {
+            "value" : 1438249282924
+          },
+          "last-modified-date" : {
+            "value" : 1438249282924
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11831861",
+          "work-title" : {
+            "title" : {
+              "value" : "‘Expected satiety’ changes hunger and fullness in the inter-meal interval"
+            },
+            "subtitle" : {
+              "value" : "Appetite"
+            },
+            "translated-title" : null
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : " @article{Brunstrom_Brown_Hinton_Rogers_Fay_2011, title={âExpected satietyâ changes hunger and fullness in the inter-meal interval}, volume={56}, ISSN={0195-6663}, url={http://dx.doi.org/10.1016/j.appet.2011.01.002}, DOI={10.1016/j.appet.2011.01.002}, number={2}, journal={Appetite}, publisher={Elsevier BV}, author={Brunstrom, Jeffrey M. and Brown, Steven and Hinton, Elanor C. and Rogers, Peter J. and Fay, Stephanie H.}, year={2011}, month={Apr}, pages={310â315}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "ISSN",
+              "work-external-identifier-id" : {
+                "value" : "0195-6663"
+              }
+            }, {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2011.01.002"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : null,
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-3054-1567",
+              "path" : "0000-0002-3054-1567",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "CrossRef Metadata Search"
+            },
+            "source-date" : {
+              "value" : 1392953465178
+            }
+          },
+          "created-date" : {
+            "value" : 1392953465178
+          },
+          "last-modified-date" : {
+            "value" : 1438249282928
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "17744782",
+          "work-title" : {
+            "title" : {
+              "value" : "What determines real-world meal size? Evidence for pre-meal planning"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Appetite"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { fay2011,title = {What determines real-world meal size? Evidence for pre-meal planning},journal = {Appetite},year = {2011},volume = {56},number = {2},pages = {284-289},author = {Fay, S.H. and Ferriday, D. and Hinton, E.C. and Shakeshaft, N.G. and Rogers, P.J. and Brunstrom, J.M.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2011.01.006"
+              }
+            }, {
+              "work-external-identifier-type" : "EID",
+              "work-external-identifier-id" : {
+                "value" : "2-s2.0-79551602498"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-79551602498&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay, S.H.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ferriday, D.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hinton, E.C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Shakeshaft, N.G.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rogers, P.J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Brunstrom, J.M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1438249282925
+            }
+          },
+          "created-date" : {
+            "value" : 1438249282925
+          },
+          "last-modified-date" : {
+            "value" : 1438249282925
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11831862",
+          "work-title" : {
+            "title" : {
+              "value" : "What determines real-world meal size? Evidence for pre-meal planning"
+            },
+            "subtitle" : {
+              "value" : "Appetite"
+            },
+            "translated-title" : null
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : " @article{Fay_Ferriday_Hinton_Shakeshaft_Rogers_Brunstrom_2011, title={What determines real-world meal size? Evidence for pre-meal planning}, volume={56}, ISSN={0195-6663}, url={http://dx.doi.org/10.1016/j.appet.2011.01.006}, DOI={10.1016/j.appet.2011.01.006}, number={2}, journal={Appetite}, publisher={Elsevier BV}, author={Fay, Stephanie H. and Ferriday, Danielle and Hinton, Elanor C. and Shakeshaft, Nicholas G. and Rogers, Peter J. and Brunstrom, Jeffrey M.}, year={2011}, month={Apr}, pages={284â289}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "ISSN",
+              "work-external-identifier-id" : {
+                "value" : "0195-6663"
+              }
+            }, {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2011.01.006"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : null,
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-3054-1567",
+              "path" : "0000-0002-3054-1567",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "CrossRef Metadata Search"
+            },
+            "source-date" : {
+              "value" : 1392953471835
+            }
+          },
+          "created-date" : {
+            "value" : 1392953471835
+          },
+          "last-modified-date" : {
+            "value" : 1438249282928
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11831860",
+          "work-title" : {
+            "title" : {
+              "value" : "Negative affect-induced food intake in non-dieting women is reward driven and associated with restrained–disinhibited eating subtype"
+            },
+            "subtitle" : {
+              "value" : "Appetite"
+            },
+            "translated-title" : null
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : " @article{Fay_Finlayson_2011, title={Negative affect-induced food intake in non-dieting women is reward driven and associated with restrainedâdisinhibited eating subtype}, volume={56}, ISSN={0195-6663}, url={http://dx.doi.org/10.1016/j.appet.2011.02.004}, DOI={10.1016/j.appet.2011.02.004}, number={3}, journal={Appetite}, publisher={Elsevier BV}, author={Fay, Stephanie H. and Finlayson, Graham}, year={2011}, month={Jun}, pages={682â688}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "ISSN",
+              "work-external-identifier-id" : {
+                "value" : "0195-6663"
+              }
+            }, {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2011.02.004"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : null,
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-3054-1567",
+              "path" : "0000-0002-3054-1567",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "CrossRef Metadata Search"
+            },
+            "source-date" : {
+              "value" : 1392953459157
+            }
+          },
+          "created-date" : {
+            "value" : 1392953459157
+          },
+          "last-modified-date" : {
+            "value" : 1438249282928
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "17744783",
+          "work-title" : {
+            "title" : {
+              "value" : "Negative affect-induced food intake in non-dieting women is reward driven and associated with restrained-disinhibited eating subtype"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Appetite"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { fay2011,title = {Negative affect-induced food intake in non-dieting women is reward driven and associated with restrained-disinhibited eating subtype},journal = {Appetite},year = {2011},volume = {56},number = {3},pages = {682-688},author = {Fay, S.H. and Finlayson, G.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2011.02.004"
+              }
+            }, {
+              "work-external-identifier-type" : "EID",
+              "work-external-identifier-id" : {
+                "value" : "2-s2.0-79952990812"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-79952990812&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay, S.H.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Finlayson, G.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1438249282925
+            }
+          },
+          "created-date" : {
+            "value" : 1438249282925
+          },
+          "last-modified-date" : {
+            "value" : 1438249282925
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "17744784",
+          "work-title" : {
+            "title" : {
+              "value" : "'Expected satiety' changes hunger and fullness in the inter-meal interval"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Appetite"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { fay2011,title = {'Expected satiety' changes hunger and fullness in the inter-meal interval},journal = {Appetite},year = {2011},volume = {56},number = {2},pages = {310-315},author = {Brunstrom, J.M. and Brown, S. and Hinton, E.C. and Rogers, P.J. and Fay, S.H.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.appet.2011.01.002"
+              }
+            }, {
+              "work-external-identifier-type" : "EID",
+              "work-external-identifier-id" : {
+                "value" : "2-s2.0-79551606581"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-79551606581&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Brunstrom, J.M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Brown, S.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hinton, E.C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rogers, P.J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fay, S.H.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1438249282926
+            }
+          },
+          "created-date" : {
+            "value" : 1438249282926
+          },
+          "last-modified-date" : {
+            "value" : 1438249282926
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      },
+      "funding-list" : null
+    },
+    "orcid-internal" : null,
+    "type" : "USER",
+    "group-type" : null,
+    "client-type" : null
+  },
+  "orcid-search-results" : null,
+  "error-desc" : null
+}

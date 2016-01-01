@@ -3,14 +3,15 @@ package org.rdswitchboard.libraries.orcid;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrcidActivities {
-	private String affiliations;
+	private Affiliations affiliations;
 	private OrcidWorks works;
+	private String fundingList;
 
-	public String getAffiliations() {
+	public Affiliations getAffiliations() {
 		return affiliations;
 	}
 
-	public void setAffiliations(String affiliations) {
+	public void setAffiliations(Affiliations affiliations) {
 		this.affiliations = affiliations;
 	}
 
@@ -19,14 +20,22 @@ public class OrcidActivities {
 		return works;
 	}
 
-	@JsonProperty("orcid-works")
 	public void setWorks(OrcidWorks works) {
 		this.works = works;
+	}
+
+	@JsonProperty("funding-list")
+	public String getFundingList() {
+		return fundingList;
+	}
+
+	public void setFundingList(String fundingList) {
+		this.fundingList = fundingList;
 	}
 
 	@Override
 	public String toString() {
 		return "OrcidActivities [affiliations=" + affiliations + ", works="
-				+ works + "]";
-	}	
+				+ works + ", fundingList=" + fundingList + "]";
+	}
 }

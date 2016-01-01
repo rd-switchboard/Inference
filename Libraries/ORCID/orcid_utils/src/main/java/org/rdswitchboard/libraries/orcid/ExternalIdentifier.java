@@ -4,22 +4,48 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 public class ExternalIdentifier {
+	private String orcid;
 	private OrcidIdentifier orcidId;
+	private String sourceId;
+	private Source source;
 	private String commonName;
 	private String reference;
 	private String url;
 	
+	public String getOrcid() {
+		return orcid;
+	}
+
+	public void setOrcid(String orcid) {
+		this.orcid = orcid;
+	}
+
 	@JsonProperty("external-id-orcid")
 	public OrcidIdentifier getOrcidId() {
 		return orcidId;
 	}
 	
-	@JsonProperty("external-id-orcid")
-	//@JsonDeserialize(using = ValueDeserializer.class)
 	public void setOrcidId(OrcidIdentifier orcidId) {
 		this.orcidId = orcidId;
 	}
 	
+	@JsonProperty("external-id-source")
+	public String getSourceId() {
+		return sourceId;
+	}
+
+	public void setSourceId(String sourceId) {
+		this.sourceId = sourceId;
+	}
+	
+	public Source getSource() {
+		return source;
+	}
+
+	public void setSource(Source source) {
+		this.source = source;
+	}
+
 	public String getOrcidUri() {
 		if (null != this.orcidId) 
 			return this.orcidId.getUri();
@@ -59,11 +85,12 @@ public class ExternalIdentifier {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "ExternalIdentifier [orcidId=" + orcidId + ", commonName="
-				+ commonName + ", reference=" + reference + ", url=" + url
-				+ "]";
-	}	
+		return "ExternalIdentifier [orcid=" + orcid + ", orcidId=" + orcidId
+				+ ", sourceId=" + sourceId + ", source=" + source
+				+ ", commonName=" + commonName + ", reference=" + reference
+				+ ", url=" + url + "]";
+	}
 }

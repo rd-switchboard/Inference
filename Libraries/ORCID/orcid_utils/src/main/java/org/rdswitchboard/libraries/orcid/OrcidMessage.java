@@ -5,13 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OrcidMessage {
 	private String messageVersion;
 	private OrcidProfile profile;
+	private String searchResults;
+	private String errorDescription;
 
 	@JsonProperty("message-version")
 	public String getMessageVersion() {
 		return messageVersion;
 	}
 
-	@JsonProperty("message-version")
 	public void setMessageVersion(String messageVersion) {
 		this.messageVersion = messageVersion;
 	}
@@ -21,14 +22,32 @@ public class OrcidMessage {
 		return profile;
 	}
 
-	@JsonProperty("orcid-profile")
 	public void setProfile(OrcidProfile profile) {
 		this.profile = profile;
+	}
+
+	@JsonProperty("orcid-search-results")
+	public String getSearchResults() {
+		return searchResults;
+	}
+
+	public void setSearchResults(String searchResults) {
+		this.searchResults = searchResults;
+	}
+	
+	@JsonProperty("error-desc")
+	public String getErrorDescription() {
+		return errorDescription;
+	}
+
+	public void setErrorDescription(String errorDescription) {
+		this.errorDescription = errorDescription;
 	}
 
 	@Override
 	public String toString() {
 		return "OrcidMessage [messageVersion=" + messageVersion + ", profile="
-				+ profile + "]";
+				+ profile + ", searchResults=" + searchResults
+				+ ", errorDescription=" + errorDescription + "]";
 	}
 }

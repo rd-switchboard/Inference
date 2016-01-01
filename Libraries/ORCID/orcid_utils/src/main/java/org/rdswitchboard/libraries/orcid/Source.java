@@ -16,6 +16,7 @@ public class Source {
 	private OrcidIdentifier identifier;
 	private OrcidIdentifier clientId;
 	private String name;
+	private String date;
 	
 	@JsonProperty("source-orcid")
 	public OrcidIdentifier getIdentifier() {
@@ -47,11 +48,24 @@ public class Source {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@JsonProperty("source-date")
+	public String getDate() {
+		return date;
+	}
+	
+	@JsonProperty("source-date")
+	@JsonDeserialize(using = ValueDeserializer.class)
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 	@Override
 	public String toString() {
 		return "Source [identifier=" + identifier 
 				+ ", clientId=" + clientId
-				+ ", name=" + name + "]";
+				+ ", name=" + name 
+				+ ", date=" + date
+				+ "]";
 	}
 }

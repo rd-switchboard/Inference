@@ -1,0 +1,2742 @@
+{
+  "message-version" : "1.2",
+  "orcid-profile" : {
+    "orcid" : null,
+    "orcid-id" : null,
+    "orcid-identifier" : {
+      "value" : null,
+      "uri" : "http://orcid.org/0000-0001-5000-0736",
+      "path" : "0000-0001-5000-0736",
+      "host" : "orcid.org"
+    },
+    "orcid-deprecated" : null,
+    "orcid-preferences" : {
+      "locale" : "EN"
+    },
+    "orcid-history" : {
+      "creation-method" : "WEBSITE",
+      "completion-date" : null,
+      "submission-date" : {
+        "value" : 1384776151420
+      },
+      "last-modified-date" : {
+        "value" : 1437671127393
+      },
+      "claimed" : {
+        "value" : true
+      },
+      "source" : null,
+      "deactivation-date" : null,
+      "verified-email" : {
+        "value" : true
+      },
+      "verified-primary-email" : {
+        "value" : true
+      },
+      "visibility" : null
+    },
+    "orcid-bio" : {
+      "personal-details" : {
+        "given-names" : {
+          "value" : "Martim"
+        },
+        "family-name" : {
+          "value" : "Chichorro"
+        },
+        "credit-name" : {
+          "value" : "M. Chichorro",
+          "visibility" : "PUBLIC"
+        },
+        "other-names" : {
+          "other-name" : [ {
+            "value" : "Chichorro, M.A."
+          } ],
+          "visibility" : "PUBLIC"
+        }
+      },
+      "biography" : {
+        "value" : "",
+        "visibility" : "PUBLIC"
+      },
+      "researcher-urls" : {
+        "researcher-url" : [ ],
+        "visibility" : "PUBLIC"
+      },
+      "contact-details" : null,
+      "keywords" : null,
+      "external-identifiers" : {
+        "external-identifier" : [ {
+          "orcid" : null,
+          "external-id-orcid" : null,
+          "external-id-common-name" : {
+            "value" : "ResearcherID"
+          },
+          "external-id-reference" : {
+            "value" : "J-3782-2013"
+          },
+          "external-id-url" : {
+            "value" : "http://www.researcherid.com/rid/J-3782-2013"
+          },
+          "external-id-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-7707-4137",
+              "path" : "0000-0001-7707-4137",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : null,
+            "source-date" : null
+          }
+        }, {
+          "orcid" : null,
+          "external-id-orcid" : null,
+          "external-id-common-name" : {
+            "value" : "Scopus Author ID"
+          },
+          "external-id-reference" : {
+            "value" : "11540746200"
+          },
+          "external-id-url" : {
+            "value" : "http://www.scopus.com/inward/authorDetails.url?authorID=11540746200&partnerID=MN8TOARS"
+          },
+          "external-id-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : null,
+            "source-date" : null
+          }
+        } ],
+        "visibility" : "PUBLIC"
+      },
+      "delegation" : null,
+      "applications" : null,
+      "scope" : null
+    },
+    "orcid-activities" : {
+      "affiliations" : {
+        "affiliation" : [ {
+          "type" : "EDUCATION",
+          "department-name" : null,
+          "role-title" : "PhD in Geology ",
+          "start-date" : null,
+          "end-date" : {
+            "year" : {
+              "value" : "2006"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "organization" : {
+            "name" : "Universidade de Évora Área Departamental de Ciências da Natureza e Ambiente",
+            "address" : {
+              "city" : "Évora",
+              "region" : null,
+              "country" : "PT"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "98820",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-5000-0736",
+              "path" : "0000-0001-5000-0736",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "M. Chichorro"
+            },
+            "source-date" : {
+              "value" : 1416323021963
+            }
+          },
+          "created-date" : {
+            "value" : 1416323021963
+          },
+          "last-modified-date" : {
+            "value" : 1416323021963
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "576828"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : null,
+          "role-title" : "MSc in Internal Geodynamics ",
+          "start-date" : null,
+          "end-date" : {
+            "year" : {
+              "value" : "1997"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "organization" : {
+            "name" : "Universidade de Lisboa",
+            "address" : {
+              "city" : "Lisboa",
+              "region" : null,
+              "country" : "PT"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "37809",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-5000-0736",
+              "path" : "0000-0001-5000-0736",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "M. Chichorro"
+            },
+            "source-date" : {
+              "value" : 1416322937362
+            }
+          },
+          "created-date" : {
+            "value" : 1416322937362
+          },
+          "last-modified-date" : {
+            "value" : 1416322937362
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "576827"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : null,
+          "role-title" : "Graduation in Geology",
+          "start-date" : null,
+          "end-date" : {
+            "year" : {
+              "value" : "1992"
+            },
+            "month" : null,
+            "day" : null
+          },
+          "organization" : {
+            "name" : "Universidade de Lisboa",
+            "address" : {
+              "city" : "Lisboa",
+              "region" : null,
+              "country" : "PT"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "37809",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-5000-0736",
+              "path" : "0000-0001-5000-0736",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "M. Chichorro"
+            },
+            "source-date" : {
+              "value" : 1416322885839
+            }
+          },
+          "created-date" : {
+            "value" : 1416322885839
+          },
+          "last-modified-date" : {
+            "value" : 1416322885839
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "576825"
+        } ]
+      },
+      "orcid-works" : {
+        "orcid-work" : [ {
+          "put-code" : "14405507",
+          "work-title" : {
+            "title" : {
+              "value" : "Zircon geochronology of intrusive rocks from Cap de Creus, Eastern Pyrenees."
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Geological Magazine "
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : null,
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-5000-0736",
+              "path" : "0000-0001-5000-0736",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "M. Chichorro"
+            },
+            "source-date" : {
+              "value" : 1416328807597
+            }
+          },
+          "created-date" : {
+            "value" : 1416328807597
+          },
+          "last-modified-date" : {
+            "value" : 1437671127412
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557873",
+          "work-title" : {
+            "title" : {
+              "value" : "Chronological link between deep-seated processes in magma chambers and eruptions: Permo-Carboniferous magmatism in the core of Pangaea (Southern Pyrenees)"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Gondwana Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2014,title = {Chronological link between deep-seated processes in magma chambers and eruptions: Permo-Carboniferous magmatism in the core of Pangaea (Southern Pyrenees)},journal = {Gondwana Research},year = {2014},volume = {25},number = {1},pages = {290-308},author = {Pereira, M.F. and Castro, A. and Chichorro, M. and Fernández, C. and Díaz-Alvarado, J. and Martí, J. and Rodríguez, C.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.gr.2013.03.009"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84886947337&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Castro, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fernández, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Díaz-Alvarado, J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Martí, J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Rodríguez, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787533608
+            }
+          },
+          "created-date" : {
+            "value" : 1389787533608
+          },
+          "last-modified-date" : {
+            "value" : 1437422908503
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557880",
+          "work-title" : {
+            "title" : {
+              "value" : "Variability over time in the sources of South Portuguese Zone turbidites: evidence of denudation of different crustal blocks during the assembly of Pangaea"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "International Journal of Earth Sciences"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2013,title = {Variability over time in the sources of South Portuguese Zone turbidites: evidence of denudation of different crustal blocks during the assembly of Pangaea},journal = {International Journal of Earth Sciences},year = {2013},pages = {1-18},author = {Pereira, M.F. and Ribeiro, C. and Vilallonga, F. and Chichorro, M. and Drost, K. and Silva, J.B. and Albardeiro, L. and Hofmann, M. and Linnemann, U.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1007/s00531-013-0902-8"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84877733188&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ribeiro, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Vilallonga, F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Drost, K.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Albardeiro, L.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hofmann, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Linnemann, U.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787533740
+            }
+          },
+          "created-date" : {
+            "value" : 1389787533740
+          },
+          "last-modified-date" : {
+            "value" : 1437422908673
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557881",
+          "work-title" : {
+            "title" : {
+              "value" : "The role of strain localization in magma injection into a transtensional shear zone (Variscan belt, SW Iberia)"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of the Geological Society"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2013,title = {The role of strain localization in magma injection into a transtensional shear zone (Variscan belt, SW Iberia)},journal = {Journal of the Geological Society},year = {2013},volume = {170},number = {1},pages = {93-105},author = {Pereira, M.F. and Chichorro, M. and Fernández, C. and Silva, J.B. and Matias, F.V.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1144/jgs2012-008"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84871888433&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fernández, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Matias, F.V.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787533785
+            }
+          },
+          "created-date" : {
+            "value" : 1389787533785
+          },
+          "last-modified-date" : {
+            "value" : 1437422908761
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557875",
+          "work-title" : {
+            "title" : {
+              "value" : "Late Eocene-Oligocene post-collisional monzonitic intrusions from the Alborz magmatic belt, NW Iran. An example of monzonite magma generation from a metasomatized mantle source"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Lithos"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2013,title = {Late Eocene-Oligocene post-collisional monzonitic intrusions from the Alborz magmatic belt, NW Iran. An example of monzonite magma generation from a metasomatized mantle source},journal = {Lithos},year = {2013},volume = {180-181},pages = {109-127},author = {Castro, A. and Aghazadeh, M. and Badrzadeh, Z. and Chichorro, M.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.lithos.2013.08.003"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84888202659&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Castro, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Aghazadeh, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Badrzadeh, Z.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787533649
+            }
+          },
+          "created-date" : {
+            "value" : 1389787533649
+          },
+          "last-modified-date" : {
+            "value" : 1437422908553
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557878",
+          "work-title" : {
+            "title" : {
+              "value" : "Early Cambrian granitoids of North Gondwana margin in the transition from a convergent setting to intra-continental rifting (Ossa-Morena Zone, SW Iberia)"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "International Journal of Earth Sciences"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2013,title = {Early Cambrian granitoids of North Gondwana margin in the transition from a convergent setting to intra-continental rifting (Ossa-Morena Zone, SW Iberia)},journal = {International Journal of Earth Sciences},year = {2013},pages = {1-16},author = {Sánchez-García, T. and Pereira, M.F. and Bellido, F. and Chichorro, M. and Silva, J.B. and Valverde-Vaquero, P. and Pin, Ch. and Solá, A.R.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1007/s00531-013-0939-8"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84881105651&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Sánchez-García, T.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Bellido, F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Valverde-Vaquero, P.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pin, Ch.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Solá, A.R.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787533695
+            }
+          },
+          "created-date" : {
+            "value" : 1389787533695
+          },
+          "last-modified-date" : {
+            "value" : 1437422908601
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557885",
+          "work-title" : {
+            "title" : {
+              "value" : "The provenance of Late Ediacaran and Early Ordovician siliciclastic rocks in the Southwest Central Iberian Zone: Constraints from detrital zircon data on northern Gondwana margin evolution during the late Neoproterozoic"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Precambrian Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2012,title = {The provenance of Late Ediacaran and Early Ordovician siliciclastic rocks in the Southwest Central Iberian Zone: Constraints from detrital zircon data on northern Gondwana margin evolution during the late Neoproterozoic},journal = {Precambrian Research},year = {2012},volume = {192-195},number = {1},pages = {166-189},author = {Pereira, M.F. and Linnemann, U. and Hofmann, M. and Chichorro, M. and Solá, A.R. and Medina, J. and Silva, J.B.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.precamres.2011.10.019"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-82055194165&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Linnemann, U.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hofmann, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Solá, A.R.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Medina, J.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534015
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534015
+          },
+          "last-modified-date" : {
+            "value" : 1437422908953
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557882",
+          "work-title" : {
+            "title" : {
+              "value" : "The missing Rheic Ocean magmatic arcs: Provenance analysis of Late Paleozoic sedimentary clastic rocks of SW Iberia"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Gondwana Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2012,title = {The missing Rheic Ocean magmatic arcs: Provenance analysis of Late Paleozoic sedimentary clastic rocks of SW Iberia},journal = {Gondwana Research},year = {2012},volume = {22},number = {3-4},pages = {882-891},author = {Pereira, M.F. and Chichorro, M. and Johnston, S.T. and Gutiérrez-Alonso, G. and Silva, J.B. and Linnemann, U. and Hofmann, M. and Drost, K.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.gr.2012.03.010"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84866017749&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Johnston, S.T.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gutiérrez-Alonso, G.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Linnemann, U.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Hofmann, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Drost, K.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787533847
+            }
+          },
+          "created-date" : {
+            "value" : 1389787533847
+          },
+          "last-modified-date" : {
+            "value" : 1437422908810
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557883",
+          "work-title" : {
+            "title" : {
+              "value" : "North-Gondwana assembly, break-up and paleogeography: U-Pb isotope evidence from detrital and igneous zircons of Ediacaran and Cambrian rocks of SW Iberia"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Gondwana Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2012,title = {North-Gondwana assembly, break-up and paleogeography: U-Pb isotope evidence from detrital and igneous zircons of Ediacaran and Cambrian rocks of SW Iberia},journal = {Gondwana Research},year = {2012},volume = {22},number = {3-4},pages = {866-881},author = {Pereira, M.F. and Solá, A.R. and Chichorro, M. and Lopes, L. and Gerdes, A. and Silva, J.B.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.gr.2012.02.010"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84866014525&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Solá, A.R.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Lopes, L.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Gerdes, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787533919
+            }
+          },
+          "created-date" : {
+            "value" : 1389787533919
+          },
+          "last-modified-date" : {
+            "value" : 1437422908866
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557884",
+          "work-title" : {
+            "title" : {
+              "value" : "Early carboniferous wrenching, exhumation of high-grade metamorphic rocks and basin instability in SW Iberia: Constraints derived from structural geology and U-Pb and 40Ar- 39Ar geochronology"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Tectonophysics"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2012,title = {Early carboniferous wrenching, exhumation of high-grade metamorphic rocks and basin instability in SW Iberia: Constraints derived from structural geology and U-Pb and 40Ar- 39Ar geochronology},journal = {Tectonophysics},year = {2012},volume = {558-559},pages = {28-44},author = {Pereira, M.F. and Chichorro, M. and Silva, J.B. and Ordóñez-Casado, B. and Lee, J.K.W. and Williams, I.S.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.tecto.2012.06.020"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-84864027341&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ordóñez-Casado, B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Lee, J.K.W.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Williams, I.S.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787533985
+            }
+          },
+          "created-date" : {
+            "value" : 1389787533985
+          },
+          "last-modified-date" : {
+            "value" : 1437422908909
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557886",
+          "work-title" : {
+            "title" : {
+              "value" : "Tracing the Cadomian magmatism with detrital/inherited zircon ages by in-situ U-Pb SHRIMP geochronology (Ossa-Morena Zone, SW Iberian Massif)"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Lithos"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2011,title = {Tracing the Cadomian magmatism with detrital/inherited zircon ages by in-situ U-Pb SHRIMP geochronology (Ossa-Morena Zone, SW Iberian Massif)},journal = {Lithos},year = {2011},volume = {123},number = {1-4},pages = {204-217},author = {Pereira, M.F. and Chichorro, M. and Solá, A.R. and Silva, J.B. and Sánchez-García, T. and Bellido, F.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.lithos.2010.11.008"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-79952536484&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Solá, A.R.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Sánchez-García, T.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Bellido, F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534067
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534067
+          },
+          "last-modified-date" : {
+            "value" : 1437422909002
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11558912",
+          "work-title" : {
+            "title" : {
+              "value" : "Rift-related volcanism predating the birth of the Rheic Ocean (Ossa-Morena zone, SW Iberia)"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Gondwana Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2010,title = {Rift-related volcanism predating the birth of the Rheic Ocean (Ossa-Morena zone, SW Iberia)},journal = {Gondwana Research},year = {2010},volume = {17},number = {2-3},pages = {392-407},author = {Sánchez-García, T. and Bellido, F. and Pereira, M.F. and Chichorro, M. and Quesada, C. and Pin, Ch. and Silva, J.B.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.gr.2009.10.005"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-74449088130&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Sánchez-García, T.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Bellido, F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Quesada, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pin, Ch.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389789605890
+            }
+          },
+          "created-date" : {
+            "value" : 1389789605890
+          },
+          "last-modified-date" : {
+            "value" : 1437423094616
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557890",
+          "work-title" : {
+            "title" : {
+              "value" : "Relative timing of transcurrent displacements in northern Gondwana: U-Pb laser ablation ICP-MS zircon and monazite geochronology of gneisses and sheared granites from the western Iberian Massif (Portugal)"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Gondwana Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2010,title = {Relative timing of transcurrent displacements in northern Gondwana: U-Pb laser ablation ICP-MS zircon and monazite geochronology of gneisses and sheared granites from the western Iberian Massif (Portugal)},journal = {Gondwana Research},year = {2010},volume = {17},number = {2-3},pages = {461-481},author = {Pereira, M.F. and Silva, J.B. and Drost, K. and Chichorro, M. and Apraiz, A.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.gr.2009.08.006"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-74449084231&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Drost, K.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Apraiz, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534189
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534189
+          },
+          "last-modified-date" : {
+            "value" : 1437422909161
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557889",
+          "work-title" : {
+            "title" : {
+              "value" : "Exhumation of high-pressure rocks in northern Gondwana during the Early Carboniferours (Coimbra-Cordoba shear zone, SW Iberian Massif): Tectonothermal analysis and U-Th-Pb SHRIMP in-situ zircon geochronology"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Gondwana Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2010,title = {Exhumation of high-pressure rocks in northern Gondwana during the Early Carboniferours (Coimbra-Cordoba shear zone, SW Iberian Massif): Tectonothermal analysis and U-Th-Pb SHRIMP in-situ zircon geochronology},journal = {Gondwana Research},year = {2010},volume = {17},number = {2-3},pages = {440-460},author = {Pereira, M.F. and Apraiz, A. and Chichorro, M. and Silva, J.B. and Armstrong, R.A.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.gr.2009.10.001"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-74749088511&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Apraiz, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Armstrong, R.A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534159
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534159
+          },
+          "last-modified-date" : {
+            "value" : 1437422909111
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557887",
+          "work-title" : {
+            "title" : {
+              "value" : "Erratum to Rift-related volcanism predating the birth of the Rheic Ocean (Ossa-Morena zone, SW Iberia), [Gondwana Research, (2010), 17, 392-407]"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Gondwana Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2010,title = {Erratum to Rift-related volcanism predating the birth of the Rheic Ocean (Ossa-Morena zone, SW Iberia), [Gondwana Research, (2010), 17, 392-407]},journal = {Gondwana Research},year = {2010},volume = {18},number = {4},author = {Sánchez-García, T. and Bellido, F. and Pereira, M.F. and Chichorro, M. and Quesada, C. and Pin, C. and Silva, J.B.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.gr.2010.02.012"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-77956494014&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Sánchez-García, T.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Bellido, F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Quesada, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pin, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534095
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534095
+          },
+          "last-modified-date" : {
+            "value" : 1437422909053
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557891",
+          "work-title" : {
+            "title" : {
+              "value" : "Variscan intra-orogenic extensional tectonics in the Ossa-Morena Zone (Évora-Aracena-Lora del Río metamorphic belt, SW Iberian Massif): SHRIMP zircon U-Th-Pb geochronology"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Geological Society Special Publication"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2009,title = {Variscan intra-orogenic extensional tectonics in the Ossa-Morena Zone (Évora-Aracena-Lora del Río metamorphic belt, SW Iberian Massif): SHRIMP zircon U-Th-Pb geochronology},journal = {Geological Society Special Publication},year = {2009},volume = {327},pages = {215-237},author = {Pereira, M.F. and Chichorro, M. and Williams, I.S. and Silva, J.B. and Fernández, C. and Díaz-Azpíroz, M. and Apraiz, A. and Castro, A.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2009"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1144/SP327.11"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-74849110073&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Williams, I.S.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fernández, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Díaz-Azpíroz, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Apraiz, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Castro, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534248
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534248
+          },
+          "last-modified-date" : {
+            "value" : 1437422909210
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557892",
+          "work-title" : {
+            "title" : {
+              "value" : "Comment on \"geodynamic evolution of the SW Europe Variscides\" by antónio ribeiro et al."
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Tectonics"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2009,title = {Comment on \"geodynamic evolution of the SW Europe Variscides\" by antónio ribeiro et al.},journal = {Tectonics},year = {2009},volume = {28},number = {4},author = {Pereira, M.F. and Silva, J.B. and Chichorro, M.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2009"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1029/2008TC002430"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-72549108604&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534300
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534300
+          },
+          "last-modified-date" : {
+            "value" : 1437422909255
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557895",
+          "work-title" : {
+            "title" : {
+              "value" : "Zircon U-Pb geochronology of paragneisses and biotite granites from the SW Iberian Massif (Portugal): Evidence for apalaeogeographical link between the Ossa-Morena Ediacaran basins and the West African craton"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Geological Society Special Publication"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2008,title = {Zircon U-Pb geochronology of paragneisses and biotite granites from the SW Iberian Massif (Portugal): Evidence for apalaeogeographical link between the Ossa-Morena Ediacaran basins and the West African craton},journal = {Geological Society Special Publication},year = {2008},volume = {297},pages = {385-408},author = {Pereira, M.F. and Chichorro, M. and Williams, I.S. and Silva, J.B.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2008"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1144/SP297.18"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-47349097876&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Williams, I.S.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534459
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534459
+          },
+          "last-modified-date" : {
+            "value" : 1437422909411
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557894",
+          "work-title" : {
+            "title" : {
+              "value" : "Tectonothermal analysis of high-temperature mylonitization in the Coimbra-Córdoba shear zone (SW Iberian Massif, Ouguela tectonic unit, Portugal): Evidence of intra-continental transcurrent transport during the amalgamation of Pangea"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Tectonophysics"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2008,title = {Tectonothermal analysis of high-temperature mylonitization in the Coimbra-Córdoba shear zone (SW Iberian Massif, Ouguela tectonic unit, Portugal): Evidence of intra-continental transcurrent transport during the amalgamation of Pangea},journal = {Tectonophysics},year = {2008},volume = {461},number = {1-4},pages = {378-394},author = {Pereira, M.F. and Apraiz, A. and Silva, J.B. and Chichorro, M.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2008"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.tecto.2007.11.042"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-55749111895&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Apraiz, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534414
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534414
+          },
+          "last-modified-date" : {
+            "value" : 1437422909367
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557893",
+          "work-title" : {
+            "title" : {
+              "value" : "Cambrian ensialic rift-related magmatism in the Ossa-Morena Zone (Évora-Aracena metamorphic belt, SW Iberian Massif): Sm-Nd isotopes and SHRIMP zircon U-Th-Pb geochronology"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Tectonophysics"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2008,title = {Cambrian ensialic rift-related magmatism in the Ossa-Morena Zone (Évora-Aracena metamorphic belt, SW Iberian Massif): Sm-Nd isotopes and SHRIMP zircon U-Th-Pb geochronology},journal = {Tectonophysics},year = {2008},volume = {461},number = {1-4},pages = {91-113},author = {Chichorro, M. and Pereira, M.F. and Díaz-Azpiroz, M. and Williams, I.S. and Fernández, C. and Pin, C. and Silva, J.B.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2008"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.tecto.2008.01.008"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-55549118949&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Díaz-Azpiroz, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Williams, I.S.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Fernández, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pin, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534343
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534343
+          },
+          "last-modified-date" : {
+            "value" : 1437422909301
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557896",
+          "work-title" : {
+            "title" : {
+              "value" : "Crustal growth and deformational processes in the northern Gondwana margin: Constraints from the Évora Massif (Ossa-Morena zone, southwest Iberia, Portugal)"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Special Paper of the Geological Society of America"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2007,title = {Crustal growth and deformational processes in the northern Gondwana margin: Constraints from the Évora Massif (Ossa-Morena zone, southwest Iberia, Portugal)},journal = {Special Paper of the Geological Society of America},year = {2007},volume = {423},pages = {333-358},author = {Pereira, M.F. and Silva, J.B. and Chichorro, M. and Moita, P. and Santos, J.F. and Apraiz, A. and Ribeiro, C.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2007"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1130/2007.2423(16)"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-55549136506&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Moita, P.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Santos, J.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Apraiz, A.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Ribeiro, C.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534490
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534490
+          },
+          "last-modified-date" : {
+            "value" : 1437422909469
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "11557897",
+          "work-title" : {
+            "title" : {
+              "value" : "Inherited arc signature in Ediacaran and Early Cambrian basins of the Ossa-Morena Zone (Iberian Massif, Portugal): Paleogeographic link with European and North African Cadomian correlatives"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Precambrian Research"
+          },
+          "short-description" : null,
+          "work-citation" : {
+            "work-citation-type" : "BIBTEX",
+            "citation" : "@article { chichorro2006,title = {Inherited arc signature in Ediacaran and Early Cambrian basins of the Ossa-Morena Zone (Iberian Massif, Portugal): Paleogeographic link with European and North African Cadomian correlatives},journal = {Precambrian Research},year = {2006},volume = {144},number = {3-4},pages = {297-315},author = {Pereira, M.F. and Chichorro, M. and Linnemann, U. and Eguiluz, L. and Silva, J.B.}}"
+          },
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2006"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : {
+            "work-external-identifier" : [ {
+              "work-external-identifier-type" : "DOI",
+              "work-external-identifier-id" : {
+                "value" : "10.1016/j.precamres.2005.11.011"
+              }
+            } ],
+            "scope" : null
+          },
+          "url" : {
+            "value" : "http://www.scopus.com/inward/record.url?eid=2-s2.0-30844449896&partnerID=MN8TOARS"
+          },
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Pereira, M.F.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Chichorro, M.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Linnemann, U.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Eguiluz, L.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            }, {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "Silva, J.B.",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : null
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0002-5982-8983",
+              "path" : "0000-0002-5982-8983",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Scopus to ORCID"
+            },
+            "source-date" : {
+              "value" : 1389787534561
+            }
+          },
+          "created-date" : {
+            "value" : 1389787534561
+          },
+          "last-modified-date" : {
+            "value" : 1437422909514
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      },
+      "funding-list" : null
+    },
+    "orcid-internal" : null,
+    "type" : "USER",
+    "group-type" : null,
+    "client-type" : null
+  },
+  "orcid-search-results" : null,
+  "error-desc" : null
+}

@@ -14,6 +14,7 @@ public class OrcidProfile {
 	private String type;
 	private String groupType;
 	private String clientType;
+	private String internal;
 
 	public String getOrcid() {
 		return orcid;
@@ -46,7 +47,6 @@ public class OrcidProfile {
 		return identifier;
 	}
 
-	@JsonProperty("orcid-identifier")
 	public void setIdentifier(OrcidIdentifier identifier) {
 		this.identifier = identifier;
 	}
@@ -56,7 +56,6 @@ public class OrcidProfile {
 		return preferences;
 	}
 
-	@JsonProperty("orcid-preferences")
 	public void setPreferences(OrcidPreferences preferences) {
 		this.preferences = preferences;
 	}
@@ -66,7 +65,6 @@ public class OrcidProfile {
 		return history;
 	}
 
-	@JsonProperty("orcid-history")
 	public void setHistory(OrcidHistory history) {
 		this.history = history;
 	}
@@ -76,7 +74,6 @@ public class OrcidProfile {
 		return bio;
 	}
 
-	@JsonProperty("orcid-bio")
 	public void setBio(OrcidBio bio) {
 		this.bio = bio;
 	}
@@ -86,7 +83,6 @@ public class OrcidProfile {
 		return activities;
 	}
 
-	@JsonProperty("orcid-activities")
 	public void setActivities(OrcidActivities activities) {
 		this.activities = activities;
 	}
@@ -104,7 +100,6 @@ public class OrcidProfile {
 		return groupType;
 	}
 
-	@JsonProperty("group-type")
 	public void setGroupType(String groupType) {
 		this.groupType = groupType;
 	}
@@ -114,17 +109,26 @@ public class OrcidProfile {
 		return clientType;
 	}
 
-	@JsonProperty("client-type")
 	public void setClientType(String clientType) {
 		this.clientType = clientType;
+	}
+	
+	@JsonProperty("orcid-internal")
+	public String getInternal() {
+		return internal;
+	}
+
+	public void setInternal(String internal) {
+		this.internal = internal;
 	}
 
 	@Override
 	public String toString() {
-		return "OrcidProfile [orcid=" + orcid + ", identifier=" + identifier
-				+ ", preferences=" + preferences + ", history=" + history
-				+ ", bio=" + bio + ", activities=" + activities + ", type="
-				+ type + ", groupType=" + groupType + ", clientType="
-				+ clientType + "]";
+		return "OrcidProfile [orcid=" + orcid + ", id=" + id + ", deprecated="
+				+ deprecated + ", identifier=" + identifier + ", preferences="
+				+ preferences + ", history=" + history + ", bio=" + bio
+				+ ", activities=" + activities + ", type=" + type
+				+ ", groupType=" + groupType + ", clientType=" + clientType
+				+ ", internal=" + internal + "]";
 	}
 }

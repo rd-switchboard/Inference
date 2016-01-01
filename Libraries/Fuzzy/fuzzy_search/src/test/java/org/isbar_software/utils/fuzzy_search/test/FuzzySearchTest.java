@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.isbar_software.fuzzy_search.test;
+package org.isbar_software.utils.fuzzy_search.test;
 
 import static org.junit.Assert.*;
 

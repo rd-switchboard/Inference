@@ -20,6 +20,7 @@ public class OrcidHistory {
 	private Source source;
 	private String visibility;
 	private String verifiedEmail;
+	private String verifiedPrimaryEmail;
 	
 	@JsonProperty("creation-method")
 	public String getCreationMethod() {
@@ -101,6 +102,7 @@ public class OrcidHistory {
 	}
 	
 	@JsonProperty("verified-email")
+	@JsonDeserialize(using = ValueDeserializer.class)
 	public String getVerifiedEmail() {
 		return verifiedEmail;
 	}
@@ -108,6 +110,17 @@ public class OrcidHistory {
 	public void setVerifiedEmail(String verifiedEmail) {
 		this.verifiedEmail = verifiedEmail;
 	}
+
+	@JsonProperty("verified-primary-email")
+	@JsonDeserialize(using = ValueDeserializer.class)
+	public String getVerifiedPrimaryEmail() {
+		return verifiedPrimaryEmail;
+	}
+
+	public void setVerifiedPrimaryEmail(String verifiedPrimaryEmail) {
+		this.verifiedPrimaryEmail = verifiedPrimaryEmail;
+	}
+
 	
 	@Override
 	public String toString() {
@@ -119,6 +132,8 @@ public class OrcidHistory {
 				+ ", deactivationDate=" + deactivationDate 
 				+ ", source=" + source
 				+ ", visibility=" + visibility
-				+ ", verifiedEmail=" + verifiedEmail + "]";
+				+ ", verifiedEmail=" + verifiedEmail
+				+ ", verifiedPrimaryEmail=" + verifiedPrimaryEmail
+				+ "]";
 	}
 }

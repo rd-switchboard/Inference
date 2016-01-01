@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 public class Contributor {
 	private OrcidIdentifier orcidId;
 	private String creditName;
+	private String email;
 	private ContributorAttributes contributorAttributes;
 
 	@JsonProperty("contributor-orcid")
@@ -38,6 +39,15 @@ public class Contributor {
 	public void setCreditName(String creditName) {
 		this.creditName = creditName;
 	}
+	
+	@JsonProperty("contributor-email")
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	@JsonProperty("contributor-attributes")
 	public ContributorAttributes getContributorAttributes() {
@@ -51,9 +61,8 @@ public class Contributor {
 
 	@Override
 	public String toString() {
-		return "Contributor [orcidId=" + orcidId 
-				+ ", creditName=" + creditName
-				+ ", contributorAttributes=" + contributorAttributes 
-				+ "]";
+		return "Contributor [orcidId=" + orcidId + ", creditName=" + creditName
+				+ ", email=" + email + ", contributorAttributes="
+				+ contributorAttributes + "]";
 	}
 }

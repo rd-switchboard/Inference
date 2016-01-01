@@ -181,8 +181,9 @@ public class ImporterOrcid {
 	 * created. Institution URL will be used as an unique node key. The nodes with the same key 
 	 * will NOT be overwritten.
 	 * @param institutionsCsv A path to institutions.csv file
+	 * @throws Exception 
 	 */
-	public void importOrcid(final String orcdiFolder) {
+	public void importOrcid(final String orcdiFolder) throws Exception {
 		
 		List<GraphSchema> schemas = new ArrayList<GraphSchema>();
 		schemas.add(new GraphSchema(GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_KEY, true));
@@ -200,22 +201,17 @@ public class ImporterOrcid {
 		
 		File[] files = new File(orcdiFolder).listFiles();
 		for (File file : files) 
-			if (!file.isDirectory())
-				try {
-					importRecord(file, graph);
+			if (!file.isDirectory()) {
+				importRecord(file, graph);
+				
+				if (graph.getNodesCount() >= 1000) {
 					
-					if (graph.getNodesCount() >= 1000) {
-						
-						System.out.println("Import chunk: " + (++chunks));
-						importer.importGraph(graph);
-					
-						graph = new Graph();
-					}
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-					break;
+					System.out.println("Import chunk: " + (++chunks));
+					importer.importGraph(graph);
+				
+					graph = new Graph();
 				}
+			}
 		
 		System.out.println("Import final chunk");
 		importer.importGraph(graph);
