@@ -12,7 +12,6 @@ public class ContactDetails {
 		return email;
 	}
 
-	@JsonDeserialize(using = ValueDeserializer.class)
 	public void setEmail(List<String> email) {
 		this.email = email;
 	}

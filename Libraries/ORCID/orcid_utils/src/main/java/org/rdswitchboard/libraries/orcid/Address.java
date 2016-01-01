@@ -27,7 +27,7 @@ public class Address {
 		return country;
 	}
 
-	//@JsonDeserialize(using = ValueDeserializer.class)
+	@JsonDeserialize(using = ValueDeserializer.class)
 	public void setCountry(String country) {
 		this.country = country;
 	}
