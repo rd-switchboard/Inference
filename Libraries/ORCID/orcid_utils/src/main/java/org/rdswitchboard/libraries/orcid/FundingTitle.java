@@ -21,6 +21,7 @@ public class FundingTitle {
 		return translatedTitle;
 	}
 	
+	@JsonDeserialize(using = ValueDeserializer.class)
 	public void setTranslatedTitle(String translatedTitle) {
 		this.translatedTitle = translatedTitle;
 	}

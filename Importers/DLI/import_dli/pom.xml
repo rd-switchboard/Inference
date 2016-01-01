@@ -8,7 +8,7 @@
   </parent>
   <groupId>org.rdswitchboard.importers</groupId>
   <artifactId>import_dli</artifactId>
-  <name>Import OpenAIRE Records</name>
+  <name>Import DLI Records</name>
   
   <properties>
     <main.class>org.rdswitchboard.importers.dli.App</main.class>

@@ -1,0 +1,1019 @@
+{
+  "message-version" : "1.2",
+  "orcid-profile" : {
+    "orcid" : null,
+    "orcid-id" : null,
+    "orcid-identifier" : {
+      "value" : null,
+      "uri" : "http://orcid.org/0000-0001-6311-9410",
+      "path" : "0000-0001-6311-9410",
+      "host" : "orcid.org"
+    },
+    "orcid-deprecated" : null,
+    "orcid-preferences" : {
+      "locale" : "ZH_CN"
+    },
+    "orcid-history" : {
+      "creation-method" : "DIRECT",
+      "completion-date" : null,
+      "submission-date" : {
+        "value" : 1403774340550
+      },
+      "last-modified-date" : {
+        "value" : 1440782654949
+      },
+      "claimed" : {
+        "value" : true
+      },
+      "source" : null,
+      "deactivation-date" : null,
+      "verified-email" : {
+        "value" : true
+      },
+      "verified-primary-email" : {
+        "value" : true
+      },
+      "visibility" : null
+    },
+    "orcid-bio" : {
+      "personal-details" : {
+        "given-names" : {
+          "value" : "mingxia"
+        },
+        "family-name" : {
+          "value" : "zhang"
+        },
+        "credit-name" : null,
+        "other-names" : {
+          "other-name" : [ {
+            "value" : "MX Zhang"
+          } ],
+          "visibility" : "PUBLIC"
+        }
+      },
+      "biography" : null,
+      "researcher-urls" : null,
+      "contact-details" : {
+        "email" : [ ],
+        "address" : {
+          "country" : {
+            "value" : "CN",
+            "visibility" : "PUBLIC"
+          }
+        }
+      },
+      "keywords" : null,
+      "external-identifiers" : null,
+      "delegation" : null,
+      "applications" : null,
+      "scope" : null
+    },
+    "orcid-activities" : {
+      "affiliations" : {
+        "affiliation" : [ {
+          "type" : "EDUCATION",
+          "department-name" : "College of Food Science and Nutritional Engineering",
+          "role-title" : "Ph.D.",
+          "start-date" : null,
+          "end-date" : null,
+          "organization" : {
+            "name" : "China Agricultural University",
+            "address" : {
+              "city" : "Beijing",
+              "region" : "Haidian",
+              "country" : "CN"
+            },
+            "disambiguated-organization" : null
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1403777065210
+            }
+          },
+          "created-date" : {
+            "value" : 1403777065210
+          },
+          "last-modified-date" : {
+            "value" : 1403777065210
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "329142"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : null,
+          "role-title" : null,
+          "start-date" : null,
+          "end-date" : null,
+          "organization" : {
+            "name" : "Henan Institute of Science and Technology",
+            "address" : {
+              "city" : "Xinxiang",
+              "region" : "Henan",
+              "country" : "CN"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "177560",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1403777272429
+            }
+          },
+          "created-date" : {
+            "value" : 1403777272429
+          },
+          "last-modified-date" : {
+            "value" : 1403777272429
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "329147"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : "College of Food Science and Engineering",
+          "role-title" : "Master",
+          "start-date" : {
+            "year" : {
+              "value" : "2009"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : {
+              "value" : "07"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "organization" : {
+            "name" : "Northwest A & F University",
+            "address" : {
+              "city" : "Xi'an",
+              "region" : "Yangling",
+              "country" : "CN"
+            },
+            "disambiguated-organization" : null
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1403776268330
+            }
+          },
+          "created-date" : {
+            "value" : 1403776268330
+          },
+          "last-modified-date" : {
+            "value" : 1403776268330
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "329120"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : null,
+          "role-title" : "Postdoctor",
+          "start-date" : {
+            "year" : {
+              "value" : "2007"
+            },
+            "month" : {
+              "value" : "10"
+            },
+            "day" : null
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : {
+              "value" : "12"
+            },
+            "day" : null
+          },
+          "organization" : {
+            "name" : "China Agricultural University",
+            "address" : {
+              "city" : "Beijing",
+              "region" : null,
+              "country" : "CN"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "34752",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404465004432
+            }
+          },
+          "created-date" : {
+            "value" : 1404465004432
+          },
+          "last-modified-date" : {
+            "value" : 1404465004432
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "340502"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : "Bio-engineering",
+          "role-title" : "Bachelor",
+          "start-date" : {
+            "year" : {
+              "value" : "1993"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "1997"
+            },
+            "month" : {
+              "value" : "07"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "organization" : {
+            "name" : "Henan University",
+            "address" : {
+              "city" : "Kaifeng",
+              "region" : "Henan",
+              "country" : "CN"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "12411",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1403775728099
+            }
+          },
+          "created-date" : {
+            "value" : 1403775728099
+          },
+          "last-modified-date" : {
+            "value" : 1403775728099
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "329110"
+        } ]
+      },
+      "orcid-works" : {
+        "orcid-work" : [ {
+          "put-code" : "13053359",
+          "work-title" : {
+            "title" : {
+              "value" : "Three types of ultraviolet radiation differentially promote expression of shikimate pathway genes and production of anthocyanins in grape berries"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Plant Physiology and Biochemistry"
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "ADDITIONAL",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404351529120
+            }
+          },
+          "created-date" : {
+            "value" : 1404351529120
+          },
+          "last-modified-date" : {
+            "value" : 1437576586743
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "13066062",
+          "work-title" : {
+            "title" : {
+              "value" : "Fermentation Performance and Flavor Characteristics of Corn Wine"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Advanced Materials Research "
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "ADDITIONAL",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404464783484
+            }
+          },
+          "created-date" : {
+            "value" : 1404464783484
+          },
+          "last-modified-date" : {
+            "value" : 1437577069510
+          },
+          "language-code" : "en",
+          "country" : {
+            "value" : "CH",
+            "visibility" : "PUBLIC"
+          },
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "13053358",
+          "work-title" : {
+            "title" : {
+              "value" : "Using Headspace Solid Phase Micro-extraction to Analysis of Aromatic Compounds during Alcoholic Fermentation of Red Wine"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : null,
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404351417660
+            }
+          },
+          "created-date" : {
+            "value" : 1404351417660
+          },
+          "last-modified-date" : {
+            "value" : 1437576586720
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "13053357",
+          "work-title" : {
+            "title" : {
+              "value" : "The Flavonoid Composition of Flavedo and Juice from the Pummelo cultivar Citrus grandis (L.) and the Grapefruit Cultivar Citrus paradisi from China"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Food Chemistry"
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404351361800
+            }
+          },
+          "created-date" : {
+            "value" : 1404351361800
+          },
+          "last-modified-date" : {
+            "value" : 1437576586701
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "13066051",
+          "work-title" : {
+            "title" : {
+              "value" : "Optimization of Headspace Solid Phase Microextraction Conditions for GC-MS Analysis of Aromatic Constituents in White Liquor"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Food Science"
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404464530447
+            }
+          },
+          "created-date" : {
+            "value" : 1404464530447
+          },
+          "last-modified-date" : {
+            "value" : 1437577069115
+          },
+          "language-code" : "zh_CN",
+          "country" : {
+            "value" : "CN",
+            "visibility" : "PUBLIC"
+          },
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "13065079",
+          "work-title" : {
+            "title" : {
+              "value" : "Composition Analysis of Phenols in Vitis ficifolia Bge and Vitis davidii Foex Fruit Skins"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "food Science"
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404461197089
+            }
+          },
+          "created-date" : {
+            "value" : 1404461197089
+          },
+          "last-modified-date" : {
+            "value" : 1437577035477
+          },
+          "language-code" : null,
+          "country" : {
+            "value" : "CN",
+            "visibility" : "PUBLIC"
+          },
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "13065175",
+          "work-title" : {
+            "title" : {
+              "value" : "Progress of Aromatic Compounds in Grape and Wine"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Scientia Agricultura Sinica"
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2008"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404461498876
+            }
+          },
+          "created-date" : {
+            "value" : 1404461498876
+          },
+          "last-modified-date" : {
+            "value" : 1437577038355
+          },
+          "language-code" : "zh_CN",
+          "country" : {
+            "value" : "CN",
+            "visibility" : "PUBLIC"
+          },
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "13065020",
+          "work-title" : {
+            "title" : {
+              "value" : "Effect of maceration enzymes on the formation of aroma compounds during Cabernet Sauvignon alcohol fermentation"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "AgroFOOD industry hi-tech"
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2007"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404461036063
+            }
+          },
+          "created-date" : {
+            "value" : 1404461036063
+          },
+          "last-modified-date" : {
+            "value" : 1437577033664
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "13053360",
+          "work-title" : {
+            "title" : {
+              "value" : "Comparative study of aromatic compounds in young red wines from Cabernet Sauvignon, Cabernet Franc, and Cabernet Gernischet Varieties in China"
+            },
+            "subtitle" : null,
+            "translated-title" : null
+          },
+          "journal-title" : {
+            "value" : "Journal of Food Science"
+          },
+          "short-description" : null,
+          "work-citation" : null,
+          "work-type" : "JOURNAL_ARTICLE",
+          "publication-date" : {
+            "year" : {
+              "value" : "2007"
+            },
+            "month" : null,
+            "day" : null,
+            "media-type" : null
+          },
+          "work-external-identifiers" : null,
+          "url" : null,
+          "work-contributors" : {
+            "contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : {
+                "value" : "mingxia zhang",
+                "visibility" : "PUBLIC"
+              },
+              "contributor-email" : null,
+              "contributor-attributes" : {
+                "contributor-sequence" : "FIRST",
+                "contributor-role" : "AUTHOR"
+              }
+            } ]
+          },
+          "work-source" : null,
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404351591885
+            }
+          },
+          "created-date" : {
+            "value" : 1404351591885
+          },
+          "last-modified-date" : {
+            "value" : 1437576586758
+          },
+          "language-code" : null,
+          "country" : null,
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      },
+      "funding-list" : {
+        "funding" : [ {
+          "put-code" : "19839",
+          "funding-type" : "GRANT",
+          "organization-defined-type" : null,
+          "funding-title" : {
+            "title" : {
+              "value" : "花色苷对干红葡萄酒香气释放影响的机理研究"
+            },
+            "translated-title" : {
+              "value" : "Effect of Anthocyanins on the Aroma Release from Dry Red-wine",
+              "language-code" : "zh_CN"
+            }
+          },
+          "short-description" : null,
+          "amount" : null,
+          "url" : {
+            "value" : ""
+          },
+          "start-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : {
+              "value" : "01"
+            },
+            "day" : null
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2015"
+            },
+            "month" : {
+              "value" : "12"
+            },
+            "day" : null
+          },
+          "funding-external-identifiers" : {
+            "funding-external-identifier" : [ {
+              "funding-external-identifier-type" : "GRANT_NUMBER",
+              "funding-external-identifier-value" : "31201410",
+              "funding-external-identifier-url" : null
+            } ]
+          },
+          "funding-contributors" : {
+            "funding-contributor" : [ {
+              "contributor-orcid" : null,
+              "credit-name" : null,
+              "contributor-email" : null,
+              "funding-contributor-attributes" : {
+                "funding-contributor-role" : "LEAD"
+              }
+            } ]
+          },
+          "organization" : {
+            "name" : "National Natural Science Foundation of China",
+            "address" : {
+              "city" : "Beijing",
+              "region" : null,
+              "country" : "CN"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "115381",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0001-6311-9410",
+              "path" : "0000-0001-6311-9410",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "mingxia zhang"
+            },
+            "source-date" : {
+              "value" : 1404350968323
+            }
+          },
+          "created-date" : {
+            "value" : 1404350968323
+          },
+          "last-modified-date" : {
+            "value" : 1437077067955
+          },
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      }
+    },
+    "orcid-internal" : null,
+    "type" : "USER",
+    "group-type" : null,
+    "client-type" : null
+  },
+  "orcid-search-results" : null,
+  "error-desc" : null
+}
