@@ -48,7 +48,7 @@
         <module>Importers/ANDS/import_ands</module>
         <module>Importers/Dryad/import_dryad</module>
         <module>Importers/Cern/import_cern</module>
-	<module>Importers/OpenAIRE/import_openaire</module>
+	<module>Importers/DLI/import_dli</module>
 	<module>Importers/DaRa/import_dara</module>
 	<module>Importers/CrossRef/import_crossref</module>
 	<module>Importers/ORCID/import_orcid</module>
@@ -62,6 +62,7 @@
 	<module>Utils/Neo4j/export_property</module>
         <module>Utils/Neo4j/test_connections</module>
 	<module>Utils/Neo4j/replace_source</module>
+	<module>Utils/Neo4j/sync</module>
 	<module>Build/distribution</module>
   </modules>
 

@@ -43,6 +43,8 @@ public class App {
 			importer.printStatistcs(System.out);
 		} catch (Exception e) {
 			e.printStackTrace();
+			
+			System.exit(1);
 		}
 	}
 

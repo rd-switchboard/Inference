@@ -79,13 +79,13 @@ public class App {
 			if (StringUtils.isEmpty(s3Bucket)) {
 				System.out.println("S3 Bucket name can not be empty");
 				
-				return;
+				System.exit(1);
 			}
 
 			if (StringUtils.isEmpty(s3Key)) {
 				System.out.println("S3 Key prefix can not be empty");
 				
-				return;
+				System.exit(1);
 			}
 			
 
@@ -131,6 +131,8 @@ public class App {
 	        
 		} catch (Exception e) {
 			e.printStackTrace();
+			
+			System.exit(1);
 		} 	
 	}
 }

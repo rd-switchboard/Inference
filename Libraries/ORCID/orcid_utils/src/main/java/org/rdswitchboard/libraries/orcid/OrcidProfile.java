@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrcidProfile {
 	private String orcid;
+	private String orcidId;
+	private String deprecated;
 	private OrcidIdentifier identifier;
 	private OrcidPreferences preferences;
 	private OrcidHistory history;
@@ -19,6 +21,23 @@ public class OrcidProfile {
 
 	public void setOrcid(String orcid) {
 		this.orcid = orcid;
+	}
+	
+	public String getOrcidId() {
+		return orcidId;
+	}
+
+	public void setOrcidId(String orcidId) {
+		this.orcidId = orcidId;
+	}
+	
+	@JsonProperty("orcid-deprecated")
+	public String getDeprecated() {
+		return deprecated;
+	}
+
+	public void setDeprecated(String deprecated) {
+		this.deprecated = deprecated;
 	}
 
 	@JsonProperty("orcid-identifier")

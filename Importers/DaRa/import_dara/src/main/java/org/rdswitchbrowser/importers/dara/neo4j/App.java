@@ -54,6 +54,8 @@ public class App {
         	processFiles(bucket, prefix, neo4jFolder);
 		} catch (Exception e) {
             e.printStackTrace();
+            
+            System.exit(1);
 		}       
 	}
 	
@@ -75,8 +77,10 @@ public class App {
 		
 		String latest;
 		try (InputStream txt = object.getObjectContent()) {
-			latest = prefix + "/" + IOUtils.toString(txt, StandardCharsets.UTF_8);
+			latest = prefix + "/" + IOUtils.toString(txt, StandardCharsets.UTF_8).trim() + "/";
 		}		
+		
+		System.out.println("S3 Repository: " + latest);
 		
 	    listObjectsRequest = new ListObjectsRequest()
 			.withBucketName(bucket)

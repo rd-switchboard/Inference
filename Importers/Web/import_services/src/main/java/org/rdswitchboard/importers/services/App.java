@@ -57,6 +57,8 @@ public abstract class App {
 			importer.importNodes(graph.getNodes());
 		} catch (Exception e) {
 			e.printStackTrace();
+			
+			System.exit(1);
 		}		
 	}
 	

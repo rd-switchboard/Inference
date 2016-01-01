@@ -10,10 +10,14 @@ public class Configuration {
 	// Properties file
 	public static final String PROPERTIES_FILE = "inference.conf";
 	
+	// Source and Target
+	public static final String PROPERTY_SOURCE = "source";
+	public static final String PROPERTY_TARGET = "target";
+	
 	// Neo4j
 	public static final String PROPERTY_NEO4J = "neo4j";
 	public static final String PROPERTY_NEO4J_NEXUS = "neo4j.nexus";
-	
+		
 	// S3
 	public static final String PROPERTY_S3_BUCKET = "s3.bucket";
 	
@@ -44,7 +48,7 @@ public class Configuration {
 	public static final String PROPERTY_NHMRC_ROLES = "nhmrc.roles";
 	
 	// OpenAIRE
-	public static final String PROPERTY_OPENAIRE_S3 = "openaire.s3";
+	public static final String PROPERTY_DLI_S3 = "dli.s3";
 	
 	// ORCID
 	public static final String PROPERTY_ORCID_JSON = "orcid.json";

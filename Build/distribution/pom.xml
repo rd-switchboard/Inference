@@ -86,7 +86,7 @@
     </dependency>
     <dependency>
       <groupId>org.rdswitchboard.importers</groupId>
-      <artifactId>import_openaire</artifactId>
+      <artifactId>import_dli</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>

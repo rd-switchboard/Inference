@@ -49,6 +49,8 @@ public class App {
 			importer.printStatistics(System.out);
 		} catch (Exception e) {
 			e.printStackTrace();
+			
+			System.exit(1);
 		}		
 	}
 	
