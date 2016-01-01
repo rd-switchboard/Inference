@@ -19,7 +19,7 @@ public class OrcidWork {
 	private PublicationDate publicationDate;
 	private WorkIdentifiers worlIdentifiers;
 	private String url;
-	private WorkContributors workContributors;
+	private Contributors workContributors;
 	private OrcidIdentifier workSource;
 	private String languageCode;
 	private String country;
@@ -118,12 +118,12 @@ public class OrcidWork {
 	}
 
 	@JsonProperty("work-contributors")
-	public WorkContributors getWorkContributors() {
+	public Contributors getWorkContributors() {
 		return workContributors;
 	}
 
 	@JsonProperty("work-contributors")
-	public void setWorkContributors(WorkContributors workContributors) {
+	public void setWorkContributors(Contributors workContributors) {
 		this.workContributors = workContributors;
 	}
 

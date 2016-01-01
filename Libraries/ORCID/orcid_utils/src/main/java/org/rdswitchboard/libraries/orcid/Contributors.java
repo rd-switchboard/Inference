@@ -2,7 +2,7 @@ package org.rdswitchboard.libraries.orcid;
 
 import java.util.List;
 
-public class WorkContributors {
+public class Contributors {
 	private List<Contributor> contributor;
 
 	public List<Contributor> getContributor() {

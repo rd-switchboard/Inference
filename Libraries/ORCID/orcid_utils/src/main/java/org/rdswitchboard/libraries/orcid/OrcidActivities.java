@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OrcidActivities {
 	private Affiliations affiliations;
 	private OrcidWorks works;
-	private String fundingList;
+	private Fundings fundings;
 
 	public Affiliations getAffiliations() {
 		return affiliations;
@@ -25,17 +25,17 @@ public class OrcidActivities {
 	}
 
 	@JsonProperty("funding-list")
-	public String getFundingList() {
-		return fundingList;
+	public Fundings getFundings() {
+		return fundings;
 	}
 
-	public void setFundingList(String fundingList) {
-		this.fundingList = fundingList;
+	public void setFunding(Fundings fundings) {
+		this.fundings = fundings;
 	}
 
 	@Override
 	public String toString() {
 		return "OrcidActivities [affiliations=" + affiliations + ", works="
-				+ works + ", fundingList=" + fundingList + "]";
+				+ works + ", fundings=" + fundings + "]";
 	}
 }

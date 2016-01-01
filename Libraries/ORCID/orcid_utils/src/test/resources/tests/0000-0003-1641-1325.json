@@ -1,0 +1,715 @@
+{
+  "message-version" : "1.2",
+  "orcid-profile" : {
+    "orcid" : null,
+    "orcid-id" : null,
+    "orcid-identifier" : {
+      "value" : null,
+      "uri" : "http://orcid.org/0000-0003-1641-1325",
+      "path" : "0000-0003-1641-1325",
+      "host" : "orcid.org"
+    },
+    "orcid-deprecated" : null,
+    "orcid-preferences" : {
+      "locale" : "EN"
+    },
+    "orcid-history" : {
+      "creation-method" : "DIRECT",
+      "completion-date" : null,
+      "submission-date" : {
+        "value" : 1436172090055
+      },
+      "last-modified-date" : {
+        "value" : 1436173258613
+      },
+      "claimed" : {
+        "value" : true
+      },
+      "source" : null,
+      "deactivation-date" : null,
+      "verified-email" : {
+        "value" : true
+      },
+      "verified-primary-email" : {
+        "value" : true
+      },
+      "visibility" : null
+    },
+    "orcid-bio" : {
+      "personal-details" : {
+        "given-names" : {
+          "value" : "Joan"
+        },
+        "family-name" : {
+          "value" : "Casas-Roma"
+        },
+        "credit-name" : null,
+        "other-names" : {
+          "other-name" : [ ],
+          "visibility" : "PUBLIC"
+        }
+      },
+      "biography" : {
+        "value" : "",
+        "visibility" : "PUBLIC"
+      },
+      "researcher-urls" : {
+        "researcher-url" : [ ],
+        "visibility" : "PUBLIC"
+      },
+      "contact-details" : {
+        "email" : [ ],
+        "address" : {
+          "country" : {
+            "value" : "ES",
+            "visibility" : "PUBLIC"
+          }
+        }
+      },
+      "keywords" : {
+        "keyword" : [ {
+          "value" : "epistemic logic"
+        }, {
+          "value" : "formal logic"
+        }, {
+          "value" : "hybrid logic"
+        }, {
+          "value" : "intensional logic"
+        }, {
+          "value" : "knowledge representation"
+        }, {
+          "value" : "philosophical logic"
+        } ],
+        "visibility" : "PUBLIC"
+      },
+      "external-identifiers" : {
+        "external-identifier" : [ ],
+        "visibility" : "PUBLIC"
+      },
+      "delegation" : null,
+      "applications" : null,
+      "scope" : null
+    },
+    "orcid-activities" : {
+      "affiliations" : {
+        "affiliation" : [ {
+          "type" : "EDUCATION",
+          "department-name" : "IT, Multimedia and Telecommunications",
+          "role-title" : "PhD in Knowledge Representation and Reasoning",
+          "start-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : {
+              "value" : "10"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : null,
+          "organization" : {
+            "name" : "Universitat Oberta de Catalunya",
+            "address" : {
+              "city" : "Barcelona",
+              "region" : "Catalunya",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "16766",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172334058
+            }
+          },
+          "created-date" : {
+            "value" : 1436172334058
+          },
+          "last-modified-date" : {
+            "value" : 1436172334058
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1010774"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : null,
+          "role-title" : "Game designer and programmer",
+          "start-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : {
+              "value" : "02"
+            },
+            "day" : {
+              "value" : "13"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : {
+              "value" : "08"
+            },
+            "day" : {
+              "value" : "07"
+            }
+          },
+          "organization" : {
+            "name" : "Dada Comunica",
+            "address" : {
+              "city" : "Vic",
+              "region" : "Barcelona",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : null
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172699608
+            }
+          },
+          "created-date" : {
+            "value" : 1436172699608
+          },
+          "last-modified-date" : {
+            "value" : 1436172699608
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1010802"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : "Logic and Philosophy of Science",
+          "role-title" : "Master Degree in Logic and Philosophy of Science",
+          "start-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2013"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "13"
+            }
+          },
+          "organization" : {
+            "name" : "Universidad de Salamanca",
+            "address" : {
+              "city" : "Salamanca",
+              "region" : "Castilla y León",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "16779",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172264553
+            }
+          },
+          "created-date" : {
+            "value" : 1436172264553
+          },
+          "last-modified-date" : {
+            "value" : 1436172264553
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1010765"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : "IT, Multimedia and Telecommunications",
+          "role-title" : "Research Assistant in data mining and data processing",
+          "start-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : {
+              "value" : "04"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2012"
+            },
+            "month" : {
+              "value" : "12"
+            },
+            "day" : {
+              "value" : "31"
+            }
+          },
+          "organization" : {
+            "name" : "Universitat Oberta de Catalunya",
+            "address" : {
+              "city" : "Barcelona",
+              "region" : "Catalunya",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "16766",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172633530
+            }
+          },
+          "created-date" : {
+            "value" : 1436172633530
+          },
+          "last-modified-date" : {
+            "value" : 1436172633530
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1010799"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : "IT, Multimedia and Telecommunications",
+          "role-title" : "Research Assistant in ontologies, semantic web and routing algorithms",
+          "start-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : {
+              "value" : "12"
+            },
+            "day" : {
+              "value" : "19"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : {
+              "value" : "12"
+            },
+            "day" : {
+              "value" : "31"
+            }
+          },
+          "organization" : {
+            "name" : "Universitat Oberta de Catalunya",
+            "address" : {
+              "city" : "Barcelona",
+              "region" : "Catalunya",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "16766",
+              "disambiguation-source" : "RINGGOLD"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172570074
+            }
+          },
+          "created-date" : {
+            "value" : 1436172570074
+          },
+          "last-modified-date" : {
+            "value" : 1436172570074
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1010795"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : null,
+          "role-title" : "Game designer",
+          "start-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "12"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : {
+              "value" : "12"
+            },
+            "day" : {
+              "value" : "12"
+            }
+          },
+          "organization" : {
+            "name" : "Pyro Studios",
+            "address" : {
+              "city" : "Madrid",
+              "region" : "Madrid",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : null
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172805898
+            }
+          },
+          "created-date" : {
+            "value" : 1436172805898
+          },
+          "last-modified-date" : {
+            "value" : 1436172805898
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1010807"
+        }, {
+          "type" : "EMPLOYMENT",
+          "department-name" : null,
+          "role-title" : "Game designer and programmer",
+          "start-date" : {
+            "year" : {
+              "value" : "2009"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2010"
+            },
+            "month" : {
+              "value" : "07"
+            },
+            "day" : {
+              "value" : "04"
+            }
+          },
+          "organization" : {
+            "name" : "Zoo Studio",
+            "address" : {
+              "city" : "Vic",
+              "region" : "Barcelona",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : null
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172750215
+            }
+          },
+          "created-date" : {
+            "value" : 1436172750215
+          },
+          "last-modified-date" : {
+            "value" : 1436172750215
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1010805"
+        }, {
+          "type" : "EDUCATION",
+          "department-name" : "Computer Science",
+          "role-title" : "Degree in Computer Science",
+          "start-date" : {
+            "year" : {
+              "value" : "2005"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2008"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : {
+              "value" : "01"
+            }
+          },
+          "organization" : {
+            "name" : "Universitat de Vic",
+            "address" : {
+              "city" : "Vic",
+              "region" : "Barcelona",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : null
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172174575
+            }
+          },
+          "created-date" : {
+            "value" : 1436172174575
+          },
+          "last-modified-date" : {
+            "value" : 1436172174575
+          },
+          "visibility" : "PUBLIC",
+          "put-code" : "1010754"
+        } ]
+      },
+      "orcid-works" : null,
+      "funding-list" : {
+        "funding" : [ {
+          "put-code" : "95168",
+          "funding-type" : "GRANT",
+          "organization-defined-type" : {
+            "value" : "Master's Degree Scholarship"
+          },
+          "funding-title" : {
+            "title" : {
+              "value" : "Master's Degree Scholarship"
+            },
+            "translated-title" : null
+          },
+          "short-description" : null,
+          "amount" : null,
+          "url" : {
+            "value" : ""
+          },
+          "start-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : null
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2011"
+            },
+            "month" : {
+              "value" : "09"
+            },
+            "day" : null
+          },
+          "funding-external-identifiers" : null,
+          "funding-contributors" : null,
+          "organization" : {
+            "name" : "Ministerio de Educación, Cultura y Deporte",
+            "address" : {
+              "city" : "Madrid",
+              "region" : "Madrid",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : {
+              "disambiguated-organization-identifier" : "http://dx.doi.org/10.13039/501100003176",
+              "disambiguation-source" : "FUNDREF"
+            }
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436173036025
+            }
+          },
+          "created-date" : {
+            "value" : 1436173036025
+          },
+          "last-modified-date" : {
+            "value" : 1436173036025
+          },
+          "visibility" : "PUBLIC"
+        }, {
+          "put-code" : "95167",
+          "funding-type" : "GRANT",
+          "organization-defined-type" : {
+            "value" : "PhD"
+          },
+          "funding-title" : {
+            "title" : {
+              "value" : "Knowledge and Information Society PhD Grant"
+            },
+            "translated-title" : null
+          },
+          "short-description" : null,
+          "amount" : null,
+          "url" : {
+            "value" : ""
+          },
+          "start-date" : {
+            "year" : {
+              "value" : "2014"
+            },
+            "month" : {
+              "value" : "10"
+            },
+            "day" : null
+          },
+          "end-date" : {
+            "year" : {
+              "value" : "2017"
+            },
+            "month" : {
+              "value" : "10"
+            },
+            "day" : null
+          },
+          "funding-external-identifiers" : null,
+          "funding-contributors" : null,
+          "organization" : {
+            "name" : "Universitat Oberta de Catalunya",
+            "address" : {
+              "city" : "Barcelona",
+              "region" : "Barcelona",
+              "country" : "ES"
+            },
+            "disambiguated-organization" : null
+          },
+          "source" : {
+            "source-orcid" : {
+              "value" : null,
+              "uri" : "http://orcid.org/0000-0003-1641-1325",
+              "path" : "0000-0003-1641-1325",
+              "host" : "orcid.org"
+            },
+            "source-client-id" : null,
+            "source-name" : {
+              "value" : "Joan Casas-Roma"
+            },
+            "source-date" : {
+              "value" : 1436172938529
+            }
+          },
+          "created-date" : {
+            "value" : 1436172938529
+          },
+          "last-modified-date" : {
+            "value" : 1436172938529
+          },
+          "visibility" : "PUBLIC"
+        } ],
+        "scope" : null
+      }
+    },
+    "orcid-internal" : null,
+    "type" : "USER",
+    "group-type" : null,
+    "client-type" : null
+  },
+  "orcid-search-results" : null,
+  "error-desc" : null
+}
