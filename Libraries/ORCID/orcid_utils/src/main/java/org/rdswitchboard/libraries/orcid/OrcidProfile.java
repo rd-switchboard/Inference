@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrcidProfile {
 	private String orcid;
-	private String orcidId;
+	private String id;
 	private String deprecated;
 	private OrcidIdentifier identifier;
 	private OrcidPreferences preferences;
@@ -23,12 +23,13 @@ public class OrcidProfile {
 		this.orcid = orcid;
 	}
 	
-	public String getOrcidId() {
-		return orcidId;
+	@JsonProperty("orcid-id")
+	public String getId() {
+		return id;
 	}
 
-	public void setOrcidId(String orcidId) {
-		this.orcidId = orcidId;
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	@JsonProperty("orcid-deprecated")
