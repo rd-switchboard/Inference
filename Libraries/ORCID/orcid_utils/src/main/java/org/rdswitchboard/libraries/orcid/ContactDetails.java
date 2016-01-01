@@ -5,15 +5,14 @@ import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 public class ContactDetails {
-	private List<String> email;
+	private List<Email> email;
 	private Address address;
 
-	public List<String> getEmail() {
+	public List<Email> getEmail() {
 		return email;
 	}
 
-	@JsonDeserialize(using = ValueArrayDeserializer.class)
-	public void setEmail(List<String> email) {
+	public void setEmail(List<Email> email) {
 		this.email = email;
 	}
 
