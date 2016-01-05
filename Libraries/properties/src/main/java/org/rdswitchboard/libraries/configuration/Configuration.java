@@ -11,8 +11,12 @@ public class Configuration {
 	public static final String PROPERTIES_FILE = "inference.conf";
 	
 	// Source and Target
-	public static final String PROPERTY_SOURCE = "source";
-	public static final String PROPERTY_TARGET = "target";
+	public static final String PROPERTY_SYNC_HOME = "sync.home";
+	public static final String PROPERTY_SYNC_SOURCE = "sync.source";
+	public static final String PROPERTY_SYNC_TARGET = "sync.target";
+	public static final String PROPERTY_SYNC_KEYS = "sync.keys";
+	public static final String PROPERTY_SYNC_LEVEL = "sync.level";
+	public static final String PROPERTY_SYNC_BUCKET = "sync.bucket";
 	
 	// Neo4j
 	public static final String PROPERTY_NEO4J = "neo4j";

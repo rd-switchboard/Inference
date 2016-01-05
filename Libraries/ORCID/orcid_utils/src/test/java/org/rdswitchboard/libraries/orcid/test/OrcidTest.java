@@ -43,7 +43,7 @@ public class OrcidTest {
 			for (File testFile : testFolder.listFiles()) 
 				if (testFile.isFile()) 
 				{
-					System.out.println("Testing: " + testFile.getAbsolutePath());
+				//	System.out.println("Testing: " + testFile.getAbsolutePath());
 					
 					OrcidMessage message = orcid.parseJson(testFile);
 										

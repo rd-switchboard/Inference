@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"  
+    xmlns:dli="http://www.dli.eu" targetNamespace="http://www.dli.eu"> 
+    <xs:element name="dliObject" type="dli:dliObjectType">
+        <xs:annotation>
+            <xs:documentation>
+                The Data Literature Interlinking entity. 
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    
+    <xs:complexType name="dliObjectType">
+        <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="1" name="dnetResourceIdentifier" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        Unique resource identifier internal to D-Net infrastructure.
+                        This property is obtained by concatenating the content CP Acronym and the
+                        MD5 of local record ID to the identifier. (CP_ACRONYM::MD5(LOCAL_IDENTIFIER))
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element maxOccurs="1" minOccurs="1" name="originalIdentifier" type="dli:identifier">
+                <xs:annotation>
+                    <xs:documentation>
+                        The local identifier of the record
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element maxOccurs="1" minOccurs="1" name="completionStatus">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="complete" />
+                        <xs:enumeration value="incomplete" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="provenance" type="dli:provenanceType" minOccurs="1" maxOccurs="1"/>
+                
+            
+            
+            <xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="date" type="xs:string" />
+            <xs:element name= "objectType" maxOccurs="1" minOccurs="1" type="dli:objectType" />             
+            
+            <xs:element name="authors">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="author" type="dli:authorType" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>                
+            </xs:element>         
+            
+            <xs:element name="relations">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="relation" type="dli:relationType" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>                
+            </xs:element>
+            
+        </xs:sequence>                
+    </xs:complexType>
+    
+    <xs:simpleType name="objectType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="publication"/>
+            <xs:enumeration value="dataset"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    
+    <xs:complexType name="provenanceType">
+        <xs:sequence> 
+            <xs:element name="datasourceInfo" type="dli:datasourceInfoType" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>        
+    </xs:complexType>
+    
+    
+    <xs:complexType name="datasourceInfoType">
+        <xs:sequence>
+            <xs:element name="datasource" type="dli:datasourceType"/>
+            <xs:element name="contributedFields" type="xs:string" minOccurs="0" maxOccurs="1" />   
+            <xs:element name="collectionDate" type="xs:string" minOccurs="0" maxOccurs="1" />            
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="datasourceType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="completionStatus" type="xs:string"/>
+                <xs:attribute name="provisionMode" type="xs:string"/>                
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="relationDatasourceType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="completionStatus" type="xs:string"/>
+                <xs:attribute name="provisionMode" type="xs:string"/>
+                <xs:attribute name="collectionDate" type="xs:string"/>                
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="relationType">  
+        <xs:sequence>
+            <xs:element name="dnetIdentifier" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="entitytype" type="dli:objectType"></xs:element>
+            <xs:element name="pid" type="dli:identifier" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="resolvedURL" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="typeOfRelation"  maxOccurs="1" type="xs:string" />
+            <xs:element name="title"  maxOccurs="1" type="xs:string" />
+            <xs:element name="authors">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="author" type="dli:authorType" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>                
+            </xs:element>
+            <xs:element name="relationProvenance">
+                <xs:complexType>
+                    <xs:sequence> 
+                        <xs:element name="datasource" type="dli:relationDatasourceType" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+                                
+                      
+        </xs:sequence>        
+    </xs:complexType>
+    
+    
+    
+    <xs:complexType name="authorType">  
+        <xs:sequence>
+            <xs:element name="fullname" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="localIdentifier" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="typeOfIdentifier" type="xs:string" minOccurs="0" maxOccurs="1"/>          
+        </xs:sequence>
+        
+    </xs:complexType>
+    
+    
+    <xs:complexType name="identifier">
+        <xs:simpleContent>            
+            <xs:extension base="xs:string">
+                <xs:attribute name="type" type="xs:string" use="required" />   
+                <xs:attribute name="resolvedUrl" type="xs:string"  />   
+            </xs:extension>            
+        </xs:simpleContent>   
+    </xs:complexType>
+    
+    
+    
+</xs:schema>
