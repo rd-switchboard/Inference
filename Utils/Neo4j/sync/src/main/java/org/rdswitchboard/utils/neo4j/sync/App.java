@@ -604,7 +604,7 @@ public class App {
 	private static void zipEntry(ZipOutputStream zos, Path root, Path source, String rootName) throws IOException {
 		if (Files.isDirectory(source)) {
 	    	// if directory not exists, create it
-			zos.putNextEntry(new ZipEntry(source.toString() + "/"));
+		//	zos.putNextEntry(new ZipEntry(source.toString() + "/"));
 			
     		// list all the directory contents
     		File files[] = source.toFile().listFiles();
