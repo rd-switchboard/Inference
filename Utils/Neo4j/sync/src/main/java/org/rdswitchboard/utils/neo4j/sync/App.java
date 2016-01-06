@@ -158,8 +158,11 @@ public class App {
 			
 	        System.out.println("Create Constraints");
 	        try ( Transaction tx = dstGraphDb.beginTx() ) {
-	        	for (String type : types)
+	        	for (String type : types) {
+	        		System.out.println("Creating Constraint on: " + type + "(key)");
+	        		
 	        		Neo4jUtils.createConstrant(dstGraphDb, DynamicLabel.label(type), GraphUtils.PROPERTY_KEY);
+	        	}
 		        
 	        	tx.success();
 	        }
@@ -169,11 +172,14 @@ public class App {
 	        	Schema schema = srcGraphDb.schema();
 	        	
 	        	for (String key : keys)
-	        		for (String type : types)
+	        		for (String type : types) {
+	        			System.out.println("Creating Index on: " + type + "(" + key + ")");
+	        			
 	        			schema
 	        				.indexFor(DynamicLabel.label(type))
 	        				.on(key)
 	        				.create();
+	        		}
 	        		
 	        	tx.success();
 	        }
