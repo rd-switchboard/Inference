@@ -11,6 +11,9 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -62,8 +65,8 @@ public class App {
 	private static final String DEF_SYNC_LEVEL = "3";	
 	private static final String DEF_SOURCE_DB = "neo4j-source";
 	private static final String DEF_TARGET_DB = "neo4j-target";
-	private static final String DEF_NEO4J_DB = "neo4j";
-	private static final String DEF_NEO4J_ZIP = "neo4j.zip";
+//	private static final String DEF_NEO4J_DB = "neo4j";
+//	private static final String DEF_NEO4J_ZIP = "neo4j.zip";
 		
 	private static GraphDatabaseService srcGraphDb;
 	private static GraphDatabaseService dstGraphDb;
@@ -109,6 +112,9 @@ public class App {
 	        System.out.println("Target Neo4j: " + target);
 
 	        String bucket = properties.getProperty(Configuration.PROPERTY_SYNC_BUCKET);
+	        
+	        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	        String drop = "neo4j-enriched-" + dateFormat.format(new Date());
 	        	        
 	        syncLevel = Integer.parseInt(properties.getProperty(Configuration.PROPERTY_SYNC_LEVEL, DEF_SYNC_LEVEL));
 	        
@@ -308,8 +314,8 @@ public class App {
 	        
 	        System.out.println("Archive database");
 	        
-	        Path zipFile = Paths.get(DEF_NEO4J_ZIP);
-	        zipFile(targetDb, zipFile, DEF_NEO4J_DB);
+	        Path zipFile = getPath(drop + ".zip");
+	        zipFile(zipFile, targetDb, drop);
 	        
 	        System.out.println("Publish database");
 	        
@@ -396,7 +402,7 @@ public class App {
 	
 	private static void copySyblings(Node src, Node dst, int synblingLevel) {
 
-		System.out.println("Copy syblings with level: " + synblingLevel);
+	//	System.out.println("Copy syblings with level: " + synblingLevel);
 		
 		// Iterate throigh all node relationships
 		Iterable<Relationship> rels = src.getRelationships();
@@ -409,11 +415,14 @@ public class App {
 				dst.createRelationshipTo(copy, rel.getType());
 			
 			if (synblingLevel > 0)
-				copySyblings(copy, dst, synblingLevel-1);			
+				copySyblings(other, copy, synblingLevel-1);			
 		}
 	}
 	
 	private static boolean isRelated(Node from, Node to) {
+		if (from.getId() == to.getId())
+			return true;
+		
 		Iterable<Relationship> rels = from.getRelationships();
 		for (Relationship rel : rels) 
 			if (rel.getOtherNode(from).getId() == to.getId()) 
@@ -440,7 +449,7 @@ public class App {
 		// let try find same node in the dst database
 		Node node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcKey);
 		if (node == null) {
-			System.out.println("Creting new node");
+	//		System.out.println("Creting new node");
 			
 			// if the node does not exists, create it
 			node = dstGraphDb.createNode();
@@ -469,7 +478,7 @@ public class App {
 	private static void copyRelationship(Node from, Node to, RelationshipType type) {
 		// create relationship to the node if needed
 		if (!isRelated(from, to)) {
-			System.out.println("Creting new relationship");
+	//		System.out.println("Creting new relationship");
 			
 			from.createRelationshipTo(to, type);
 			
@@ -491,19 +500,16 @@ public class App {
 			while (nodes.hasNext()) {
 				Node srcNode = nodes.next();
 
-				System.out.println("Match found with id : " + srcNode.getId());
+		//		System.out.println("Match found with id : " + srcNode.getId());
 
 				// get or copy the node to the dst database
 				Node cpyNode = copyNode(srcNode);
 				
-				if (dstNode.getId() != cpyNode.getId()) {
-				
-					// create relationships
-					copyRelationship(dstNode, cpyNode, relKnownAs);
-				}
+				// create relationships
+				copyRelationship(dstNode, cpyNode, relKnownAs);
 								
 				// copy node syblings
-				copySyblings(cpyNode, dstNode, syncLevel);
+				copySyblings(srcNode, cpyNode, syncLevel);
 				
 				System.out.println("Done");
 			}
@@ -536,7 +542,7 @@ public class App {
 		else
 			return;
 		
-		System.out.println("Node id: " + dstNode.getId());
+		//System.out.println("Node id: " + dstNode.getId());
 		
 		// check if node has one of property required for syncing 
 		for (String property : keys) {
@@ -603,7 +609,7 @@ public class App {
     		for (File file : files) 
     			zipEntry(zos, root, file.toPath(), rootName);
 	    } else {
-	    	System.out.println("Zip File " + source);
+	    	System.out.println("zip: " + source);
 	    	
 	    	Path local = Paths.get(rootName, source.relativize(root).toString());
 	    	ZipEntry ze = new ZipEntry(local.toString());
@@ -704,16 +710,16 @@ public class App {
 	}
 
 	private static void downloadDatabase(String from, Path to) throws FileNotFoundException, IOException {
-		System.out.println("Downloading database from " + from + " to " + to);
+	//	System.out.println("Downloading database from " + from + " to " + to);
 		S3Path path = S3Path.parse(from);
 		if (null != path && path.isValud()) {
-			System.out.println("The file is hosted on S3 bucket: " + path.getBucket() + ", key: " + path.getKey() + ", file: " + path.getFile());
+	//		System.out.println("The file is hosted on S3 bucket: " + path.getBucket() + ", key: " + path.getKey() + ", file: " + path.getFile());
 			if (isZip(path.getFile())) {
 				// the from path is a path to S3 file 
 				Path tmp = Paths.get(getTmpPath().toString(), path.getFile());
 				Files.createDirectories(tmp.getParent());
 				
-				System.out.println("Tmp path: " + tmp);
+			//	System.out.println("Tmp path: " + tmp);
 			
 				downloadFileS3(path, tmp);
 				unzipFile(tmp, to);
@@ -743,7 +749,7 @@ public class App {
         	
         	InputStream inputStream = new ByteArrayInputStream(bytes);
         	
-        	PutObjectRequest request = new PutObjectRequest(bucket, DEF_NEO4J_ZIP, inputStream, metadata);
+        	PutObjectRequest request = new PutObjectRequest(bucket, zipFile.getFileName().toString(), inputStream, metadata);
         	
 	        s3client.putObject(request);
         }  
