@@ -206,6 +206,7 @@ public class App {
 	        dstGraphDb = null;
 	        
 	        System.out.println("Archive database");
+	        
 	        Path zipFile = Paths.get(DEF_NEO4J_ZIP);
 	        zipFile(targetDb, zipFile, DEF_NEO4J_DB);
 	        
@@ -578,11 +579,15 @@ public class App {
 	}
 
 	private static void downloadDatabase(String from, Path to) throws FileNotFoundException, IOException {
+		System.out.println("Downloading database from " + from + " to " + to);
 		S3Path path = S3Path.parse(from);
 		if (null != path && path.isValud()) {
+			System.out.println("The file is hosted on S3 bucket: " + path.getBucket() + ", key: " + path.getKey() + ", file: " + path.getFile());
 			if (isZip(path.getFile())) {
 				// the from path is a path to S3 file 
 				Path tmp = Paths.get(getTmpPath().toString(), path.getFile());
+				
+				System.out.println("Tmp path: " + tmp);
 			
 				downloadFileS3(path, tmp);
 				unzipFile(tmp, to);
