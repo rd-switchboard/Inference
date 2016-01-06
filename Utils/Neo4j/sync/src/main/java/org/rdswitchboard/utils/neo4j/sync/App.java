@@ -34,6 +34,8 @@ import org.neo4j.graphdb.RelationshipType;
 import org.neo4j.graphdb.ResourceIterable;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
+import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+import org.neo4j.graphdb.factory.GraphDatabaseSettings;
 import org.neo4j.graphdb.schema.ConstraintDefinition;
 import org.neo4j.graphdb.schema.IndexDefinition;
 import org.neo4j.graphdb.schema.Schema;
@@ -143,10 +145,26 @@ public class App {
 	        downloadDatabase(target, targetDb);
 	        
 	        System.out.println("Connecting to source database");
-	        srcGraphDb = Neo4jUtils.getGraphDb(sourceDb.toString());
+	        srcGraphDb = new GraphDatabaseFactory()
+				.newEmbeddedDatabaseBuilder( Neo4jUtils.GetDbPath(sourceDb.toString()).toString() )
+				.loadPropertiesFromFile( Neo4jUtils.GetConfPath(sourceDb.toString()).toString() )
+				.setConfig( GraphDatabaseSettings.read_only, "false" )
+				.newGraphDatabase();
+	
+	        Neo4jUtils.registerShutdownHook( srcGraphDb );
+	        
+	       // srcGraphDb = Neo4jUtils.getGraphDb(sourceDb.toString());
 	        
 	        System.out.println("Connecting to target database");
-	        dstGraphDb = Neo4jUtils.getGraphDb(targetDb.toString());
+	       // dstGraphDb = Neo4jUtils.getGraphDb(targetDb.toString());
+	        
+	        dstGraphDb = new GraphDatabaseFactory()
+				.newEmbeddedDatabaseBuilder( Neo4jUtils.GetDbPath(targetDb.toString()).toString() )
+				.loadPropertiesFromFile( Neo4jUtils.GetConfPath(targetDb.toString()).toString() )
+				.setConfig( GraphDatabaseSettings.read_only, "false" )
+				.newGraphDatabase();
+
+	        Neo4jUtils.registerShutdownHook( dstGraphDb );
 
 	        System.out.println("Create global operation's driver");
 			GlobalGraphOperations global = Neo4jUtils.getGlobalOperations(dstGraphDb);
