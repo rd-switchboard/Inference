@@ -143,10 +143,10 @@ public class App {
 	        downloadDatabase(target, targetDb);
 	        
 	        System.out.println("Connecting to source database");
-	        srcGraphDb = Neo4jUtils.getReadOnlyGraphDb(sourceDb.toString());
+	        srcGraphDb = Neo4jUtils.getGraphDb(sourceDb.toString());
 	        
 	        System.out.println("Connecting to target database");
-	        dstGraphDb = Neo4jUtils.getReadOnlyGraphDb(targetDb.toString());
+	        dstGraphDb = Neo4jUtils.getGraphDb(targetDb.toString());
 
 	        System.out.println("Create global operation's driver");
 			GlobalGraphOperations global = Neo4jUtils.getGlobalOperations(dstGraphDb);
