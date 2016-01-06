@@ -159,7 +159,7 @@ public class App {
 			
 	        System.out.println("Create Constraints");
 	        try ( Transaction tx = dstGraphDb.beginTx() ) {
-	        	Schema schema = srcGraphDb.schema();
+	        	Schema schema = dstGraphDb.schema();
 	        	
 	        	for (String type : types) {
 	        		Label label = DynamicLabel.label(type);
