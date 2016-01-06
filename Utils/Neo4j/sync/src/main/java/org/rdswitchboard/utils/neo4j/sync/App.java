@@ -243,7 +243,9 @@ public class App {
 		        	System.out.println("Found " + mapImported.size() + " unique nodes");
 		        	
 		        	System.out.println("Sync synblings");
-		        	for (Map.Entry<Long,Long> entry : mapImported.entrySet()) {
+		        	
+		        	Map<Long,Long> map = new HashMap<Long,Long>(mapImported);
+		        	for (Map.Entry<Long,Long> entry : map.entrySet()) {
 		        		Node srcNode = srcGraphDb.getNodeById(entry.getKey());
 		        		Node dstNode = dstGraphDb.getNodeById(entry.getValue());
 		        				
