@@ -518,11 +518,12 @@ public class App {
 			ZipEntry ze = zis.getNextEntry();
 			while (ze != null) {
 				file = Paths.get(ze.getName());
+				System.out.println("unzip : "+ file.toString());
 				try {
 					file = base.relativize(file);
 				} catch (IllegalArgumentException e) {}
 				
-		        System.out.println("file unzip : "+ file.toString());
+		        System.out.println("relative : "+ file.toString());
 		                
 	        	//create all non exists folders
 	            //else you will hit FileNotFoundException for compressed folder
