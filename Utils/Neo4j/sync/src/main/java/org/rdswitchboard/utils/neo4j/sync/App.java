@@ -34,6 +34,8 @@ import org.neo4j.graphdb.RelationshipType;
 import org.neo4j.graphdb.ResourceIterable;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
+import org.neo4j.graphdb.schema.IndexDefinition;
+import org.neo4j.graphdb.schema.Schema;
 import org.neo4j.tooling.GlobalGraphOperations;
 import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.GraphUtils;
@@ -147,17 +149,36 @@ public class App {
 
 	        System.out.println("Create global operation's driver");
 			GlobalGraphOperations global = Neo4jUtils.getGlobalOperations(dstGraphDb);
-
+			
+			Set<String> types = new HashSet<String>();
+			types.add(GraphUtils.TYPE_DATASET);
+			types.add(GraphUtils.TYPE_GRANT);
+			types.add(GraphUtils.TYPE_RESEARCHER);
+			types.add(GraphUtils.TYPE_PUBLICATION);
+			
 	        System.out.println("Create Constraints");
 	        try ( Transaction tx = dstGraphDb.beginTx() ) {
-	        	Neo4jUtils.createConstrant(dstGraphDb, DynamicLabel.label(GraphUtils.TYPE_DATASET), GraphUtils.PROPERTY_KEY);
-	        	Neo4jUtils.createConstrant(dstGraphDb, DynamicLabel.label(GraphUtils.TYPE_GRANT), GraphUtils.PROPERTY_KEY);
-	        	Neo4jUtils.createConstrant(dstGraphDb, DynamicLabel.label(GraphUtils.TYPE_RESEARCHER), GraphUtils.PROPERTY_KEY);
-	        	Neo4jUtils.createConstrant(dstGraphDb, DynamicLabel.label(GraphUtils.TYPE_PUBLICATION), GraphUtils.PROPERTY_KEY);
+	        	for (String type : types)
+	        		Neo4jUtils.createConstrant(dstGraphDb, DynamicLabel.label(type), GraphUtils.PROPERTY_KEY);
 		        
 	        	tx.success();
 	        }
 
+	        System.out.println("Create Indexes");
+	        try ( Transaction tx = srcGraphDb.beginTx() ) {
+	        	Schema schema = srcGraphDb.schema();
+	        	
+	        	for (String key : keys)
+	        		for (String type : types)
+	        			schema
+	        				.indexFor(DynamicLabel.label(type))
+	        				.on(key)
+	        				.create();
+	        		
+	        	tx.success();
+	        }
+
+	        
 	    /*    System.out.println("Create Indexes");
 	        try ( Transaction tx = srcGraphDb.beginTx() ) {
 	        	for (String key : keys) {
@@ -522,10 +543,10 @@ public class App {
 				
 	        	if (file.toString().startsWith(base.toString()))
 					file = base.relativize(file);
-				
-				file = Paths.get(output.toString(), file.toString());
-				
+
 		        System.out.println("unzip : "+ file.toString());
+	        	
+				file = Paths.get(output.toString(), file.toString());
 
 		        if (ze.isDirectory()) 
 		        	Files.createDirectories(file);
