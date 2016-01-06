@@ -205,7 +205,7 @@ public class App {
 	        	tx.success();
 	        }
 
-	        System.out.println("Create indexes in target database");
+	      /*  System.out.println("Create indexes in target database");
 	        try ( Transaction tx = dstGraphDb.beginTx() ) {
 	        	Schema schema = dstGraphDb.schema();
 	        	
@@ -213,8 +213,7 @@ public class App {
 	        		createIndex(schema, DynamicLabel.label(type), GraphUtils.PROPERTY_URL);
 		        
 	        	tx.success();
-	        }
-	        	        
+	        }*/        	        
 	        
 	        
 	        try ( Transaction ignored = srcGraphDb.beginTx() ) 
@@ -461,9 +460,11 @@ public class App {
 		// let try find same node in the dst database
 		Node node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcKey);
 		if (node == null) {
-			String url = GraphUtils.extractFormalizedUrl(srcKey);
-			if (null != url)
-				node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_URL, url);
+			if (srcNode.hasProperty(GraphUtils.PROPERTY_URL)) {
+				String srcUrl = GraphUtils.extractFormalizedUrl((String) srcNode.getProperty(GraphUtils.PROPERTY_URL));
+				if (null != srcUrl)
+					node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcUrl);
+			}
 			
 			if (node == null) {
 		//		System.out.println("Creting new node");
