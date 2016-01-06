@@ -81,7 +81,7 @@ public class App {
 	private static final Label labelResearcher = DynamicLabel.label(GraphUtils.TYPE_RESEARCHER);
 	private static final Label labelPublication = DynamicLabel.label(GraphUtils.TYPE_PUBLICATION);
 	
-	private static final RelationshipType relKnownAs = DynamicRelationshipType.withName(GraphUtils.RELATIONSHIP_KNOWN_AS);
+//	private static final RelationshipType relKnownAs = DynamicRelationshipType.withName(GraphUtils.RELATIONSHIP_KNOWN_AS);
 	
 	private static int syncLevel;
 	private static long processedCounter = 0;
@@ -274,7 +274,7 @@ public class App {
 	        	}
 			}
 	        
-	        System.out.println("Imported " + nodeCounter + " nodes and " + relCounter + " relationships");
+	        System.out.println("Processed " + processedCounter + " nodes. Imported " + nodeCounter + " nodes and " + relCounter + " relationships");
 	      		        
 	        System.out.println("Shutdown database");
 	        
@@ -560,6 +560,8 @@ public class App {
 			labelType = labelPublication;
 		else
 			return;
+		
+		++processedCounter;
 		
 		//System.out.println("Node id: " + dstNode.getId());
 		
