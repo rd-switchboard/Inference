@@ -170,16 +170,33 @@ public class App {
 	        System.out.println("Create Indexes");
 	        try ( Transaction tx = srcGraphDb.beginTx() ) {
 	        	Schema schema = srcGraphDb.schema();
-	        	
-	        	for (String key : keys)
-	        		for (String type : types) {
-	        			System.out.println("Creating Index on: " + type + "(" + key + ")");
+
+        		for (String type : types) {
+        			Label label = DynamicLabel.label(type);
+        			
+        			for (String key : keys) {
+	        			boolean exists = false;
+	        			for (IndexDefinition index : schema.getIndexes(label)) {
+	        				for (String property : index.getPropertyKeys()) {
+	        					if (property.equals(key))
+	        						exists = true;
+	        					break;
+	        				}
+	        				
+	        				if (exists)
+	        					break;
+	        			}
 	        			
-	        			schema
-	        				.indexFor(DynamicLabel.label(type))
-	        				.on(key)
-	        				.create();
+	        			if (exists) {
+	        				System.out.println("Creating Index on: " + type + "(" + key + ")");
+	    	        		
+		        			schema
+		        				.indexFor(label)
+		        				.on(key)
+		        				.create();
+	        			}
 	        		}
+        		}
 	        		
 	        	tx.success();
 	        }
