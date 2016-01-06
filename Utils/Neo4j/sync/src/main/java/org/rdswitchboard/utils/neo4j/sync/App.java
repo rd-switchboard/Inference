@@ -611,9 +611,10 @@ public class App {
     		for (File file : files) 
     			zipEntry(zos, root, file.toPath(), rootName);
 	    } else {
-	    	System.out.println("zip: " + source);
-	    	
 	    	Path local = Paths.get(rootName, source.relativize(root).toString());
+
+	    	System.out.println("zip: " + local);
+
 	    	ZipEntry ze = new ZipEntry(local.toString());
 	    	
 	    	zos.putNextEntry(ze);
