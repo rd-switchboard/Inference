@@ -422,8 +422,9 @@ public class App {
 			Node other = rel.getOtherNode(src);
 			Node copy = copyNode(other);
 			
-			if (!isRelated(dst, copy)) 
-				dst.createRelationshipTo(copy, rel.getType());
+			createRelationship(dst, copy, rel.getType()); 
+			
+//			dst.createRelationshipTo(copy, rel.getType());
 			
 			if (synblingLevel > 0)
 				copySyblings(other, copy, synblingLevel-1);			
@@ -460,7 +461,10 @@ public class App {
 		// let try find same node in the dst database
 		Node node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcKey);
 		if (node == null) {
-			node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_URL, srcKey);
+			String url = GraphUtils.extractFormalizedUrl(srcKey);
+			if (null != url)
+				node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_URL, url);
+			
 			if (node == null) {
 		//		System.out.println("Creting new node");
 				
@@ -489,7 +493,7 @@ public class App {
 		return node;
 	}
 	
-	private static void copyRelationship(Node from, Node to, RelationshipType type) {
+	private static void createRelationship(Node from, Node to, RelationshipType type) {
 		// create relationship to the node if needed
 		if (!isRelated(from, to)) {
 	//		System.out.println("Creting new relationship");
@@ -520,7 +524,7 @@ public class App {
 				Node cpyNode = copyNode(srcNode);
 				
 				// create relationships
-				copyRelationship(dstNode, cpyNode, relKnownAs);
+				createRelationship(dstNode, cpyNode, relKnownAs);
 								
 				// copy node syblings
 //				copySyblings(srcNode, cpyNode, syncLevel);
