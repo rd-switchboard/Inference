@@ -480,7 +480,8 @@ public class App {
 	private static void zipEntry(ZipOutputStream zos, Path root, Path source, String rootName) throws IOException {
 		if (Files.isDirectory(source)) {
 	    	// if directory not exists, create it
-	    		
+			zos.putNextEntry(new ZipEntry(source.toString() + "/"));
+			
     		// list all the directory contents
     		File files[] = source.toFile().listFiles();
     		for (File file : files) 
@@ -517,23 +518,27 @@ public class App {
 
 			ZipEntry ze = zis.getNextEntry();
 			while (ze != null) {
-				file = Paths.get(ze.getName());
-				System.out.println("unzip : "+ file.toString());
-				try {
-					file = base.relativize(file);
-				} catch (IllegalArgumentException e) {}
+	        	file = Paths.get(ze.getName());
 				
-		        System.out.println("relative : "+ file.toString());
-		                
-	        	//create all non exists folders
-	            //else you will hit FileNotFoundException for compressed folder
-				Files.createDirectories(file.getParent());
-		              
-	            try (OutputStream os = new FileOutputStream(file.toFile())) {             
-		        	while ((n = zis.read(buffer)) > 0) {
-		        		os.write(buffer, 0, n);
+	        	if (file.toString().startsWith(base.toString()))
+					file = base.relativize(file);
+				
+				file = Paths.get(output.toString(), file.toString());
+				
+		        System.out.println("unzip : "+ file.toString());
+
+		        if (ze.isDirectory()) 
+		        	Files.createDirectories(file);
+	        	else {
+		        	// create all non exists folders
+		        	// else you will hit FileNotFoundException for compressed folder
+				      
+		            try (OutputStream os = new FileOutputStream(file.toFile())) {             
+			        	while ((n = zis.read(buffer)) > 0) {
+			        		os.write(buffer, 0, n);
+			            }
 		            }
-	            }
+		        }
 		        		
 	        	ze = zis.getNextEntry();
 	    	}
