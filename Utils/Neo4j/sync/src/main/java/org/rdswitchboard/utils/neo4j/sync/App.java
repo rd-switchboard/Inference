@@ -621,7 +621,7 @@ public class App {
 		Path relative = root.relativize(source);
 		Path local = Paths.get(rootName, relative.toString());
 		
-		System.out.println("zip: " + local);
+		//System.out.println("zip: " + local);
 		
 		ZipEntry ze = new ZipEntry(local.toString());
 		
