@@ -20,7 +20,7 @@ public class S3Path {
 		if (idx >= 0) {
 			int idx2 = path.indexOf(PART_SLASH, idx + PART_S3.length());
 			if (idx2 > 0)
-				return new S3Path(path.substring(idx + PART_S3.length(), idx2), path.substring(idx2));
+				return new S3Path(path.substring(idx + PART_S3.length(), idx2), path.substring(idx2+1));
 		}
 		
 		return null;
