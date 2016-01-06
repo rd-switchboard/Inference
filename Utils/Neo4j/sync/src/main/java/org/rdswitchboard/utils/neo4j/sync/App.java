@@ -295,6 +295,8 @@ public class App {
         				}
 		        	}
 		        	
+		        	System.out.println("Writing final chunk to database");
+		        	
 		        	nodeCounter += chunkSize;
 		        	tx.success();
 	        	} finally {
@@ -491,7 +493,7 @@ public class App {
 	}
 	
 	private static void matchNode(Node dstNode, Label labelType, String property, Object value) {
-		System.out.println("Searching for " + property + " = " + value);
+//		System.out.println("Searching for " + property + " = " + value);
 		
 		// At this point the sync will only match nodes of the same type. 
 		// This will require source nodes to have correct type or sync program will not work
@@ -511,7 +513,7 @@ public class App {
 				// copy node syblings
 				copySyblings(srcNode, cpyNode, syncLevel);
 				
-				System.out.println("Done");
+			//	System.out.println("Done");
 			}
 	}
 	
