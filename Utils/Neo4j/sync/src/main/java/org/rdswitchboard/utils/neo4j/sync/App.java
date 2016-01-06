@@ -34,6 +34,7 @@ import org.neo4j.graphdb.RelationshipType;
 import org.neo4j.graphdb.ResourceIterable;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
+import org.neo4j.graphdb.schema.ConstraintDefinition;
 import org.neo4j.graphdb.schema.IndexDefinition;
 import org.neo4j.graphdb.schema.Schema;
 import org.neo4j.tooling.GlobalGraphOperations;
@@ -158,10 +159,31 @@ public class App {
 			
 	        System.out.println("Create Constraints");
 	        try ( Transaction tx = dstGraphDb.beginTx() ) {
+	        	Schema schema = srcGraphDb.schema();
+	        	
 	        	for (String type : types) {
-	        		System.out.println("Creating Constraint on: " + type + "(key)");
+	        		Label label = DynamicLabel.label(type);
 	        		
-	        		Neo4jUtils.createConstrant(dstGraphDb, DynamicLabel.label(type), GraphUtils.PROPERTY_KEY);
+	        		boolean exists = false;
+	        		for (ConstraintDefinition constraint : schema.getConstraints(label)) {
+	        			for (String property : constraint.getPropertyKeys())
+	        				if (property.equals(GraphUtils.PROPERTY_KEY)) {
+	        					exists = true;
+	        					break;
+	        				}
+	        			
+	        			if (exists)
+        					break;
+	        		}
+	        			
+	        		if (!exists) {
+	        			System.out.println("Creating Constraint on: " + type + "(key)");
+	        			
+	        			schema
+	        				.constraintFor(label)
+	        				.assertPropertyIsUnique(GraphUtils.PROPERTY_KEY)
+	        				.create();
+	        		}
 	        	}
 		        
 	        	tx.success();
@@ -175,26 +197,40 @@ public class App {
         			Label label = DynamicLabel.label(type);
         			
         			for (String key : keys) {
-	        			boolean exists = false;
-	        			for (IndexDefinition index : schema.getIndexes(label)) {
-	        				for (String property : index.getPropertyKeys()) {
-	        					if (property.equals(key))
-	        						exists = true;
-	        					break;
-	        				}
-	        				
-	        				if (exists)
-	        					break;
-	        			}
 	        			
-	        			if (exists) {
-	        				System.out.println("Creating Index on: " + type + "(" + key + ")");
-	    	        		
-		        			schema
-		        				.indexFor(label)
-		        				.on(key)
-		        				.create();
-	        			}
+        				boolean exists = false;
+        				for (ConstraintDefinition constraint : schema.getConstraints(label)) {
+    	        			for (String property : constraint.getPropertyKeys())
+    	        				if (property.equals(GraphUtils.PROPERTY_KEY)) {
+    	        					exists = true;
+    	        					break;
+    	        				}
+    	        			
+    	        			if (exists)
+            					break;
+    	        		}
+        				
+        				if (!exists) {
+		        			for (IndexDefinition index : schema.getIndexes(label)) {
+		        				for (String property : index.getPropertyKeys()) 
+		        					if (property.equals(key)) {
+		        						exists = true;
+		        						break;
+		        					}
+		        				
+		        				if (exists)
+		        					break;
+		        			}
+		        			
+		        			if (!exists) {
+		        				System.out.println("Creating Index on: " + type + "(" + key + ")");
+		    	        		
+			        			schema
+			        				.indexFor(label)
+			        				.on(key)
+			        				.create();
+		        			}
+        				}
 	        		}
         		}
 	        		
