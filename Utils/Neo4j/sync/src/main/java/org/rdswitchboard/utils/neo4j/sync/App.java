@@ -589,6 +589,7 @@ public class App {
 			if (isZip(path.getFile())) {
 				// the from path is a path to S3 file 
 				Path tmp = Paths.get(getTmpPath().toString(), path.getFile());
+				Files.createDirectories(tmp.getParent());
 				
 				System.out.println("Tmp path: " + tmp);
 			
