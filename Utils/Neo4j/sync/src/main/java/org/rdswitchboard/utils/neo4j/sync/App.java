@@ -84,6 +84,7 @@ public class App {
 	private static final RelationshipType relKnownAs = DynamicRelationshipType.withName(GraphUtils.RELATIONSHIP_KNOWN_AS);
 	
 	private static int syncLevel;
+	private static long processedCounter = 0;
 	private static long nodeCounter = 0;
 	private static long relCounter = 0;
 	private static long chunksCounter = 0;
@@ -205,7 +206,7 @@ public class App {
 	        	tx.success();
 	        }
 
-	      /*  System.out.println("Create indexes in target database");
+	        System.out.println("Create indexes in target database");
 	        try ( Transaction tx = dstGraphDb.beginTx() ) {
 	        	Schema schema = dstGraphDb.schema();
 	        	
@@ -213,7 +214,8 @@ public class App {
 	        		createIndex(schema, DynamicLabel.label(type), GraphUtils.PROPERTY_URL);
 		        
 	        	tx.success();
-	        }*/        	        
+	        }
+	        	        
 	        
 	        
 	        try ( Transaction ignored = srcGraphDb.beginTx() ) 
@@ -458,40 +460,36 @@ public class App {
 		Label type = DynamicLabel.label(srcType);
 		
 		// let try find same node in the dst database
-		Node node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcKey);
-		if (node == null) {
-			if (srcNode.hasProperty(GraphUtils.PROPERTY_URL)) {
-				String srcUrl = GraphUtils.extractFormalizedUrl((String) srcNode.getProperty(GraphUtils.PROPERTY_URL));
-				if (null != srcUrl)
-					node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcUrl);
-			}
+		Node dstNode = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcKey);
+		if (dstNode == null) {
+		/*node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_URL, srcKey);
 			
-			if (node == null) {
+			if (node == null) {*/
 		//		System.out.println("Creting new node");
 				
 				// if the node does not exists, create it
-				node = dstGraphDb.createNode();
+				dstNode = dstGraphDb.createNode();
 				
 				// copy all node properties
 				for (String p : srcNode.getPropertyKeys()) 
-					node.setProperty(p, srcNode.getProperty(p));
+					dstNode.setProperty(p, srcNode.getProperty(p));
 				
 				// copy all node labels
 				for (Label l : srcNode.getLabels())
-					node.addLabel(l);
+					dstNode.addLabel(l);
 				
 				// increase nodes count
 				++nodeCounter;
 				
 				// increase chunk syze
 				++chunkSize;
-			}
+			//}
 		}
 		
 		// store node id in the map, so we do not need to search it again
-		mapImported.put(srcNode.getId(), node.getId());
+		mapImported.put(srcNode.getId(), dstNode.getId());
 		
-		return node;
+		return dstNode;
 	}
 	
 	private static void createRelationship(Node from, Node to, RelationshipType type) {
@@ -518,18 +516,20 @@ public class App {
 		if (null != nodes)
 			while (nodes.hasNext()) {
 				Node srcNode = nodes.next();
+				
+				mapImported.put(srcNode.getId(), dstNode.getId());
 
 		//		System.out.println("Match found with id : " + srcNode.getId());
 
+				// DK Disabled the creation of knownAs relationsip
+				// to enable, comment map adding above and uncomment the rest
+				
 				// get or copy the node to the dst database
-				Node cpyNode = copyNode(srcNode);
+			//	Node cpyNode = copyNode(srcNode);
 				
 				// create relationships
-				createRelationship(dstNode, cpyNode, relKnownAs);
+			//	createRelationship(dstNode, cpyNode, relKnownAs);
 								
-				// copy node syblings
-//				copySyblings(srcNode, cpyNode, syncLevel);
-				
 			//	System.out.println("Done");
 			}
 	}
