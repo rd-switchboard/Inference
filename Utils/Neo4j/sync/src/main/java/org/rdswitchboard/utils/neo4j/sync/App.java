@@ -618,29 +618,20 @@ public class App {
 	}
 	
 	private static void zipEntry(ZipOutputStream zos, Path root, Path source, String rootName) throws IOException {
-		System.out.println("zip process: " + source);
-		Path relative = source.relativize(root);
-		System.out.println("Relative path: " + relative.toString());
+		Path relative = root.relativize(source);
 		Path local = Paths.get(rootName, relative.toString());
-		System.out.println("Local path: " + local.toString());
+		
+		System.out.println("zip: " + local);
+		
+		ZipEntry ze = new ZipEntry(local.toString());
+		
+		zos.putNextEntry(ze);
 		
 		if (Files.isDirectory(source)) {
-			System.out.println("zip is directory: " + source);
-	    	// if directory not exists, create it
-		//	zos.putNextEntry(new ZipEntry(source.toString() + "/"));
-			
-    		// list all the directory contents
-    		File files[] = source.toFile().listFiles();
+			File files[] = source.toFile().listFiles();
     		for (File file : files) 
     			zipEntry(zos, root, file.toPath(), rootName);
 	    } else {
-
-	    	System.out.println("zip: " + local);
-
-	    	ZipEntry ze = new ZipEntry(local.toString());
-	    	
-	    	zos.putNextEntry(ze);
-	    	
 	    	try (InputStream in = new FileInputStream(source.toString())) {
 	    		byte[] buffer = new byte[1024];
     			int n;
@@ -670,7 +661,7 @@ public class App {
 	        	if (file.toString().startsWith(base.toString()))
 					file = base.relativize(file);
 
-		        System.out.println("unzip : "+ file.toString());
+		      //  System.out.println("unzip : "+ file.toString());
 	        	
 				file = Paths.get(output.toString(), file.toString());
 
