@@ -619,7 +619,11 @@ public class App {
 	
 	private static void zipEntry(ZipOutputStream zos, Path root, Path source, String rootName) throws IOException {
 		System.out.println("zip process: " + source);
-
+		Path relative = source.relativize(root);
+		System.out.println("Relative path: " + relative.toString());
+		Path local = Paths.get(rootName, relative.toString());
+		System.out.println("Local path: " + local.toString());
+		
 		if (Files.isDirectory(source)) {
 			System.out.println("zip is directory: " + source);
 	    	// if directory not exists, create it
@@ -629,8 +633,7 @@ public class App {
     		File files[] = source.toFile().listFiles();
     		for (File file : files) 
     			zipEntry(zos, root, file.toPath(), rootName);
-	    } else if (Files.isRegularFile(source)) {
-	    	Path local = Paths.get(rootName, source.relativize(root).toString());
+	    } else {
 
 	    	System.out.println("zip: " + local);
 

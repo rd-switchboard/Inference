@@ -12,7 +12,7 @@ public class SyncTest {
 	public static final String TEST_PATH = "S3://neo4j.rdswitchboard/2015-11/23/neo4j.zip";
 	public static final String TEST_BROKEN_PATH = "s://neo4j.rdswitchboard";
 	public static final String TEST_BUCKET = "neo4j.rdswitchboard";
-	public static final String TEST_KEY = "/2015-11/23/neo4j.zip";
+	public static final String TEST_KEY = "2015-11/23/neo4j.zip";
 	
 	
 	@Test
