@@ -39,7 +39,9 @@ import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
 
+import com.amazonaws.auth.InstanceProfileCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -102,7 +104,7 @@ public class App {
 	        System.out.println("Target Neo4j: " + target);
 
 	        String bucket = properties.getProperty(Configuration.PROPERTY_SYNC_BUCKET);
-	        
+	        	        
 	        syncLevel = Integer.parseInt(properties.getProperty(Configuration.PROPERTY_SYNC_LEVEL, DEF_SYNC_LEVEL));
 	        
 	        String keysList = properties.getProperty(Configuration.PROPERTY_SYNC_KEYS, DEF_KEYS_LIST);
@@ -122,7 +124,8 @@ public class App {
 		    
 			mapImported = new HashMap<Long, Long>();
 						
-			
+	        s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
+
 	        Path home = Paths.get(syncHome);
 	        Files.createDirectories(home);
 	        work = Files.createTempDirectory(home, DEF_SYNC_PREFIX);
