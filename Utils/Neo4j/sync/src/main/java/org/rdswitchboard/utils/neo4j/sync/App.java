@@ -377,6 +377,9 @@ public class App {
 	}*/
 	
 	private static void copySyblings(Node src, Node dst, int synblingLevel) {
+
+		System.out.println("Copy syblings with level: " + synblingLevel);
+		
 		// Iterate throigh all node relationships
 		Iterable<Relationship> rels = src.getRelationships();
 		for (Relationship rel : rels) {
@@ -419,6 +422,8 @@ public class App {
 		// let try find same node in the dst database
 		Node node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcKey);
 		if (node == null) {
+			System.out.println("Creting new node");
+			
 			// if the node does not exists, create it
 			node = dstGraphDb.createNode();
 			
@@ -446,6 +451,8 @@ public class App {
 	private static void copyRelationship(Node from, Node to, RelationshipType type) {
 		// create relationship to the node if needed
 		if (!isRelated(from, to)) {
+			System.out.println("Creting new relationship");
+			
 			from.createRelationshipTo(to, type);
 			
 			// increase relationships count
@@ -457,6 +464,8 @@ public class App {
 	}
 	
 	private static void matchNode(Node dstNode, Label labelType, String property, Object value) {
+		System.out.println("Searching for " + property + " = " + value);
+		
 		// At this point the sync will only match nodes of the same type. 
 		// This will require source nodes to have correct type or sync program will not work
 		ResourceIterator<Node> nodes = srcGraphDb.findNodes(labelType, property, value);
@@ -464,14 +473,21 @@ public class App {
 			while (nodes.hasNext()) {
 				Node srcNode = nodes.next();
 
+				System.out.println("Match found with id : " + srcNode.getId());
+
 				// get or copy the node to the dst database
 				Node cpyNode = copyNode(srcNode);
 				
-				// create relationships
-				copyRelationship(dstNode, cpyNode, relKnownAs);
+				if (dstNode.getId() != cpyNode.getId()) {
 				
+					// create relationships
+					copyRelationship(dstNode, cpyNode, relKnownAs);
+				}
+								
 				// copy node syblings
-				copySyblings(cpyNode, dstNode, syncLevel);				
+				copySyblings(cpyNode, dstNode, syncLevel);
+				
+				System.out.println("Done");
 			}
 	}
 	
@@ -501,6 +517,8 @@ public class App {
 			labelType = labelPublication;
 		else
 			return;
+		
+		System.out.println("Node id: " + dstNode.getId());
 		
 		// check if node has one of property required for syncing 
 		for (String property : keys) {
