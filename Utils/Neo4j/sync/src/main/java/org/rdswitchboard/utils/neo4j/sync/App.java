@@ -211,19 +211,9 @@ public class App {
 	        
 	        System.out.println("Publish database");
 	        
-	        try (InputStream is = new FileInputStream(zipFile.toFile())) {
-	        	
-	        	byte[] bytes = IOUtils.toByteArray(is);
-	        	
-	        	ObjectMetadata metadata = new ObjectMetadata();
-	        	metadata.setContentLength(bytes.length);
-	        	
-	        	InputStream inputStream = new ByteArrayInputStream(bytes);
-	        	
-	        	PutObjectRequest request = new PutObjectRequest(bucket, DEF_NEO4J_ZIP, inputStream, metadata);
-	        	
-		        s3client.putObject(request);
-	        }        
+	        if (!StringUtils.isEmpty(bucket))
+	        	uploadDatabase(zipFile, bucket);
+	              
 	        
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -610,5 +600,21 @@ public class App {
 				throw new IllegalArgumentException("The local path are invalid: " + local.toString());
 				
 		}			
+	}
+	
+	private static void uploadDatabase(Path zipFile, String bucket) throws FileNotFoundException, IOException {
+		try (InputStream is = new FileInputStream(zipFile.toFile())) {
+        	
+        	byte[] bytes = IOUtils.toByteArray(is);
+        	
+        	ObjectMetadata metadata = new ObjectMetadata();
+        	metadata.setContentLength(bytes.length);
+        	
+        	InputStream inputStream = new ByteArrayInputStream(bytes);
+        	
+        	PutObjectRequest request = new PutObjectRequest(bucket, DEF_NEO4J_ZIP, inputStream, metadata);
+        	
+	        s3client.putObject(request);
+        }  
 	}
 }
