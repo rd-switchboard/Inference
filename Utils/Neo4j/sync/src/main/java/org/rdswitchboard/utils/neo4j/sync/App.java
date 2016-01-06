@@ -181,108 +181,75 @@ public class App {
 			types.add(GraphUtils.TYPE_RESEARCHER);
 			types.add(GraphUtils.TYPE_PUBLICATION);
 			
-	        System.out.println("Create Constraints");
-	        try ( Transaction tx = dstGraphDb.beginTx() ) {
-	        	Schema schema = dstGraphDb.schema();
-	        	
-	        	for (String type : types) {
-	        		Label label = DynamicLabel.label(type);
-	        		
-	        		boolean exists = false;
-	        		for (ConstraintDefinition constraint : schema.getConstraints(label)) {
-	        			for (String property : constraint.getPropertyKeys())
-	        				if (property.equals(GraphUtils.PROPERTY_KEY)) {
-	        					exists = true;
-	        					break;
-	        				}
-	        			
-	        			if (exists)
-        					break;
-	        		}
-	        			
-	        		if (!exists) {
-	        			System.out.println("Creating Constraint on: " + type + "(key)");
-	        			
-	        			schema
-	        				.constraintFor(label)
-	        				.assertPropertyIsUnique(GraphUtils.PROPERTY_KEY)
-	        				.create();
-	        		}
-	        	}
-		        
-	        	tx.success();
-	        }
-
-	        System.out.println("Create Indexes");
+			System.out.println("Create indexes in source database");
 	        try ( Transaction tx = srcGraphDb.beginTx() ) {
 	        	Schema schema = srcGraphDb.schema();
 
         		for (String type : types) {
         			Label label = DynamicLabel.label(type);
         			
-        			for (String key : keys) {
-	        			
-        				boolean exists = false;
-        				for (ConstraintDefinition constraint : schema.getConstraints(label)) {
-    	        			for (String property : constraint.getPropertyKeys())
-    	        				if (property.equals(GraphUtils.PROPERTY_KEY)) {
-    	        					exists = true;
-    	        					break;
-    	        				}
-    	        			
-    	        			if (exists)
-            					break;
-    	        		}
-        				
-        				if (!exists) {
-		        			for (IndexDefinition index : schema.getIndexes(label)) {
-		        				for (String property : index.getPropertyKeys()) 
-		        					if (property.equals(key)) {
-		        						exists = true;
-		        						break;
-		        					}
-		        				
-		        				if (exists)
-		        					break;
-		        			}
-		        			
-		        			if (!exists) {
-		        				System.out.println("Creating Index on: " + type + "(" + key + ")");
-		    	        		
-			        			schema
-			        				.indexFor(label)
-			        				.on(key)
-			        				.create();
-		        			}
-        				}
-	        		}
+        			for (String key : keys) 
+        				createIndex(schema, label, key);
         		}
 	        		
 	        	tx.success();
 	        }
+			
+	        System.out.println("Create constraints in target database");
+	        try ( Transaction tx = dstGraphDb.beginTx() ) {
+	        	Schema schema = dstGraphDb.schema();
+	        	
+	        	for (String type : types) 
+	        		createConstraint(schema, DynamicLabel.label(type), GraphUtils.PROPERTY_KEY);
+	        	
+	        	tx.success();
+	        }
 
+	        System.out.println("Create indexes in target database");
+	        try ( Transaction tx = dstGraphDb.beginTx() ) {
+	        	Schema schema = dstGraphDb.schema();
+	        	
+	        	for (String type : types) 
+	        		createIndex(schema, DynamicLabel.label(type), GraphUtils.PROPERTY_URL);
+		        
+	        	tx.success();
+	        }
+	        	        
 	        
-	    /*    System.out.println("Create Indexes");
-	        try ( Transaction tx = srcGraphDb.beginTx() ) {
-	        	for (String key : keys) {
-	        		Neo4jUtils.createIndex(srcGraphDb, DynamicLabel.label(key), GraphUtils.PROPERTY_KEY);
-	        	}
-
-	        	tx.success();	        	
-	        }*/
-	        
-	        System.out.println("Sync nodes");
 	        
 	        try ( Transaction ignored = srcGraphDb.beginTx() ) 
 			{
 	        	Transaction tx = dstGraphDb.beginTx();
 	        	try {
-					ResourceIterable<Node> srcNodes = global.getAllNodes();
-		        	for (Node srcNode : srcNodes) {
+	        		
+	        		System.out.println("Sync nodes");
+		        	for (Node srcNode : global.getAllNodes()) {
 		        		
 		        		syncNode(srcNode);
 		        
 		        		if (chunkSize > 1000) {
+        					
+        					chunkSize = 0;
+        					++chunksCounter;
+
+        					System.out.println("Writing " + chunksCounter + " chunk to database");
+        				
+        					tx.success();
+        					tx.close();
+        					tx = dstGraphDb.beginTx();			        					
+        				}
+		        	}
+		        	
+		        	System.out.println("Found " + mapImported.size() + " unique nodes");
+		        	
+		        	System.out.println("Sync synblings");
+		        	for (Map.Entry<Long,Long> entry : mapImported.entrySet()) {
+		        		Node srcNode = srcGraphDb.getNodeById(entry.getKey());
+		        		Node dstNode = dstGraphDb.getNodeById(entry.getValue());
+		        				
+        				copySyblings(srcNode, dstNode, syncLevel);
+        				
+        				if (chunkSize > 1000) {
         					
         					chunkSize = 0;
         					++chunksCounter;
@@ -304,9 +271,8 @@ public class App {
 	        	}
 			}
 	        
-	        System.out.println("Created " + nodeCounter + " nodes and " + relCounter + " relationships");
-	      	
-	        
+	        System.out.println("Imported " + nodeCounter + " nodes and " + relCounter + " relationships");
+	      		        
 	        System.out.println("Shutdown database");
 	        
 	        srcGraphDb.shutdown();
@@ -331,6 +297,47 @@ public class App {
 			System.exit(1);
 		}
 	}	
+	
+	private static boolean isConstraintExists(Schema schema, Label label, String key) {
+		for (ConstraintDefinition constraint : schema.getConstraints(label)) 
+			for (String property : constraint.getPropertyKeys())
+				if (property.equals(key)) 
+					return true;
+		
+		return false;
+	}
+	
+	private static boolean isIndexExists(Schema schema, Label label, String key) {
+		for (IndexDefinition index : schema.getIndexes(label)) 
+			for (String property : index.getPropertyKeys()) 
+				if (property.equals(key)) 
+					return true;
+		
+		return false;
+	}
+	
+	private static void createConstraint(Schema schema, Label label, String key) {
+		//Label label = DynamicLabel.label(type);
+		if (!isConstraintExists(schema, label, key)) {
+			System.out.println("Creating Constraint on: " + label.toString() + "(" + key + ")");
+			
+			schema
+				.constraintFor(label)
+				.assertPropertyIsUnique(key)
+				.create();
+		}
+	}
+	
+	private static void createIndex(Schema schema, Label label, String key) {	
+		if (!isConstraintExists(schema, label, key) && !isIndexExists(schema, label, key)) {
+			System.out.println("Creating Index on: " + label.toString() + "(" + key + ")");
+    		
+			schema
+				.indexFor(label)
+				.on(key)
+				.create();
+		}
+	}
 /*	
 	private static void addProperty(Node node, String key, Object value) {
 		if (node.hasProperty(key)) {
@@ -451,24 +458,27 @@ public class App {
 		// let try find same node in the dst database
 		Node node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_KEY, srcKey);
 		if (node == null) {
-	//		System.out.println("Creting new node");
-			
-			// if the node does not exists, create it
-			node = dstGraphDb.createNode();
-			
-			// copy all node properties
-			for (String p : srcNode.getPropertyKeys()) 
-				node.setProperty(p, srcNode.getProperty(p));
-			
-			// copy all node labels
-			for (Label l : srcNode.getLabels())
-				node.addLabel(l);
-			
-			// increase nodes count
-			++nodeCounter;
-			
-			// increase chunk syze
-			++chunkSize; 
+			node = dstGraphDb.findNode(type, GraphUtils.PROPERTY_URL, srcKey);
+			if (node == null) {
+		//		System.out.println("Creting new node");
+				
+				// if the node does not exists, create it
+				node = dstGraphDb.createNode();
+				
+				// copy all node properties
+				for (String p : srcNode.getPropertyKeys()) 
+					node.setProperty(p, srcNode.getProperty(p));
+				
+				// copy all node labels
+				for (Label l : srcNode.getLabels())
+					node.addLabel(l);
+				
+				// increase nodes count
+				++nodeCounter;
+				
+				// increase chunk syze
+				++chunkSize;
+			}
 		}
 		
 		// store node id in the map, so we do not need to search it again
@@ -511,7 +521,7 @@ public class App {
 				copyRelationship(dstNode, cpyNode, relKnownAs);
 								
 				// copy node syblings
-				copySyblings(srcNode, cpyNode, syncLevel);
+//				copySyblings(srcNode, cpyNode, syncLevel);
 				
 			//	System.out.println("Done");
 			}
