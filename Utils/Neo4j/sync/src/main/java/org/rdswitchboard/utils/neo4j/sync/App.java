@@ -105,18 +105,21 @@ public class App {
 	        String source = properties.getProperty(Configuration.PROPERTY_SYNC_SOURCE);
 	        if (StringUtils.isEmpty(source))
 	            throw new IllegalArgumentException("Source Neo4j can not be empty");
-	        System.out.println("Source Neo4j: " + source);
+	        System.out.println("Nexus Neo4j: " + source);
 
 	        String target = properties.getProperty(Configuration.PROPERTY_SYNC_TARGET);
 	        if (StringUtils.isEmpty(target))
 	            throw new IllegalArgumentException("Target Neo4j can not be empty");
-	        System.out.println("Target Neo4j: " + target);
+	        System.out.println("Input Neo4j: " + target);
 
 	        String bucket = properties.getProperty(Configuration.PROPERTY_SYNC_BUCKET);
 	        
 	        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	        String drop = "neo4j-enriched-" + dateFormat.format(new Date());
-	        	        
+
+	        if (!StringUtils.isEmpty(bucket))
+	        	System.out.println("Output Neo4j: s3://" + bucket + "/" + drop + ".zip");
+
 	        syncLevel = Integer.parseInt(properties.getProperty(Configuration.PROPERTY_SYNC_LEVEL, DEF_SYNC_LEVEL));
 	        
 	        String keysList = properties.getProperty(Configuration.PROPERTY_SYNC_KEYS, DEF_KEYS_LIST);
@@ -145,13 +148,13 @@ public class App {
 	        Path sourceDb = getPath(DEF_SOURCE_DB);
 	        Path targetDb = getPath(DEF_TARGET_DB);
 	        
-	        System.out.println("Install source database");
+	        System.out.println("Install Nexus database");
 	        downloadDatabase(source, sourceDb);
 	        
-	        System.out.println("Install target database");
+	        System.out.println("Install Input database");
 	        downloadDatabase(target, targetDb);
 	        
-	        System.out.println("Connecting to source database");
+	        System.out.println("Connecting to Nexus database");
 	        srcGraphDb = new GraphDatabaseFactory()
 				.newEmbeddedDatabaseBuilder( Neo4jUtils.GetDbPath(sourceDb.toString()).toString() )
 				.loadPropertiesFromFile( Neo4jUtils.GetConfPath(sourceDb.toString()).toString() )
@@ -162,7 +165,7 @@ public class App {
 	        
 	       // srcGraphDb = Neo4jUtils.getGraphDb(sourceDb.toString());
 	        
-	        System.out.println("Connecting to target database");
+	        System.out.println("Connecting to Input database");
 	       // dstGraphDb = Neo4jUtils.getGraphDb(targetDb.toString());
 	        
 	        dstGraphDb = new GraphDatabaseFactory()
@@ -182,7 +185,7 @@ public class App {
 			types.add(GraphUtils.TYPE_RESEARCHER);
 			types.add(GraphUtils.TYPE_PUBLICATION);
 			
-			System.out.println("Create indexes in source database");
+			System.out.println("Create indexes in Nexus database");
 	        try ( Transaction tx = srcGraphDb.beginTx() ) {
 	        	Schema schema = srcGraphDb.schema();
 
@@ -196,7 +199,7 @@ public class App {
 	        	tx.success();
 	        }
 			
-	        System.out.println("Create constraints in target database");
+	        System.out.println("Create constraints in Input database");
 	        try ( Transaction tx = dstGraphDb.beginTx() ) {
 	        	Schema schema = dstGraphDb.schema();
 	        	
@@ -206,7 +209,7 @@ public class App {
 	        	tx.success();
 	        }
 
-	        System.out.println("Create indexes in target database");
+/*	        System.out.println("Create indexes in Input database");
 	        try ( Transaction tx = dstGraphDb.beginTx() ) {
 	        	Schema schema = dstGraphDb.schema();
 	        	
@@ -214,7 +217,7 @@ public class App {
 	        		createIndex(schema, DynamicLabel.label(type), GraphUtils.PROPERTY_URL);
 		        
 	        	tx.success();
-	        }
+	        }*/
 	        	        
 	        
 	        
@@ -626,16 +629,17 @@ public class App {
 		
 		//System.out.println("zip: " + local);
 		
-		ZipEntry ze = new ZipEntry(local.toString());
-		
-		zos.putNextEntry(ze);
-		
 		if (Files.isDirectory(source)) {
+			zos.putNextEntry(new ZipEntry(local.toString() + "/"));
+			
 			File files[] = source.toFile().listFiles();
     		for (File file : files) 
     			zipEntry(zos, root, file.toPath(), rootName);
 	    } else {
-	    	try (InputStream in = new FileInputStream(source.toString())) {
+			ZipEntry ze = new ZipEntry(local.toString());
+			zos.putNextEntry(ze);
+
+			try (InputStream in = new FileInputStream(source.toString())) {
 	    		byte[] buffer = new byte[1024];
     			int n;
     	        
