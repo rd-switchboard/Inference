@@ -16,18 +16,18 @@ import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
 
 public class App {
-	private static final String OUTPUT_NAME = "rds_keys.csv";
+	private static final String OUTPUT_NAME = "ands_keys.csv";
 	
 	public static void main(String[] args) {
 		try {
 			Properties properties = Configuration.fromArgs(args);
 		        	               	        
-	        String neo4jFolder = properties.getProperty("neo4j");
+	        String neo4jFolder = properties.getProperty(Configuration.PROPERTY_NEO4J_NEXUS);
 	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4j Folder: " + neo4jFolder);
 
-	        String outputName = properties.getProperty("out", OUTPUT_NAME);
+	        String outputName = properties.getProperty(Configuration.PROPERTY_KEYS_FILE, OUTPUT_NAME);
 	        if (StringUtils.isEmpty(outputName))
 	            throw new IllegalArgumentException("Output name can not be empty");
 	        System.out.println("Output: " + outputName);

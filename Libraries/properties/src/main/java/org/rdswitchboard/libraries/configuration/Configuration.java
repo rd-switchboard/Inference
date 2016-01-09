@@ -81,6 +81,10 @@ public class Configuration {
 	public static final String PROPERTY_PATTERNS = "patterns";
 	public static final String PROPERTY_SERVICES = "services";
 	
+	// Output
+	
+	public static final String PROPERTY_KEYS_FILE = "keys.file";
+	
 	// Test
 	public static final String PROPERTY_TEST_MIN_CONNECTIONS = "test.min.connections";
 	
