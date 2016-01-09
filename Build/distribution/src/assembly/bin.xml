@@ -52,9 +52,11 @@
         <include>org.rdswitchboard.linkers:link_nodes</include>
         <include>org.rdswitchboard.linkers:link_web_researchers</include>
         <include>org.rdswitchboard.search:google_search</include>
-        <include>org.rdswitchboard.utils:copy_harmonized</include>
+        <include>org.rdswitchboard.utils:harmonise</include>
         <include>org.rdswitchboard.utils:delete_nodes</include>
         <include>org.rdswitchboard.utils:export_graph_json</include>
+        <include>org.rdswitchboard.utils:export_keys</include>
+        <include>org.rdswitchboard.utils:sync</include>
       </includes> 
   
       <binaries>

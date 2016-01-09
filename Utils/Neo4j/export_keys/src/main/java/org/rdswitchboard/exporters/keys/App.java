@@ -1,15 +1,6 @@
 package org.rdswitchboard.exporters.keys;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang.StringUtils;
@@ -18,56 +9,29 @@ import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
-import org.neo4j.graphdb.ResourceIterable;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
-import org.neo4j.tooling.GlobalGraphOperations;
+import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
-import org.rdswitchboard.libraries.neo4j.interfaces.ProcessNode;
 
 public class App {
-	private static final String PROPERTIES_FILE = "properties/export_keys.properties";
-	private static final String NEXUS_NEO4J_FOLDER = "neo4j-nexus";
-/*	private static final String SOURCES_NAME = "conf/rds_sources.csv";*/
 	private static final String OUTPUT_NAME = "rds_keys.csv";
 	
 	public static void main(String[] args) {
 		try {
-			String propertiesFile = PROPERTIES_FILE;
-			if (args.length > 0 && !StringUtils.isEmpty(args[0])) 
-				propertiesFile = args[0];
-		
-		    Properties properties = new Properties();
-		    try (InputStream in = new FileInputStream(propertiesFile)) {
-		        properties.load(in);
-		    }
+			Properties properties = Configuration.fromArgs(args);
 		        	               	        
-	        String neo4jFolder = properties.getProperty("neo4j", NEXUS_NEO4J_FOLDER);
+	        String neo4jFolder = properties.getProperty("neo4j");
 	        if (StringUtils.isEmpty(neo4jFolder))
 	            throw new IllegalArgumentException("Neo4j Folder can not be empty");
 	        System.out.println("Neo4j Folder: " + neo4jFolder);
-
-	        /*String sourcesFile = properties.getProperty("sources", SOURCES_NAME);
-	        if (StringUtils.isEmpty(sourcesFile))
-	            throw new IllegalArgumentException("Path to a list of valid sources can not be empty");
-	        System.out.println("Sources: " + sourcesFile);*/
 
 	        String outputName = properties.getProperty("out", OUTPUT_NAME);
 	        if (StringUtils.isEmpty(outputName))
 	            throw new IllegalArgumentException("Output name can not be empty");
 	        System.out.println("Output: " + outputName);
-	        
-/*	        Map<Label, String> malLabels = new HashMap<Label, String>();
-	        
-	        List<String> lines = Files.readAllLines(FileSystems.getDefault().getPath(sourcesFile), StandardCharsets.UTF_8);
-	        for (String line : lines) {
-	        	String[] parts = line.split(",");
-	        	String source = parts[0].trim();
-	        	String property = parts.length > 1 ? parts[1].trim() : null; 
-	        	malLabels.put(DynamicLabel.label(source), property);
-	        }*/
-	        
+	                
 	        GraphDatabaseService graphDb = Neo4jUtils.getGraphDb(neo4jFolder);
 	        Label labelAnds = DynamicLabel.label(GraphUtils.SOURCE_ANDS);
 	        Label labelDryad = DynamicLabel.label(GraphUtils.SOURCE_DRYAD);

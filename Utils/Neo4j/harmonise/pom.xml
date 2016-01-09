@@ -7,7 +7,7 @@
   	<relativePath>../../../pom.xml</relativePath>
   </parent>
   <groupId>org.rdswitchboard.utils</groupId>
-  <artifactId>copy_harmonized</artifactId>
+  <artifactId>harmonise</artifactId>
   <name>Copy Harmonized data</name>
   
   <properties>

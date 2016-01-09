@@ -116,7 +116,7 @@
     </dependency>
     <dependency>
       <groupId>org.rdswitchboard.utils</groupId>
-      <artifactId>copy_harmonized</artifactId>
+      <artifactId>harmonise</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -127,6 +127,16 @@
     <dependency>
       <groupId>org.rdswitchboard.utils</groupId>
       <artifactId>export_graph_json</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.rdswitchboard.utils</groupId>
+      <artifactId>export_keys</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.rdswitchboard.utils</groupId>
+      <artifactId>sync</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>

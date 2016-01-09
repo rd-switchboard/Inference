@@ -55,7 +55,7 @@
 	<module>Linkers/Google/link_web_researchers</module>
 	<module>Linkers/Static/link_nodes</module>
 	<module>Search/Google/google_search</module>
-  	<module>Utils/Neo4j/copy_harmonized</module>
+  	<module>Utils/Neo4j/harmonise</module>
 	<module>Utils/Neo4j/delete_nodes</module>
 	<module>Utils/Neo4j/export_graph_json</module>
 	<module>Utils/Neo4j/export_keys</module>
