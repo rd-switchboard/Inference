@@ -56,6 +56,11 @@
     </dependency>
     <dependency>
       <groupId>org.rdswitchboard.importers</groupId>
+      <artifactId>import_version</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.rdswitchboard.importers</groupId>
       <artifactId>import_arc</artifactId>
       <version>${project.version}</version>
     </dependency>

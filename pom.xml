@@ -43,6 +43,7 @@
         <module>Importers/Web/import_institutions</module>
 	<module>Importers/Web/import_patterns</module>
 	<module>Importers/Web/import_services</module>
+	<module>Importers/Web/import_version</module>
 	<module>Importers/ARC/import_arc</module>
         <module>Importers/NHMRC/import_nhmrc</module>
         <module>Importers/ANDS/import_ands</module>

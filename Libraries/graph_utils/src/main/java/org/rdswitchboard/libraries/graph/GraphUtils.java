@@ -59,12 +59,14 @@ public class GraphUtils {
 	public static final String PROPERTY_ORIGINAL_KEY = "original_key";
 	public static final String PROPERTY_DARA_ID = "dara_id";
 	public static final String PROPERTY_TITLE_LANGUAGE = "title_language";
+	public static final String PROPERTY_VERSION = "version";
 	
 	// control properties
 	public static final String PROPERTY_DELETED = "deleted";
 	public static final String PROPERTY_BROKEN = "broken";
 	
 	// meta-data sources
+	public static final String SOURCE_SYSTEM = "system";
 	public static final String SOURCE_ANDS = "ands";
 	public static final String SOURCE_ARC = "arc";
 	public static final String SOURCE_NHMRC = "nhmrc";
@@ -85,6 +87,7 @@ public class GraphUtils {
 	public static final String TYPE_SERVICE = "service";
 	public static final String TYPE_PUBLICATION = "publication";
 	public static final String TYPE_PATTERN = "pattern";
+	public static final String TYPE_VERSION = "version";
 	
 	// relationships
 	

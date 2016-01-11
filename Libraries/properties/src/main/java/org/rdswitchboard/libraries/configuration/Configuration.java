@@ -21,6 +21,7 @@ public class Configuration {
 	// Neo4j
 	public static final String PROPERTY_NEO4J = "neo4j";
 	public static final String PROPERTY_NEO4J_NEXUS = "neo4j.nexus";
+	public static final String PROPERTY_NEO4J_VERSION= "neo4j.version";
 		
 	// S3
 	public static final String PROPERTY_S3_BUCKET = "s3.bucket";
@@ -80,6 +81,9 @@ public class Configuration {
 	public static final String PROPERTY_INSTITUTIONS = "institutions";
 	public static final String PROPERTY_PATTERNS = "patterns";
 	public static final String PROPERTY_SERVICES = "services";
+	public static final String PROPERTY_ARCHITECTURE_VERSION = "architecture.version";
+	public static final String PROPERTY_GOOGLE_VERSION = "google.version";
+	public static final String PROPERTY_BUILD_NUMBER= "build.number";
 	
 	// Output
 	

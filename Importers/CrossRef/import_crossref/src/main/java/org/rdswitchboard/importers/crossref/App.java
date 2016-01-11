@@ -73,8 +73,13 @@ public class App {
 	        loadReferences(GraphUtils.SOURCE_DRYAD, GraphUtils.PROPERTY_REFERENCED_BY);
 	        loadReferences(GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_REFERENCED_BY);
 	        processReferences(GraphUtils.RELATIONSHIP_RELATED_TO);
-
+	        
 	        loadReferences(GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);
+	        loadReferences(GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_DOI);
+	        loadReferences(GraphUtils.SOURCE_CERN, GraphUtils.PROPERTY_DOI);
+	        loadReferences(GraphUtils.SOURCE_DLI, GraphUtils.PROPERTY_DOI);
+	        loadReferences(GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI);
+	        	        
 	        processReferences(GraphUtils.RELATIONSHIP_KNOWN_AS);
 	        
 		} catch (Exception e) {
