@@ -198,6 +198,8 @@ public class Exporter {
 		System.out.println("Max nodes: " + maxNodes);
 		System.out.println("Max siblings: " + maxSiblings);
 		
+		graphDb = Neo4jUtils.getReadOnlyGraphDb(neo4jFolder);
+		
 		if (0 != testNodeId) {
 			System.out.println("Test Node ID: " + testNodeId);
 		
@@ -222,7 +224,6 @@ public class Exporter {
 			}
 		}
 		
-		graphDb = Neo4jUtils.getReadOnlyGraphDb(neo4jFolder);
 		
 //		System.out.println("Region: " + s3client.setE);
 //		System.out.println("Location: " + s3client.getBucketLocation(s3Bucket));
