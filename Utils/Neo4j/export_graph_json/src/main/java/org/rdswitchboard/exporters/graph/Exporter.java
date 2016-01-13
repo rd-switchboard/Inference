@@ -198,8 +198,29 @@ public class Exporter {
 		System.out.println("Max nodes: " + maxNodes);
 		System.out.println("Max siblings: " + maxSiblings);
 		
-		if (0 != testNodeId)
+		if (0 != testNodeId) {
 			System.out.println("Test Node ID: " + testNodeId);
+		
+			try ( Transaction tx = graphDb.beginTx() ) {
+				
+				Node node = graphDb.getNodeById(testNodeId);
+				if (null == node) {
+					System.err.println("Test Node does not exist");
+					System.exit(1);
+				} 
+				
+				if (!isValid(node, sources)) {
+					System.err.println("Test Node is not valid for exporting");
+					System.exit(1);
+				} 
+				
+				System.out.println("Exporting test node");
+				
+				processNode(node);
+				
+				System.exit(0);
+			}
+		}
 		
 		graphDb = Neo4jUtils.getReadOnlyGraphDb(neo4jFolder);
 		

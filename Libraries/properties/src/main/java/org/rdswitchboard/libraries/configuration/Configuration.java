@@ -83,7 +83,8 @@ public class Configuration {
 	public static final String PROPERTY_SERVICES = "services";
 	public static final String PROPERTY_ARCHITECTURE_VERSION = "architecture.version";
 	public static final String PROPERTY_GOOGLE_VERSION = "google.version";
-	public static final String PROPERTY_BUILD_NUMBER= "build.number";
+	public static final String PROPERTY_BUILD_NUMBER = "build.number";
+	public static final String PROPERTY_VERSION_FILE = "version.file";
 	
 	// Output
 	
