@@ -526,18 +526,14 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 						graph.addRelationship(relationship);
 					} else if (IDENTIFICATOR_DOI.equals(identifierType)) {
 						String doi = GraphUtils.extractDoi(identifier.getValue());
-						if (null != doi)
-							node.addProperty(GraphUtils.PROPERTY_REFERENCED_BY, doi);
-					} else if (IDENTIFICATOR_ORCID.equals(identifierType)) {
-						String orcid = GraphUtils.extractOrcidId(identifier.getValue());
-						if (null != orcid) {
-							String key = GraphUtils.generateOrcidUri(orcid);
+						if (null != doi) {
+							String key = GraphUtils.generateDoiUri(doi);
 							GraphNode relatedNode = new GraphNode()
 								.withKey(GraphUtils.SOURCE_ANDS, key)
 								.withSource(GraphUtils.SOURCE_ANDS)
-								.withType(GraphUtils.TYPE_RESEARCHER)
+								.withType(recordType)
 								.withProperty(GraphUtils.PROPERTY_URL, key)
-								.withProperty(GraphUtils.PROPERTY_ORCID_ID, orcid)
+								.withProperty(GraphUtils.PROPERTY_DOI, doi)
 								.withProperty(GraphUtils.PROPERTY_TITLE, title);
 								
 							graph.addNode(relatedNode);
@@ -548,6 +544,31 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 								.withEnd(relatedNode.getKey());
 			
 							graph.addRelationship(relationship);
+							
+							node.addProperty(GraphUtils.PROPERTY_REFERENCED_BY, doi);
+						}
+					} else if (IDENTIFICATOR_ORCID.equals(identifierType)) {
+						if (recordType.equals(GraphUtils.TYPE_RESEARCHER)) {
+							String orcid = GraphUtils.extractOrcidId(identifier.getValue());
+							if (null != orcid) {
+								String key = GraphUtils.generateOrcidUri(orcid);
+								GraphNode relatedNode = new GraphNode()
+									.withKey(GraphUtils.SOURCE_ANDS, key)
+									.withSource(GraphUtils.SOURCE_ANDS)
+									.withType(GraphUtils.TYPE_RESEARCHER)
+									.withProperty(GraphUtils.PROPERTY_URL, key)
+									.withProperty(GraphUtils.PROPERTY_ORCID_ID, orcid)
+									.withProperty(GraphUtils.PROPERTY_TITLE, title);
+									
+								graph.addNode(relatedNode);
+								
+								GraphRelationship relationship = new GraphRelationship()
+									.withRelationship(relation)
+									.withStart(node.getKey())
+									.withEnd(relatedNode.getKey());
+				
+								graph.addRelationship(relationship);
+							}
 						}
 					}
 				}
