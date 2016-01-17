@@ -303,13 +303,13 @@ public class Exporter {
 			Map<Long, Node> graphNodes = new HashMap<Long, Node>();
 				
 			graphNodes.put(node.getId(), node);
-			String type = getNodeType(node);
-			if (!StringUtils.isEmpty(type) && isDatasetType(type)) { //  && !isInstitutionType(type)
+//			String type = getNodeType(node);
+//			if (!StringUtils.isEmpty(type) && isDatasetType(type)) { //  && !isInstitutionType(type)
 				List<Node> root = new ArrayList<Node>();
 				root.add(node);
 						
 				exctractNodes(graphNodes, root, maxLevel);
-			}
+//			}
 					
 			System.out.println("Done! Found " + graphNodes.size() + " unique nodes.");
 					
