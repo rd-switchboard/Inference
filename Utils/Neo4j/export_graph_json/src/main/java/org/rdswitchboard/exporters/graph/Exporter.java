@@ -6,21 +6,18 @@ import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.neo4j.graphdb.DynamicLabel;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
-import org.neo4j.tooling.GlobalGraphOperations;
 import org.parboiled.common.StringUtils;
 import org.rdswitchboard.exporters.graph.json.JsonGraph;
 import org.rdswitchboard.exporters.graph.json.JsonNode;
@@ -541,9 +538,9 @@ public class Exporter {
 	 * @param type
 	 * @return
 	 */
-	private boolean isDatasetType(String type) {
+	/*private boolean isDatasetType(String type) {
 		return type.equals(GraphUtils.TYPE_DATASET);
-	}
+	}*/
 	
 	/**
 	 * Function to test is node type is Publication

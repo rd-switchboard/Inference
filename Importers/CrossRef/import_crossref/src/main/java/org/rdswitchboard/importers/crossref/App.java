@@ -72,6 +72,7 @@ public class App {
 	        
 	        loadReferences(GraphUtils.SOURCE_DRYAD, GraphUtils.PROPERTY_REFERENCED_BY);
 	        loadReferences(GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_REFERENCED_BY);
+	        loadReferences(GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_REFERENCED_BY);
 	        processReferences(GraphUtils.RELATIONSHIP_RELATED_TO);
 	        
 	        loadReferences(GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);

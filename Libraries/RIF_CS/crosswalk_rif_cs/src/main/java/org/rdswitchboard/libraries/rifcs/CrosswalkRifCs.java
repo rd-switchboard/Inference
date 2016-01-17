@@ -3,6 +3,7 @@ package org.rdswitchboard.libraries.rifcs;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.JAXBContext;
@@ -28,10 +29,12 @@ import au.org.ands.standards.rif_cs.registryobjects.Activity;
 import au.org.ands.standards.rif_cs.registryobjects.Collection;
 import au.org.ands.standards.rif_cs.registryobjects.DatesType;
 import au.org.ands.standards.rif_cs.registryobjects.DatesType.Date;
+import au.org.ands.standards.rif_cs.registryobjects.DescriptionType;
 import au.org.ands.standards.rif_cs.registryobjects.IdentifierType;
 import au.org.ands.standards.rif_cs.registryobjects.NameType;
 import au.org.ands.standards.rif_cs.registryobjects.Party;
 import au.org.ands.standards.rif_cs.registryobjects.RegistryObjects;
+import au.org.ands.standards.rif_cs.registryobjects.RelatedInfoType;
 import au.org.ands.standards.rif_cs.registryobjects.RelatedObjectType;
 import au.org.ands.standards.rif_cs.registryobjects.RelationType;
 import au.org.ands.standards.rif_cs.registryobjects.Service;
@@ -49,6 +52,12 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 	private static final String PARTY_TYPE_PUBLISHER = "publisher";
 	private static final String PARTY_TYPE_GROUP = "group";
 	private static final String PARTY_TYPE_ADMINISTRATIVE_POSITION = "administrativePosition";
+	
+	private static final String RELATED_INFO_TITLE = "title";
+	private static final String RELATED_INFO_TYPE_ACTIVITY = "activity";
+	private static final String RELATED_INFO_TYPE_COLLECTION = "collection";
+	private static final String RELATED_INFO_TYPE_PARTY = "party";
+	private static final String RELATED_INFO_TYPE_PUBLICATION = "publication";
 	
 	private static final String IDENTIFICATOR_NLA = "AU-ANL:PEAU";
 	private static final String IDENTIFICATOR_LOCAL = "local";
@@ -235,7 +244,7 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				else if (registryObject.getService() != null)
 					importService(graph, node, registryObject.getService());
 				else if (registryObject.getParty() != null)
-					importParty(graph, node, registryObject.getParty());	
+					importParty(graph, node, registryObject.getParty());
 				else {
 					graph.addNode(node.withBroken(true));
 					
@@ -264,6 +273,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				processName(node, (NameType) object);
 			else if (object instanceof RelatedObjectType) 
 				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
+			else if (object instanceof RelatedInfoType) 
+				processRelatedInfo(graph, node, (RelatedInfoType) object);
 			else if (object instanceof DatesType) 
 				processDates(node, GraphUtils.PROPERTY_PUBLISHED_DATE, COLLECTION_DATES, (DatesType) object);
 		}
@@ -289,6 +300,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				processName(node, (NameType) object);
 			else if (object instanceof RelatedObjectType) 
 				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
+			else if (object instanceof RelatedInfoType) 
+				processRelatedInfo(graph, node, (RelatedInfoType) object);
 			else if (object instanceof DatesType) 
 				processDates(node, GraphUtils.PROPERTY_AWARDED_DATE, GRANT_DATES, (DatesType) object);
 		}
@@ -318,6 +331,9 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				processName(node, (NameType) object);
 			else if (object instanceof RelatedObjectType) 
 				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
+			else if (object instanceof RelatedInfoType) 
+				processRelatedInfo(graph, node, (RelatedInfoType) object);
+
 		}
 		
 		graph.addNode(node);
@@ -440,6 +456,116 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				graph.addRelationship(relationship);
 			}
 		}
+	}
+	
+
+	private void processRelatedInfo(Graph graph, GraphNode node, RelatedInfoType relatedInfo) {
+		String recordType, infoType = relatedInfo.getType();
+		if (RELATED_INFO_TYPE_ACTIVITY.equals(infoType))
+			recordType = GraphUtils.TYPE_GRANT;
+		else if (RELATED_INFO_TYPE_COLLECTION.equals(infoType))
+			recordType = GraphUtils.TYPE_DATASET;
+		else if (RELATED_INFO_TYPE_PARTY.equals(infoType))
+			recordType = GraphUtils.TYPE_RESEARCHER;
+		else if (RELATED_INFO_TYPE_PUBLICATION.equals(infoType))
+			recordType = GraphUtils.TYPE_PUBLICATION;
+		else
+			recordType = null;
+		
+		if (null != recordType) {
+			List<IdentifierType> identifiers = null;
+			String title = null;
+			String relation = null;
+			
+			for (JAXBElement<?> element : relatedInfo.getIdentifierOrRelationOrTitle()) {
+				if (element.getDeclaredType().equals(IdentifierType.class)) {
+					IdentifierType identifier = (IdentifierType) element.getValue();
+					if (null == identifiers)
+						identifiers = new ArrayList<IdentifierType>();
+					identifiers.add(identifier);
+				} else if (element.getDeclaredType().equals(RelationType.class)) {
+					if (null == relation) 
+						for (Object relationElement : ((RelationType) element.getValue()).getDescriptionOrUrl()) 
+							if (relationElement instanceof JAXBElement<?> && 
+								((JAXBElement<?>)relationElement).getDeclaredType().equals(DescriptionType.class)) { 
+									relation = ((DescriptionType)((JAXBElement<?>)relationElement).getValue()).getValue();
+									break;
+							}							
+				} else if (element.getDeclaredType().equals(String.class)) {
+					if (null == title && RELATED_INFO_TITLE.equals(element.getName().getLocalPart())) 
+						title = (String) element.getValue();
+				}
+			}
+			
+			if (null != identifiers) {
+				if (null == relation)
+					relation = GraphUtils.RELATIONSHIP_RELATED_TO;
+				
+				for (IdentifierType identifier : identifiers) {
+					String identifierType = identifier.getType();
+					if (IDENTIFICATOR_ARC.equals(identifierType)) {
+						GraphRelationship relationship = new GraphRelationship()
+							.withRelationship(relation)
+							.withStart(node.getKey())
+							.withEnd(new GraphKey(node.getKey().getIndex(), "http://purl.org/au-research/grants/arc/" + identifier.getValue()));
+					
+						graph.addRelationship(relationship);
+					} else if (IDENTIFICATOR_NHMRC.equals(identifierType)) {
+						GraphRelationship relationship = new GraphRelationship()
+							.withRelationship(relation)
+							.withStart(node.getKey())
+							.withEnd(new GraphKey(node.getKey().getIndex(), "http://purl.org/au-research/grants/nhmrc/" + identifier.getValue()));
+				
+						graph.addRelationship(relationship);
+					} else if (IDENTIFICATOR_PURL.equals(identifierType)) {
+						GraphRelationship relationship = new GraphRelationship()
+							.withRelationship(relation)
+							.withStart(node.getKey())
+							.withEnd(new GraphKey(node.getKey().getIndex(), identifier.getValue()));
+			
+						graph.addRelationship(relationship);
+					} else if (IDENTIFICATOR_DOI.equals(identifierType)) {
+						String doi = GraphUtils.extractDoi(identifier.getValue());
+						if (null != doi)
+							node.addProperty(GraphUtils.PROPERTY_REFERENCED_BY, doi);
+					} else if (IDENTIFICATOR_ORCID.equals(identifierType)) {
+						String orcid = GraphUtils.extractOrcidId(identifier.getValue());
+						if (null != orcid) {
+							String key = GraphUtils.generateOrcidUri(orcid);
+							GraphNode relatedNode = new GraphNode()
+								.withKey(GraphUtils.SOURCE_ANDS, key)
+								.withSource(GraphUtils.SOURCE_ANDS)
+								.withType(GraphUtils.TYPE_RESEARCHER)
+								.withProperty(GraphUtils.PROPERTY_URL, key)
+								.withProperty(GraphUtils.PROPERTY_ORCID_ID, orcid)
+								.withProperty(GraphUtils.PROPERTY_TITLE, title);
+								
+							graph.addNode(relatedNode);
+							
+							GraphRelationship relationship = new GraphRelationship()
+								.withRelationship(relation)
+								.withStart(node.getKey())
+								.withEnd(relatedNode.getKey());
+			
+							graph.addRelationship(relationship);
+						}
+					}
+				}
+			}			
+		}
+		/*			
+		for (RelationType relType : relatedObject.getRelation()) {
+			String key = relatedObject.getKey();
+			String type = relType.getType();
+			if (null != key && !key.isEmpty() && null != type && !type.isEmpty()) { 
+				GraphRelationship relationship = new GraphRelationship()
+					.withRelationship(type)
+					.withStart(from)
+					.withEnd(new GraphKey(from.getIndex(), key));
+				
+				graph.addRelationship(relationship);
+			}
+		}*/
 	}
 	
 	private void processDates(GraphNode node, String propertyName, String[] types, DatesType dates) {
