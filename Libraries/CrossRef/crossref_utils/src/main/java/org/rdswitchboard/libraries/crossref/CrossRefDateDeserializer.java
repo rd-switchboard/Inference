@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.TimeZone;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -25,8 +26,13 @@ public class CrossRefDateDeserializer  extends JsonDeserializer<Date> {
 	private static final String NODE_DATE_TIME = "date-time";
 	private static final String NODE_DATE_PARTS = "date-parts";
 	
-	private static final DateFormat df = new SimpleDateFormat("yyyy-MM-ddTHH:mm:ssZ", Locale.ENGLISH);
+	private static final DateFormat df;
 	  
+	static {
+		df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.ENGLISH);
+		df.setTimeZone(TimeZone.getTimeZone("GMT"));
+	}
+	
 
 	@Override
 	public Date deserialize(JsonParser p, DeserializationContext ctxt)
