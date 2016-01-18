@@ -19,74 +19,77 @@ public class CrossrefGraph extends CrossRef {
 	 */
 	
 	public GraphNode queryGraph(Graph graph, String doi) {
-		// make sure we have doi
-		Item item = requestWork(PART_DOI + doi);
-		if (null != item) {
-			String doiUri = GraphUtils.generateDoiUri(doi);
-			GraphNode nodePublication = new GraphNode()
-				.withKey(GraphUtils.SOURCE_CROSSREF, doiUri)
-				.withSource(GraphUtils.SOURCE_CROSSREF)
-				.withType(GraphUtils.TYPE_PUBLICATION)
-				.withProperty(GraphUtils.PROPERTY_DOI, doi)
-				.withProperty(GraphUtils.PROPERTY_URL, doiUri)
-//				.withProperty(GraphUtils.PROPERTY_URL, item.getUrl())
-//				.withProperty(GraphUtils.PROPERTY_NAME_PREFIX, item.getPrefix())
-				.withProperty(GraphUtils.PROPERTY_ISSN, item.getIssn())
-				.withProperty(GraphUtils.PROPERTY_TITLE, item.getTitle())
-//				.withProperty(GraphUtils.PROPERTY_SUBTITLE, item.getSubject())
-//				.withProperty(GraphUtils.PROPERTY_CONTAINER_TITLE, item.getContainerTitle())
-//				.withProperty(GraphUtils.PROPERTY_AUTHORS, item.getAuthorString())
-//				.withProperty(GraphUtils.PROPERTY_EDITORS, item.getEditorString())
-				.withProperty(GraphUtils.PROPERTY_PUBLISHED_DATE, item.getIssuedString());
-//				.withProperty(GraphUtils.PROPERTY_DEPOSITED_DATE, item.getDepositedString())
-//				.withProperty(GraphUtils.PROPERTY_INDEXED_DATE, item.getIndexedString());
-			
-			graph.addNode(nodePublication);
-			
-		/*	String url = GraphUtils.extractFormalizedUrl(item.getUrl());
-			if (null != url && !url.equals(doiUri)) {
-				GraphNode nodeWeb = new GraphNode()
-					.withKey(GraphUtils.SOURCE_WEB, url)
-					.withSource(GraphUtils.SOURCE_WEB)
+		String authority = requestAuthority(doi);
+		if (authority.equals(CrossRef.AUTHORITY_CROSSREF)) {
+			// make sure we have doi
+			Item item = requestWork(PART_DOI + doi);
+			if (null != item) {
+				String doiUri = GraphUtils.generateDoiUri(doi);
+				GraphNode nodePublication = new GraphNode()
+					.withKey(GraphUtils.SOURCE_CROSSREF, doiUri)
+					.withSource(GraphUtils.SOURCE_CROSSREF)
 					.withType(GraphUtils.TYPE_PUBLICATION)
-					.withProperty(GraphUtils.PROPERTY_URL, url)
-					.withProperty(GraphUtils.PROPERTY_TITLE, item.getTitle());
-					
-				graph.addNode(nodeWeb);
+					.withProperty(GraphUtils.PROPERTY_DOI, doi)
+					.withProperty(GraphUtils.PROPERTY_URL, doiUri)
+	//				.withProperty(GraphUtils.PROPERTY_URL, item.getUrl())
+	//				.withProperty(GraphUtils.PROPERTY_NAME_PREFIX, item.getPrefix())
+					.withProperty(GraphUtils.PROPERTY_ISSN, item.getIssn())
+					.withProperty(GraphUtils.PROPERTY_TITLE, item.getTitle())
+	//				.withProperty(GraphUtils.PROPERTY_SUBTITLE, item.getSubject())
+	//				.withProperty(GraphUtils.PROPERTY_CONTAINER_TITLE, item.getContainerTitle())
+	//				.withProperty(GraphUtils.PROPERTY_AUTHORS, item.getAuthorString())
+	//				.withProperty(GraphUtils.PROPERTY_EDITORS, item.getEditorString())
+					.withProperty(GraphUtils.PROPERTY_PUBLISHED_DATE, item.getIssuedString());
+	//				.withProperty(GraphUtils.PROPERTY_DEPOSITED_DATE, item.getDepositedString())
+	//				.withProperty(GraphUtils.PROPERTY_INDEXED_DATE, item.getIndexedString());
 				
-				graph.addRelationship(new GraphRelationship()
-					.withRelationship(GraphUtils.RELATIONSHIP_KNOWN_AS)
-					.withStart(nodePublication.getKey())
-					.withEnd(nodeWeb.getKey()));
-			}*/
-			
-			if (null != item.getAuthor())
-				for (Author author : item.getAuthor()) {
-					String fullName = author.getFullName();
-					String key = doi + ":" + fullName;
+				graph.addNode(nodePublication);
+				
+			/*	String url = GraphUtils.extractFormalizedUrl(item.getUrl());
+				if (null != url && !url.equals(doiUri)) {
+					GraphNode nodeWeb = new GraphNode()
+						.withKey(GraphUtils.SOURCE_WEB, url)
+						.withSource(GraphUtils.SOURCE_WEB)
+						.withType(GraphUtils.TYPE_PUBLICATION)
+						.withProperty(GraphUtils.PROPERTY_URL, url)
+						.withProperty(GraphUtils.PROPERTY_TITLE, item.getTitle());
+						
+					graph.addNode(nodeWeb);
 					
-					nodePublication.addProperty(GraphUtils.PROPERTY_AUTHORS, fullName);
-					
-					GraphNode nodeResearcher = new GraphNode()
-						.withKey(GraphUtils.SOURCE_CROSSREF, key)
-						.withSource(GraphUtils.SOURCE_CROSSREF)
-						.withType(GraphUtils.TYPE_RESEARCHER)
-						.withProperty(GraphUtils.PROPERTY_NAME_PREFIX, author.getSuffix())
-						.withProperty(GraphUtils.PROPERTY_FIRST_NAME, author.getGiven())
-						.withProperty(GraphUtils.PROPERTY_LAST_NAME, author.getFamily())
-						.withProperty(GraphUtils.PROPERTY_FULL_NAME, author.getFullName())
-						.withProperty(GraphUtils.PROPERTY_ORCID_ID, author.getOrcid());
-					
-					graph.addNode(nodeResearcher);						
 					graph.addRelationship(new GraphRelationship()
-						.withRelationship(GraphUtils.RELATIONSHIP_AUTHOR)
+						.withRelationship(GraphUtils.RELATIONSHIP_KNOWN_AS)
 						.withStart(nodePublication.getKey())
-						.withEnd(nodeResearcher.getKey()));
-				}
-			
-			return nodePublication;
-			
-		}
+						.withEnd(nodeWeb.getKey()));
+				}*/
+				
+				if (null != item.getAuthor())
+					for (Author author : item.getAuthor()) {
+						String fullName = author.getFullName();
+						String key = doi + ":" + fullName;
+						
+						nodePublication.addProperty(GraphUtils.PROPERTY_AUTHORS, fullName);
+						
+						GraphNode nodeResearcher = new GraphNode()
+							.withKey(GraphUtils.SOURCE_CROSSREF, key)
+							.withSource(GraphUtils.SOURCE_CROSSREF)
+							.withType(GraphUtils.TYPE_RESEARCHER)
+							.withProperty(GraphUtils.PROPERTY_NAME_PREFIX, author.getSuffix())
+							.withProperty(GraphUtils.PROPERTY_FIRST_NAME, author.getGiven())
+							.withProperty(GraphUtils.PROPERTY_LAST_NAME, author.getFamily())
+							.withProperty(GraphUtils.PROPERTY_FULL_NAME, author.getFullName())
+							.withProperty(GraphUtils.PROPERTY_ORCID_ID, author.getOrcid());
+						
+						graph.addNode(nodeResearcher);						
+						graph.addRelationship(new GraphRelationship()
+							.withRelationship(GraphUtils.RELATIONSHIP_AUTHOR)
+							.withStart(nodePublication.getKey())
+							.withEnd(nodeResearcher.getKey()));
+					}
+				
+				return nodePublication;
+			}
+		} else 
+			System.err.println("Unsupported DOI Authority: " + authority);
 		
 		return null;
 	}

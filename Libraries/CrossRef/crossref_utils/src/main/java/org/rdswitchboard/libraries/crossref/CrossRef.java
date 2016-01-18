@@ -3,6 +3,7 @@ package org.rdswitchboard.libraries.crossref;
 import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.List;
 
 import javax.ws.rs.core.MediaType;
 
@@ -22,9 +23,15 @@ import com.sun.jersey.api.client.ClientResponse;
  * @version 1.0.0
  */
 public class CrossRef {
+	public static final String AUTHORITY_CROSSREF = "CrossRef";
+	
 	private static final String URL_CROSSREF = "http://api.crossref.org/";
 
+	private static final String CACHE_WORKS = "works";
+	private static final String CACHE_AUTHORITY = "authority";
+	
 	private static final String FUNCTION_WORKS = "works";
+	private static final String FUNCTION_DOI_RA = "doiRA";
 	/*private static final String FUNCTION_FUNDERS = "funders";
 	private static final String FUNCTION_MEMBERS = "members";
 	private static final String FUNCTION_TYPES = "types";
@@ -32,6 +39,7 @@ public class CrossRef {
 	private static final String FUNCTION_JOURNALS = "journals";*/
 	
 	private static final String URL_CROSSREF_WORKDS = URL_CROSSREF + FUNCTION_WORKS;
+	private static final String URL_CROSSREF_DOI_RA = URL_CROSSREF + FUNCTION_DOI_RA;
 	/*private static final String URL_CROSSREF_FUNDERS = URL_CROSSREF + FUNCTION_FUNDERS;
 	private static final String URL_CROSSREF_MEMBERS = URL_CROSSREF + FUNCTION_MEMBERS;
 	private static final String URL_CROSSREF_TYPES = URL_CROSSREF + FUNCTION_TYPES;
@@ -50,12 +58,20 @@ public class CrossRef {
 	
 	private static final String EXT_JSON = ".json";
 	
+//	private static final String PART_DOI = "doi:";
+	
 	private File cacheFolder;
 	private File cacheWorksFolder;
+	private File cacheAuthorityFolder;
+	
+	private long maxAttempts = 10;
+	private long attemptDelay = 1000;
+	private boolean dbaEnabled = true;
 	
 	private static final ObjectMapper mapper = new ObjectMapper();   
 	private static final TypeReference<Response<ItemList>> itemListType = new TypeReference<Response<ItemList>>() {};   
-	private static final TypeReference<Response<Item>> itemType = new TypeReference<Response<Item>>() {};   
+	private static final TypeReference<Response<Item>> itemType = new TypeReference<Response<Item>>() {};
+	private static final TypeReference<List<Authority>> authorityListType = new TypeReference<List<Authority>>() {};
 	
 	/*
 	static {
@@ -81,7 +97,7 @@ public class CrossRef {
 					return response.getMessage();
 			}		
 			else
-				System.out.println("Inavlid response");
+				System.err.println("Inavlid response");
 			
 		} catch (JsonParseException e) {
 			e.printStackTrace();
@@ -99,8 +115,11 @@ public class CrossRef {
 	 * @param doi String containing doi identificator
 	 * @return Item - work information
 	 */
-	public Item requestWork(final String doi) {
+	public Item requestWork(String doi) {
 		try {
+	/*		if (doi.startsWith(PART_DOI))
+				doi = doi.substring(PART_DOI.length());*/
+			
 			String json = null;
 			String encodedDoi = URLEncoder.encode(doi, URL_ENCODING);
 			File jsonFile = null;
@@ -126,15 +145,62 @@ public class CrossRef {
 					return response.getMessage();
 			}		
 			else
-				System.out.println("Inavlid response");
+				System.err.println("Inavlid response");
 		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		return null;
+	}
+	
+	public String requestAuthority(String doi) {
+		try {
+	/*		if (doi.startsWith(PART_DOI))
+				doi = doi.substring(PART_DOI.length());*/
+			
+			String json = null;
+			String encodedDoi = URLEncoder.encode(doi, URL_ENCODING);
+			File jsonFile = null;
+			if (null != cacheAuthorityFolder) {
+				jsonFile = new File (cacheAuthorityFolder, encodedDoi + EXT_JSON);
+				if (jsonFile.exists() && !jsonFile.isDirectory())
+					json = FileUtils.readFileToString(jsonFile);
+			}
+			
+			if (null == json) {
+				json = get(URL_CROSSREF_WORKDS + "/" + encodedDoi.replace("%2F", "/"));
+				if (json != null && !json.isEmpty())
+					FileUtils.write(jsonFile, json);
+			}
+			
+			if (null != json) {			
+				List<Authority> authorities = mapper.readValue(json, authorityListType);
+				
+				//System.out.println(response);
+				
+				if (null == authorities)
+					return null;
+				
+				for (Authority authority : authorities) {
+					if (authority.getAuthority() != null)
+						return authority.getAuthority();
+					
+					if (authority.getStatus() != null) 
+						System.err.println(authority.getStatus());
+				}
+			}		
+			else
+				System.err.println("Inavlid response");
+		} catch (JsonParseException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
@@ -143,16 +209,35 @@ public class CrossRef {
 	
 	private String get( final String url ) {
 		System.out.println("Downloading: " + url);
+						
+		long delay = attemptDelay;
+		long attemps = maxAttempts;
+		for (;;) {
+			try {
+				ClientResponse response = Client.create()
+										  .resource( url )
+										  .accept( MediaType.APPLICATION_JSON ) 
+										  .get( ClientResponse.class );
 				
-		ClientResponse response = Client.create()
-								  .resource( url )
-								  .accept( MediaType.APPLICATION_JSON ) 
-								  .get( ClientResponse.class );
-		
-		if (response.getStatus() == 200) 
-			return response.getEntity( String.class );
-		
-		return null;
+				if (response.getStatus() == 200) 
+					return response.getEntity( String.class );
+				else
+					return null;
+				
+			} catch (Exception e) {
+				if (attemps <= 0)
+					throw e;
+				
+				--attemps;
+				try {
+					Thread.sleep(delay);
+				} catch (InterruptedException e1) {
+					throw e;
+				}
+				if (dbaEnabled)
+					delay = delay * 2;
+			}
+		}
     } 
 	
 	public File getCacheFolder() {
@@ -163,11 +248,38 @@ public class CrossRef {
 		this.cacheFolder = cacheFolder;
 		this.cacheFolder.mkdirs();
 		
-		this.cacheWorksFolder = new File(this.cacheFolder, FUNCTION_WORKS);
+		this.cacheWorksFolder = new File(this.cacheFolder, CACHE_WORKS);
 		this.cacheWorksFolder.mkdirs();
+		
+		this.cacheAuthorityFolder = new File(this.cacheFolder, CACHE_AUTHORITY);
+		this.cacheAuthorityFolder.mkdirs();
 	}
 
 	public void setCacheFolder(String cacheFolder) {
 		setCacheFolder(new File(cacheFolder));
+	}
+
+	public long getMaxAttempts() {
+		return maxAttempts;
+	}
+
+	public void setMaxAttempts(long maxAttempts) {
+		this.maxAttempts = maxAttempts;
+	}
+
+	public long getAttemptDelay() {
+		return attemptDelay;
+	}
+
+	public void setAttemptDelay(long attemptDelay) {
+		this.attemptDelay = attemptDelay;
+	}
+
+	public boolean isDbaEnabled() {
+		return dbaEnabled;
+	}
+
+	public void setDbaEnabled(boolean dbaEnabled) {
+		this.dbaEnabled = dbaEnabled;
 	}
 }

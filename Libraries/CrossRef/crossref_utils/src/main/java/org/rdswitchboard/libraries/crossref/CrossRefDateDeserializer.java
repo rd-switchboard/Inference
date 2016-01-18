@@ -1,8 +1,12 @@
 package org.rdswitchboard.libraries.crossref;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -18,7 +22,11 @@ import com.fasterxml.jackson.databind.JsonNode;
  */
 public class CrossRefDateDeserializer  extends JsonDeserializer<Date> {
 	private static final String NODE_TIMESTAMP = "timestamp";
+	private static final String NODE_DATE_TIME = "date-time";
 	private static final String NODE_DATE_PARTS = "date-parts";
+	
+	private static final DateFormat df = new SimpleDateFormat("yyyy-MM-ddTHH:mm:ssZ", Locale.ENGLISH);
+	  
 
 	@Override
 	public Date deserialize(JsonParser p, DeserializationContext ctxt)
@@ -29,6 +37,14 @@ public class CrossRefDateDeserializer  extends JsonDeserializer<Date> {
 		final JsonNode nodeStamp = node.get(NODE_TIMESTAMP);
 		if (null != nodeStamp) 
 			return new Date(nodeStamp.asLong(0));
+		
+		final JsonNode nodeTime = node.get(NODE_DATE_TIME);
+		if (null != nodeTime)
+			try {
+				return df.parse(nodeTime.asText());
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}  
 
 		final JsonNode nodeParts = node.get(NODE_DATE_PARTS);
 		if (null != nodeParts && nodeParts.isArray()) {

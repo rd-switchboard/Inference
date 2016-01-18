@@ -14,6 +14,7 @@ public class Funder {
 	private List<String> award;
 	private String name;
 	private String doi;
+	private String assertedBy;
 	
 	public List<String> getAward() {
 		return award;
@@ -39,13 +40,25 @@ public class Funder {
 		return doi;
 	}
 	
-	@JsonProperty("DOI")
 	public void setDoi(final String doi) {
 		this.doi = doi;
 	}
 	
+	@JsonProperty("doi-asserted-by")
+	public String getAssertedBy() {
+		return assertedBy;
+	}
+
+	public void setAssertedBy(String assertedBy) {
+		this.assertedBy = assertedBy;
+	}
+
 	public String toString() {
-		return "Funder [award=" + award + ", name=" + name + ", doi=" + doi + "]";
+		return "Funder [award=" + award + 
+				", name=" + name + 
+				", doi=" + doi + 
+				", assertedBy=" + assertedBy + 
+				"]";
 	}
 	
 }

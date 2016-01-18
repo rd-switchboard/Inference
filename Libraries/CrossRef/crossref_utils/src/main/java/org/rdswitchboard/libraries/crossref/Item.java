@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -16,7 +17,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  *
  */
 
-//@JsonIgnoreProperties({ "license"})
 public class Item {
 	private String doi;
 	private String url;
@@ -50,6 +50,8 @@ public class Item {
 	private Date issued;
 	private Date deposited;
 	private Date indexed;
+	private Date published;
+	private Date created;
 	
 	private double score;
 	
@@ -385,6 +387,25 @@ public class Item {
 
 	public void setIsbns(List<String> isbns) {
 		this.isbns = isbns;
+	}
+	
+	@JsonProperty("published-print")
+	public Date getPublished() {
+		return published;
+	}
+	
+	@JsonDeserialize(using = CrossRefDateDeserializer.class)
+	public void setPublished(Date published) {
+		this.published = published;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	@JsonDeserialize(using = CrossRefDateDeserializer.class)
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 	@JsonAnySetter
