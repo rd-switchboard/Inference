@@ -26,6 +26,7 @@ public class CrossRef {
 	public static final String AUTHORITY_CROSSREF = "CrossRef";
 	
 	private static final String URL_CROSSREF = "http://api.crossref.org/";
+	private static final String URL_CROSSREF_DOI = "http://doi.crossref.org/";
 
 	private static final String CACHE_WORKS = "works";
 	private static final String CACHE_AUTHORITY = "authority";
@@ -39,7 +40,7 @@ public class CrossRef {
 	private static final String FUNCTION_JOURNALS = "journals";*/
 	
 	private static final String URL_CROSSREF_WORKDS = URL_CROSSREF + FUNCTION_WORKS;
-	private static final String URL_CROSSREF_DOI_RA = URL_CROSSREF + FUNCTION_DOI_RA;
+	private static final String URL_CROSSREF_DOI_RA = URL_CROSSREF_DOI + FUNCTION_DOI_RA;
 	/*private static final String URL_CROSSREF_FUNDERS = URL_CROSSREF + FUNCTION_FUNDERS;
 	private static final String URL_CROSSREF_MEMBERS = URL_CROSSREF + FUNCTION_MEMBERS;
 	private static final String URL_CROSSREF_TYPES = URL_CROSSREF + FUNCTION_TYPES;
