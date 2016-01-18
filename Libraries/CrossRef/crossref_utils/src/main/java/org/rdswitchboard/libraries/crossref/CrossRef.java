@@ -173,7 +173,7 @@ public class CrossRef {
 			}
 			
 			if (null == json) {
-				json = get(URL_CROSSREF_WORKDS + "/" + encodedDoi.replace("%2F", "/"));
+				json = get(URL_CROSSREF_DOI_RA + "/" + encodedDoi.replace("%2F", "/"));
 				if (json != null && !json.isEmpty())
 					FileUtils.write(jsonFile, json);
 			}
