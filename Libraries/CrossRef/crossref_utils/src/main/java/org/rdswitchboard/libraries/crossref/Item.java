@@ -30,6 +30,7 @@ public class Item {
 	private String referenceCount;
 	private String member;
 	private String updatePolicy;
+	private String articleNumber;
 		
 	private List<String> issn;
 	private List<String> title;
@@ -50,7 +51,8 @@ public class Item {
 	private Date issued;
 	private Date deposited;
 	private Date indexed;
-	private Date published;
+	private Date publishedPrint;
+	private Date publishedOnline;
 	private Date created;
 	
 	private double score;
@@ -390,13 +392,23 @@ public class Item {
 	}
 	
 	@JsonProperty("published-print")
-	public Date getPublished() {
-		return published;
+	public Date getPublishedPrint() {
+		return publishedPrint;
 	}
 	
 	@JsonDeserialize(using = CrossRefDateDeserializer.class)
-	public void setPublished(Date published) {
-		this.published = published;
+	public void setPublishedPrint(Date published) {
+		this.publishedPrint = published;
+	}
+	
+	@JsonProperty("published-online")
+	public Date getPublishedOnline() {
+		return publishedOnline;
+	}
+
+	@JsonDeserialize(using = CrossRefDateDeserializer.class)
+	public void setPublishedOnline(Date publishedOnline) {
+		this.publishedOnline = publishedOnline;
 	}
 
 	public Date getCreated() {
@@ -407,44 +419,38 @@ public class Item {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
+	
+	@JsonProperty("article-number")
+	public String getArticleNumber() {
+		return articleNumber;
+	}
+
+	public void setArticleNumber(String articleNumber) {
+		this.articleNumber = articleNumber;
+	}
 
 	@JsonAnySetter
 	public void handleUnknown(String key, Object value) {
 		System.out.println("Warning. Ignoring Item property: " + key + " with value: " + value);			
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Item [doi=" + doi + 
-				", url=" + url + 
-				", prefix=" + prefix +
-				", type=" + type + 
-				", issue=" + issue +
-				", volume=" + volume +
-				", page=" + page +
-				", publisher=" + publisher +
-				", updatePolicy=" + updatePolicy +
-				", source=" + source +
-				", referenceCount=" + referenceCount +
-				", member=" + member +
-				", issn=" + issn +
-				", title=" + title +
-				", subtitle=" + subtitle +
-				", subject=" + subject +
-				", containerTitle=" + containerTitle +
-				", author=" + author +
-				", editor=" + editor +
-				", funder=" + funder +
-				", issued=" + issued +
-				", deposited=" + deposited +
-				", indexed=" + indexed +
-				", score=" + score +
-				", alternativeId=" + alternativeId +
-				", links=" + links +
-				", assertions=" + assertions +
-				", licenses=" + licenses +
-				", archive=" + archives +
-				", isbns=" + isbns +
-				"]";	
-	}	
+		return "Item [doi=" + doi + ", url=" + url + ", prefix=" + prefix
+				+ ", issue=" + issue + ", volume=" + volume + ", type=" + type
+				+ ", page=" + page + ", publisher=" + publisher + ", source="
+				+ source + ", referenceCount=" + referenceCount + ", member="
+				+ member + ", updatePolicy=" + updatePolicy
+				+ ", articleNumber=" + articleNumber + ", issn=" + issn
+				+ ", title=" + title + ", subtitle=" + subtitle + ", subject="
+				+ subject + ", containerTitle=" + containerTitle
+				+ ", alternativeId=" + alternativeId + ", isbns=" + isbns
+				+ ", archives=" + archives + ", author=" + author + ", editor="
+				+ editor + ", funder=" + funder + ", links=" + links
+				+ ", assertions=" + assertions + ", licenses=" + licenses
+				+ ", issued=" + issued + ", deposited=" + deposited
+				+ ", indexed=" + indexed + ", publishedPrint=" + publishedPrint
+				+ ", publishedOnline=" + publishedOnline + ", created="
+				+ created + ", score=" + score + "]";
+	}
 }

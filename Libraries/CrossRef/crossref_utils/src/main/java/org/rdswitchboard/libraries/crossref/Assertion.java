@@ -9,6 +9,7 @@ public class Assertion {
 	private String name;
 	private String value;
 	private String url;
+	private String explanation;
 	private Group group;
 	
 	public int getOrder() {
@@ -59,7 +60,7 @@ public class Assertion {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
+	
 	@JsonAnySetter
 	public void handleUnknown(String key, Object value) {
 		System.out.println("Warning. Ignoring Assertion property: " + key + " with value: " + value);			

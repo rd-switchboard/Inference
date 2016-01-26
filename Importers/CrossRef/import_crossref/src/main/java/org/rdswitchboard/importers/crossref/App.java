@@ -76,7 +76,7 @@ public class App {
 	        processReferences(GraphUtils.RELATIONSHIP_RELATED_TO);
 	        
 	        loadReferences(GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);
-	        loadReferences(GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_DOI);
+//	        loadReferences(GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_DOI);
 	        loadReferences(GraphUtils.SOURCE_CERN, GraphUtils.PROPERTY_DOI);
 	        loadReferences(GraphUtils.SOURCE_DLI, GraphUtils.PROPERTY_DOI);
 	        loadReferences(GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI);
