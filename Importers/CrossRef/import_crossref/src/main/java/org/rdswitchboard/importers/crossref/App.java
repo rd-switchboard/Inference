@@ -140,7 +140,6 @@ public class App {
 		
 		Graph graph = new Graph();
 		for (Map.Entry<String, Set<GraphKey>> entry : references.entrySet()) {
-			++counter;
 			GraphNode node = crossref.queryGraph(graph, entry.getKey());
 			if (null != node) {
 				for (GraphKey key : entry.getValue()) {
@@ -150,13 +149,16 @@ public class App {
 						.withEnd(node.getKey()));
 				}
 			}
+			
+			if (++counter % 1000 == 0)
+				System.out.println("Processed " + counter + " DOI's");
 						
 			if (graph.getNodesCount() >= 10000 
 					|| graph.getRelationshipsCount() >= 10000) {
+				System.out.println("Importing data to the Neo4j");
+				
 				neo4j.importGraph(graph);
 				graph = new Graph();
-				
-				System.out.println("Processed " + counter + " DOI's");
 			}				
 		}
 		
