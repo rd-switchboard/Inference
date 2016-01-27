@@ -11,7 +11,7 @@ import org.rdswitchboard.libraries.graph.GraphUtils;
 
 public class CrossrefGraph extends CrossRef {
 
-	private static final String PART_DOI = "doi:";
+//	private static final String PART_DOI = "doi:";
 	/**
 	 * Function to Query CrossRef metadata 
 	 * @param doi An DOI in a format, returned by GraphUtils.extractDoi() function 
@@ -19,11 +19,12 @@ public class CrossrefGraph extends CrossRef {
 	 */
 	
 	public GraphNode queryGraph(Graph graph, String doi) {
-		String authority = requestAuthority(doi);
+	/*	String authority = requestAuthority(doi);
 		if (null != authority) {
 			if (authority.equals(CrossRef.AUTHORITY_CROSSREF)) {
 				// make sure we have doi
-				Item item = requestWork(PART_DOI + doi);
+				Item item = requestWork(doi);*/
+				Item item = requestWorkWithAuthority(doi);
 				if (null != item) {
 					String doiUri = GraphUtils.generateDoiUri(doi);
 					GraphNode nodePublication = new GraphNode()
@@ -89,10 +90,10 @@ public class CrossrefGraph extends CrossRef {
 					
 					return nodePublication;
 				}
-			} else 
+	/*		} else 
 				System.err.println("Unsupported Authority: `" + authority + "` for DOI `" + doi + "`");
 		} else 
-			System.err.println("Unknown Authority for DOI: `" + doi + "`");
+			System.err.println("Unknown Authority for DOI: `" + doi + "`");*/
 		
 		return null;
 	}

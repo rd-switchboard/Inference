@@ -26,6 +26,7 @@ public class App {
 	
 	private static CrossrefGraph crossref;
 	private static Neo4jDatabase neo4j;
+	private static int counter;
 	
 	private static final Map<String, Set<GraphKey>> references = new HashMap<String, Set<GraphKey>>();
 	
@@ -77,8 +78,8 @@ public class App {
 	        
 	        loadReferences(GraphUtils.SOURCE_DARA, GraphUtils.PROPERTY_DOI);
 //	        loadReferences(GraphUtils.SOURCE_ORCID, GraphUtils.PROPERTY_DOI);
-	        loadReferences(GraphUtils.SOURCE_CERN, GraphUtils.PROPERTY_DOI);
-	        loadReferences(GraphUtils.SOURCE_DLI, GraphUtils.PROPERTY_DOI);
+//	        loadReferences(GraphUtils.SOURCE_CERN, GraphUtils.PROPERTY_DOI);
+//	        loadReferences(GraphUtils.SOURCE_DLI, GraphUtils.PROPERTY_DOI);
 	        loadReferences(GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI);
 	        	        
 	        processReferences(GraphUtils.RELATIONSHIP_KNOWN_AS);
@@ -92,6 +93,8 @@ public class App {
 	
 	private static void loadReferences(final String source, final String property) {
 		System.out.println("Loading source: " + source + ", reference: " + property);
+		int exists = references.size();
+		counter = 0;
 	
 		try {
 			neo4j.createIndex(DynamicLabel.label(source), property);
@@ -108,13 +111,16 @@ public class App {
 						for (String doi : (String[])dois)
 							loadDoi(key, doi);
 					}
-					
+					++counter;
+										
 					return true;
 				}			
 			});
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println("Done. Processed " + counter + " nodes and loaded " + (references.size() - exists) + " new DOI's");
 	}
 	
 	private static void loadDoi(GraphKey key, String ref) {
@@ -128,7 +134,7 @@ public class App {
 	}
 	
 	private static void processReferences(String relationships) {
-		System.out.println("Processing references");
+		System.out.println("Processing " + references.size() + " unique DOI's");
 		
 		Graph graph = new Graph();
 		for (Map.Entry<String, Set<GraphKey>> entry : references.entrySet()) {

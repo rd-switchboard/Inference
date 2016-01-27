@@ -2,6 +2,7 @@ package org.rdswitchboard.libraries.crossref;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class CrossRef {
 	
 	private static final String EXT_JSON = ".json";
 	
-//	private static final String PART_DOI = "doi:";
+	private static final String PART_DOI = "doi:";
 	
 	private File cacheFolder;
 	private File cacheWorksFolder;
@@ -121,32 +122,97 @@ public class CrossRef {
 	/*		if (doi.startsWith(PART_DOI))
 				doi = doi.substring(PART_DOI.length());*/
 			
-			String json = null;
-			String encodedDoi = URLEncoder.encode(doi, URL_ENCODING);
-			File jsonFile = null;
-			if (null != cacheWorksFolder) {
-				jsonFile = new File (cacheWorksFolder, encodedDoi + EXT_JSON);
-				if (jsonFile.exists() && !jsonFile.isDirectory())
-					json = FileUtils.readFileToString(jsonFile);
-			}
+			String encodedDoi = encodeWorkDoi(doi);
+			File jsonFile = getCachedWorkFile(encodedDoi);
+			String json = getCahcedFile(jsonFile);
 			
 			if (null == json) {
-				json = get(URL_CROSSREF_WORKDS + "/" + encodedDoi.replace("%2F", "/"));
-				if (json != null && !json.isEmpty())
-					FileUtils.write(jsonFile, json);
+				json = getWork(encodedDoi);
+				saveCacheFile(jsonFile, json);
+			}
+
+			if (null != json)
+				return parseWork(json);
+			
+			System.err.println("Inavlid response");			
+		} catch (JsonParseException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public String requestAuthority(String doi) {
+		try {
+	/*		if (doi.startsWith(PART_DOI))
+				doi = doi.substring(PART_DOI.length());*/
+			
+			String encodedDoi = encodeAuthorityDoi(doi);
+			File jsonFile = getCachedAuthorityFile(encodedDoi);
+			String json = getCahcedFile(jsonFile);
+			
+			if (null == json) {
+				json = getAuthority(encodedDoi);
+				saveCacheFile(jsonFile, json);
 			}
 			
-			if (null != json) {			
-				Response<Item> response = mapper.readValue(json, itemType);
+			if (null != json) 
+				return parseAuthority(json);
+
+			System.err.println("Inavlid response");
+		} catch (JsonParseException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public Item requestWorkWithAuthority(String doi) {
+		try {
+	/*		if (doi.startsWith(PART_DOI))
+				doi = doi.substring(PART_DOI.length());*/
+			
+			String workDoi = encodeWorkDoi(doi);
+			File workFile = getCachedWorkFile(workDoi);
+			String workJson = getCahcedFile(workFile);
+			
+			if (null == workJson) {
+				/*	String authority = requestAuthority(doi);
+				if (!AUTHORITY_CROSSREF.equals(authority))
+					return null;*/
 				
-				//System.out.println(response);
+				String authorityDoi = encodeAuthorityDoi(doi);
+				File authorityFile = getCachedAuthorityFile(authorityDoi);
+				String authorityJson = getCahcedFile(authorityFile);
 				
-				if (response.getStatus().equals(STATUS_OK) && 
-					response.getMessageType().equals(MESSAGE_WORK)) 
-					return response.getMessage();
-			}		
-			else
-				System.err.println("Inavlid response");
+				if (null != authorityJson) {
+					String authority = parseAuthority(authorityJson);
+					if (!AUTHORITY_CROSSREF.equals(authority))
+						return null;
+				}
+				
+				workJson = getWork(workDoi);
+				saveCacheFile(workFile, workJson);
+				
+				if (null == workJson) {
+					authorityJson = getAuthority(authorityDoi);
+					saveCacheFile(authorityFile, authorityJson);
+				}
+			}
+
+			if (null != workJson)
+				return parseWork(workJson);
+			
+			System.err.println("Inavlid response");				
+		
 		} catch (JsonParseException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
@@ -159,54 +225,6 @@ public class CrossRef {
 		return null;
 	}
 	
-	public String requestAuthority(String doi) {
-		try {
-	/*		if (doi.startsWith(PART_DOI))
-				doi = doi.substring(PART_DOI.length());*/
-			
-			String json = null;
-			String encodedDoi = URLEncoder.encode(doi, URL_ENCODING);
-			File jsonFile = null;
-			if (null != cacheAuthorityFolder) {
-				jsonFile = new File (cacheAuthorityFolder, encodedDoi + EXT_JSON);
-				if (jsonFile.exists() && !jsonFile.isDirectory())
-					json = FileUtils.readFileToString(jsonFile);
-			}
-			
-			if (null == json) {
-				json = get(URL_CROSSREF_DOI_RA + "/" + encodedDoi.replace("%2F", "/"));
-				if (json != null && !json.isEmpty())
-					FileUtils.write(jsonFile, json);
-			}
-			
-			if (null != json) {			
-				List<Authority> authorities = mapper.readValue(json, authorityListType);
-				
-				//System.out.println(response);
-				
-				if (null == authorities)
-					return null;
-				
-				for (Authority authority : authorities) {
-					if (authority.getAuthority() != null)
-						return authority.getAuthority();
-					
-					if (authority.getStatus() != null) 
-						System.err.println(authority.getStatus());
-				}
-			}		
-			else
-				System.err.println("Inavlid response");
-		} catch (JsonParseException e) {
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
 	
 	private String get( final String url ) {
 		System.out.println("Downloading: " + url);
@@ -240,6 +258,73 @@ public class CrossRef {
 			}
 		}
     } 
+	
+	private String encodeWorkDoi(String doi) throws UnsupportedEncodingException {
+		return URLEncoder.encode(PART_DOI + doi, URL_ENCODING);
+	}
+
+	private String encodeAuthorityDoi(String doi) throws UnsupportedEncodingException {
+		return URLEncoder.encode(doi, URL_ENCODING);
+	}
+
+	private File getCachedWorkFile(String encodedDoi) {
+		return null != cacheWorksFolder ? new File(cacheWorksFolder, encodedDoi + EXT_JSON) : null;
+	}
+
+	private File getCachedAuthorityFile(String encodedDoi) {
+		return null != cacheAuthorityFolder ? new File(cacheAuthorityFolder, encodedDoi + EXT_JSON) : null;
+	}
+	
+	private String getCahcedFile(File file) throws IOException { 
+		if (null != file && file.exists() && !file.isDirectory())
+			return FileUtils.readFileToString(file);
+		else
+			return null;
+	}
+
+	private void saveCacheFile(File file, String json) throws IOException {
+		if (null != file && null != json && !json.isEmpty())
+			FileUtils.write(file, json);
+	}
+	
+	private String getWork(String encodedDoi) {
+		return get(URL_CROSSREF_WORKDS + "/" + encodedDoi.replace("%2F", "/"));
+	}
+	
+	private String getAuthority(String encodedDoi) {
+		return get(URL_CROSSREF_DOI_RA + "/" + encodedDoi.replace("%2F", "/"));
+	}
+	
+	private Item parseWork(String json) throws JsonParseException, JsonMappingException, IOException {
+		Response<Item> response = mapper.readValue(json, itemType);
+		
+		//System.out.println(response);
+		
+		if (response.getStatus().equals(STATUS_OK) && 
+			response.getMessageType().equals(MESSAGE_WORK)) 
+			return response.getMessage();
+		else
+			return null;
+	}
+	
+	private String parseAuthority(String json) throws JsonParseException, JsonMappingException, IOException {
+		List<Authority> authorities = mapper.readValue(json, authorityListType);
+		
+		//System.out.println(response);
+		
+		if (null == authorities)
+			return null;
+		
+		for (Authority authority : authorities) {
+			if (authority.getAuthority() != null)
+				return authority.getAuthority();
+			
+			if (authority.getStatus() != null) 
+				System.err.println(authority.getStatus());
+		}
+		
+		return null;
+	}
 	
 	public File getCacheFolder() {
 		return cacheFolder;
