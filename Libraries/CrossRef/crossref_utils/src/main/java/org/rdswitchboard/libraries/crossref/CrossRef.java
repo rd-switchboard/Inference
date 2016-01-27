@@ -185,27 +185,12 @@ public class CrossRef {
 			String workJson = getCahcedFile(workFile);
 			
 			if (null == workJson) {
-				/*	String authority = requestAuthority(doi);
+				String authority = requestAuthority(doi);
 				if (!AUTHORITY_CROSSREF.equals(authority))
-					return null;*/
-				
-				String authorityDoi = encodeAuthorityDoi(doi);
-				File authorityFile = getCachedAuthorityFile(authorityDoi);
-				String authorityJson = getCahcedFile(authorityFile);
-				
-				if (null != authorityJson) {
-					String authority = parseAuthority(authorityJson);
-					if (!AUTHORITY_CROSSREF.equals(authority))
-						return null;
-				}
-				
+					return null;
+								
 				workJson = getWork(workDoi);
 				saveCacheFile(workFile, workJson);
-				
-				if (null == workJson) {
-					authorityJson = getAuthority(authorityDoi);
-					saveCacheFile(authorityFile, authorityJson);
-				}
 			}
 
 			if (null != workJson)
