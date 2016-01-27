@@ -136,8 +136,11 @@ public class App {
 	private static void processReferences(String relationships) {
 		System.out.println("Processing " + references.size() + " unique DOI's");
 		
+		counter = 0;
+		
 		Graph graph = new Graph();
 		for (Map.Entry<String, Set<GraphKey>> entry : references.entrySet()) {
+			++counter;
 			GraphNode node = crossref.queryGraph(graph, entry.getKey());
 			if (null != node) {
 				for (GraphKey key : entry.getValue()) {
@@ -147,11 +150,13 @@ public class App {
 						.withEnd(node.getKey()));
 				}
 			}
-			
-			if (graph.getNodesCount() >= 1000 
-					|| graph.getRelationshipsCount() >= 1000) {
+						
+			if (graph.getNodesCount() >= 10000 
+					|| graph.getRelationshipsCount() >= 10000) {
 				neo4j.importGraph(graph);
 				graph = new Graph();
+				
+				System.out.println("Processed " + counter + " DOI's");
 			}				
 		}
 		
