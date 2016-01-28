@@ -253,46 +253,41 @@ public class Linker {
 		File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
 		File[] files = cacheFolder.listFiles();
 		for (File file : files) 
-			if (!file.isDirectory())
-				try {
-					/*if (verbose)
-						System.out.println("Processing file: " + file.toString());*/
-					
-					Result result = (Result) jaxbUnmarshaller.unmarshal(file);
-					if (result != null) {
-						String text = result.getText();
+			if (!file.isDirectory()) {
+				/*if (verbose)
+					System.out.println("Processing file: " + file.toString());*/
+				
+				Result result = (Result) jaxbUnmarshaller.unmarshal(file);
+				if (result != null) {
+					String text = result.getText();
+					if (verbose)
+						System.out.println("Searching for a string: " + text);
+					Set<Long> nodeIds = nodes.get(text.trim().toLowerCase());
+					if (null != nodeIds) { 
 						if (verbose)
-							System.out.println("Searching for a string: " + text);
-						Set<Long> nodeIds = nodes.get(text.trim().toLowerCase());
-						if (null != nodeIds) { 
-							if (verbose)
-								System.out.println("Found " + nodeIds.size() + " possible matches");
+							System.out.println("Found " + nodeIds.size() + " possible matches");
 
-							for (String l : result.getLinks()) {
-								Link link = (Link) jaxbUnmarshaller.unmarshal(new File(linksFolder, l));
-								if (null != link) {
-									
+						for (String l : result.getLinks()) {
+							Link link = (Link) jaxbUnmarshaller.unmarshal(new File(linksFolder, l));
+							if (null != link) {
+								
+								if (verbose)
+									System.out.println("Testing link: " + link.getLink());
+								if (isLinkFollowAPattern(link.getLink())) {
 									if (verbose)
-										System.out.println("Testing link: " + link.getLink());
-									if (isLinkFollowAPattern(link.getLink())) {
-										if (verbose)
-											System.out.println("Found matching URL: " + link.getLink() + " for grant: " + text);
-									
-										Node nodeResearcher = getOrCreateWebResearcher(link, metadataFolder);
-										for (Long nodeId : nodeIds) 
-											Neo4jUtils.createUniqueRelationship(graphDb.getNodeById(nodeId), 
-													nodeResearcher, relRelatedTo, Direction.OUTGOING, null);	
-									}
+										System.out.println("Found matching URL: " + link.getLink() + " for grant: " + text);
+								
+									Node nodeResearcher = getOrCreateWebResearcher(link, metadataFolder);
+									for (Long nodeId : nodeIds) 
+										Neo4jUtils.createUniqueRelationship(graphDb.getNodeById(nodeId), 
+												nodeResearcher, relRelatedTo, Direction.OUTGOING, null);	
 								}
 							}
 						}
-					} else
-						throw new Exception("Unable to parse a file: " + file.toString());
-				} catch (Exception e) {
-					e.printStackTrace();
-					
-					break;
-				}
+					}
+				} else
+					throw new Exception("Unable to parse a file: " + file.toString());
+			}
 	}	
 	
 	private void linkSimpleSearch(Map<String, Set<Long>> nodes, String googleCache) throws Exception {
@@ -316,48 +311,44 @@ public class Linker {
 			File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
 			File[] files = linksFolder.listFiles();
 			for (File file : files) 
-				if (!file.isDirectory())
-					try {
-						/*if (verbose)
-							System.out.println("Processing file: " + file.toString());*/
+				if (!file.isDirectory()) {
+					/*if (verbose)
+						System.out.println("Processing file: " + file.toString());*/
+					
+					Link link = (Link) jaxbUnmarshaller.unmarshal(file);
+					if (link != null && isLinkFollowAPattern(link.getLink())) {
+						if (verbose)
+							System.out.println("Testing link: " + link.getLink());
+							
+						MatcherSimple matcher = new MatcherSimple(googleCache, link, nodes);
+
+						semaphore.acquire(); 
 						
-						Link link = (Link) jaxbUnmarshaller.unmarshal(file);
-						if (link != null && isLinkFollowAPattern(link.getLink())) {
-							if (verbose)
-								System.out.println("Testing link: " + link.getLink());
+						boolean matcherAssigned = false;
+						for (MatcherThread thread : threads) 
+							if (thread.isFree()) {
 								
-							MatcherSimple matcher = new MatcherSimple(googleCache, link, nodes);
-	
-							semaphore.acquire(); 
-							
-							boolean matcherAssigned = false;
-							for (MatcherThread thread : threads) 
-								if (thread.isFree()) {
+								counter += processResult(thread.getResult(), metadataFolder);
+								if (counter >= 1000) {
+									tx.success();
+									tx.close();
 									
-									counter += processResult(thread.getResult(), metadataFolder);
-									if (counter >= 1000) {
-										tx.success();
-										tx.close();
-										
-										tx = graphDb.beginTx();
-										
-										counter = 0;
-									}
+									tx = graphDb.beginTx();
 									
-									thread.addMatcher(matcher);
-									matcherAssigned = true;
-									
-									break;
+									counter = 0;
 								}
-							
-							if (!matcherAssigned)
-								throw new MatcherThreadException("All matcher threads are busy");
-						}
-					} catch (Exception e) {
-						e.printStackTrace();
+								
+								thread.addMatcher(matcher);
+								matcherAssigned = true;
+								
+								break;
+							}
 						
-						break;
+						if (!matcherAssigned)
+							throw new MatcherThreadException("All matcher threads are busy");
 					}
+				}
+			
 			for (MatcherThread thread : threads) {
 				thread.finishCurrentAndExit();
 				
@@ -393,47 +384,42 @@ public class Linker {
 			File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
 			File[] files = linksFolder.listFiles();
 			for (File file : files) 
-				if (!file.isDirectory())
-					try {
-						/*if (verbose)
-							System.out.println("Processing file: " + file.toString());*/
+				if (!file.isDirectory()) {
+					/*if (verbose)
+						System.out.println("Processing file: " + file.toString());*/
+					
+					Link link = (Link) jaxbUnmarshaller.unmarshal(file);
+					if (link != null && isLinkFollowAPattern(link.getLink())) {
+						if (verbose)
+							System.out.println("Testing link: " + link.getLink());
+							
+						Matcher matcher = new MatcherFuzzy(googleCache, link, nodes);
+
+						semaphore.acquire(); 
 						
-						Link link = (Link) jaxbUnmarshaller.unmarshal(file);
-						if (link != null && isLinkFollowAPattern(link.getLink())) {
-							if (verbose)
-								System.out.println("Testing link: " + link.getLink());
+						boolean matcherAssigned = false;
+						for (MatcherThread thread : threads) 
+							if (thread.isFree()) {
+								counter += processResult(thread.getResult(), metadataFolder); 
+								if (counter >= 1000) {
+									tx.success();
+									tx.close();
+									
+									tx = graphDb.beginTx();
+									
+									counter = 0;
+								}									
 								
-							Matcher matcher = new MatcherFuzzy(googleCache, link, nodes);
-	
-							semaphore.acquire(); 
-							
-							boolean matcherAssigned = false;
-							for (MatcherThread thread : threads) 
-								if (thread.isFree()) {
-									counter += processResult(thread.getResult(), metadataFolder); 
-									if (counter >= 1000) {
-										tx.success();
-										tx.close();
-										
-										tx = graphDb.beginTx();
-										
-										counter = 0;
-									}									
-									
-									thread.addMatcher(matcher);
-									matcherAssigned = true;
-									
-									break;
-								}
-							
-							if (!matcherAssigned)
-								throw new MatcherThreadException("All matcher threads are busy");
-						}
-					} catch (Exception e) {
-						e.printStackTrace();
+								thread.addMatcher(matcher);
+								matcherAssigned = true;
+								
+								break;
+							}
 						
-						break;
+						if (!matcherAssigned)
+							throw new MatcherThreadException("All matcher threads are busy");
 					}
+				}
 			for (MatcherThread thread : threads) {
 				processResult(thread.getResult(), metadataFolder);
 				
@@ -500,7 +486,7 @@ public class Linker {
 		return null;
 	}
 	
-	private Node getOrCreateWebResearcher(Link link,File metadataFolder) throws Exception {
+	private Node getOrCreateWebResearcher(Link link, File metadataFolder) throws Exception {
 		String url = GraphUtils.extractFormalizedUrl(link.getLink());
 		
 		Node node = findWebResearcher(url);
@@ -517,10 +503,12 @@ public class Linker {
 		node.setProperty(GraphUtils.PROPERTY_TYPE, GraphUtils.TYPE_RESEARCHER);
 		node.setProperty(GraphUtils.PROPERTY_URL, url);
 		
-		String author = GoogleUtils.getMetatag(new File(metadataFolder, link.getMetadata()), 
-				GoogleUtils.METDATA_DC_TITLE);				
-		if (null != author)
-			node.setProperty(GraphUtils.PROPERTY_TITLE, author);
+		if (link.getMetadata() != null) {
+			String author = GoogleUtils.getMetatag(new File(metadataFolder, link.getMetadata()), 
+					GoogleUtils.METDATA_DC_TITLE);				
+			if (null != author)
+				node.setProperty(GraphUtils.PROPERTY_TITLE, author);
+		}
 		
 		node.addLabel(labelWeb);
 		node.addLabel(labelResearcher);
