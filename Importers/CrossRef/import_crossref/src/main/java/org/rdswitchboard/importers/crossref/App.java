@@ -1,6 +1,10 @@
 package org.rdswitchboard.importers.crossref;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -23,6 +27,8 @@ import org.rdswitchboard.libraries.neo4j.interfaces.ProcessNode;
 
 public class App {
 	private static final String CROSSREF_FOLDER = "crossref/cahce";
+	private static final String CROSSREF_VERSION_FILE = "crossref";
+	private static final String DATE_FORMAT = "yyyy-MM-dd";
 	
 	private static CrossrefGraph crossref;
 	private static Neo4jDatabase neo4j;
@@ -43,6 +49,10 @@ public class App {
 	        if (StringUtils.isEmpty(crossrefFolder))
 	            throw new IllegalArgumentException("CrossRef Cache Folder can not be empty");
 	        System.out.println("CrossRef: " + crossrefFolder);
+	        
+	        String versionFolder = properties.getProperty("versions");
+	        if (StringUtils.isEmpty(versionFolder))
+	            throw new IllegalArgumentException("Versions Folder can not be empty");
 	        
 	     /*   String sources = properties.getProperty("sources");
 	        if (StringUtils.isNotEmpty(sources))
@@ -83,6 +93,9 @@ public class App {
 	        loadReferences(GraphUtils.SOURCE_ANDS, GraphUtils.PROPERTY_DOI);
 	        	        
 	        processReferences(GraphUtils.RELATIONSHIP_KNOWN_AS);
+	        
+	        Files.write(Paths.get(versionFolder, CROSSREF_VERSION_FILE), 
+	        		new SimpleDateFormat(DATE_FORMAT).format(new Date()).getBytes());
 	        
 		} catch (Exception e) {
             e.printStackTrace();

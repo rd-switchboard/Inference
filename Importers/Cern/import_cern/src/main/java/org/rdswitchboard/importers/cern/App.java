@@ -2,6 +2,8 @@ package org.rdswitchboard.importers.cern;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.apache.commons.io.IOUtils;
@@ -34,6 +36,8 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
  */
 public class App {
 	
+	public static final String CERN_VERSION_FILE = "cern";
+	
 	public static void main(String[] args) {
 		try {
 			Properties properties = Configuration.fromArgs(args);
@@ -58,10 +62,14 @@ public class App {
 	            throw new IllegalArgumentException("AWS S3 Prefix can not be empty");
         
 	        System.out.println("S3 Prefix: " + prefix);
-	        	        
+	        
+	     	String versionFolder = properties.getProperty("versions");
+	        if (StringUtils.isEmpty(versionFolder))
+	            throw new IllegalArgumentException("Versions Folder can not be empty");
+       	        	        
 	        /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");*/ 
 	        
-        	processFiles(bucket, prefix, neo4jFolder);
+        	processFiles(bucket, prefix, neo4jFolder, versionFolder);
 		} catch (Exception e) {
             e.printStackTrace();
             
@@ -92,7 +100,7 @@ public class App {
 	}
 	*/
 	
-	private static void processFiles(String bucket, String prefix, String neo4jFolder) throws Exception {
+	private static void processFiles(String bucket, String prefix, String neo4jFolder, String versionFolder) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkMarc21 crosswalk = new CrosswalkMarc21();
@@ -110,14 +118,16 @@ public class App {
 		
 		String latest;
 		try (InputStream txt = object.getObjectContent()) {
-			latest = prefix + "/" + IOUtils.toString(txt, StandardCharsets.UTF_8).trim() + "/";
-		}		
+			latest = IOUtils.toString(txt, StandardCharsets.UTF_8).trim();
+		}
+		
+		String folder = prefix + "/" + latest + "/";	
 		
 		System.out.println("S3 Repository: " + latest);
 		
 	    listObjectsRequest = new ListObjectsRequest()
 			.withBucketName(bucket)
-			.withPrefix(latest);
+			.withPrefix(folder);
 	    do {
 			objectListing = s3client.listObjects(listObjectsRequest);
 			for (S3ObjectSummary objectSummary : 
@@ -137,6 +147,8 @@ public class App {
 			listObjectsRequest.setMarker(objectListing.getNextMarker());
 		} while (objectListing.isTruncated());
 		
+	    Files.write(Paths.get(versionFolder, CERN_VERSION_FILE), latest.getBytes());
+	    
 		System.out.println("Done");
 		
 		crosswalk.printStatistics(System.out);

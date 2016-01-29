@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.apache.commons.io.IOUtils;
@@ -26,6 +28,7 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 public class App {
 
 	public static final String DEF_XML_TYPE = "oai";
+	public static final String ANDS_VERSION_FILE = "ands";
 		
 	public static void main(String[] args) {
 		try {
@@ -43,13 +46,18 @@ public class App {
 	        String xmlFolder = properties.getProperty(Configuration.PROPERTY_ANDS_XML);
 	        String xmlType = properties.getProperty(Configuration.PROPERTY_ANDS_XML_TYPE, DEF_XML_TYPE);
 	        
+	        
 	        CrosswalkRifCs.XmlType type = CrosswalkRifCs.XmlType.valueOf(xmlType); 
 	        
 	        if (!StringUtils.isEmpty(bucket) && !StringUtils.isEmpty(prefix)) {
 	        	System.out.println("S3 Bucket: " + bucket);
 	        	System.out.println("S3 Prefix: " + prefix);
+
+	        	String versionFolder = properties.getProperty("versions");
+		        if (StringUtils.isEmpty(versionFolder))
+		            throw new IllegalArgumentException("Versions Folder can not be empty");
 	        	
-	        	processS3Files(bucket, prefix, neo4jFolder, type);
+	        	processS3Files(bucket, prefix, neo4jFolder, versionFolder, type);
 	        } else if (!StringUtils.isEmpty(xmlFolder)) {
 	        	System.out.println("XML: " + xmlFolder);
 	        	
@@ -91,7 +99,8 @@ public class App {
 	}
 	*/
 	
-	private static void processS3Files(String bucket, String prefix, String neo4jFolder, CrosswalkRifCs.XmlType type) throws Exception {
+	private static void processS3Files(String bucket, String prefix, String neo4jFolder, 
+			String versionFolder, CrosswalkRifCs.XmlType type) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
@@ -110,14 +119,16 @@ public class App {
 		
 		String latest;
 		try (InputStream txt = object.getObjectContent()) {
-			latest = prefix + "/" + IOUtils.toString(txt, StandardCharsets.UTF_8).trim() + "/";
+			latest = IOUtils.toString(txt, StandardCharsets.UTF_8).trim();
 		}
+		
+		String folder = prefix + "/" + latest + "/";
 		
 		System.out.println("S3 Repository: " + latest);
 		
 	    listObjectsRequest = new ListObjectsRequest()
 			.withBucketName(bucket)
-			.withPrefix(latest);
+			.withPrefix(folder);
 	    do {
 			objectListing = s3client.listObjects(listObjectsRequest);
 			for (S3ObjectSummary objectSummary : 
@@ -136,11 +147,15 @@ public class App {
 			}
 			listObjectsRequest.setMarker(objectListing.getNextMarker());
 		} while (objectListing.isTruncated());
-		
+	    
+	    Files.write(Paths.get(versionFolder, ANDS_VERSION_FILE), latest.getBytes());
+	    
 		System.out.println("Done");
-		
+				
 		crosswalk.printStatistics(System.out);
 		neo4j.printStatistics(System.out);
+		
+		
 	}
 	
 	private static void processFiles(String xmlFolder, String neo4jFolder, CrosswalkRifCs.XmlType type) throws Exception {
