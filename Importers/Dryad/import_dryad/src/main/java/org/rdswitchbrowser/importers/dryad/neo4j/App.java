@@ -52,7 +52,7 @@ public class App {
         
 	        System.out.println("S3 Prefix: " + prefix);	        
 	        
-	        String versionFolder = properties.getProperty("versions");
+	        String versionFolder = properties.getProperty(Configuration.PROPERTY_VERSIONS_FOLDER);
 	        if (StringUtils.isEmpty(versionFolder))
 	            throw new IllegalArgumentException("Versions Folder can not be empty");
         

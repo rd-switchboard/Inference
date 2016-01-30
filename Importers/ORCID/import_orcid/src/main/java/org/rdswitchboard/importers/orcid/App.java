@@ -1,7 +1,5 @@
 package org.rdswitchboard.importers.orcid;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.Properties;
 
 import org.parboiled.common.StringUtils;

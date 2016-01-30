@@ -50,7 +50,7 @@ public class App {
 	            throw new IllegalArgumentException("CrossRef Cache Folder can not be empty");
 	        System.out.println("CrossRef: " + crossrefFolder);
 	        
-	        String versionFolder = properties.getProperty("versions");
+	        String versionFolder = properties.getProperty(Configuration.PROPERTY_VERSIONS_FOLDER);
 	        if (StringUtils.isEmpty(versionFolder))
 	            throw new IllegalArgumentException("Versions Folder can not be empty");
 	        

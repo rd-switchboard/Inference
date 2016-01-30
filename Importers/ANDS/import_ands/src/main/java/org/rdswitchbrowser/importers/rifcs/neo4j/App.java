@@ -42,10 +42,9 @@ public class App {
 	        System.out.println("Neo4J: " + neo4jFolder);
 	        
 	        String bucket = properties.getProperty(Configuration.PROPERTY_S3_BUCKET);
-	        String prefix = properties.getProperty(Configuration.PROPERTY_ANDS_S3S);
+	        String prefix = properties.getProperty(Configuration.PROPERTY_ANDS_S3);
 	        String xmlFolder = properties.getProperty(Configuration.PROPERTY_ANDS_XML);
 	        String xmlType = properties.getProperty(Configuration.PROPERTY_ANDS_XML_TYPE, DEF_XML_TYPE);
-	        
 	        
 	        CrosswalkRifCs.XmlType type = CrosswalkRifCs.XmlType.valueOf(xmlType); 
 	        
@@ -53,7 +52,7 @@ public class App {
 	        	System.out.println("S3 Bucket: " + bucket);
 	        	System.out.println("S3 Prefix: " + prefix);
 
-	        	String versionFolder = properties.getProperty("versions");
+	        	String versionFolder = properties.getProperty(Configuration.PROPERTY_VERSIONS_FOLDER);
 		        if (StringUtils.isEmpty(versionFolder))
 		            throw new IllegalArgumentException("Versions Folder can not be empty");
 	        	
@@ -121,6 +120,9 @@ public class App {
 		try (InputStream txt = object.getObjectContent()) {
 			latest = IOUtils.toString(txt, StandardCharsets.UTF_8).trim();
 		}
+		
+		if (StringUtils.isEmpty(latest)) 
+			throw new Exception("Unable to find latest harvest in the S3 Bucket (latest.txt file is empty or not avaliable). Please check if you have access to S3 bucket and did you have completed the harvestring.");	
 		
 		String folder = prefix + "/" + latest + "/";
 		

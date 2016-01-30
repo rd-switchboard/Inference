@@ -27,7 +27,7 @@ public class Configuration {
 	public static final String PROPERTY_S3_BUCKET = "s3.bucket";
 	
 	// ANDS
-	public static final String PROPERTY_ANDS_S3S = "ands.s3";
+	public static final String PROPERTY_ANDS_S3 = "ands.s3";
 	public static final String PROPERTY_ANDS_XML = "ands.xml";
 	public static final String PROPERTY_ANDS_XML_TYPE = "ands.xml.type";
 	
@@ -85,6 +85,7 @@ public class Configuration {
 	public static final String PROPERTY_GOOGLE_VERSION = "google.version";
 	public static final String PROPERTY_BUILD_NUMBER = "build.number";
 	public static final String PROPERTY_VERSION_FILE = "version.file";
+	public static final String PROPERTY_VERSIONS_FOLDER = "versions.folder";
 	
 	// Output
 	

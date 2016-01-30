@@ -63,7 +63,7 @@ public class App {
 	        if (StringUtils.isEmpty(versionFile))
             	throw new IllegalArgumentException("Version file can not be empty");
 	        
-	        String versionFolder = properties.getProperty("versions");
+	        String versionFolder = properties.getProperty(Configuration.PROPERTY_VERSIONS_FOLDER);
 	        if (StringUtils.isEmpty(versionFolder))
 	            throw new IllegalArgumentException("Versions Folder can not be empty");
 	        
