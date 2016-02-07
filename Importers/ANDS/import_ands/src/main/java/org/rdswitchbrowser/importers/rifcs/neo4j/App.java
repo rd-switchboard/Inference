@@ -1,12 +1,21 @@
 package org.rdswitchbrowser.importers.rifcs.neo4j;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
+
+import javax.xml.transform.Source;
+import javax.xml.transform.Templates;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
@@ -45,6 +54,17 @@ public class App {
 	        String prefix = properties.getProperty(Configuration.PROPERTY_ANDS_S3);
 	        String xmlFolder = properties.getProperty(Configuration.PROPERTY_ANDS_XML);
 	        String xmlType = properties.getProperty(Configuration.PROPERTY_ANDS_XML_TYPE, DEF_XML_TYPE);
+	        String crosswalk = properties.getProperty(Configuration.PROPERTY_CROSSWALK);
+		    
+	        Templates template = null;
+	        
+	        if (!StringUtils.isEmpty(crosswalk)) {
+	        	System.out.println("Crosswalk: " + crosswalk);
+	        	
+	        	template = TransformerFactory.newInstance().newTemplates(
+	        			new StreamSource(
+	        					new FileInputStream(crosswalk)));
+	        } 
 	        
 	        CrosswalkRifCs.XmlType type = CrosswalkRifCs.XmlType.valueOf(xmlType); 
 	        
@@ -56,11 +76,11 @@ public class App {
 		        if (StringUtils.isEmpty(versionFolder))
 		            throw new IllegalArgumentException("Versions Folder can not be empty");
 	        	
-	        	processS3Files(bucket, prefix, neo4jFolder, versionFolder, type);
+	        	processS3Files(bucket, prefix, neo4jFolder, versionFolder, type, template);
 	        } else if (!StringUtils.isEmpty(xmlFolder)) {
 	        	System.out.println("XML: " + xmlFolder);
 	        	
-	        	processFiles(xmlFolder, neo4jFolder, type);
+	        	processFiles(xmlFolder, neo4jFolder, type, template);
 	        } else
                 throw new IllegalArgumentException("Please provide either S3 Bucket and prefix OR a path to a XML Folder");
 
@@ -99,7 +119,7 @@ public class App {
 	*/
 	
 	private static void processS3Files(String bucket, String prefix, String neo4jFolder, 
-			String versionFolder, CrosswalkRifCs.XmlType type) throws Exception {
+			String versionFolder, CrosswalkRifCs.XmlType type, Templates template) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
@@ -141,11 +161,24 @@ public class App {
 		        System.out.println("Processing file: " + file);
 				
 				object = s3client.getObject(new GetObjectRequest(bucket, file));
-				InputStream xml = object.getObjectContent();
-								
-				System.out.println("Parsing file: " + file);
-				Graph graph = crosswalk.process(xml);
-				neo4j.importGraph(graph);
+				
+				if (null != template) {
+					Source reader = new StreamSource(object.getObjectContent());
+					StringWriter writer = new StringWriter();
+					
+					Transformer transformer = template.newTransformer(); 
+					transformer.transform(reader, new StreamResult(writer));
+					
+					InputStream stream = new ByteArrayInputStream(writer.toString().getBytes(StandardCharsets.UTF_8));
+					
+					Graph graph = crosswalk.process(stream);
+					neo4j.importGraph(graph);
+		        } else {
+		        	InputStream xml = object.getObjectContent();
+						
+		        	Graph graph = crosswalk.process(xml);
+					neo4j.importGraph(graph);
+				}
 			}
 			listObjectsRequest.setMarker(objectListing.getNextMarker());
 		} while (objectListing.isTruncated());
@@ -160,7 +193,7 @@ public class App {
 		
 	}
 	
-	private static void processFiles(String xmlFolder, String neo4jFolder, CrosswalkRifCs.XmlType type) throws Exception {
+	private static void processFiles(String xmlFolder, String neo4jFolder, CrosswalkRifCs.XmlType type, Templates template) throws Exception {
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
         crosswalk.setSource(GraphUtils.SOURCE_ANDS);
         crosswalk.setType(type);
@@ -175,9 +208,23 @@ public class App {
 		        try (InputStream xml = new FileInputStream(file))
 		        {
 			        System.out.println("Processing file: " + file);
-					
-			     	Graph graph = crosswalk.process(xml);
-					neo4j.importGraph(graph);
+			        
+			        if (null != template) {
+						Source reader = new StreamSource(xml);
+						StringWriter writer = new StringWriter();
+						
+						Transformer transformer = template.newTransformer(); 
+						transformer.transform(reader, new StreamResult(writer));
+						
+						InputStream stream = new ByteArrayInputStream(writer.toString().getBytes(StandardCharsets.UTF_8));
+						
+						Graph graph = crosswalk.process(stream);
+						neo4j.importGraph(graph);
+
+			        } else {
+						Graph graph = crosswalk.process(xml);
+						neo4j.importGraph(graph);
+					}
 		        }
 		
 		System.out.println("Done");

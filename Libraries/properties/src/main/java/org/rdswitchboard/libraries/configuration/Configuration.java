@@ -30,6 +30,7 @@ public class Configuration {
 	public static final String PROPERTY_ANDS_S3 = "ands.s3";
 	public static final String PROPERTY_ANDS_XML = "ands.xml";
 	public static final String PROPERTY_ANDS_XML_TYPE = "ands.xml.type";
+	public static final String PROPERTY_CROSSWALK = "crosswalk";
 	
 	// ARC
 	public static final String PROPERTY_ARC_COMPLETED = "arc.completed";

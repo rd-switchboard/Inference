@@ -43,6 +43,7 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 	private static final String COLLECTION_TYPE_DATASET = "dataset";
 	private static final String COLLECTION_TYPE_NON_GEOGRAOPHIC_DATASET = "nonGeographicDataset";
 	private static final String COLLECTION_TYPE_RESEARCH_DATASET = "researchDataSet";
+	private static final String COLLECTION_TYPE_PUBLICATION = "publication";
 	
 	/*private static final String ACTIVITY_TYPE_PROJECT = "project";
 	private static final String ACTIVITY_TYPE_PROGRAM = "program";
@@ -199,6 +200,7 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 							
 				if (null != record.getMetadata()) {
 					Object metadata = record.getMetadata().getAny();
+				//	System.out.println(metadata.getClass().toString());
 					if (metadata instanceof RegistryObjects) 
 						processRegistryObjects((RegistryObjects) metadata, graph, deleted);
 					else
@@ -263,6 +265,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				|| type.equals(COLLECTION_TYPE_NON_GEOGRAOPHIC_DATASET) 
 				|| type.equals(COLLECTION_TYPE_RESEARCH_DATASET))
 			node.setType(GraphUtils.TYPE_DATASET);
+		else if (type.equals(COLLECTION_TYPE_PUBLICATION))
+			node.setType(GraphUtils.TYPE_PUBLICATION);
 		else
 			return false;// ignore
 				
