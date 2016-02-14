@@ -54,7 +54,8 @@ public class App {
 	        String prefix = properties.getProperty(Configuration.PROPERTY_ANDS_S3);
 	        String xmlFolder = properties.getProperty(Configuration.PROPERTY_ANDS_XML);
 	        String xmlType = properties.getProperty(Configuration.PROPERTY_ANDS_XML_TYPE, DEF_XML_TYPE);
-	        String crosswalk = properties.getProperty(Configuration.PROPERTY_CROSSWALK);
+	        String source = properties.getProperty(Configuration.PROPERTY_ANDS_SOURCE, GraphUtils.SOURCE_ANDS);
+	        String crosswalk = properties.getProperty(Configuration.PROPERTY_ANDS_CROSSWALK);
 		    
 	        Templates template = null;
 	        
@@ -76,11 +77,11 @@ public class App {
 		        if (StringUtils.isEmpty(versionFolder))
 		            throw new IllegalArgumentException("Versions Folder can not be empty");
 	        	
-	        	processS3Files(bucket, prefix, neo4jFolder, versionFolder, type, template);
+	        	processS3Files(bucket, prefix, neo4jFolder, versionFolder, source, type, template);
 	        } else if (!StringUtils.isEmpty(xmlFolder)) {
 	        	System.out.println("XML: " + xmlFolder);
 	        	
-	        	processFiles(xmlFolder, neo4jFolder, type, template);
+	        	processFiles(xmlFolder, neo4jFolder, source, type, template);
 	        } else
                 throw new IllegalArgumentException("Please provide either S3 Bucket and prefix OR a path to a XML Folder");
 
@@ -119,7 +120,7 @@ public class App {
 	*/
 	
 	private static void processS3Files(String bucket, String prefix, String neo4jFolder, 
-			String versionFolder, CrosswalkRifCs.XmlType type, Templates template) throws Exception {
+			String versionFolder, String source, CrosswalkRifCs.XmlType type, Templates template) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
@@ -193,7 +194,8 @@ public class App {
 		
 	}
 	
-	private static void processFiles(String xmlFolder, String neo4jFolder, CrosswalkRifCs.XmlType type, Templates template) throws Exception {
+	private static void processFiles(String xmlFolder, String neo4jFolder, String source, 
+			CrosswalkRifCs.XmlType type, Templates template) throws Exception {
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
         crosswalk.setSource(GraphUtils.SOURCE_ANDS);
         crosswalk.setType(type);
