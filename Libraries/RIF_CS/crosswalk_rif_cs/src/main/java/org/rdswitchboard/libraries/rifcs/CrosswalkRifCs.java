@@ -93,7 +93,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 	
 	private boolean verbose = false;
 	
-	private String source;
+	private String source = GraphUtils.SOURCE_ANDS;
+	private boolean needAndsGroup = true;
 	
 	public CrosswalkRifCs() throws JAXBException {
 		unmarshaller = JAXBContext.newInstance( "org.openarchives.oai._2:au.org.ands.standards.rif_cs.registryobjects:au.org.ands.standards.rif_cs.extendedregistryobjects" ).createUnmarshaller();
@@ -150,7 +151,7 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 	@Override
 	public void setSource(String source) {
 		this.source = source;
-		
+		this.needAndsGroup = GraphUtils.SOURCE_ANDS.equals(source);
 	}
 
 	@Override
@@ -232,8 +233,10 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				GraphNode node = new GraphNode()
 					.withKey(new GraphKey(source, key))
 					.withSource(source)
-					.withProperty(GraphUtils.PROPERTY_URL, url)
-					.withProperty(GraphUtils.PROPERTY_ANDS_GROUP, group);
+					.withProperty(GraphUtils.PROPERTY_URL, url);
+				
+				if (needAndsGroup)
+					node.setProperty(GraphUtils.PROPERTY_ANDS_GROUP, group);
 				
 				if (deleted) {
 					graph.addNode(node.withDeleted(true));
