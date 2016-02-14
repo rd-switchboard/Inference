@@ -274,7 +274,7 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 			if (object instanceof IdentifierType) 
 				processIdentifier(node, (IdentifierType) object);
 			else if (object instanceof NameType)
-				processName(node, (NameType) object);
+				processNameWork(node, (NameType) object);
 			else if (object instanceof RelatedObjectType) 
 				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
 			else if (object instanceof RelatedInfoType) 
@@ -301,7 +301,7 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 			if (object instanceof IdentifierType) 
 				processIdentifier(node, (IdentifierType) object);
 			else if (object instanceof NameType)
-				processName(node, (NameType) object);
+				processNameWork(node, (NameType) object);
 			else if (object instanceof RelatedObjectType) 
 				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
 			else if (object instanceof RelatedInfoType) 
@@ -332,7 +332,7 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 			if (object instanceof IdentifierType) 
 				processIdentifier(node, (IdentifierType) object);
 			else if (object instanceof NameType)
-				processName(node, (NameType) object);
+				processNameParty(node, (NameType) object);
 			else if (object instanceof RelatedObjectType) 
 				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
 			else if (object instanceof RelatedInfoType) 
@@ -377,12 +377,11 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 			node.addProperty(type, key);
 	}
 	
-	private void processName(GraphNode node, NameType name) {
+	private void processNameParty(GraphNode node, NameType name) {
 		String type = name.getType();
 		if (null != type && type.equals(NAME_PRIMARY)) {
 			String family = null;
 			String given = null;
-			String title = null;
 			String suffix =  null;
 			
 			for (NameType.NamePart part : name.getNamePart()) {
@@ -394,9 +393,6 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 					} else if (nameType.equals(NAME_PART_GIVEN)) {
 						given = part.getValue();
 						node.addProperty(GraphUtils.PROPERTY_FIRST_NAME, given);
-					} else if (nameType.equals(NAME_PART_TITLE)) {
-						title = part.getValue();
-						node.addProperty(GraphUtils.PROPERTY_NAME_PREFIX, title);
 					} else if (nameType.equals(NAME_PART_SUFFIX)) {
 						suffix = part.getValue();
 						node.addProperty(GraphUtils.PROPERTY_NAME_PREFIX, suffix);
@@ -404,46 +400,41 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				}				
 			}
 			
-			StringBuilder sb = new StringBuilder();
-			if (null != title && !title.isEmpty()) 
-				sb.append(title);
-			if (null != suffix && !suffix.isEmpty()) {
-				if (sb.length() > 0)
-					sb.append(" ");
-				
-				sb.append(suffix);
-			}
-			if (null != given && !given.isEmpty()) {
-				if (sb.length() > 0)
-					sb.append(" ");
-				
-				sb.append(given);
-			}
-			if (null != family && !family.isEmpty()) {
-				if (sb.length() > 0)
-					sb.append(" ");
-				
-				sb.append(family);
-			}
-			for (NameType.NamePart part : name.getNamePart()) {
-				final String nameType = part.getType();
-				if (null != nameType 
-						&& !nameType.isEmpty() 
-						&& (nameType.equals(NAME_PART_FAMILY) 
-								|| nameType.equals(NAME_PART_GIVEN) 
-								|| nameType.equals(NAME_PART_TITLE) 
-								|| nameType.equals(NAME_PART_SUFFIX)))
-					continue;
-				
-				if (sb.length() > 0)
-					sb.append(" ");
-				
-				sb.append(part.getValue());				
-			}
+			List<String> nameParts = new ArrayList<String>();
+			if (!StringUtils.isEmpty(suffix))
+				nameParts.add(suffix);
+			if (!StringUtils.isEmpty(given))
+				nameParts.add(given);
+			if (!StringUtils.isEmpty(family))
+				nameParts.add(family);
+			
+			if (!nameParts.isEmpty()) 
+				node.addProperty(GraphUtils.PROPERTY_TITLE, StringUtils.join(nameParts, ' '));
+					
+		/*
 			
 			String fullName = sb.toString();
 			if (!fullName.isEmpty())
-				node.addProperty(GraphUtils.PROPERTY_TITLE, fullName);
+				node.addProperty(GraphUtils.PROPERTY_TITLE, fullName);*/
+		}
+	}
+	
+	private void processNameWork(GraphNode node, NameType name) {
+		String type = name.getType();
+		if (null != type && type.equals(NAME_PRIMARY)) {
+			String title = null;
+			
+			for (NameType.NamePart part : name.getNamePart()) {
+				final String nameType = part.getType();
+				if (null != nameType && !nameType.isEmpty()) {
+					if (nameType.equals(NAME_PART_TITLE)) {
+						title = part.getValue();
+					}
+				}				
+			}
+			
+			if (!StringUtils.isEmpty(title))
+				node.addProperty(GraphUtils.PROPERTY_TITLE, title);
 		}
 	}
 	
