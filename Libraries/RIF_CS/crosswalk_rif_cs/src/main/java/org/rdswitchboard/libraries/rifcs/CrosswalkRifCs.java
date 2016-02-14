@@ -524,8 +524,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 						if (null != doi) {
 							String key = GraphUtils.generateDoiUri(doi);
 							GraphNode relatedNode = new GraphNode()
-								.withKey(GraphUtils.SOURCE_ANDS, key)
-								.withSource(GraphUtils.SOURCE_ANDS)
+								.withKey(source, key)
+								.withSource(source)
 								.withType(recordType)
 								.withProperty(GraphUtils.PROPERTY_URL, key)
 								.withProperty(GraphUtils.PROPERTY_DOI, doi)
@@ -548,8 +548,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 							if (null != orcid) {
 								String key = GraphUtils.generateOrcidUri(orcid);
 								GraphNode relatedNode = new GraphNode()
-									.withKey(GraphUtils.SOURCE_ANDS, key)
-									.withSource(GraphUtils.SOURCE_ANDS)
+									.withKey(source, key)
+									.withSource(source)
 									.withType(GraphUtils.TYPE_RESEARCHER)
 									.withProperty(GraphUtils.PROPERTY_URL, key)
 									.withProperty(GraphUtils.PROPERTY_ORCID_ID, orcid)
