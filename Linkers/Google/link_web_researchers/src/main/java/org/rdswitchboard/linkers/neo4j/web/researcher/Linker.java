@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import org.neo4j.graphdb.Direction;
@@ -56,7 +57,6 @@ public class Linker {
 	private List<Pattern> webPatterns;
 	
 	private JAXBContext jaxbContext;
-	private Unmarshaller jaxbUnmarshaller;
 	
 	private final int minTitleLength;
 	private int maxThreads;
@@ -65,8 +65,7 @@ public class Linker {
 		this.minTitleLength = minTitleLength;
 		this.verbose = verbose;
 		
-		jaxbContext = JAXBContext.newInstance(Link.class, Result.class);
-		jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+		jaxbContext = JAXBContext.newInstance(Link.class, Result.class, Cache.class);
 		
 		graphDb = Neo4jUtils.getGraphDb( neo4jFolder );
 		
@@ -95,9 +94,7 @@ public class Linker {
 	}
 	
 	public void link(String googleCache) throws Exception {
-		Map<String, Set<Long>> nodes;
-		
-		nodes = new HashMap<String, Set<Long>>();
+		Map<String, MatcherNodes> nodes = new HashMap<String, MatcherNodes>();
 		
 		if (verbose)
 			System.out.println("Processing ANDS:Grant");
@@ -135,7 +132,7 @@ public class Linker {
 		if (verbose)
 			System.out.println("Processing Simple Search");
 		
-		nodes = new HashMap<String, Set<Long>>();
+		nodes = new HashMap<String, MatcherNodes>();
 		
 	/*	loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_GRANT, 
 				GraphUtils.PROPERTY_TITLE, null );
@@ -164,7 +161,7 @@ public class Linker {
 		if (verbose)
 			System.out.println("Processing Fuzzu Search");
 		
-		nodes = new HashMap<String, Set<Long>>();
+		nodes = new HashMap<String, MatcherNodes>();
 		
 		loadNodes( nodes, GraphUtils.SOURCE_ANDS, GraphUtils.TYPE_GRANT, 
 				GraphUtils.PROPERTY_TITLE, null );
@@ -216,7 +213,7 @@ public class Linker {
     	}    
 	}
 	
-	private void loadNodes(Map<String, Set<Long>> nodes, String source, String type, 
+	private void loadNodes(Map<String, MatcherNodes> nodes, String source, String type, 
 			String fieldTitle, String filter) {
 
 		if (verbose)
@@ -244,9 +241,11 @@ public class Linker {
     	}    		
 	}
 	
-	private void linkCached(Map<String, Set<Long>> nodes, String googleCache, String folderName) throws Exception {
+	private void linkCached(Map<String, MatcherNodes> nodes, String googleCache, String folderName) throws Exception {
 		if (verbose)
 			System.out.println("Processing cached pages: " + folderName);
+		
+		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 		
 		File linksFolder = GoogleUtils.getLinkFolder(googleCache);
 		File cacheFolder = GoogleUtils.getResultFolder(googleCache);
@@ -262,7 +261,7 @@ public class Linker {
 					String text = result.getText();
 					if (verbose)
 						System.out.println("Searching for a string: " + text);
-					Set<Long> nodeIds = nodes.get(text.trim().toLowerCase());
+					Set<Long> nodeIds = nodes.get(text.trim().toLowerCase()).getNodes();
 					if (null != nodeIds) { 
 						if (verbose)
 							System.out.println("Found " + nodeIds.size() + " possible matches");
@@ -290,11 +289,12 @@ public class Linker {
 			}
 	}	
 	
-	private void linkSimpleSearch(Map<String, Set<Long>> nodes, String googleCache) throws Exception {
+	private void linkSimpleSearch(Map<String, MatcherNodes> nodes, String googleCache) throws Exception {
 		if (verbose)
 			System.out.println("Processing Simple Search");
 		
 		Semaphore semaphore = new Semaphore(maxThreads);
+		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 		
 		List<MatcherThread> threads = new ArrayList<MatcherThread>();
 		for (int i = 0; i < maxThreads; ++i) {
@@ -320,7 +320,10 @@ public class Linker {
 						if (verbose)
 							System.out.println("Testing link: " + link.getLink());
 							
-						MatcherSimple matcher = new MatcherSimple(googleCache, link, nodes);
+						Matcher matcher = new MatcherSimple()
+								.withCacheFolder(googleCache)
+								.withLink(link)
+								.withNodes(nodes);
 
 						semaphore.acquire(); 
 						
@@ -363,11 +366,12 @@ public class Linker {
 		}
 	}
 	
-	private void linkFuzzySearch(Map<String, Set<Long>> nodes, String googleCache) throws Exception {
+	private void linkFuzzySearch(Map<String, MatcherNodes> nodes, String googleCache) throws Exception {
 		if (verbose)
 			System.out.println("Processing Fuzzy Search");
 		
 		Semaphore semaphore = new Semaphore(maxThreads);
+		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 		
 		List<MatcherThread> threads = new ArrayList<MatcherThread>();
 		for (int i = 0; i < maxThreads; ++i) {
@@ -393,7 +397,10 @@ public class Linker {
 						if (verbose)
 							System.out.println("Testing link: " + link.getLink());
 							
-						Matcher matcher = new MatcherFuzzy(googleCache, link, nodes);
+						Matcher matcher = new MatcherFuzzy()
+								.withCacheFolder(googleCache)
+								.withLink(link)
+								.withNodes(nodes);
 
 						semaphore.acquire(); 
 						
@@ -455,15 +462,16 @@ public class Linker {
 		return counter;
 	}
 	
-	private void putUnique(Map<String, Set<Long>> nodes, String key, Long id) {
+	private void putUnique(Map<String, MatcherNodes> nodes, String key, Long id) {
     	key = key.trim().toLowerCase();
     	if (key.startsWith(PART_DATA_FROM))
     		key = key.substring(PART_DATA_FROM.length()).trim();
    	 	if (key.length() > minTitleLength && !blackList.contains(key)) { 
-			Set<Long> set = nodes.get(key);
-			if (null == set) 
-				nodes.put(key, set = new HashSet<Long>());
-			set.add(id);
+   	 		MatcherNodes entry = nodes.get(key);
+			if (null == entry) 
+				nodes.put(key, new MatcherNodes(id));
+			else
+				entry.addNode(id);
    	 	}
 	}
 	

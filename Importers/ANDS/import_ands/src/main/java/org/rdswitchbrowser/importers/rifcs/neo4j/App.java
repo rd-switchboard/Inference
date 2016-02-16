@@ -124,7 +124,7 @@ public class App {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
-        crosswalk.setSource(GraphUtils.SOURCE_ANDS);
+        crosswalk.setSource(source);
         crosswalk.setType(type);
      //   crosswalk.setVerbose(true);
         
@@ -197,7 +197,7 @@ public class App {
 	private static void processFiles(String xmlFolder, String neo4jFolder, String source, 
 			CrosswalkRifCs.XmlType type, Templates template) throws Exception {
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
-        crosswalk.setSource(GraphUtils.SOURCE_ANDS);
+        crosswalk.setSource(source);
         crosswalk.setType(type);
      //   crosswalk.setVerbose(true);
         

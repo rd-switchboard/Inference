@@ -22,6 +22,7 @@
     <mysql.version>5.1.35</mysql.version>
     <guava.version>18.0</guava.version>
     <jaxb.api.version>2.2.11</jaxb.api.version>
+    <joda-time.version>2.9.2</joda-time.version>
   </properties>
 
   <modules>

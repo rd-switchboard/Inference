@@ -1,6 +1,9 @@
 package org.rdswitchboard.libraries.neo4j;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -31,10 +34,13 @@ public class Neo4jUtils {
 	public static final String NEO4J_CONF = "/conf/neo4j.properties";
 	public static final String NEO4J_DB = "/data/graph.db";
 	
-	public static File GetDbPath(final String folder) throws Neo4jException
+	public static File GetDbPath(final String folder) throws Neo4jException, IOException
 	{
 		File db = new File(folder, NEO4J_DB);
-		if (!db.exists() || !db.isDirectory())
+		if (!db.exists())
+			db.mkdirs();
+				
+		if (!db.isDirectory())
 			throw new Neo4jException("The " + folder + " folder is not valid Neo4j instance. Please provide path to an existing Neo4j instance");
 		
 		return db;

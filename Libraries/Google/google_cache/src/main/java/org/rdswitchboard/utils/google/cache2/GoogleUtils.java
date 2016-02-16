@@ -24,6 +24,7 @@ public class GoogleUtils {
 	public static final String FOLDER_JSON = "json";
 	public static final String FOLDER_RESULT = "result";
 	public static final String FOLDER_CACHE = "cache";
+	public static final String FOLDER_SCACHE = "scache";
 	public static final String FOLDER_LINK = "link";
 	public static final String FOLDER_BROKEN_LINK = "broken_link";
 	public static final String FOLDER_DATA = "data";
@@ -142,6 +143,10 @@ public class GoogleUtils {
 		return getCacheFolder(folder, FOLDER_DATA);
 	}
 
+	public static final File getSearchCacheFolder(String folder) {
+		return getCacheFolder(folder, FOLDER_SCACHE);
+	}
+	
 	public static final File getMetadataFolder(String folder) {
 		return getCacheFolder(folder, FOLDER_METADATA);
 	}
