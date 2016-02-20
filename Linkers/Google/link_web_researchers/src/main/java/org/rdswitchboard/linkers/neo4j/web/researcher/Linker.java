@@ -265,25 +265,28 @@ public class Linker {
 					String text = result.getText();
 					if (verbose)
 						System.out.println("Searching for a string: " + text);
-					Set<Long> nodeIds = nodes.get(text.trim().toLowerCase()).getNodes();
-					if (null != nodeIds) { 
-						if (verbose)
-							System.out.println("Found " + nodeIds.size() + " possible matches");
-
-						for (String l : result.getLinks()) {
-							Link link = (Link) jaxbUnmarshaller.unmarshal(new File(linksFolder, l));
-							if (null != link) {
-								
-								if (verbose)
-									System.out.println("Testing link: " + link.getLink());
-								if (isLinkFollowAPattern(link.getLink())) {
+					MatcherNodes matcherNodes = nodes.get(text.trim().toLowerCase());
+					if (null != matcherNodes) {
+						Set<Long> nodeIds = matcherNodes.getNodes();
+						if (null != nodeIds) { 
+							if (verbose)
+								System.out.println("Found " + nodeIds.size() + " possible matches");
+	
+							for (String l : result.getLinks()) {
+								Link link = (Link) jaxbUnmarshaller.unmarshal(new File(linksFolder, l));
+								if (null != link) {
+									
 									if (verbose)
-										System.out.println("Found matching URL: " + link.getLink() + " for grant: " + text);
-								
-									Node nodeResearcher = getOrCreateWebResearcher(link, metadataFolder);
-									for (Long nodeId : nodeIds) 
-										Neo4jUtils.createUniqueRelationship(graphDb.getNodeById(nodeId), 
-												nodeResearcher, relRelatedTo, Direction.OUTGOING, null);	
+										System.out.println("Testing link: " + link.getLink());
+									if (isLinkFollowAPattern(link.getLink())) {
+										if (verbose)
+											System.out.println("Found matching URL: " + link.getLink() + " for grant: " + text);
+									
+										Node nodeResearcher = getOrCreateWebResearcher(link, metadataFolder);
+										for (Long nodeId : nodeIds) 
+											Neo4jUtils.createUniqueRelationship(graphDb.getNodeById(nodeId), 
+													nodeResearcher, relRelatedTo, Direction.OUTGOING, null);	
+									}
 								}
 							}
 						}
