@@ -219,6 +219,8 @@ public class Linker {
 		if (verbose)
 			System.out.println("Source: " + source + ", Type: " + type + ", Field: " + fieldTitle + ", Filter: " + filter);
 		
+		long existing = nodes.size();
+		
 		String cypher = "MATCH (n:" + source + ":" + type + ")";
 		if (null != filter)
 			cypher += " WHERE " + filter;
@@ -238,7 +240,9 @@ public class Linker {
     	        			putUnique(nodes, title, nodeId);
     	        }
     	    }
-    	}    		
+    	}    	
+		
+		System.out.println("Loaded " + (nodes.size() - existing) + " new titles");
 	}
 	
 	private void linkCached(Map<String, MatcherNodes> nodes, String googleCache, String folderName) throws Exception {
@@ -304,6 +308,7 @@ public class Linker {
 		}
 
 		int counter = 0;
+		int linkCounter = 0;
 		
 		Transaction tx = graphDb.beginTx();
 		try {
@@ -317,10 +322,13 @@ public class Linker {
 					
 					Link link = (Link) jaxbUnmarshaller.unmarshal(file);
 					if (link != null && isLinkFollowAPattern(link.getLink())) {
+						++linkCounter;
+						
 						if (verbose)
-							System.out.println("Testing link: " + link.getLink());
+							System.out.println("Testing " + linkCounter + " link: " + link.getLink());
 							
 						Matcher matcher = new MatcherSimple()
+								.withContext(jaxbContext)
 								.withCacheFolder(googleCache)
 								.withLink(link)
 								.withNodes(nodes);
@@ -381,6 +389,7 @@ public class Linker {
 		}
 		
 		int counter = 0;
+		int linkCounter = 0;
 		
 		Transaction tx = graphDb.beginTx();
 		try {
@@ -394,10 +403,13 @@ public class Linker {
 					
 					Link link = (Link) jaxbUnmarshaller.unmarshal(file);
 					if (link != null && isLinkFollowAPattern(link.getLink())) {
+						++linkCounter;
+						
 						if (verbose)
-							System.out.println("Testing link: " + link.getLink());
+							System.out.println("Testing " + linkCounter + " link: " + link.getLink());
 							
 						Matcher matcher = new MatcherFuzzy()
+								.withContext(jaxbContext)
 								.withCacheFolder(googleCache)
 								.withLink(link)
 								.withNodes(nodes);
@@ -443,20 +455,24 @@ public class Linker {
 	private int processResult(MatcherResult result, File metadataFolder) {
 		int counter = 0;
 		if (null != result) {
-			if (verbose)
-				System.out.println("Found " + result.getNodes().size() + " macthing texts in: " + result.getLink().getLink());
-
-			try {
-				Node nodeResearcher = getOrCreateWebResearcher(result.getLink(), metadataFolder);
-				for (Long nodeId : result.getNodes()) {
-					Neo4jUtils.createUniqueRelationship(graphDb.getNodeById(nodeId), 
-							nodeResearcher, relRelatedTo, Direction.OUTGOING, null);
-					++counter;
-				}
-				
-			} catch (Exception e) {
-				e.printStackTrace();
+			if (verbose) {
+				if (result.isError()) 
+					System.err.println("Matcher process finished with error: " + result.getError());
+				else
+					System.out.println("Matcher process spent " + result.getElapsedTime() + " ms and found " + result.getNodesSize() + " macthing texts in: " + result.getLink().getLink());
 			}
+			if (result.isValid()) {
+				try {
+					Node nodeResearcher = getOrCreateWebResearcher(result.getLink(), metadataFolder);
+					for (Long nodeId : result.getNodes()) {
+						Neo4jUtils.createUniqueRelationship(graphDb.getNodeById(nodeId), 
+								nodeResearcher, relRelatedTo, Direction.OUTGOING, null);
+						++counter;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} 
 		}
 		
 		return counter;

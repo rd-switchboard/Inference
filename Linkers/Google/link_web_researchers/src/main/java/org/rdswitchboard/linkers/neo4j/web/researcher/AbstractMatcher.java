@@ -11,30 +11,25 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.rdswitchboard.utils.google.cache2.GoogleUtils;
 import org.rdswitchboard.utils.google.cache2.Link;
 
 public abstract class AbstractMatcher implements Matcher {
-	private String cacheFolder;
-	private Link link;
-	private Map<String, MatcherNodes> nodes;
-	private Map<String, MatcherCache> cache;
-	private MatcherResult result = null;
-	private JAXBContext jaxbContext;
+	private String cacheFolder = null;
+	private Link link = null;
+	private Map<String, MatcherNodes> nodes = null;
+	private Map<String, MatcherCache> cache = null;
+	private JAXBContext jaxbContext = null;
 	private boolean cacheUpdated = false;
-	
-	public JAXBContext getContext() {
-		return jaxbContext;
-	}
 
 	public void setContext(JAXBContext jaxbContext) {
 		this.jaxbContext = jaxbContext;
 	}
-
-	public String getCacheFolder() {
-		return cacheFolder;
+	
+	public AbstractMatcher withContext(JAXBContext jaxbContext) {
+		setContext(jaxbContext);
+		return this;
 	}
 
 	public void setCacheFolder(String cacheFolder) {
@@ -72,9 +67,6 @@ public abstract class AbstractMatcher implements Matcher {
 		return this;
 	}
 	
-	public MatcherResult getResult() {
-		return result;
-	}
 	
 	protected void loadCache() throws JAXBException {
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -112,27 +104,36 @@ public abstract class AbstractMatcher implements Matcher {
 	}
 	
 	protected MatcherCache getCahce(String title) {
-		return this.cache.get(title);
+		MatcherCache item = this.cache.get(title);
+		if (null == item) {
+			this.cache.put(title, item = new MatcherCache(0, false));
+			
+			cacheUpdated = true;
+		}
+		return item;		
 	}
 	
-	protected void addCahce(String title, int level, boolean found) {
-		cache.put(title, new MatcherCache(level, found));
+	public void updateCache() {
 		cacheUpdated = true;
 	}
 	
+	/*protected void addCahce(String title, int level, boolean found) throws MatcherThreadException {
+		if (null != cache.put(title, new MatcherCache(level, found)))
+			throw new MatcherThreadException("The cache already had this item");
+		cacheUpdated = true;
+	}*/
+	
 	protected File getCacheFile() {
-		return new File(GoogleUtils.getSearchCacheFolder(cacheFolder), new File(link.getData()).getName() + ".xml");
+		return new File(GoogleUtils.getSearchCacheFolder(cacheFolder), new File(FilenameUtils.removeExtension(link.getData()) + ".xml").getName());
 	}
 	
 	protected File getDataFile() {
 		return new File(GoogleUtils.getDataFolder(cacheFolder), link.getData());
 	}
-	
-	
-	
+		
 	@Override
 	public String toString() {
 		return "AbstractMatcher [cacheFolder=" + cacheFolder + ", link=" + link + ", nodes=" + nodes + ", cache="
-				+ cache + ", result=" + result + "]";
+				+ cache + "]";
 	}
 }

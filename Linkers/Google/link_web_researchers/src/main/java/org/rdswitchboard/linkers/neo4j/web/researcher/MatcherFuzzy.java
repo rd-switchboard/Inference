@@ -12,48 +12,42 @@ public class MatcherFuzzy extends AbstractMatcher {
 		
 	@Override
 	public MatcherResult match() {
+		MatcherResult result = new MatcherResult();
+		result.setLink(getLink());
+		result.startWatch();
+
 		try {
-			// reset result set
-			//result.clear();
-			
 			loadCache();
-			
-			MatcherResult result = new MatcherResult();
-			result.setLink(getLink());			
 			
 			char[] data = null;
 			//long beginTime = System.currentTimeMillis();
 			for (Map.Entry<String, MatcherNodes> entry : getNodes().entrySet()) {
 				MatcherCache cache = getCahce(entry.getKey());
-				if (null != cache) {
-					if (cache.isFound()) {
-						result.addNodes(entry.getValue().getNodes());
-						continue;
-					} else if (cache.getLevel() >= 2)
-						continue;
+				if (!cache.isFound() && cache.getLevel() < 2) {
+					cache.setLevel(2);
+				
+					if (null == data) 
+						data = FuzzySearch.stringToCharArray(
+								StringEscapeUtils.unescapeHtml(
+										FileUtils.readFileToString(getDataFile()))
+												.toLowerCase()				// convert to lower case
+												.replaceAll("\u00A0", " "));
+					
+					if (FuzzySearch.find(
+							FuzzySearch.stringToCharArray(entry.getKey()), 
+							data, 
+							getDistance(entry.getKey().length())) >= 0) 
+						cache.setFound(true);
+					
+					updateCache();
 				}
 				
-				if (null == data) 
-					data = FuzzySearch.stringToCharArray(
-							StringEscapeUtils.unescapeHtml(
-									FileUtils.readFileToString(getDataFile()))
-											.toLowerCase()				// convert to lower case
-											.replaceAll("\u00A0", " "));
-				
-				if (FuzzySearch.find(
-						FuzzySearch.stringToCharArray(entry.getKey()), 
-						data, 
-						getDistance(entry.getKey().length())) >= 0) {
+				if (cache.isFound()) 
 					result.addNodes(entry.getValue().getNodes());
-					addCahce(entry.getKey(), 2, true); 
-				} else
-					addCahce(entry.getKey(), 2, false);
 			}
 			
 			saveCache();
 			
-			if (result.hasNodes())
-				return result;
 			
 			/*
 			String cacheData = FileUtils.readFileToString(
@@ -79,9 +73,13 @@ public class MatcherFuzzy extends AbstractMatcher {
 		}
 		catch(Exception e) {
 			e.printStackTrace();
+			
+			result.setError(e.getMessage());			
+		} finally {
+			result.stopWatch();
 		}
 		
-		return null;		
+		return result;		
 	}
 	
 	private int getDistance(int length) {

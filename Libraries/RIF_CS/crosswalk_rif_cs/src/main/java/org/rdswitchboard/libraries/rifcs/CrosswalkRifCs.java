@@ -225,19 +225,24 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 				
 				String url = null;
 				try {
-					url = GraphUtils.generateAndsUrl(key);
+					if (needAndsGroup)
+						url = GraphUtils.generateAndsUrl(key);
+					else
+						url = GraphUtils.extractFormalizedUrl(key);
 				} catch(UnsupportedEncodingException e) {
 					e.printStackTrace();
 				}								
 				
 				GraphNode node = new GraphNode()
 					.withKey(new GraphKey(source, key))
-					.withSource(source)
-					.withProperty(GraphUtils.PROPERTY_URL, url);
+					.withSource(source);
 				
-				if (needAndsGroup)
+				if (needAndsGroup) 
 					node.setProperty(GraphUtils.PROPERTY_ANDS_GROUP, group);
 				
+				if (null != url)
+					node.setProperty(GraphUtils.PROPERTY_URL, url);
+			
 				if (deleted) {
 					graph.addNode(node.withDeleted(true));
 					
