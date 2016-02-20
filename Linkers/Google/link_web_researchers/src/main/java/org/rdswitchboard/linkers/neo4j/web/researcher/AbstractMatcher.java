@@ -69,18 +69,21 @@ public abstract class AbstractMatcher implements Matcher {
 	
 	
 	protected void loadCache() throws JAXBException {
+		this.cache = new HashMap<String, MatcherCache>();
+		
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 		
-		Cache cache = (Cache) jaxbUnmarshaller.unmarshal(getCacheFile());
-		if (null != cache) {
-			this.cache = new HashMap<String, MatcherCache>();
+		File cahcedFile = getCacheFile();
+		if (cahcedFile.exists() && !cahcedFile.isDirectory()) {
+			Cache cache = (Cache) jaxbUnmarshaller.unmarshal(getCacheFile());
+			if (null != cache) 
+				for (Entry entry : cache.getEntries()) 
+					this.cache.put(entry.getTitle(), 
+							new MatcherCache(entry.getTime(), entry.getLevel(), entry.isFound()));
 			
-			for (Entry entry : cache.getEntries()) 
-				this.cache.put(entry.getTitle(), 
-						new MatcherCache(entry.getTime(), entry.getLevel(), entry.isFound()));
-		}
-		
-		cacheUpdated = false; 
+			cacheUpdated = false;
+		} else 
+			cacheUpdated = true;
 	}
 
 	protected void saveCache() throws JAXBException {
