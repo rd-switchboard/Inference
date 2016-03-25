@@ -157,6 +157,10 @@ public class Linker {
 				GraphUtils.PROPERTY_TITLE, null );*/
 		loadNodes( nodes, GraphUtils.SOURCE_ORCID, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_PUBLICATION, 
+				GraphUtils.PROPERTY_TITLE, null );
+		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_DATASET, 
+				GraphUtils.PROPERTY_TITLE, null );
 		
 		linkSimpleSearch(nodes, googleCache);
 		
@@ -175,10 +179,6 @@ public class Linker {
 		loadNodes( nodes, GraphUtils.SOURCE_CROSSREF, GraphUtils.TYPE_PUBLICATION, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_CERN, GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.PROPERTY_TITLE, null );
-		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_PUBLICATION, 
-				GraphUtils.PROPERTY_TITLE, null );
-		loadNodes( nodes, GraphUtils.SOURCE_DARA, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
 		loadNodes( nodes, GraphUtils.SOURCE_DLI, GraphUtils.TYPE_DATASET, 
 				GraphUtils.PROPERTY_TITLE, null );
