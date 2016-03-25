@@ -1,9 +1,13 @@
 package org.rdswitchboard.linkers.neo4j.web.researcher;
 
-import java.util.Properties;
+import java.util.List;
 
-import org.parboiled.common.StringUtils;
-import org.rdswitchboard.libraries.configuration.Configuration;
+import org.rdswitchboard.linkers.neo4j.web.researcher.model.Link;
+import org.rdswitchboard.linkers.neo4j.web.researcher.service.LinkService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+// c4.8xlarge
 
 public class App {
 	
@@ -13,6 +17,46 @@ public class App {
 	private static final String MAX_THREADS = "100";
 	
 	public static void main(String[] args) {
+		
+		ApplicationContext context = 
+	    		new ClassPathXmlApplicationContext("spring/config/Spring-Config.xml");
+		
+//		Hibernate.initialize(proxy);
+		
+		System.out.println("\n\n\n*** Begin Testing ***\n\n\n");
+		
+		LinkService linkService = (LinkService) context.getBean("linkService");
+		
+		System.out.println("\n\n\n*** Insert new Link ***\n\n\n");
+		
+		
+		try { 
+			Link link = new Link();
+		
+			link.setLink("http://test.test/test.html");
+			link.setData("Data/test2.html");
+			link.setMetadata("Metadata/test2.json");
+			
+			linkService.save(link);
+			
+			System.out.println(link);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+			
+		System.out.println("\n\n\n*** Select all Links ***\n\n\n");
+		
+		linkService = (LinkService) context.getBean("linkService");
+		
+		List<Link> links = linkService.getAllLinks();
+		
+		
+
+		System.out.println("\n\n\n*** Dump Links ***\n\n\n");
+		
+		System.out.println(links);
+		
+		/*
 		try {
 			Properties properties = Configuration.fromArgs(args);
 	        	        
@@ -45,7 +89,8 @@ public class App {
 			e.printStackTrace();
 			
 			System.exit(1);
-		}
+		}*/
 	}
+	
 
 }
