@@ -22,7 +22,7 @@ import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
 
 public class App {
 	private static final String NEO4J_VERSION_FILE = "data/version";
-	private static final String PART_VERSION = "_version";
+	private static final String PART_VERSION = "_lastupdate";
 	
 	public static void main(String[] args) {
 		try {
@@ -77,7 +77,7 @@ public class App {
 	        try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(versionFolder))) {
 	            for (Path path : directoryStream) 
 	            	if (Files.isRegularFile(path) & Files.isReadable(path)) {
-	            		String name = path.toString();
+	            		String name = path.getFileName().toString();
 	            		String value = new String(Files.readAllBytes(path));
 	            		
 	            		System.out.println(String.format("Module %s version: %s", name, value));
