@@ -434,10 +434,8 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 			
 			for (NameType.NamePart part : name.getNamePart()) {
 				final String nameType = part.getType();
-				if (null != nameType && !nameType.isEmpty()) {
-					if (null == title || nameType.equals(NAME_PART_TITLE)) {
-						title = part.getValue();
-					}
+				if (null == title || null != nameType && nameType.equals(NAME_PART_TITLE)) {
+					title = part.getValue();
 				}				
 			}
 			
