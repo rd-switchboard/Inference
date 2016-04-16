@@ -395,7 +395,9 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 		if (null != type && type.equals(NAME_PRIMARY)) {
 			String family = null;
 			String given = null;
-			String suffix =  null;
+			String suffix = null;
+			String title = null;
+			String anyPart = null;
 			
 			for (NameType.NamePart part : name.getNamePart()) {
 				final String nameType = part.getType();
@@ -409,8 +411,13 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 					} else if (nameType.equals(NAME_PART_SUFFIX)) {
 						suffix = part.getValue();
 						node.addProperty(GraphUtils.PROPERTY_NAME_PREFIX, suffix);
-					}
-				}				
+					} /*else if (nameType.equals(NAME_PART_TITLE)) {
+						title = part.getValue();
+					} */ // uncomment to decode person title, as 'Assistant Professor'
+				} else if (null == anyPart || anyPart.isEmpty()) {
+					anyPart = part.getValue();
+				}
+					
 			}
 			
 			List<String> nameParts = new ArrayList<String>();
@@ -421,9 +428,15 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 			if (!StringUtils.isEmpty(family))
 				nameParts.add(family);
 			
+			// if we have some name parts with a type, 
+			// combine them together and use as a title for the node.
+			// If we don't find any parts with a type, 
+			// use the first name part if one is presented.
 			if (!nameParts.isEmpty()) 
 				node.addProperty(GraphUtils.PROPERTY_TITLE, StringUtils.join(nameParts, ' '));
-					
+			else if (!StringUtils.isEmpty(anyPart))
+				node.addProperty(GraphUtils.PROPERTY_TITLE, anyPart);
+			
 		/*
 			
 			String fullName = sb.toString();
