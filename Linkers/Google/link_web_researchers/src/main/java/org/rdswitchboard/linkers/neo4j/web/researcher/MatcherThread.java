@@ -21,11 +21,10 @@ public class MatcherThread extends Thread {
 	
 	public void addMatcher(Matcher matcher) throws MatcherThreadException {
 		synchronized(lock) {
-			if (null != this.result)
-				throw new MatcherThreadException("The matcher tread has unprocessed result object");
 			if (null != this.matcher)
 				throw new MatcherThreadException("The matcher tread is busy");
 		
+			this.result = null;
 			this.matcher = matcher;
 			this.lock.notify();
 		}
@@ -40,11 +39,7 @@ public class MatcherThread extends Thread {
 	}
 	
 	public MatcherResult getResult() {
-		synchronized(lock) {
-			MatcherResult r = result;
-			result = null;
-			return r;
-		}
+		return result;
 	}
 	
 	@Override

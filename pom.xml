@@ -65,7 +65,7 @@
         <module>Utils/Neo4j/test_connections</module>
 	<module>Utils/Neo4j/replace_source</module>
 	<module>Utils/Neo4j/sync</module>
-	<module>Build/distribution</module>
+	<module>Build/distribution</module> 
   </modules>
 
   <build>

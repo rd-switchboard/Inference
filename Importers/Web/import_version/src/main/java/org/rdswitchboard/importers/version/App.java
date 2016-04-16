@@ -55,8 +55,13 @@ public class App {
 	            throw new IllegalArgumentException("Build Number File can not be empty");
 	        Path buildNumberPath = Paths.get(buildNumberFile);
 	        int buildNumber = 0;
-	        if (Files.isRegularFile(buildNumberPath) & Files.isReadable(buildNumberPath))
-	        	buildNumber = Integer.parseInt(new String(Files.readAllBytes(buildNumberPath)), 0);
+	        if (Files.isRegularFile(buildNumberPath) & Files.isReadable(buildNumberPath)) {
+	        	try {
+	        		buildNumber = Integer.parseInt(new String(Files.readAllBytes(buildNumberPath)));
+	        	} catch (NumberFormatException e) {
+	        		buildNumber = 0;
+	        	}
+	        }
 	        ++buildNumber;
 
 	        String versionFile = properties.getProperty(Configuration.PROPERTY_VERSION_FILE);

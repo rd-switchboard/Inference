@@ -329,9 +329,11 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 	
 	private boolean importParty(Graph graph, GraphNode node, Party party) {
 		String type = party.getType();
-		if (type.equals(PARTY_TYPE_PERSON) || type.equals(PARTY_TYPE_PUBLISHER))
+		boolean person = false;
+		if (type.equals(PARTY_TYPE_PERSON) || type.equals(PARTY_TYPE_PUBLISHER)) {
 			node.setType(GraphUtils.TYPE_RESEARCHER);
-		else if (type.equals(PARTY_TYPE_GROUP) || type.equals(PARTY_TYPE_ADMINISTRATIVE_POSITION))
+			person = true;
+		} else if (type.equals(PARTY_TYPE_GROUP) || type.equals(PARTY_TYPE_ADMINISTRATIVE_POSITION))
 			node.setType(GraphUtils.TYPE_INSTITUTION);
 		else
 			return false;// ignore
@@ -339,9 +341,12 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 		for (Object object : party.getIdentifierOrNameOrLocation()) {
 			if (object instanceof IdentifierType) 
 				processIdentifier(node, (IdentifierType) object);
-			else if (object instanceof NameType)
-				processNameParty(node, (NameType) object);
-			else if (object instanceof RelatedObjectType) 
+			else if (object instanceof NameType) {
+				if (person)
+					processNameParty(node, (NameType) object);
+				else
+					processNameInstitution(node, (NameType) object);
+			} else if (object instanceof RelatedObjectType) 
 				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
 			else if (object instanceof RelatedInfoType) 
 				processRelatedInfo(graph, node, (RelatedInfoType) object);
@@ -390,7 +395,9 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 		if (null != type && type.equals(NAME_PRIMARY)) {
 			String family = null;
 			String given = null;
-			String suffix =  null;
+			String suffix = null;
+			String title = null;
+			String anyPart = null;
 			
 			for (NameType.NamePart part : name.getNamePart()) {
 				final String nameType = part.getType();
@@ -404,8 +411,13 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 					} else if (nameType.equals(NAME_PART_SUFFIX)) {
 						suffix = part.getValue();
 						node.addProperty(GraphUtils.PROPERTY_NAME_PREFIX, suffix);
-					}
-				}				
+					} /*else if (nameType.equals(NAME_PART_TITLE)) {
+						title = part.getValue();
+					} */ // uncomment to decode person title, as 'Assistant Professor'
+				} else if (null == anyPart || anyPart.isEmpty()) {
+					anyPart = part.getValue();
+				}
+					
 			}
 			
 			List<String> nameParts = new ArrayList<String>();
@@ -416,9 +428,15 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 			if (!StringUtils.isEmpty(family))
 				nameParts.add(family);
 			
+			// if we have some name parts with a type, 
+			// combine them together and use as a title for the node.
+			// If we don't find any parts with a type, 
+			// use the first name part if one is presented.
 			if (!nameParts.isEmpty()) 
 				node.addProperty(GraphUtils.PROPERTY_TITLE, StringUtils.join(nameParts, ' '));
-					
+			else if (!StringUtils.isEmpty(anyPart))
+				node.addProperty(GraphUtils.PROPERTY_TITLE, anyPart);
+			
 		/*
 			
 			String fullName = sb.toString();
@@ -434,10 +452,24 @@ public class CrosswalkRifCs implements GraphCrosswalk {
 			
 			for (NameType.NamePart part : name.getNamePart()) {
 				final String nameType = part.getType();
-				if (null != nameType && !nameType.isEmpty()) {
-					if (null == title || nameType.equals(NAME_PART_TITLE)) {
-						title = part.getValue();
-					}
+				if (null == title || null != nameType && nameType.equals(NAME_PART_TITLE)) {
+					title = part.getValue();
+				}				
+			}
+			
+			if (!StringUtils.isEmpty(title))
+				node.addProperty(GraphUtils.PROPERTY_TITLE, title);
+		}
+	}
+	
+	private void processNameInstitution(GraphNode node, NameType name) {
+		String type = name.getType();
+		if (null != type && type.equals(NAME_PRIMARY)) {
+			String title = null;
+			
+			for (NameType.NamePart part : name.getNamePart()) {
+				if (null == title) {
+					title = part.getValue();
 				}				
 			}
 			
