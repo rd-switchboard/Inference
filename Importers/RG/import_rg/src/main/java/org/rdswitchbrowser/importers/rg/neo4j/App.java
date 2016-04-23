@@ -1,41 +1,8 @@
 package org.rdswitchbrowser.importers.rg.neo4j;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.StringWriter;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Properties;
-
-import javax.xml.transform.Source;
-import javax.xml.transform.Templates;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
-import org.rdswitchboard.libraries.configuration.Configuration;
-import org.rdswitchboard.libraries.graph.Graph;
-import org.rdswitchboard.libraries.graph.GraphUtils;
-import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
-import org.rdswitchboard.libraries.rifcs.CrosswalkRifCs;
-
-import com.amazonaws.auth.InstanceProfileCredentialsProvider;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.GetObjectRequest;
-import com.amazonaws.services.s3.model.ListObjectsRequest;
-import com.amazonaws.services.s3.model.ObjectListing;
-import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 public class App {
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			Properties properties = Configuration.fromArgs(args);
 			        
@@ -81,7 +48,7 @@ public class App {
                 throw new IllegalArgumentException("Please provide either S3 Bucket and prefix OR a path to a XML Folder");
 
 	        	        
-	       /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");*/ 
+	       /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");* / 
 	        
         	
 		} catch (Exception e) {
@@ -205,6 +172,6 @@ public class App {
 		
 		crosswalk.printStatistics(System.out);
 		neo4j.printStatistics(System.out);
-	}
+	}*/
 
 }

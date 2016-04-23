@@ -54,6 +54,7 @@
 	<module>Importers/DaRa/import_dara</module>
 	<module>Importers/CrossRef/import_crossref</module>
 	<module>Importers/ORCID/import_orcid</module>
+	<module>Importers/RG/import_rg</module>
 	<module>Linkers/Google/link_web_researchers</module>
 	<module>Linkers/Static/link_nodes</module>
 	<module>Search/Google/google_search</module>
