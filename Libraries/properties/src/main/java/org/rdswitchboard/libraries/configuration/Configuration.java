@@ -22,9 +22,18 @@ public class Configuration {
 	public static final String PROPERTY_NEO4J = "neo4j";
 	public static final String PROPERTY_NEO4J_NEXUS = "neo4j.nexus";
 	public static final String PROPERTY_NEO4J_VERSION= "neo4j.version";
+	
+	// Data
+	public static final String PROPERTY_SOURCE = "source";
+	public static final String PROPERTY_CROSSWALK = "crosswalk";
 		
+	// XML
+	public static final String PROPERTY_XML_FOLDER = "xml.folder";
+	public static final String PROPERTY_XML_TYPE = "xml.type";
+	
 	// S3
 	public static final String PROPERTY_S3_BUCKET = "s3.bucket";
+	public static final String PROPERTY_S3_PREIFX = "s3.prefix";
 	
 	// ANDS
 	public static final String PROPERTY_ANDS_S3 = "ands.s3";

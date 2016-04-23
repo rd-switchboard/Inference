@@ -1,8 +1,35 @@
 package org.rdswitchbrowser.importers.rg.neo4j;
 
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
+import java.util.Properties;
+
+import javax.xml.transform.Source;
+import javax.xml.transform.Templates;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.rdswitchboard.libraries.configuration.Configuration;
+import org.rdswitchboard.libraries.neo4j.Neo4jDatabase;
+
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.ListObjectsRequest;
+import com.amazonaws.services.s3.model.ObjectListing;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 public class App {
-	/*public static void main(String[] args) {
+	
+	
+	public static void main(String[] args) {
 		try {
 			Properties properties = Configuration.fromArgs(args);
 			        
@@ -14,10 +41,11 @@ public class App {
 	        System.out.println("Neo4J: " + neo4jFolder);
 	        
 	        String bucket = properties.getProperty(Configuration.PROPERTY_S3_BUCKET);
-	        String prefix = properties.getProperty(Configuration.PROPERTY_ANDS_S3);
-	        String xmlFolder = properties.getProperty(Configuration.PROPERTY_ANDS_XML);
-	        String source = properties.getProperty(Configuration.PROPERTY_ANDS_SOURCE, GraphUtils.SOURCE_ANDS);
-	        String crosswalk = properties.getProperty(Configuration.PROPERTY_ANDS_CROSSWALK);
+	        String prefix = properties.getProperty(Configuration.PROPERTY_S3_PREIFX);
+	        String xmlFolder = properties.getProperty(Configuration.PROPERTY_XML_FOLDER);
+	        String xmlType = properties.getProperty(Configuration.PROPERTY_XML_TYPE);
+	        String source = properties.getProperty(Configuration.PROPERTY_SOURCE);
+	        String crosswalk = properties.getProperty(Configuration.PROPERTY_CROSSWALK);
 		    
 	        Templates template = null;
 	        
@@ -29,7 +57,7 @@ public class App {
 	        					new FileInputStream(crosswalk)));
 	        } 
 	        
-	        CrosswalkRifCs.XmlType type = CrosswalkRifCs.XmlType.valueOf(xmlType); 
+	        XmlType type = XmlType.valueOf(xmlType); 
 	        
 	        if (!StringUtils.isEmpty(bucket) && !StringUtils.isEmpty(prefix)) {
 	        	System.out.println("S3 Bucket: " + bucket);
@@ -48,7 +76,7 @@ public class App {
                 throw new IllegalArgumentException("Please provide either S3 Bucket and prefix OR a path to a XML Folder");
 
 	        	        
-	       /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");* / 
+	       /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");*/ 
 	        
         	
 		} catch (Exception e) {
@@ -59,7 +87,7 @@ public class App {
 	}
 	
 	private static void processS3Files(String bucket, String prefix, String neo4jFolder, 
-			String versionFolder, String source, CrosswalkRifCs.XmlType type, Templates template) throws Exception {
+			String versionFolder, String source, XmlType type, Templates template) throws Exception {
         AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
@@ -93,8 +121,7 @@ public class App {
 			.withPrefix(folder);
 	    do {
 			objectListing = s3client.listObjects(listObjectsRequest);
-			for (S3ObjectSummary objectSummary : 
-				objectListing.getObjectSummaries()) {
+			for (S3ObjectSummary objectSummary : objectListing.getObjectSummaries()) {
 				
 				file = objectSummary.getKey();
 
@@ -172,6 +199,6 @@ public class App {
 		
 		crosswalk.printStatistics(System.out);
 		neo4j.printStatistics(System.out);
-	}*/
+	}
 
 }
