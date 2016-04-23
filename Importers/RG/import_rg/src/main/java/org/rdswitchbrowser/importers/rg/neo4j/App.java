@@ -27,7 +27,7 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 public class App {
-	
+	/*
 	
 	public static void main(String[] args) {
 		try {
@@ -76,7 +76,7 @@ public class App {
                 throw new IllegalArgumentException("Please provide either S3 Bucket and prefix OR a path to a XML Folder");
 
 	        	        
-	       /*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");*/ 
+	       //*debugFile(accessKey, secretKey, bucket, "rda/rif/class:collection/54800.xml");* / 
 	        
         	
 		} catch (Exception e) {
@@ -200,5 +200,5 @@ public class App {
 		crosswalk.printStatistics(System.out);
 		neo4j.printStatistics(System.out);
 	}
-
+*/
 }
