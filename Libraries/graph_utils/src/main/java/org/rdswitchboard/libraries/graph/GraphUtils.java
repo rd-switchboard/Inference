@@ -55,11 +55,19 @@ public class GraphUtils {
 	public static final String PROPERTY_INSPIRE_ID = "inspire_id";
 	//public static final String PROPERTY_OAI = "oai";
 	public static final String PROPERTY_AUTHORS = "authors";
+	public static final String PROPERTY_PARTICIPANTS = "participants";
 	public static final String PROPERTY_REFERENCED_BY = "referenced_by"; // temporary for Dryad
 	public static final String PROPERTY_ORIGINAL_KEY = "original_key";
 	public static final String PROPERTY_DARA_ID = "dara_id";
 	public static final String PROPERTY_TITLE_LANGUAGE = "title_language";
 	public static final String PROPERTY_VERSION = "version";
+	public static final String PROPERTY_LAST_UPDATED = "last_updated";
+	public static final String PROPERTY_FUNDER = "funder";
+	public static final String PROPERTY_START_YEAR = "start_year";
+	public static final String PROPERTY_END_YEAR = "end_year";
+	public static final String PROPERTY_PUBLICATION_YEAR = "publication_year";
+	public static final String PROPERTY_LICENSE = "license";
+	public static final String PROPERTY_MEGABYTE = "megabyte";
 	
 	// control properties
 	public static final String PROPERTY_DELETED = "deleted";

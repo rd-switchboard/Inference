@@ -3,22 +3,24 @@ package org.rdswitchbrowser.importers.rg.neo4j;
 
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.commons.lang.StringUtils;
-/*
+
 import org.openarchives.oai._2.HeaderType;
 import org.openarchives.oai._2.ListRecordsType;
 import org.openarchives.oai._2.OAIPMHtype;
 import org.openarchives.oai._2.RecordType;
 import org.openarchives.oai._2.StatusType;
+
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphKey;
 import org.rdswitchboard.libraries.graph.GraphNode;
@@ -26,44 +28,22 @@ import org.rdswitchboard.libraries.graph.GraphRelationship;
 import org.rdswitchboard.libraries.graph.GraphSchema;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.graph.interfaces.GraphCrosswalk;
+import org.researchgraph.schema.v2_0.xml.nodes.Dataset;
+import org.researchgraph.schema.v2_0.xml.nodes.Grant;
+import org.researchgraph.schema.v2_0.xml.nodes.Publication;
+import org.researchgraph.schema.v2_0.xml.nodes.RegistryObjects;
+import org.researchgraph.schema.v2_0.xml.nodes.Relation;
+import org.researchgraph.schema.v2_0.xml.nodes.Researcher;
 
-/*
 
-public class CrosswalkRG implements GraphCrosswalk {	
-	private static final String COLLECTION_TYPE_DATASET = "dataset";
-	private static final String COLLECTION_TYPE_NON_GEOGRAOPHIC_DATASET = "nonGeographicDataset";
-	private static final String COLLECTION_TYPE_RESEARCH_DATASET = "researchDataSet";
-	private static final String COLLECTION_TYPE_PUBLICATION = "publication";
+public class CrosswalkRG implements GraphCrosswalk {
 	
-
-	private static final String PARTY_TYPE_PERSON = "person";
-	private static final String PARTY_TYPE_PUBLISHER = "publisher";
-	private static final String PARTY_TYPE_GROUP = "group";
-	private static final String PARTY_TYPE_ADMINISTRATIVE_POSITION = "administrativePosition";
+	private static final SimpleDateFormat formatter;
 	
-	private static final String RELATED_INFO_TITLE = "title";
-	private static final String RELATED_INFO_TYPE_ACTIVITY = "activity";
-	private static final String RELATED_INFO_TYPE_COLLECTION = "collection";
-	private static final String RELATED_INFO_TYPE_PARTY = "party";
-	private static final String RELATED_INFO_TYPE_PUBLICATION = "publication";
-	
-	private static final String IDENTIFICATOR_NLA = "AU-ANL:PEAU";
-	private static final String IDENTIFICATOR_LOCAL = "local";
-	private static final String IDENTIFICATOR_ARC = "arc";
-	private static final String IDENTIFICATOR_NHMRC = "nhmrc";
-	private static final String IDENTIFICATOR_ORCID = "orcid";
-	private static final String IDENTIFICATOR_DOI = "doi";
-	private static final String IDENTIFICATOR_PURL = "purl";
-	
-	private static final String NAME_PRIMARY = "primary";
-	
-	private static final String NAME_PART_FAMILY = "family";
-	private static final String NAME_PART_GIVEN = "given";
-	private static final String NAME_PART_SUFFIX = "suffix";
-	private static final String NAME_PART_TITLE = "title";
-	
-	private static final String[] GRANT_DATES = new String[] { "startDate" };
-	private static final String[] COLLECTION_DATES = new String[] { null };
+	static {
+		formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
+		formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+	}
 	
 	public enum XmlType {
 		oai, rg
@@ -80,11 +60,11 @@ public class CrosswalkRG implements GraphCrosswalk {
 	
 	private boolean verbose = false;
 	
-	private String source = GraphUtils.SOURCE_ANDS;
+	private String source = null;
 	private boolean needAndsGroup = true;
 	
 	public CrosswalkRG() throws JAXBException {
-		unmarshaller = JAXBContext.newInstance( "org.openarchives.oai._2:au.org.ands.standards.rif_cs.registryobjects:au.org.ands.standards.rif_cs.extendedregistryobjects" ).createUnmarshaller();
+		unmarshaller = JAXBContext.newInstance( "org.openarchives.oai._2:org.researchgraph.schema.v2_0.xml.nodes" ).createUnmarshaller();
 	}
 	
 	public long getExistingRecords() {
@@ -200,434 +180,363 @@ public class CrosswalkRG implements GraphCrosswalk {
 			System.out.println("Unable to find records");
 	}
 	
+	
+	
 	private void processRegistryObjects(RegistryObjects registryObjects, 
 			Graph graph, boolean deleted) throws Exception
 	{
-		if (registryObjects.getRegistryObject() != null && registryObjects.getRegistryObject().size() > 0) {
-			for (RegistryObjects.RegistryObject registryObject : registryObjects.getRegistryObject()) {
-				String group = registryObject.getGroup();
-				String key = registryObject.getKey();
-				if (verbose) 
-					System.out.println("Key: " + key);
-				
-				String url = null;
-				try {
-					if (needAndsGroup)
-						url = GraphUtils.generateAndsUrl(key);
-					else
-						url = GraphUtils.extractFormalizedUrl(key);
-				} catch(UnsupportedEncodingException e) {
-					e.printStackTrace();
-				}								
-				
-				GraphNode node = new GraphNode()
-					.withKey(new GraphKey(source, key))
-					.withSource(source);
-				
-				if (needAndsGroup) 
-					node.setProperty(GraphUtils.PROPERTY_ANDS_GROUP, group);
-				
-				if (null != url)
-					node.setProperty(GraphUtils.PROPERTY_URL, url);
-			
-				if (deleted) {
-					graph.addNode(node.withDeleted(true));
-					
-					++deletedRecords;
-				} else if (registryObject.getCollection() != null)
-					importCollection(graph, node, registryObject.getCollection());
-				else if (registryObject.getActivity() != null) 
-					importActivity(graph, node, registryObject.getActivity());
-				else if (registryObject.getService() != null)
-					importService(graph, node, registryObject.getService());
-				else if (registryObject.getParty() != null)
-					importParty(graph, node, registryObject.getParty());
-				else {
-					graph.addNode(node.withBroken(true));
-					
-					++brokenRecords;
+		if (null != registryObjects) {
+			if (null != registryObjects.getResearchers()) {
+				for (Researcher researcher : registryObjects.getResearchers().getResearcher()) {
+					processResearcher(researcher, graph, deleted);
 				}
-				
-				++existingRecords;
 			}
-		} else
-			throw new Exception("Metadata does not contains any records");
+			
+			if (null != registryObjects.getGrants()) {
+				for (Grant grant : registryObjects.getGrants().getGrant()) {
+					processGrant(grant, graph, deleted);
+				}
+			}
+			
+			if (null != registryObjects.getDatasets()) {
+				for (Dataset dataset : registryObjects.getDatasets().getDataset()) {
+					processDataset(dataset, graph, deleted);
+				}
+			}
+			
+			if (null != registryObjects.getPublications()) {
+				for (Publication publication : registryObjects.getPublications().getPublication()) {
+					processPublication(publication, graph, deleted);
+				}
+			}
+			
+			if (null != registryObjects.getRelations()) {
+				for (Relation relation : registryObjects.getRelations().getRelation()) {
+					processRelation(relation, graph);
+				}
+			}
+		}
 	}
 	
-	private boolean importCollection(Graph graph, GraphNode node, Collection collection) {
-		String type = collection.getType();
-		if (type.equals(COLLECTION_TYPE_DATASET) 
-				|| type.equals(COLLECTION_TYPE_NON_GEOGRAOPHIC_DATASET) 
-				|| type.equals(COLLECTION_TYPE_RESEARCH_DATASET))
-			node.setType(GraphUtils.TYPE_DATASET);
-		else if (type.equals(COLLECTION_TYPE_PUBLICATION))
-			node.setType(GraphUtils.TYPE_PUBLICATION);
-		else
-			return false;// ignore
-				
-		for (Object object : collection.getIdentifierOrNameOrDates()) {
-			if (object instanceof IdentifierType) 
-				processIdentifier(node, (IdentifierType) object);
-			else if (object instanceof NameType)
-				processNameWork(node, (NameType) object);
-			else if (object instanceof RelatedObjectType) 
-				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
-			else if (object instanceof RelatedInfoType) 
-				processRelatedInfo(graph, node, (RelatedInfoType) object);
-			else if (object instanceof DatesType) 
-				processDates(node, GraphUtils.PROPERTY_PUBLISHED_DATE, COLLECTION_DATES, (DatesType) object);
+	private boolean processResearcher(final Researcher researcher, final Graph graph, boolean deleted) {
+		++existingRecords;
+		
+		if (verbose) 
+			System.out.println("Processing Researcher");
+		
+		String key = researcher.getKey();
+		if (StringUtils.isEmpty(key)) {
+			return false;
+		}	
+		
+		if (verbose) 
+			System.out.println("Key: " + key);
+		
+		String source = researcher.getSource();
+		if (StringUtils.isEmpty(source)) 
+			source = this.source;
+		
+		GraphNode node = new GraphNode()
+				.withKey(new GraphKey(source, key))
+				.withSource(source)
+				.withType(GraphUtils.TYPE_RESEARCHER);
+		
+		if (deleted) {
+			graph.addNode(node.withDeleted(true));
+			
+			++deletedRecords;
+			
+			return true;
 		}
+		
+		String localId = researcher.getLocalId();
+		if (!StringUtils.isEmpty(localId)) 
+			node.setProperty(GraphUtils.PROPERTY_LOCAL_ID, localId);
+		
+		XMLGregorianCalendar lastUpdated = researcher.getLastUpdated();
+		if (null != lastUpdated) {
+			String lastUpdatedString = formatter.format(lastUpdated.toGregorianCalendar().getTime());
+			if (!StringUtils.isEmpty(lastUpdatedString)) 
+				node.setProperty(GraphUtils.PROPERTY_LAST_UPDATED, lastUpdatedString);
+		}
+		
+		String url = GraphUtils.extractFormalizedUrl(researcher.getUrl());
+		if (!StringUtils.isEmpty(url)) 
+			node.setProperty(GraphUtils.PROPERTY_URL, url);
+		
+		String fullName = researcher.getFullName();
+		if (!StringUtils.isEmpty(fullName)) 
+			node.setProperty(GraphUtils.PROPERTY_FULL_NAME, fullName);
+		
+		String firstName = researcher.getFirstName();
+		if (!StringUtils.isEmpty(firstName)) 
+			node.setProperty(GraphUtils.PROPERTY_FIRST_NAME, firstName);
+		
+		String lastName = researcher.getLastName();
+		if (!StringUtils.isEmpty(lastName)) 
+			node.setProperty(GraphUtils.PROPERTY_LAST_NAME, lastName);
+		
+		String orcid = GraphUtils.extractOrcidId(researcher.getOrcid());
+		if (!StringUtils.isEmpty(orcid)) 
+			node.setProperty(GraphUtils.PROPERTY_ORCID_ID, orcid);
+		
+		String scopus = GraphUtils.extractScopusAuthorId(researcher.getScopusAuthorId());
+		if (!StringUtils.isEmpty(scopus)) 
+			node.setProperty(GraphUtils.PROPERTY_SCOPUS_ID, scopus);
 		
 		graph.addNode(node);
 		
 		return true;
 	}
 	
-	private boolean importActivity(Graph graph, GraphNode node, Activity activity) {
-			node.setType(GraphUtils.TYPE_GRANT);
-//		else
-//			return false;// ignore
-				
-		for (Object object : activity.getIdentifierOrNameOrLocation()) {
-			if (object instanceof IdentifierType) 
-				processIdentifier(node, (IdentifierType) object);
-			else if (object instanceof NameType)
-				processNameWork(node, (NameType) object);
-			else if (object instanceof RelatedObjectType) 
-				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
-			else if (object instanceof RelatedInfoType) 
-				processRelatedInfo(graph, node, (RelatedInfoType) object);
-			else if (object instanceof DatesType) 
-				processDates(node, GraphUtils.PROPERTY_AWARDED_DATE, GRANT_DATES, (DatesType) object);
+	private boolean processGrant(final Grant grant, final Graph graph, boolean deleted) {
+		++existingRecords;
+		
+		if (verbose) 
+			System.out.println("Processing Grant");
+		
+		String key = grant.getKey();
+		if (StringUtils.isEmpty(key)) {
+			return false;
+		}	
+		
+		if (verbose) 
+			System.out.println("Key: " + key);
+		
+		String source = grant.getSource();
+		if (StringUtils.isEmpty(source)) 
+			source = this.source;
+		
+		GraphNode node = new GraphNode()
+				.withKey(new GraphKey(source, key))
+				.withSource(source)
+				.withType(GraphUtils.TYPE_GRANT);
+		
+		if (deleted) {
+			graph.addNode(node.withDeleted(true));
+			
+			++deletedRecords;
+			
+			return true;
 		}
+		
+		String localId = grant.getLocalId();
+		if (!StringUtils.isEmpty(localId)) 
+			node.setProperty(GraphUtils.PROPERTY_LOCAL_ID, localId);
+		
+		XMLGregorianCalendar lastUpdated = grant.getLastUpdated();
+		if (null != lastUpdated) {
+			String lastUpdatedString = formatter.format(lastUpdated.toGregorianCalendar().getTime());
+			if (!StringUtils.isEmpty(lastUpdatedString)) 
+				node.setProperty(GraphUtils.PROPERTY_LAST_UPDATED, lastUpdatedString);
+		}
+		
+		String url = GraphUtils.extractFormalizedUrl(grant.getUrl());
+		if (!StringUtils.isEmpty(url)) 
+			node.setProperty(GraphUtils.PROPERTY_URL, url);
+		
+		String title = grant.getTitle();
+		if (!StringUtils.isEmpty(title)) 
+			node.setProperty(GraphUtils.PROPERTY_TITLE, title);
+		
+		String purl = GraphUtils.extractFormalizedUrl(grant.getPurl());
+		if (!StringUtils.isEmpty(purl)) 
+			node.setProperty(GraphUtils.PROPERTY_PURL, purl);
+		
+		String participantList = grant.getParticipantList();
+		if (!StringUtils.isEmpty(participantList)) {
+			String[] participants = participantList.trim().split("\\s*,\\s*");
+			if (participants.length > 0)
+				node.setProperty(GraphUtils.PROPERTY_PARTICIPANTS, participants);
+		}
+			
+		String funder = GraphUtils.extractFormalizedUrl(grant.getFunder());
+		if (!StringUtils.isEmpty(funder)) 
+			node.setProperty(GraphUtils.PROPERTY_FUNDER, funder);
+		
+		XMLGregorianCalendar startYear = grant.getStartYear();
+		if (null != startYear && startYear.getYear() > 0)
+			node.setProperty(GraphUtils.PROPERTY_START_YEAR, startYear.getYear());
+		
+		XMLGregorianCalendar endYear = grant.getEndYear();
+		if (null != endYear && endYear.getYear() > 0)
+			node.setProperty(GraphUtils.PROPERTY_END_YEAR, endYear.getYear());
 		
 		graph.addNode(node);
 		
 		return true;
 	}
 	
-	private boolean importService(Graph graph, GraphNode node, Service service) {
-		return false; // ignore all
-	}
-	
-	private boolean importParty(Graph graph, GraphNode node, Party party) {
-		String type = party.getType();
-		boolean person = false;
-		if (type.equals(PARTY_TYPE_PERSON) || type.equals(PARTY_TYPE_PUBLISHER)) {
-			node.setType(GraphUtils.TYPE_RESEARCHER);
-			person = true;
-		} else if (type.equals(PARTY_TYPE_GROUP) || type.equals(PARTY_TYPE_ADMINISTRATIVE_POSITION))
-			node.setType(GraphUtils.TYPE_INSTITUTION);
-		else
-			return false;// ignore
-				
-		for (Object object : party.getIdentifierOrNameOrLocation()) {
-			if (object instanceof IdentifierType) 
-				processIdentifier(node, (IdentifierType) object);
-			else if (object instanceof NameType) {
-				if (person)
-					processNameParty(node, (NameType) object);
-				else
-					processNameInstitution(node, (NameType) object);
-			} else if (object instanceof RelatedObjectType) 
-				processRelatedObject(graph, node.getKey(), (RelatedObjectType) object);
-			else if (object instanceof RelatedInfoType) 
-				processRelatedInfo(graph, node, (RelatedInfoType) object);
-
+	private boolean processDataset(final Dataset dataset, final Graph graph, boolean deleted) {
+		++existingRecords;
+		
+		if (verbose) 
+			System.out.println("Processing Dataset");
+		
+		String key = dataset.getKey();
+		if (StringUtils.isEmpty(key)) {
+			return false;
+		}	
+		
+		if (verbose) 
+			System.out.println("Key: " + key);
+		
+		String source = dataset.getSource();
+		if (StringUtils.isEmpty(source)) 
+			source = this.source;
+		
+		GraphNode node = new GraphNode()
+				.withKey(new GraphKey(source, key))
+				.withSource(source)
+				.withType(GraphUtils.TYPE_DATASET);
+		
+		if (deleted) {
+			graph.addNode(node.withDeleted(true));
+			
+			++deletedRecords;
+			
+			return true;
 		}
+		
+		String localId = dataset.getLocalId();
+		if (!StringUtils.isEmpty(localId)) 
+			node.setProperty(GraphUtils.PROPERTY_LOCAL_ID, localId);
+		
+		XMLGregorianCalendar lastUpdated = dataset.getLastUpdated();
+		if (null != lastUpdated) {
+			String lastUpdatedString = formatter.format(lastUpdated.toGregorianCalendar().getTime());
+			if (!StringUtils.isEmpty(lastUpdatedString)) 
+				node.setProperty(GraphUtils.PROPERTY_LAST_UPDATED, lastUpdatedString);
+		}
+		
+		String url = GraphUtils.extractFormalizedUrl(dataset.getUrl());
+		if (!StringUtils.isEmpty(url)) 
+			node.setProperty(GraphUtils.PROPERTY_URL, url);
+		
+		String title = dataset.getTitle();
+		if (!StringUtils.isEmpty(title)) 
+			node.setProperty(GraphUtils.PROPERTY_TITLE, title);
+		
+		String doi = GraphUtils.extractDoi(dataset.getDoi());
+		if (!StringUtils.isEmpty(doi)) 
+			node.setProperty(GraphUtils.PROPERTY_DOI, doi);
+		
+		XMLGregorianCalendar publicationYear = dataset.getPublicationYear();
+		if (null != publicationYear && publicationYear.getYear() > 0)
+			node.setProperty(GraphUtils.PROPERTY_PUBLICATION_YEAR, publicationYear.getYear());
+		
+		String license = GraphUtils.extractFormalizedUrl(dataset.getLicense());
+		if (!StringUtils.isEmpty(license)) 
+			node.setProperty(GraphUtils.PROPERTY_LICENSE, license);
+		
+		BigDecimal megabyte = dataset.getMegabyte();
+		if (null != megabyte)
+			node.setProperty(GraphUtils.PROPERTY_MEGABYTE, megabyte.toString());
 		
 		graph.addNode(node);
 		
 		return true;
 	}
 	
-	private void processIdentifier(GraphNode node, IdentifierType identifier) {
-		String type = identifier.getType();
-		String key = identifier.getValue();
-		if (null != type) {
-			if (type.equals(IDENTIFICATOR_NLA)) {
-				type = GraphUtils.PROPERTY_NLA;
-				key = GraphUtils.extractFormalizedUrl(key);
-			} else if (type.equals(IDENTIFICATOR_LOCAL))
-				type = GraphUtils.PROPERTY_LOCAL_ID;
-			else if (type.equals(IDENTIFICATOR_ARC))
-				type = GraphUtils.PROPERTY_ARC_ID;
-			else if (type.equals(IDENTIFICATOR_NHMRC))
-				type = GraphUtils.PROPERTY_NHMRC_ID;
-			else if (type.equals(IDENTIFICATOR_ORCID)) {
-				type = GraphUtils.PROPERTY_ORCID_ID;
-				key = GraphUtils.extractOrcidId(key);
-			}
-			else if (type.equals(IDENTIFICATOR_DOI)) {
-				type = GraphUtils.PROPERTY_DOI;
-				key = GraphUtils.extractDoi(key);
-			}
-			else if (type.equals(IDENTIFICATOR_PURL)) {
-				type = GraphUtils.PROPERTY_PURL;
-				key = GraphUtils.extractFormalizedUrl(key);
-			} else 
-				type = null;			
+	private boolean processPublication(final Publication publication, final Graph graph, boolean deleted) {
+		++existingRecords;
+				
+		if (verbose) 
+			System.out.println("Processing Publication");
+		
+		String key = publication.getKey();
+		if (StringUtils.isEmpty(key)) {
+			return false;
+		}	
+		
+		if (verbose) 
+			System.out.println("Key: " + key);
+		
+		String source = publication.getSource();
+		if (StringUtils.isEmpty(source)) 
+			source = this.source;
+		
+		GraphNode node = new GraphNode()
+				.withKey(new GraphKey(source, key))
+				.withSource(source)
+				.withType(GraphUtils.TYPE_PUBLICATION);
+		
+		if (deleted) {
+			graph.addNode(node.withDeleted(true));
+			
+			++deletedRecords;
+			
+			return true;
 		}
 		
-		if (null != type && StringUtils.isNotEmpty(key)) 
-			node.addProperty(type, key);
-	}
-	
-	private void processNameParty(GraphNode node, NameType name) {
-		String type = name.getType();
-		if (null != type && type.equals(NAME_PRIMARY)) {
-			String family = null;
-			String given = null;
-			String suffix = null;
-			String title = null;
-			String anyPart = null;
-			
-			for (NameType.NamePart part : name.getNamePart()) {
-				final String nameType = part.getType();
-				if (null != nameType && !nameType.isEmpty()) {
-					if (nameType.equals(NAME_PART_FAMILY)) {
-						family = part.getValue();
-						node.addProperty(GraphUtils.PROPERTY_LAST_NAME, family);
-					} else if (nameType.equals(NAME_PART_GIVEN)) {
-						given = part.getValue();
-						node.addProperty(GraphUtils.PROPERTY_FIRST_NAME, given);
-					} else if (nameType.equals(NAME_PART_SUFFIX)) {
-						suffix = part.getValue();
-						node.addProperty(GraphUtils.PROPERTY_NAME_PREFIX, suffix);
-					} /*else if (nameType.equals(NAME_PART_TITLE)) {
-						title = part.getValue();
-					} * / // uncomment to decode person title, as 'Assistant Professor'
-				} else if (null == anyPart || anyPart.isEmpty()) {
-					anyPart = part.getValue();
-				}
-					
-			}
-			
-			List<String> nameParts = new ArrayList<String>();
-			if (!StringUtils.isEmpty(suffix))
-				nameParts.add(suffix);
-			if (!StringUtils.isEmpty(given))
-				nameParts.add(given);
-			if (!StringUtils.isEmpty(family))
-				nameParts.add(family);
-			
-			// if we have some name parts with a type, 
-			// combine them together and use as a title for the node.
-			// If we don't find any parts with a type, 
-			// use the first name part if one is presented.
-			if (!nameParts.isEmpty()) 
-				node.addProperty(GraphUtils.PROPERTY_TITLE, StringUtils.join(nameParts, ' '));
-			else if (!StringUtils.isEmpty(anyPart))
-				node.addProperty(GraphUtils.PROPERTY_TITLE, anyPart);
-			
-		/*
-			
-			String fullName = sb.toString();
-			if (!fullName.isEmpty())
-				node.addProperty(GraphUtils.PROPERTY_TITLE, fullName);* /
-		}
-	}
-	
-	private void processNameWork(GraphNode node, NameType name) {
-		String type = name.getType();
-		if (null != type && type.equals(NAME_PRIMARY)) {
-			String title = null;
-			
-			for (NameType.NamePart part : name.getNamePart()) {
-				final String nameType = part.getType();
-				if (null == title || null != nameType && nameType.equals(NAME_PART_TITLE)) {
-					title = part.getValue();
-				}				
-			}
-			
-			if (!StringUtils.isEmpty(title))
-				node.addProperty(GraphUtils.PROPERTY_TITLE, title);
-		}
-	}
-	
-	private void processNameInstitution(GraphNode node, NameType name) {
-		String type = name.getType();
-		if (null != type && type.equals(NAME_PRIMARY)) {
-			String title = null;
-			
-			for (NameType.NamePart part : name.getNamePart()) {
-				if (null == title) {
-					title = part.getValue();
-				}				
-			}
-			
-			if (!StringUtils.isEmpty(title))
-				node.addProperty(GraphUtils.PROPERTY_TITLE, title);
-		}
-	}
-	
-	private void processRelatedObject(Graph graph, GraphKey from, RelatedObjectType relatedObject) {
-		for (RelationType relType : relatedObject.getRelation()) {
-			String key = relatedObject.getKey();
-			String type = relType.getType();
-			if (null != key && !key.isEmpty() && null != type && !type.isEmpty()) { 
-				GraphRelationship relationship = new GraphRelationship()
-					.withRelationship(type)
-					.withStart(from)
-					.withEnd(new GraphKey(from.getIndex(), key));
-				
-				graph.addRelationship(relationship);
-			}
-		}
-	}
-	
-
-	private void processRelatedInfo(Graph graph, GraphNode node, RelatedInfoType relatedInfo) {
-		String recordType, infoType = relatedInfo.getType();
-		if (RELATED_INFO_TYPE_ACTIVITY.equals(infoType))
-			recordType = GraphUtils.TYPE_GRANT;
-		else if (RELATED_INFO_TYPE_COLLECTION.equals(infoType))
-			recordType = GraphUtils.TYPE_DATASET;
-		else if (RELATED_INFO_TYPE_PARTY.equals(infoType))
-			recordType = GraphUtils.TYPE_RESEARCHER;
-		else if (RELATED_INFO_TYPE_PUBLICATION.equals(infoType))
-			recordType = GraphUtils.TYPE_PUBLICATION;
-		else
-			recordType = null;
+		String localId = publication.getLocalId();
+		if (!StringUtils.isEmpty(localId)) 
+			node.setProperty(GraphUtils.PROPERTY_LOCAL_ID, localId);
 		
-		if (null != recordType) {
-			List<IdentifierType> identifiers = null;
-			String title = null;
-			String relation = null;
-			
-			for (JAXBElement<?> element : relatedInfo.getIdentifierOrRelationOrTitle()) {
-				if (element.getDeclaredType().equals(IdentifierType.class)) {
-					IdentifierType identifier = (IdentifierType) element.getValue();
-					if (null == identifiers)
-						identifiers = new ArrayList<IdentifierType>();
-					identifiers.add(identifier);
-				} else if (element.getDeclaredType().equals(RelationType.class)) {
-					if (null == relation) 
-						for (Object relationElement : ((RelationType) element.getValue()).getDescriptionOrUrl()) 
-							if (relationElement instanceof JAXBElement<?> && 
-								((JAXBElement<?>)relationElement).getDeclaredType().equals(DescriptionType.class)) { 
-									relation = ((DescriptionType)((JAXBElement<?>)relationElement).getValue()).getValue();
-									break;
-							}							
-				} else if (element.getDeclaredType().equals(String.class)) {
-					if (null == title && RELATED_INFO_TITLE.equals(element.getName().getLocalPart())) 
-						title = (String) element.getValue();
-				}
-			}
-			
-			if (null != identifiers) {
-				if (null == relation)
-					relation = GraphUtils.RELATIONSHIP_RELATED_TO;
-				
-				for (IdentifierType identifier : identifiers) {
-					String identifierType = identifier.getType();
-					if (IDENTIFICATOR_ARC.equals(identifierType)) {
-						GraphRelationship relationship = new GraphRelationship()
-							.withRelationship(relation)
-							.withStart(node.getKey())
-							.withEnd(new GraphKey(node.getKey().getIndex(), "http://purl.org/au-research/grants/arc/" + identifier.getValue()));
-					
-						graph.addRelationship(relationship);
-					} else if (IDENTIFICATOR_NHMRC.equals(identifierType)) {
-						GraphRelationship relationship = new GraphRelationship()
-							.withRelationship(relation)
-							.withStart(node.getKey())
-							.withEnd(new GraphKey(node.getKey().getIndex(), "http://purl.org/au-research/grants/nhmrc/" + identifier.getValue()));
-				
-						graph.addRelationship(relationship);
-					} else if (IDENTIFICATOR_PURL.equals(identifierType)) {
-						GraphRelationship relationship = new GraphRelationship()
-							.withRelationship(relation)
-							.withStart(node.getKey())
-							.withEnd(new GraphKey(node.getKey().getIndex(), identifier.getValue()));
-			
-						graph.addRelationship(relationship);
-					} else if (IDENTIFICATOR_DOI.equals(identifierType)) {
-						String doi = GraphUtils.extractDoi(identifier.getValue());
-						if (null != doi) {
-							String key = GraphUtils.generateDoiUri(doi);
-							GraphNode relatedNode = new GraphNode()
-								.withKey(source, key)
-								.withSource(source)
-								.withType(recordType)
-								.withProperty(GraphUtils.PROPERTY_URL, key)
-								.withProperty(GraphUtils.PROPERTY_DOI, doi)
-								.withProperty(GraphUtils.PROPERTY_TITLE, title);
-								
-							graph.addNode(relatedNode);
-							
-							GraphRelationship relationship = new GraphRelationship()
-								.withRelationship(relation)
-								.withStart(node.getKey())
-								.withEnd(relatedNode.getKey());
-			
-							graph.addRelationship(relationship);
-							
-							node.addProperty(GraphUtils.PROPERTY_REFERENCED_BY, doi);
-						}
-					} else if (IDENTIFICATOR_ORCID.equals(identifierType)) {
-						if (recordType.equals(GraphUtils.TYPE_RESEARCHER)) {
-							String orcid = GraphUtils.extractOrcidId(identifier.getValue());
-							if (null != orcid) {
-								String key = GraphUtils.generateOrcidUri(orcid);
-								GraphNode relatedNode = new GraphNode()
-									.withKey(source, key)
-									.withSource(source)
-									.withType(GraphUtils.TYPE_RESEARCHER)
-									.withProperty(GraphUtils.PROPERTY_URL, key)
-									.withProperty(GraphUtils.PROPERTY_ORCID_ID, orcid)
-									.withProperty(GraphUtils.PROPERTY_TITLE, title);
-									
-								graph.addNode(relatedNode);
-								
-								GraphRelationship relationship = new GraphRelationship()
-									.withRelationship(relation)
-									.withStart(node.getKey())
-									.withEnd(relatedNode.getKey());
-				
-								graph.addRelationship(relationship);
-							}
-						}
-					}
-				}
-			}			
-		}
-		/*			
-		for (RelationType relType : relatedObject.getRelation()) {
-			String key = relatedObject.getKey();
-			String type = relType.getType();
-			if (null != key && !key.isEmpty() && null != type && !type.isEmpty()) { 
-				GraphRelationship relationship = new GraphRelationship()
-					.withRelationship(type)
-					.withStart(from)
-					.withEnd(new GraphKey(from.getIndex(), key));
-				
-				graph.addRelationship(relationship);
-			}
-		}* 
-	}
-	
-	private void processDates(GraphNode node, String propertyName, String[] types, DatesType dates) {
-		List<Date> list = dates.getDate();
-		if (null != list) {
-			String date = null;
-			
-			for (String type : types) 
-				if ((date = extractDate(type, list)) != null)
-					break;
-			
-			if (null != date)
-				node.addProperty(propertyName, date);
-		}
-	}
-	
-	private String extractDate(String type, List<Date> dates) {
-		for (Date date : dates) {
-			if (null == type || type.equals(date.getType()))
-				return date.getValue();
+		XMLGregorianCalendar lastUpdated = publication.getLastUpdated();
+		if (null != lastUpdated) {
+			String lastUpdatedString = formatter.format(lastUpdated.toGregorianCalendar().getTime());
+			if (!StringUtils.isEmpty(lastUpdatedString)) 
+				node.setProperty(GraphUtils.PROPERTY_LAST_UPDATED, lastUpdatedString);
 		}
 		
-		return null;		
-	}	
+		String url = GraphUtils.extractFormalizedUrl(publication.getUrl());
+		if (!StringUtils.isEmpty(url)) 
+			node.setProperty(GraphUtils.PROPERTY_URL, url);
+		
+		String title = publication.getTitle();
+		if (!StringUtils.isEmpty(title)) 
+			node.setProperty(GraphUtils.PROPERTY_TITLE, title);
+		
+		String authorsList = publication.getAuthorsList();
+		if (!StringUtils.isEmpty(authorsList)) {
+			String[] authors = authorsList.trim().split("\\s*,\\s*");
+			if (authors.length > 0)
+				node.setProperty(GraphUtils.PROPERTY_AUTHORS, authors);
+		}
+		
+		String doi = GraphUtils.extractDoi(publication.getDoi());
+		if (!StringUtils.isEmpty(doi)) 
+			node.setProperty(GraphUtils.PROPERTY_DOI, doi);
+		
+		XMLGregorianCalendar publicationYear = publication.getPublicationYear();
+		if (null != publicationYear && publicationYear.getYear() > 0)
+			node.setProperty(GraphUtils.PROPERTY_PUBLICATION_YEAR, publicationYear.getYear());
+		
+		String scopusEid = GraphUtils.extractScopusEID(publication.getScopusEid());
+		if (!StringUtils.isEmpty(scopusEid)) 
+			node.setProperty(GraphUtils.PROPERTY_SCOPUS_EID, scopusEid);
+		
+		graph.addNode(node);
+		
+		return true;
+	}
+	
+	private boolean processRelation(final Relation relation, final Graph graph) {
+		if (verbose) 
+			System.out.println("Processing Publication");
+	
+		String label = relation.getLabel();
+		if (!StringUtils.isEmpty(label)) 
+			label = GraphUtils.RELATIONSHIP_RELATED_TO;
+			
+		String from = relation.getFromKey();
+		if (!StringUtils.isEmpty(from)) {
+			return false;
+		}
+		
+		String to = relation.getToUri();
+		if (!StringUtils.isEmpty(to)) {
+			return false;
+		}
+			
+		GraphRelationship relationship = new GraphRelationship()
+				.withRelationship(label)
+				.withStart(source, from)
+				.withEnd(source, to);
+				
+		graph.addRelationship(relationship);
+		
+		return true;
+	}
 }
-*/
