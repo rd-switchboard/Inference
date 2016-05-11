@@ -8,7 +8,7 @@ Program requires Java 1.7 and Apache Maven 3.0.5. This will program also reuire 
 
 Program has been tested on Ubuntu Linux 14.04 and should work on any other linux as well
 
-#### Build and ussage
+#### Build and usage
 
 To build the program run `mvn package -am` from the `Importers/ANDS/import_ands` project forlder 
 or run `mvn package -pl :import_ands -am` from the main repository folder. Or to build everything,
