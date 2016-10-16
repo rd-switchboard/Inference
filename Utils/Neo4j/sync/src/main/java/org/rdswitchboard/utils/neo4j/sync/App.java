@@ -42,7 +42,6 @@ import org.neo4j.graphdb.factory.GraphDatabaseSettings;
 import org.neo4j.graphdb.schema.ConstraintDefinition;
 import org.neo4j.graphdb.schema.IndexDefinition;
 import org.neo4j.graphdb.schema.Schema;
-import org.neo4j.tooling.GlobalGraphOperations;
 import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
@@ -156,7 +155,7 @@ public class App {
 	        
 	        System.out.println("Connecting to Nexus database");
 	        srcGraphDb = new GraphDatabaseFactory()
-				.newEmbeddedDatabaseBuilder( Neo4jUtils.GetDbPath(sourceDb.toString()).toString() )
+				.newEmbeddedDatabaseBuilder( Neo4jUtils.GetDbPath(sourceDb.toString()) )
 				.loadPropertiesFromFile( Neo4jUtils.GetConfPath(sourceDb.toString()).toString() )
 				.setConfig( GraphDatabaseSettings.read_only, "false" )
 				.newGraphDatabase();
@@ -169,16 +168,14 @@ public class App {
 	       // dstGraphDb = Neo4jUtils.getGraphDb(targetDb.toString());
 	        
 	        dstGraphDb = new GraphDatabaseFactory()
-				.newEmbeddedDatabaseBuilder( Neo4jUtils.GetDbPath(targetDb.toString()).toString() )
+				.newEmbeddedDatabaseBuilder( Neo4jUtils.GetDbPath(targetDb.toString()) )
 				.loadPropertiesFromFile( Neo4jUtils.GetConfPath(targetDb.toString()).toString() )
 				.setConfig( GraphDatabaseSettings.read_only, "false" )
 				.newGraphDatabase();
 
 	        Neo4jUtils.registerShutdownHook( dstGraphDb );
 
-	        System.out.println("Create global operation's driver");
-			GlobalGraphOperations global = Neo4jUtils.getGlobalOperations(dstGraphDb);
-			
+	    	
 			Set<String> types = new HashSet<String>();
 			types.add(GraphUtils.TYPE_DATASET);
 			types.add(GraphUtils.TYPE_GRANT);
@@ -227,7 +224,7 @@ public class App {
 	        	try {
 	        		
 	        		System.out.println("Sync nodes");
-		        	for (Node srcNode : global.getAllNodes()) {
+		        	for (Node srcNode : dstGraphDb.getAllNodes()) {
 		        		
 		        		syncNode(srcNode);
 		        

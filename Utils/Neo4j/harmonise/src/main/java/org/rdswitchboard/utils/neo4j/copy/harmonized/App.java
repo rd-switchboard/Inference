@@ -20,7 +20,6 @@ import org.neo4j.graphdb.ResourceIterable;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.index.Index;
-import org.neo4j.tooling.GlobalGraphOperations;
 import org.rdswitchboard.libraries.configuration.Configuration;
 import org.rdswitchboard.libraries.graph.GraphUtils;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
@@ -60,7 +59,7 @@ public class App {
 	        System.out.println("Connecting to destination database");
 	        dstGraphDb = Neo4jUtils.getGraphDb(dstNeo4j2Folder);
 	        
-	        GlobalGraphOperations global = Neo4jUtils.getGlobalOperations(srcGraphDb);
+	       // GlobalGraphOperations global = Neo4jUtils.getGlobalOperations(srcGraphDb);
 	        
 	        long nodeCounter = 0;
 	        long relCounter = 0;
@@ -121,7 +120,7 @@ public class App {
 	        	long chunkCnt = 0;
 	        	Transaction tx = dstGraphDb.beginTx();
 	        	try {
-		        	ResourceIterable<Node> srcNodes = global.getAllNodes();
+		        	ResourceIterable<Node> srcNodes = srcGraphDb.getAllNodes();
 		        	for (Node srcNode : srcNodes) {
 		        		if (exportNode(srcNode, null))
 		        			++chunkSize;
@@ -152,7 +151,7 @@ public class App {
 	        	chunkCnt = 0;
 	        	tx = dstGraphDb.beginTx();
 	        	try {
-		        	ResourceIterable<Node> srcNodes = global.getAllNodes();
+		        	ResourceIterable<Node> srcNodes = srcGraphDb.getAllNodes();
 		        	for (Node srcNode : srcNodes) {
 		        		chunkSize += exportRelationships(srcNode);
 		        

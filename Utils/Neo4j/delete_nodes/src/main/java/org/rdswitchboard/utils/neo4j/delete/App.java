@@ -12,7 +12,6 @@ import org.neo4j.graphdb.Relationship;
 import org.neo4j.graphdb.ResourceIterable;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
-import org.neo4j.tooling.GlobalGraphOperations;
 import org.rdswitchboard.libraries.neo4j.Neo4jUtils;
 
 public class App {
@@ -87,8 +86,8 @@ public class App {
 		
 		try (Transaction ignored = graphDb.beginTx()) {
 
-			GlobalGraphOperations global = Neo4jUtils.getGlobalOperations(graphDb);
-			ResourceIterable<Node> nodes = global.getAllNodes();
+		//	GlobalGraphOperations global = Neo4jUtils.getGlobalOperations(graphDb);
+			ResourceIterable<Node> nodes = graphDb.getAllNodes();
 			for (Node node : nodes) 
 				if (!node.hasRelationship()) 
 					nodeIds.add(node.getId());

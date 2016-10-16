@@ -8,7 +8,6 @@ import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.neo4j.graphdb.Direction;
-import org.neo4j.graphdb.DynamicLabel;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
@@ -20,7 +19,6 @@ import org.neo4j.graphdb.index.Index;
 import org.neo4j.graphdb.schema.ConstraintDefinition;
 import org.neo4j.graphdb.schema.IndexDefinition;
 import org.neo4j.graphdb.schema.Schema;
-import org.neo4j.tooling.GlobalGraphOperations;
 
 /**
  * Neo4jUtils class
@@ -31,9 +29,9 @@ import org.neo4j.tooling.GlobalGraphOperations;
  */
 
 public class Neo4jUtils {
-	public static final String NEO4J_CONF = "/conf/neo4j.properties";
-	public static final String NEO4J_DB = "/data/graph.db";
-	
+	private static final String NEO4J_CONF = "/conf/neo4j.conf";
+	private static final String NEO4J_DB = "/data/databases/graph.db";
+
 	public static File GetDbPath(final String folder) throws Neo4jException, IOException
 	{
 		File db = new File(folder, NEO4J_DB);
@@ -61,7 +59,7 @@ public class Neo4jUtils {
 		
 		try {
 			GraphDatabaseService graphDb = new GraphDatabaseFactory()
-				.newEmbeddedDatabaseBuilder( GetDbPath(graphDbPath).toString() )
+				.newEmbeddedDatabaseBuilder( GetDbPath(graphDbPath) )
 				.loadPropertiesFromFile( GetConfPath(graphDbPath).toString() )
 				.setConfig( GraphDatabaseSettings.read_only, "true" )
 				.newGraphDatabase();
@@ -80,7 +78,7 @@ public class Neo4jUtils {
 		
 		try {
 			GraphDatabaseService graphDb = new GraphDatabaseFactory()
-				.newEmbeddedDatabaseBuilder( GetDbPath(graphDbPath).toString() )
+				.newEmbeddedDatabaseBuilder( GetDbPath(graphDbPath) )
 				.loadPropertiesFromFile( GetConfPath(graphDbPath).toString() )
 				.newGraphDatabase();
 		
@@ -126,12 +124,7 @@ public class Neo4jUtils {
 	@Deprecated
 	public static ConstraintDefinition createConstrant(final GraphDatabaseService graphDb, 
 			final String label, final String key) {
-		return createConstrant(graphDb, DynamicLabel.label(label), key);
-	}
-	
-	@Deprecated
-	public static GlobalGraphOperations getGlobalOperations(final GraphDatabaseService graphDb) {
-		return GlobalGraphOperations.at(graphDb);
+		return createConstrant(graphDb, Label.label(label), key);
 	}
 	
 	@Deprecated
@@ -153,7 +146,7 @@ public class Neo4jUtils {
 	@Deprecated
 	public static IndexDefinition createIndex(final GraphDatabaseService graphDb, 
 			final String label, final String key) {
-		return createIndex(graphDb, DynamicLabel.label(label), key);
+		return createIndex(graphDb, Label.label(label), key);
 	}
 	
 	@Deprecated

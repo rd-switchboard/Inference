@@ -11,8 +11,6 @@ import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
 import org.neo4j.graphdb.Direction;
-import org.neo4j.graphdb.DynamicLabel;
-import org.neo4j.graphdb.DynamicRelationshipType;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
@@ -22,13 +20,11 @@ import org.neo4j.graphdb.ResourceIterable;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
-import org.neo4j.graphdb.index.AutoIndexer;
 import org.neo4j.graphdb.index.Index;
 import org.neo4j.graphdb.index.ReadableIndex;
 import org.neo4j.graphdb.schema.ConstraintDefinition;
 import org.neo4j.graphdb.schema.IndexDefinition;
 import org.neo4j.graphdb.schema.Schema;
-import org.neo4j.tooling.GlobalGraphOperations;
 import org.rdswitchboard.libraries.graph.Graph;
 import org.rdswitchboard.libraries.graph.GraphKey;
 import org.rdswitchboard.libraries.graph.GraphNode;
@@ -43,7 +39,7 @@ public class Neo4jDatabase implements GraphImporter {
 	private GraphDatabaseService graphDb;
 	
 	private Map<String, Index<Node>> indexes = new HashMap<String, Index<Node>>();
-	private AutoIndexer<Node> nodeAutoIndexer = null;
+//	private AutoIndexer<Node> nodeAutoIndexer = null;
 	
 	private boolean verbose = false;
 	private long nodesCreated = 0;
@@ -69,10 +65,6 @@ public class Neo4jDatabase implements GraphImporter {
 		return graphDb;
 	}
 		
-	public GlobalGraphOperations getGlobalOperations() {
-		return GlobalGraphOperations.at(graphDb);
-	}
-	
 	/*public static ExecutionEngine getExecutionEngine( final GraphDatabaseService graphDb ) {
 		return new ExecutionEngine(graphDb, StringLogger.SYSTEM);
 	}*/
@@ -130,7 +122,7 @@ public class Neo4jDatabase implements GraphImporter {
 	public void enumrateAllNodes(ProcessNode processNode) throws Exception {
 		try ( Transaction tx = graphDb.beginTx() ) 
 		{
-			ResourceIterable<Node> nodes = getGlobalOperations().getAllNodes();
+			ResourceIterable<Node> nodes = graphDb.getAllNodes();
 			for (Node node : nodes) {
 				if (!processNode.processNode(node))
 					break;
@@ -158,7 +150,7 @@ public class Neo4jDatabase implements GraphImporter {
 	}
 	
 	public void enumrateAllNodesWithLabel(String label, ProcessNode processNode) throws Exception {
-		enumrateAllNodesWithLabel(DynamicLabel.label(label), processNode);
+		enumrateAllNodesWithLabel(Label.label(label), processNode);
 	}
 	
 	public void enumrateAllNodesWithProperty(String property, ProcessNode processNode) throws Exception {
@@ -213,7 +205,7 @@ public class Neo4jDatabase implements GraphImporter {
 	}	
 	
 	public ConstraintDefinition createConstrant(String label, String key) {
-		return createConstrant(DynamicLabel.label(label), key);
+		return createConstrant(Label.label(label), key);
 	}
 	
 	public IndexDefinition createIndex(Label label, String key) {
@@ -230,7 +222,7 @@ public class Neo4jDatabase implements GraphImporter {
 	}
 	
 	public IndexDefinition createIndex(String label, String key) {
-		return createIndex(DynamicLabel.label(label), key);
+		return createIndex(Label.label(label), key);
 	}
 	
 	public Index<Node> getNodeIndex(String label) {
@@ -330,7 +322,7 @@ public class Neo4jDatabase implements GraphImporter {
 	}
 	
 	public ConstraintDefinition _createConstrant(String label, String key) {
-		return _createConstrant(DynamicLabel.label(label), key);
+		return _createConstrant(Label.label(label), key);
 	}
 	
 	public IndexDefinition _createIndex(Label label, String key) {
@@ -348,7 +340,7 @@ public class Neo4jDatabase implements GraphImporter {
 	}
 	
 	public IndexDefinition _createIndex(String label, String key) {
-		return _createIndex(DynamicLabel.label(label), key);
+		return _createIndex(Label.label(label), key);
 	}
 	
 	public Index<Node> _getNodeIndex(String label) {
@@ -360,19 +352,6 @@ public class Neo4jDatabase implements GraphImporter {
 		return index;
 	}
 	
-	public ReadableIndex<Node> _getNodeAutoIndex(String indexingProperty) {
-		if (null == nodeAutoIndexer)
-			nodeAutoIndexer = graphDb.index().getNodeAutoIndexer();
-		if (null != indexingProperty) {
-			if (verbose)
-				System.out.println("Creating Node Auto Index on Property: " + indexingProperty);
-	        
-			nodeAutoIndexer.startAutoIndexingProperty( indexingProperty );
-			nodeAutoIndexer.setEnabled( true );
-		}
- 
-		return nodeAutoIndexer.getAutoIndex();
-	}
 	
 	public Node _findNode(Index<Node> index, String key, Object value) {
 		 return index.get(key, value).getSingle();
@@ -419,11 +398,11 @@ public class Neo4jDatabase implements GraphImporter {
 	}
 	
 	public ResourceIterator<Node> _findNodes(String label, String key, Object value) {
-		return _findNodes(DynamicLabel.label(label), key, value);
+		return _findNodes(Label.label(label), key, value);
 	}
 
 	public ResourceIterator<Node> _findNodes(GraphKey key) {
-		return _findNodes(DynamicLabel.label(key.getIndex()), key.getKey(), key.getValue());
+		return _findNodes(Label.label(key.getIndex()), key.getKey(), key.getValue());
 	}
 	
 	public Node _findSingleNode(Label label, String key, Object value) {
@@ -436,7 +415,7 @@ public class Neo4jDatabase implements GraphImporter {
 	}
 	
 	public Node _findSingleNode(String label, String key, Object value) {
-		return _findSingleNode(DynamicLabel.label(label), key, value); 		
+		return _findSingleNode(Label.label(label), key, value); 		
 	}
 	
 	public Node _findSingleNode(GraphKey key) {
@@ -456,11 +435,11 @@ public class Neo4jDatabase implements GraphImporter {
 	}
 	
 	private List<Node> _findRelatedNodes(String label, String key, Object value) {
-		return _findRelatedNodes(DynamicLabel.label(label), key, value);
+		return _findRelatedNodes(Label.label(label), key, value);
 	}
 	
 	private List<Node> _findRelatedNodes(GraphKey key) {
-		return _findRelatedNodes(DynamicLabel.label(key.getIndex()), key.getKey(), key.getValue());
+		return _findRelatedNodes(Label.label(key.getIndex()), key.getKey(), key.getValue());
 	}
 	
 	public Relationship _findRelationship(Iterable<Relationship> rels, long nodeId, Direction direction) {
@@ -504,12 +483,12 @@ public class Neo4jDatabase implements GraphImporter {
 	}
 
 	public void _addLabel(Node node, String label) {
-		node.addLabel( DynamicLabel.label( label ) );
+		node.addLabel( Label.label( label ) );
 	}
 
 	public void _addLabels(Node node, String[] labels) {
 		for (String label : labels)
-			node.addLabel( DynamicLabel.label( label ) );
+			node.addLabel( Label.label( label ) );
 	}
 	
 	public void _setProperties(Node node, Map<String, Object> properties) {
@@ -905,7 +884,7 @@ public class Neo4jDatabase implements GraphImporter {
 		if (verbose) 
 			System.out.println("Importing Relationship (" + start + ")-[" + relationshipName + "]->(" + end + ")");
 		
-		RelationshipType relationshipType = DynamicRelationshipType.withName(relationshipName);
+		RelationshipType relationshipType = RelationshipType.withName(relationshipName);
 		for (Node nodeStart : nodesStart)
 			for (Node nodeEnd : nodesEnd)
 				_mergeRelationship(nodeStart, nodeEnd, relationshipType, 
