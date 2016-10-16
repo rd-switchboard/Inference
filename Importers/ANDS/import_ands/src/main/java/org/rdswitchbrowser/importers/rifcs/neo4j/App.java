@@ -121,7 +121,7 @@ public class App {
 	
 	private static void processS3Files(String bucket, String prefix, String neo4jFolder, 
 			String versionFolder, String source, CrosswalkRifCs.XmlType type, Templates template) throws Exception {
-        AmazonS3 s3client = new AmazonS3Client(new InstanceProfileCredentialsProvider());
+        AmazonS3 s3client = new AmazonS3Client(InstanceProfileCredentialsProvider.getInstance());
         
         CrosswalkRifCs crosswalk = new CrosswalkRifCs();
         crosswalk.setSource(source);
