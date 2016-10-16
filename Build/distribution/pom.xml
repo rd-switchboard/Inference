@@ -4,13 +4,13 @@
   <parent>
     <groupId>org.rdswitchboard</groupId>
     <artifactId>inference</artifactId>
-    <version>1.4.0</version>
+    <version>1.5</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
   <groupId>org.rdswitchboard.inference</groupId>
   <artifactId>distribution</artifactId>
   <packaging>pom</packaging>
-  <version>1.4.0</version>
+  <version>1.5</version>
   <name>Inference Distribution</name>
 
   <build>

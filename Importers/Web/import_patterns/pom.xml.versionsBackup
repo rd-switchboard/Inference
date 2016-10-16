@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.rdswitchboard</groupId>
+  	<artifactId>inference</artifactId>
+  	<version>1.4.0</version>
+  	<relativePath>../../../pom.xml</relativePath>
+  </parent>
+  <groupId>org.rdswitchboard.importers</groupId>
+  <artifactId>import_patterns</artifactId>
+  <name>Import Web Patterns</name>
+     
+  <properties>
+    <main.class>org.rdswitchboard.importers.patterns.App</main.class>
+  </properties>
+  
+  <build>
+	<plugins>
+	  	  
+	  <plugin>
+  	    <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+	      <archive>
+		    <manifest>
+		      <addClasspath>true</addClasspath>
+		      <mainClass>${main.class}</mainClass>
+		      <classpathPrefix>${class.path}</classpathPrefix>
+		    </manifest>
+	      </archive>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+		  <execution>
+	        <id>copy-dependencies</id>
+			<phase>package</phase>
+			<goals>
+			  <goal>copy-dependencies</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${project.build.directory}/${class.path}</outputDirectory>
+			</configuration>
+		  </execution>
+		</executions>
+      </plugin>
+ 	</plugins>
+  </build>
+  
+  <dependencies>
+	<dependency>
+	  <groupId>net.sf.opencsv</groupId>
+	  <artifactId>opencsv</artifactId>
+	  <version>${opencsv.version}</version>
+    </dependency>
+    <dependency>
+	  <groupId>commons-io</groupId>
+	  <artifactId>commons-io</artifactId>
+	  <version>${commons.io.version}</version>
+    </dependency>
+    <dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+  	  <artifactId>properties</artifactId>
+  	  <version>1.4.0</version>
+  	</dependency>    
+    <dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+  	  <artifactId>neo4j_utils</artifactId>
+  	  <version>1.4.0</version>
+  	</dependency>
+  	<dependency>
+  	  <groupId>org.rdswitchboard.libraries</groupId>
+  	  <artifactId>graph_utils</artifactId>
+  	  <version>1.4.0</version>
+  	</dependency>
+  </dependencies>
+  
+</project>
