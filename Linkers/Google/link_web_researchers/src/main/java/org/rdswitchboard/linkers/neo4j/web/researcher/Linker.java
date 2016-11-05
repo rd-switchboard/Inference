@@ -277,8 +277,8 @@ public class Linker {
 								/*if (verbose)
 									System.out.println("Testing link: " + link.getLink());*/
 								if (isLinkFollowAPattern(link.getLink())) {
-									if (verbose)
-										System.out.println("Found matching URL: " + link.getLink() + " for grant: " + text);
+								/*	if (verbose)
+										System.out.println("Found matching URL: " + link.getLink() + " for grant: " + text);*/
 								
 									Node nodeResearcher = getOrCreateWebResearcher(link, metadataFolder);
 									for (Long nodeId : nodeIds) 
