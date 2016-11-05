@@ -267,15 +267,15 @@ public class Linker {
 						System.out.println("Searching for a string: " + text);*/
 					Set<Long> nodeIds = nodes.get(text.trim().toLowerCase());
 					if (null != nodeIds) { 
-						if (verbose)
-							System.out.println("Found " + nodeIds.size() + " possible matches");
+					/*	if (verbose)
+							System.out.println("Found " + nodeIds.size() + " possible matches");*/
 
 						for (String l : result.getLinks()) {
 							Link link = (Link) jaxbUnmarshaller.unmarshal(new File(linksFolder, l));
 							if (null != link) {
 								
-								if (verbose)
-									System.out.println("Testing link: " + link.getLink());
+								/*if (verbose)
+									System.out.println("Testing link: " + link.getLink());*/
 								if (isLinkFollowAPattern(link.getLink())) {
 									if (verbose)
 										System.out.println("Found matching URL: " + link.getLink() + " for grant: " + text);
