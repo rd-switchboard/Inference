@@ -252,6 +252,9 @@ public class Linker {
 		File cacheFolder = GoogleUtils.getResultFolder(googleCache);
 		File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
 		File[] files = cacheFolder.listFiles();
+		int totalFiles = files.length;
+		int processedFiles = 0;
+		long started = System.currentTimeMillis();
 		for (File file : files) 
 			if (!file.isDirectory()) {
 				/*if (verbose)
@@ -260,8 +263,8 @@ public class Linker {
 				Result result = (Result) jaxbUnmarshaller.unmarshal(file);
 				if (result != null) {
 					String text = result.getText();
-					if (verbose)
-						System.out.println("Searching for a string: " + text);
+				/*	if (verbose)
+						System.out.println("Searching for a string: " + text);*/
 					Set<Long> nodeIds = nodes.get(text.trim().toLowerCase());
 					if (null != nodeIds) { 
 						if (verbose)
@@ -285,6 +288,12 @@ public class Linker {
 							}
 						}
 					}
+				
+					double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
+					if (verbose)
+						System.out.println("L F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
+				
+					
 				} else
 					throw new Exception("Unable to parse a file: " + file.toString());
 			}
@@ -310,6 +319,9 @@ public class Linker {
 			File linksFolder = GoogleUtils.getLinkFolder(googleCache);
 			File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
 			File[] files = linksFolder.listFiles();
+			int totalFiles = files.length;
+			int processedFiles = 0;
+			long started = System.currentTimeMillis();
 			for (File file : files) 
 				if (!file.isDirectory()) {
 					/*if (verbose)
@@ -317,9 +329,9 @@ public class Linker {
 					
 					Link link = (Link) jaxbUnmarshaller.unmarshal(file);
 					if (link != null && isLinkFollowAPattern(link.getLink())) {
-						if (verbose)
-							System.out.println("Testing link: " + link.getLink());
-							
+						/*if (verbose)
+							System.out.println("Testing link: " + link.getLink());*/
+						
 						MatcherSimple matcher = new MatcherSimple(googleCache, link, nodes);
 
 						semaphore.acquire(); 
@@ -328,7 +340,14 @@ public class Linker {
 						for (MatcherThread thread : threads) 
 							if (thread.isFree()) {
 								
-								counter += processResult(thread.getResult(), metadataFolder);
+								MatcherResult result = thread.getResult();
+								if (null != result) {
+									double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
+									if (verbose)
+										System.out.println("SS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
+									
+								}
+								counter += processResult(result, metadataFolder);
 								if (counter >= 1000) {
 									tx.success();
 									tx.close();
@@ -346,13 +365,22 @@ public class Linker {
 						
 						if (!matcherAssigned)
 							throw new MatcherThreadException("All matcher threads are busy");
+					} else {
+						++processedFiles;
 					}
 				}
 			
 			for (MatcherThread thread : threads) {
 				thread.finishCurrentAndExit();
 				
-				processResult(thread.getResult(), metadataFolder);
+				MatcherResult result = thread.getResult();
+				if (null != result) {
+					double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
+					if (verbose)
+						System.out.println("SS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
+					
+				}
+				processResult(result, metadataFolder);
 				
 				thread.join();
 			}
@@ -383,6 +411,9 @@ public class Linker {
 			File linksFolder = GoogleUtils.getLinkFolder(googleCache);
 			File metadataFolder = GoogleUtils.getMetadataFolder(googleCache);
 			File[] files = linksFolder.listFiles();
+			int totalFiles = files.length;
+			int processedFiles = 0;
+			long started = System.currentTimeMillis();
 			for (File file : files) 
 				if (!file.isDirectory()) {
 					/*if (verbose)
@@ -390,8 +421,8 @@ public class Linker {
 					
 					Link link = (Link) jaxbUnmarshaller.unmarshal(file);
 					if (link != null && isLinkFollowAPattern(link.getLink())) {
-						if (verbose)
-							System.out.println("Testing link: " + link.getLink());
+					/*	if (verbose)
+							System.out.println("Testing link: " + link.getLink());*/
 							
 						Matcher matcher = new MatcherFuzzy(googleCache, link, nodes);
 
@@ -400,7 +431,15 @@ public class Linker {
 						boolean matcherAssigned = false;
 						for (MatcherThread thread : threads) 
 							if (thread.isFree()) {
-								counter += processResult(thread.getResult(), metadataFolder); 
+								MatcherResult result = thread.getResult();
+								if (null != result) {
+									double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
+									if (verbose)
+										System.out.println("FS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
+									
+								}
+								
+								counter += processResult(result, metadataFolder); 
 								if (counter >= 1000) {
 									tx.success();
 									tx.close();
@@ -418,10 +457,20 @@ public class Linker {
 						
 						if (!matcherAssigned)
 							throw new MatcherThreadException("All matcher threads are busy");
+					} else {
+						++processedFiles;
 					}
 				}
 			for (MatcherThread thread : threads) {
-				processResult(thread.getResult(), metadataFolder);
+				MatcherResult result = thread.getResult();
+				if (null != result) {
+					double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
+					if (verbose)
+						System.out.println("FS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
+					
+				}
+				
+				processResult(result, metadataFolder);
 				
 				thread.finishCurrentAndExit();
 				thread.join();
