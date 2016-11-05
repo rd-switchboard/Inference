@@ -198,7 +198,7 @@ public class Linker {
 
         String cypher = "MATCH (n:" + GraphUtils.SOURCE_WEB 
 	    		  + ":" + GraphUtils.TYPE_PATTERN 
-		          + ") WHERE HAS(n." + GraphUtils.PROPERTY_PATTERN 
+		          + ") WHERE EXISTS(n." + GraphUtils.PROPERTY_PATTERN 
 		          + ") RETURN n." + GraphUtils.PROPERTY_PATTERN 
 		          + " AS " + FIELD_PATTERN;
         
@@ -468,7 +468,7 @@ public class Linker {
 	}
 	
 	private String filterHas(String field) {
-		return  "HAS (n." + field + ")";
+		return  "EXISTS(n." + field + ")";
 	}
 	
 	private boolean isLinkFollowAPattern(String link) {
