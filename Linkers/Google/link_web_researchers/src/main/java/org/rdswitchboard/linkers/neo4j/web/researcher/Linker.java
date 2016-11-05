@@ -340,14 +340,7 @@ public class Linker {
 						for (MatcherThread thread : threads) 
 							if (thread.isFree()) {
 								
-								MatcherResult result = thread.getResult();
-								if (null != result) {
-									double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
-									if (verbose)
-										System.out.println("SS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
-									
-								}
-								counter += processResult(result, metadataFolder);
+								counter += processResult(thread.getResult(), metadataFolder);
 								if (counter >= 1000) {
 									tx.success();
 									tx.close();
@@ -365,22 +358,17 @@ public class Linker {
 						
 						if (!matcherAssigned)
 							throw new MatcherThreadException("All matcher threads are busy");
-					} else {
-						++processedFiles;
-					}
+					} 
+					
+					double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
+					if (verbose)
+						System.out.println("SS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
 				}
 			
 			for (MatcherThread thread : threads) {
 				thread.finishCurrentAndExit();
 				
-				MatcherResult result = thread.getResult();
-				if (null != result) {
-					double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
-					if (verbose)
-						System.out.println("SS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
-					
-				}
-				processResult(result, metadataFolder);
+				processResult(thread.getResult(), metadataFolder);
 				
 				thread.join();
 			}
@@ -431,15 +419,7 @@ public class Linker {
 						boolean matcherAssigned = false;
 						for (MatcherThread thread : threads) 
 							if (thread.isFree()) {
-								MatcherResult result = thread.getResult();
-								if (null != result) {
-									double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
-									if (verbose)
-										System.out.println("FS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
-									
-								}
-								
-								counter += processResult(result, metadataFolder); 
+								counter += processResult(thread.getResult(), metadataFolder); 
 								if (counter >= 1000) {
 									tx.success();
 									tx.close();
@@ -457,20 +437,15 @@ public class Linker {
 						
 						if (!matcherAssigned)
 							throw new MatcherThreadException("All matcher threads are busy");
-					} else {
-						++processedFiles;
-					}
-				}
-			for (MatcherThread thread : threads) {
-				MatcherResult result = thread.getResult();
-				if (null != result) {
+					} 
+					
 					double averageTime = (double)(System.currentTimeMillis() - started) / (double) ++processedFiles;
 					if (verbose)
 						System.out.println("FS F: " + processedFiles + " / " + totalFiles + ". AT: " + averageTime + " ms. ET: " +  averageTime * (double) totalFiles / 60000.0 + " min.");
-					
+
 				}
-				
-				processResult(result, metadataFolder);
+			for (MatcherThread thread : threads) {
+				processResult(thread.getResult(), metadataFolder);
 				
 				thread.finishCurrentAndExit();
 				thread.join();
