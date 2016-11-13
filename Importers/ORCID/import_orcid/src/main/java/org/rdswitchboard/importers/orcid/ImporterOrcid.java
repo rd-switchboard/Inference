@@ -214,7 +214,9 @@ public class ImporterOrcid {
 							processOrcidWork(graph, key, work);
 				}
 			}
-		}	
+		} else {
+			System.out.println("Warning. The file does not have proper url");
+		}
 	}
 	
 	private void processOrcidWork(Graph graph, String researcherKey, OrcidWork work) throws Exception {
