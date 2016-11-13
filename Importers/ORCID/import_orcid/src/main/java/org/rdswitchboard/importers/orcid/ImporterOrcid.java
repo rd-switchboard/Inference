@@ -44,84 +44,17 @@ import org.rdswitchboard.libraries.orcid.WorkTitle;
  *
  */
 public class ImporterOrcid {
-	/*private static final String LABEL_ORCID = "Orcid";
-	private static final String LABEL_RESEARCHER = "Researcher";
-	private static final String LABEL_IDENTIFICATOR = "Identificator";
-	private static final String LABEL_PAGE = "Page";
-	private static final String LABEL_WORK = "Work";
-//	private static final String LABEL_CONTRIBUTOR = "Contributor";
-	private static final String LABEL_ORCID_RESEARCHER = LABEL_ORCID + "_" + LABEL_RESEARCHER;
-	private static final String LABEL_ORCID_IDENTIFICATOR = LABEL_ORCID + "_" + LABEL_IDENTIFICATOR;
-	private static final String LABEL_ORCID_PAGE = LABEL_ORCID + "_" + LABEL_PAGE;
-	private static final String LABEL_ORCID_WORK = LABEL_ORCID + "_" + LABEL_WORK;
-//	private static final String LABEL_ORCID_CONTRIBUTOR = LABEL_ORCID + "_" + LABEL_CONTRIBUTOR;
-
-	private static final String RELATIONSHIP_IDENTIFIED_BY = "identifiedBy";
-	private static final String RELATIONSHIP_LINKED_TO = "linkedTo";
-	private static final String RELATIONSHIP_AUTHOR = "author";
-	private static final String RELATIONSHIP_CONTRIBUTOR = "contributor";
-	
-	private static final String PROPERTY_KEY = "key"; 
-	private static final String PROPERTY_NODE_SOURCE = "node_source";
-	private static final String PROPERTY_NODE_TYPE = "node_type";
-	private static final String PROPERTY_ORCID_ID = "orcid_id"; 
-	private static final String PROPERTY_ORCID_TYPE = "orcid_type"; 
-	private static final String PROPERTY_ORCID_SOURCE = "orcid_source";
-	private static final String PROPERTY_FAMILY_NAME = "family_name";
-	private static final String PROPERTY_GYVEN_NAMES = "gyven_names";
-	private static final String PROPERTY_FULL_NAME = "full_name";
-	private static final String PROPERTY_CREADIT_NAME = "creadit_name";
-	private static final String PROPERTY_OTHER_NAMES = "other_names";
-	private static final String PROPERTY_BIOGRAPHY = "biography";
-	private static final String PROPERTY_SCOPUS_ID = "scopus_id";
-	private static final String PROPERTY_URL = "url";
-	private static final String PROPERTY_NAME = "name";
-	private static final String PROPERTY_REFERENCE = "reference";
-	private static final String PROPERTY_JOURNAL_TITLE = "jounral_title";
-	private static final String PROPERTY_TITLE = "title";
-	private static final String PROPERTY_SUBTITLE = "subtitle";
-	private static final String PROPERTY_TRANSLATED_TITLE = "translated_title";
-	private static final String PROPERTY_PUBLICATION_DATE = "publication_date";
-	private static final String PROPERTY_CITATION = "citation";
-	private static final String PROPERTY_IDENTIFIER = "identifier";
-	private static final String PROPERTY_DESCRIPTION = "description";
-	private static final String PROPERTY_SEQUINCE = "sequince";
-	private static final String PROPERTY_ROLE = "role";
-	private static final String PROPERTY_CONTRIBUTORS = "contributors";
-*/		
 	private static final String NAME_SCOPUS_AUTHOR_ID = "Scopus Author ID";
 	
 	private static final String IDENTIFICATOR_DOI = "DOI";
 	private static final String IDENTIFICATOR_ISBN = "ISBN";
 	private static final String IDENTIFICATOR_ISSN = "ISSN";
 		
-/*	private RestAPI graphDb;
-	private RestCypherQueryEngine engine;
-	private RestIndex<Node> indexOrcidResearcher;
-	private RestIndex<Node> indexOrcidIdentificator;
-	private RestIndex<Node> indexOrcidPage;
-	private RestIndex<Node> indexOrcidWork;*/
-	//private RestIndex<Node> indexOrcidContributor;
-	
-	/*private Label labelOrcid = DynamicLabel.label(LABEL_ORCID);
-	private Label labelResearcher = DynamicLabel.label(LABEL_RESEARCHER);
-	private Label labelIdentificator = DynamicLabel.label(LABEL_IDENTIFICATOR);
-	private Label labelPage = DynamicLabel.label(LABEL_PAGE);
-	private Label labelWork = DynamicLabel.label(LABEL_WORK);*/
-	//private Label labelContributor = DynamicLabel.label(LABEL_CONTRIBUTOR);
-		
-/*	private RelationshipType relIdentifiedBy = DynamicRelationshipType.withName(RELATIONSHIP_IDENTIFIED_BY);
-	private RelationshipType relLinkedTo = DynamicRelationshipType.withName(RELATIONSHIP_LINKED_TO);
-	private RelationshipType relAuthor = DynamicRelationshipType.withName(RELATIONSHIP_AUTHOR);
-	private RelationshipType relContributor = DynamicRelationshipType.withName(RELATIONSHIP_CONTRIBUTOR);
-*/	
 	private Orcid orcid = new Orcid();
 	private Neo4jDatabase importer;
 	
 	private boolean verbose;
-	
-//	private List<ContributorData> contributos = new ArrayList<ContributorData>();
-	
+		
 	public static void GetTestRecord(String orcidId) {
 		Orcid orcid = new Orcid();
 		
@@ -146,21 +79,6 @@ public class ImporterOrcid {
 	 */
 	public ImporterOrcid(final String neo4jUrl) throws Exception {
 		importer = new Neo4jDatabase(neo4jUrl);
-		
-		/*graphDb = new RestAPIFacade(neo4jUrl);
-		engine = new RestCypherQueryEngine(graphDb);  
-		
-		engine.query("CREATE CONSTRAINT ON (n:" + LABEL_ORCID_RESEARCHER + ") ASSERT n." + PROPERTY_KEY + " IS UNIQUE", null);
-		engine.query("CREATE CONSTRAINT ON (n:" + LABEL_ORCID_IDENTIFICATOR + ") ASSERT n." + PROPERTY_KEY + " IS UNIQUE", null);
-		engine.query("CREATE CONSTRAINT ON (n:" + LABEL_ORCID_PAGE + ") ASSERT n." + PROPERTY_KEY + " IS UNIQUE", null);
-		engine.query("CREATE CONSTRAINT ON (n:" + LABEL_ORCID_WORK + ") ASSERT n." + PROPERTY_KEY + " IS UNIQUE", null);
-	//	engine.query("CREATE CONSTRAINT ON (n:" + LABEL_ORCID_CONTRIBUTOR + ") ASSERT n." + PROPERTY_KEY + " IS UNIQUE", null);
-				
-		indexOrcidResearcher = graphDb.index().forNodes(LABEL_ORCID_RESEARCHER);
-		indexOrcidIdentificator = graphDb.index().forNodes(LABEL_ORCID_IDENTIFICATOR);
-		indexOrcidPage = graphDb.index().forNodes(LABEL_ORCID_PAGE);
-		indexOrcidWork = graphDb.index().forNodes(LABEL_ORCID_WORK);
-		//indexOrcidContributor = graphDb.index().forNodes(LABEL_ORCID_CONTRIBUTOR);*/
 	}
 	
 	public boolean isVerbose() {
@@ -198,6 +116,7 @@ public class ImporterOrcid {
 		
 		Graph graph = new Graph();
 		int chunks = 0;
+		int fileCounter = 0;
 		
 		File[] files = new File(orcdiFolder).listFiles();
 		for (File file : files) 
@@ -211,27 +130,14 @@ public class ImporterOrcid {
 				
 					graph = new Graph();
 				}
+				
+				if (++fileCounter % 1000 == 0) {
+					System.out.println("Processed : " + fileCounter + " files");
+				}
 			}
 		
 		System.out.println("Import final chunk");
 		importer.importGraph(graph);
-		
-		/*for (ContributorData contributorData : contributos) {
-			RestNode nodeResearcher = findNodeByKey(indexOrcidResearcher, PROPERTY_KEY, contributorData.getResearcherKey());
-			if (null != nodeResearcher) {
-				RestNode nodeWork = graphDb.getNodeById(contributorData.getWorkId());
-				if (null != nodeWork) {
-					Map<String, Object> attr = new HashMap<String, Object>();
-					
-					addProperty(attr, PROPERTY_SEQUINCE, contributorData.getSequince());	
-					addProperty(attr, PROPERTY_ROLE, contributorData.getRole());
-					addProperty(attr, PROPERTY_NAME, contributorData.getName());
-						
-					createUniqueRelationship(nodeResearcher, nodeWork, 
-							relContributor, Direction.OUTGOING, attr);
-				}				
-			}
-		}*/
 	} 
 		
 	private void importRecord(File file, Graph graph) throws Exception {
@@ -278,15 +184,7 @@ public class ImporterOrcid {
 						
 					fullName = fullName.trim();
 					node.setProperty(GraphUtils.PROPERTY_TITLE, fullName);
-					
-					/*OtherNames otherNames = personalDetails.getOtherNames();
-					if (null != otherNames && null != otherNames.getNames()) 
-						for (String otherName : otherNames.getNames()) 
-							if (null != otherName && !otherName.isEmpty() && !otherName.equals(fullName)) 
-								addProperty(map, PROPERTY_OTHER_NAMES, otherName);*/
 				}
-				
-				//addProperty(map, PROPERTY_BIOGRAPHY, bio.getBiography());
 				
 				// try and extract Scopus ID
 				ExternalIdentifiers externalIdentifiers =  bio.getExternalIdentifiers();
@@ -307,32 +205,6 @@ public class ImporterOrcid {
 	
 				graph.addNode(node);
 				
-				/*OrcidHistory history = profile.getHistory();
-				if (null != history) {
-					Source source = history.getSource();
-					if (null != source) 
-						addProperty(map, PROPERTY_ORCID_SOURCE, source.getName());
-				}*/
-				
-				// Creare Orcid:Researcher
-			//	System.out.println("Creating Orcid:Researcher " + identifier.getUri());
-				
-				// Create Orcid:Identificator
-				/*if (null != externalIdentifiers) {
-					List<ExternalIdentifier> identifiers = externalIdentifiers.getIdentifiers();
-					if (null != identifiers) 
-						for (ExternalIdentifier externalIdentifier : identifiers) 
-							processIdentifier(graph, key, externalIdentifier);
-				}*/	
-				
-				// Create Orcid:Page
-				/*ResearcherUrls researcherUrls =  bio.getResearcherUrls();
-				if (null != researcherUrls) {
-					List<ResearcherUrl> urls = researcherUrls.getUrl();
-					for (ResearcherUrl researcherUrl : urls) 
-						processOrcidPage(graph, key, researcherUrl); 
-				}*/
-				
 				// Create Orcid:Work
 				OrcidActivities activities = profile.getActivities();						
 				if (null != activities) {
@@ -344,56 +216,6 @@ public class ImporterOrcid {
 			}
 		}	
 	}
-	
-	/*private void processIdentifier(Graph grahp, String key, ExternalIdentifier externalIdentifier) {
-		String url = externalIdentifier.getUrl();
-		if (null != url && !url.isEmpty()) {
-			Map<String, Object> map = new HashMap<String, Object>();
-			map.put(PROPERTY_KEY, url);
-			map.put(PROPERTY_URL, url);
-			map.put(PROPERTY_NODE_SOURCE, LABEL_ORCID);
-			map.put(PROPERTY_NODE_TYPE, LABEL_IDENTIFICATOR);
-			
-			addProperty(map, PROPERTY_NAME, externalIdentifier.getCommonName());
-			addProperty(map, PROPERTY_ORCID_ID, externalIdentifier.getOrcidUri());
-			addProperty(map, PROPERTY_REFERENCE, externalIdentifier.getReference());
-			
-		//	System.out.println("Creating Orcid:Identificator " + url);
-			RestNode nodeIdentificator = graphDb.getOrCreateNode(indexOrcidIdentificator, 
-					PROPERTY_KEY, url, map);
-			if (!nodeIdentificator.hasLabel(labelIdentificator))
-				nodeIdentificator.addLabel(labelIdentificator); 
-			if (!nodeIdentificator.hasLabel(labelOrcid))
-				nodeIdentificator.addLabel(labelOrcid);
-			
-			createUniqueRelationship(nodeResearcher, nodeIdentificator, 
-					relIdentifiedBy, Direction.OUTGOING, null);
-		}
-	}*/
-	
-	/*private void processOrcidPage(RestNode nodeResearcher, ResearcherUrl researcherUrl) {
-		String url = researcherUrl.getUrl();
-		if (null != url && !url.isEmpty()) {
-			Map<String, Object> map = new HashMap<String, Object>();
-			map.put(PROPERTY_KEY, url);
-			map.put(PROPERTY_URL, url);
-			map.put(PROPERTY_NODE_SOURCE, LABEL_ORCID);
-			map.put(PROPERTY_NODE_TYPE, LABEL_PAGE);
-			
-			addProperty(map, PROPERTY_NAME, researcherUrl.getName());
-			
-		//	System.out.println("Creating Orcid:Page " + url);
-			RestNode nodePage = graphDb.getOrCreateNode(indexOrcidPage, 
-					PROPERTY_KEY, url, map);
-			if (!nodePage.hasLabel(labelPage))
-				nodePage.addLabel(labelPage); 
-			if (!nodePage.hasLabel(labelOrcid))
-				nodePage.addLabel(labelOrcid);
-			
-			createUniqueRelationship(nodeResearcher, nodePage, 
-					relLinkedTo, Direction.OUTGOING, null);
-		}
-	}*/
 	
 	private void processOrcidWork(Graph graph, String researcherKey, OrcidWork work) throws Exception {
 		String putCode = work.getPutCode();
@@ -448,28 +270,6 @@ public class ImporterOrcid {
 						}
 					}
 				}
-
-			
-//			addProperty(map, PROPERTY_PUBLICATION_DATE, work.getPublicationDateString());
-//			addProperty(map, PROPERTY_DESCRIPTION, work.getShortDescription());
-			
-/*			WorkCitation citation = work.getCitation();
-			if (null != citation) {
-				String property = PROPERTY_CITATION;
-				String type = citation.getType();
-				if (null != type && !type.isEmpty()) 
-					property += "_" + type;
-				
-				addProperty(map, property, citation.getCitation());
-			}*/
-			
-			/*			
-			/*WorkTitle title = work.getTitle();
-			if (null != title) {
-				addProperty(map, PROPERTY_TITLE, title.getTitle());	
-				addProperty(map, PROPERTY_SUBTITLE, title.getSubtitle());
-				addProperty(map, PROPERTY_TRANSLATED_TITLE, title.getTranslatedTitle());
-			}*/
 			
 			WorkContributors contributors = work.getWorkContributors();
 			if (null != contributors && null != contributors.getContributor()) 
@@ -489,143 +289,6 @@ public class ImporterOrcid {
 						}
 					}
 				}
-
-			/*if (!conytributorsSet.isEmpty())
-				map.put(PROPERTY_CONTRIBUTORS, conytributorsSet);*/
-
-			//	System.out.println("Creating Orcid:Work " + url);
-		/*	RestNode nodeWork = graphDb.getOrCreateNode(indexOrcidWork, 
-					PROPERTY_KEY, key, map);
-			if (!nodeWork.hasLabel(labelWork))
-				nodeWork.addLabel(labelWork); 
-			if (!nodeWork.hasLabel(labelOrcid))
-				nodeWork.addLabel(labelOrcid);
-			
-			createUniqueRelationship(nodeResearcher, nodeWork, 
-					relAuthor, Direction.OUTGOING, null);
-			*/
-			//WorkContributors contributors = work.getWorkContributors();
-		/*	if (null != contributors && null != contributors.getContributor()) 
-				for (Contributor contributor : contributors.getContributor()) 
-					processOrcidContributor(key, contributor);*/
 		}		
 	}
-	
-	/*private void processOrcidContributor(String workKey, Contributor contributor) {
-		// we only interesting in contributors, who have an orcid_id
-		OrcidIdentifier contributorId = contributor.getOrcidId();
-		if (null != contributorId) {
-			// Check what orcid_id is valid
-			String url = contributorId.getUri();
-			if (StringUtils.isNotEmpty(url)) {
-					
-				ContributorData contributorData = new ContributorData();
-				contributorData.setResearcherKey(url);
-				contributorData.setWorkId(workNodeId);
-				contributorData.setName(contributor.getCreditName());
-					
-				ContributorAttributes attributes = contributor.getContributorAttributes();
-				if (null != attributes) {
-					contributorData.setSequince(attributes.getContributorSequince());
-					contributorData.setRole(attributes.getContributorRole());
-				}
-
-				contributos.add(contributorData);
-			}
-		}
-		
-		/*
-				
-					// Build an unique key for contributor
-					//String key = workKey + "/" + name;
-				
-					Map<String, Object> map = new HashMap<String, Object>();
-					map.put(PROPERTY_KEY, url);
-					map.put(PROPERTY_NODE_SOURCE, LABEL_ORCID);
-					map.put(PROPERTY_NODE_TYPE, LABEL_CONTRIBUTOR);
-					map.put(PROPERTY_NAME, name);
-					map.put(PROPERTY_URL, url);
-					map.put(PROPERTY_ORCID_ID, contributorId.getPath());
-					
-					Map<String, Object> attr = null;
-					ContributorAttributes attributes = contributor.getContributorAttributes();
-					if (null != attributes) {
-						attr = new HashMap<String, Object>();
-					
-						addProperty(attr, PROPERTY_SEQUINCE, attributes.getContributorSequince());	
-						addProperty(attr, PROPERTY_ROLE, attributes.getContributorRole());	
-					}
-					
-					//		System.out.println("Creating Orcid:Contributor " + key);
-					RestNode nodeContributor = graphDb.getOrCreateNode(indexOrcidContributor, 
-							PROPERTY_KEY, url, map);
-					if (!nodeContributor.hasLabel(labelContributor))
-						nodeContributor.addLabel(labelContributor); 
-					if (!nodeContributor.hasLabel(labelOrcid))
-						nodeContributor.addLabel(labelOrcid);
-						
-					createUniqueRelationship(nodeContributor, nodeWork, 
-							relContributor, Direction.OUTGOING, attr);
-				}
-			}
-		}*/
-	//}
-
-	/*
-	@SuppressWarnings("unchecked")
-	private void addProperty(Map<String, Object> map, final String key, final String value) {
-		if (null != key && null != value && !key.isEmpty()) {
-			Object par = map.get(key);
-			if (null == par) 
-				map.put(key, value);
-			else {
-				if (par instanceof String) {
-					if (((String)par).equals(key))
-						return; // we already have this string
-					
-					Set<String> pars = new HashSet<String>();
-					pars.add((String) par);
-					pars.add(value);
-					map.put(key, pars);
-				} else 
-					((Set<String>)par).add(value);
-			}
-		}
-	}*/
-	
-	/*
-	private void createUniqueRelationship(RestNode nodeStart, RestNode nodeEnd, 
-			RelationshipType type, Direction direction, Map<String, Object> data) {
-
-		// get all node relationships. They should be empty for a new node
-		Iterable<Relationship> rels = nodeStart.getRelationships(type, direction);		
-		for (Relationship rel : rels) {
-			switch (direction) {
-			case INCOMING:
-				if (rel.getStartNode().getId() == nodeEnd.getId())
-					return;
-			case OUTGOING:
-				if (rel.getEndNode().getId() == nodeEnd.getId())
-					return;				
-			case BOTH:
-				if (rel.getStartNode().getId() == nodeEnd.getId() || 
-				    rel.getEndNode().getId() == nodeEnd.getId())
-					return;
-			}
-		}
-		
-		if (direction == Direction.INCOMING)
-			graphDb.createRelationship(nodeEnd, nodeStart, type, data);
-		else
-			graphDb.createRelationship(nodeStart, nodeEnd, type, data);
-	}
-	
-	private RestNode findNodeByKey(RestIndex<Node> index, String key, String value) {
-		IndexHits<Node> hits = index.get(key, value);
-		if (null != hits)
-			return (RestNode) hits.getSingle();
-		else
-			return null;
-		
-	}*/
 }
