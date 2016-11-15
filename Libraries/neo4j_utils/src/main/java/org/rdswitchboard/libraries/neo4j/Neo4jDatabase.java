@@ -156,7 +156,7 @@ public class Neo4jDatabase implements GraphImporter {
 	public void enumrateAllNodesWithProperty(String property, ProcessNode processNode) throws Exception {
 		try ( Transaction tx = graphDb.beginTx() ) 
 		{
-			String cypher = "MATCH (n) WHERE HAS(n." + property + ") RETURN n";
+			String cypher = "MATCH (n) WHERE EXISTS(n." + property + ") RETURN n";
 			try (Result result = graphDb.execute(cypher)) {
 				while ( result.hasNext() )
 			    {
@@ -173,7 +173,7 @@ public class Neo4jDatabase implements GraphImporter {
 	public void enumrateAllNodesWithLabelAndProperty(String label, String property, ProcessNode processNode)  throws Exception {
 		try ( Transaction tx = graphDb.beginTx() ) 
 		{
-			String cypher = "MATCH (n:" + label + ") WHERE HAS(n." + property + ") RETURN n";
+			String cypher = "MATCH (n:" + label + ") WHERE EXISTS(n." + property + ") RETURN n";
 			try (Result result = graphDb.execute(cypher)) {
 				while ( result.hasNext() )
 			    {

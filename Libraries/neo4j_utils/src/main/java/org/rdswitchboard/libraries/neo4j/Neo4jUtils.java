@@ -165,7 +165,7 @@ public class Neo4jUtils {
 			case OUTGOING:
 				if (rel.getEndNode().getId() == nodeId)
 					return rel;
-				
+				break;
 			case BOTH:
 				if (rel.getStartNode().getId() == nodeId || 
 				    rel.getEndNode().getId() == nodeId)
