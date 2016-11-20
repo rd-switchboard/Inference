@@ -1,5 +1,7 @@
 package org.rdswitchboard.utils.neo4j.copy.harmonized;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -35,6 +37,9 @@ public class App {
 	
 	private static final RelationshipType relKnownAs = DynamicRelationshipType.withName(GraphUtils.RELATIONSHIP_KNOWN_AS);
 	private static final RelationshipType relRelatedTo = DynamicRelationshipType.withName(GraphUtils.RELATIONSHIP_RELATED_TO);
+	
+	private static final File orphantsLogFile = new File("orphants.log");
+	private static PrintWriter orphantsLog;
 	
 	public static void main(String[] args) {
 		try {
@@ -82,6 +87,8 @@ public class App {
 	        TYPES.add(GraphUtils.TYPE_RESEARCHER);
 	        TYPES.add(GraphUtils.TYPE_DATASET);
 	        TYPES.add(GraphUtils.TYPE_GRANT);
+	        
+	        orphantsLog = new PrintWriter(orphantsLogFile);
 	        
 /*	        mapKeys.put(GraphUtils.TYPE_INSTITUTION, new HashMap<Long, Long>());
 	        mapKeys.put(GraphUtils.TYPE_PUBLICATION, new HashMap<Long, Long>());
@@ -181,6 +188,10 @@ public class App {
 	      	
 		} catch (Exception e) {
 			e.printStackTrace();
+			
+			if (null != orphantsLog) {
+				orphantsLog.close();
+			}
 			
 			System.exit(1);
 		}
@@ -290,8 +301,15 @@ public class App {
 			if (null == key) {
 				// The node does not have key, this must be first export of the node. 
 				// check if this is an orphant node
-				if (isOrphantNode(srcNode, null))
-					return false;
+				if (isOrphantNode(srcNode, null)) {
+				//	return false;
+					orphantsLog.println(nId 
+							+ "," + (String) srcNode.getProperty(GraphUtils.PROPERTY_SOURCE)
+							+ "," + (String) srcNode.getProperty(GraphUtils.PROPERTY_TYPE)
+							+ "," + (String) srcNode.getProperty(GraphUtils.PROPERTY_KEY)
+							+ "," + url);
+					
+				}
 				
 				// assing the url as a key
 				key = url;
