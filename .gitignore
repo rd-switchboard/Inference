@@ -14,5 +14,5 @@ hs_err_pid*
 .metadata
 .recommenders
 .settings
-
+*.iml
 *~
